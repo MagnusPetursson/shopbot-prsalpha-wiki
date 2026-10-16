@@ -83,7 +83,7 @@ const nav = (current) => {
   const cur = PAGES.find((p) => p.file === current);
   return `<header class="sb-mast">
 <div class="sb-mast-top"><a class="sb-brand" href="index.html"${current === "index.html" ? ' aria-current="page"' : ""}><span class="sb-brand-name">ShopBot PRSalpha <span>144-60</span></span><span class="sb-brand-sub">Prototyping Lab · University of Iceland</span></a>
-<details class="sb-navm"><summary><span>${cur ? `${cur.n} ${cur.nav}` : current === "webgl.html" ? "3D model" : "Contents"}</span><span class="sb-navm-k" aria-hidden="true">Contents</span></summary><nav aria-label="Site (compact)">${navList(current)}<a class="sb-navm-3d" href="webgl.html">3D model, full screen</a></nav></details></div>
+<details class="sb-navm"><summary><span>${cur ? `${cur.n} ${cur.nav}` : current === "webgl.html" ? "3D model" : "Contents"}</span><span class="sb-navm-k" aria-hidden="true">Contents</span></summary><nav aria-label="Site (compact)">${navList(current)}<a class="sb-navm-3d" href="webgl.html">3D model, full screen</a><a href="${THEME === "light" ? "../" : "light/"}${current}">${THEME === "light" ? "Dark" : "Light"} version</a><a href="${THEME === "light" ? "../" : ""}shopbot-handbook.pdf">Student handbook (PDF)</a><a href="${THEME === "light" ? "../" : ""}shopbot-wiki.pdf">Full wiki (PDF)</a></nav></details></div>
 <nav class="sb-nav" aria-label="Site">${navList(current)}</nav>
 <div class="sb-public-links" style="padding:8px 24px;font-size:13px;display:flex;gap:20px;flex-wrap:wrap"><a href="${THEME === "light" ? "../" : "light/"}${current}">${THEME === "light" ? "Dark" : "Light"} version</a><a href="${THEME === "light" ? "../" : ""}shopbot-handbook.pdf">Student handbook (PDF)</a><a href="${THEME === "light" ? "../" : ""}shopbot-wiki.pdf">Full wiki (PDF)</a></div>
 </header>`;
@@ -615,7 +615,7 @@ body.embed .sb-gl-stage{flex:1;aspect-ratio:auto;min-height:240px;height:auto}</
 .sb-glbar{box-sizing:border-box;height:64px;padding:0 24px;border-bottom:1.5px solid var(--anatomy-strong);background:var(--anatomy-page);position:relative;z-index:30}
 .sb-glbar .sb-mast{margin:0;height:100%;container-type:normal}
 .sb-glbar .sb-mast-top{height:100%;padding:0;align-items:center;border:0}
-.sb-glbar .sb-nav{display:none}.sb-glbar .sb-navm{display:block}
+.sb-glbar .sb-nav{display:none}.sb-glbar .sb-public-links{display:none!important}.sb-glbar .sb-navm{display:block}
 body:not(.embed) .sbx{height:calc(100vh - 64px);height:calc(100dvh - 64px)}
 body.embed .sb-glbar,body.embed .sbx-head h1,body.embed .sbx-meta{display:none}
 @media (max-width:820px){body:not(.embed) .sbx{height:auto}}
