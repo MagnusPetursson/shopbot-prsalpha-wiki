@@ -1,0 +1,10 @@
+node_modules/
+.venv/
+backup-*/
+v1/
+.DS_Store
+generator/figures/shopbot/*.html
+generator/figures/shopbot/*.pdf
+generator/figures/shopbot/fragment-script.js
+generator/figures/shopbot/site/
+generator/figures/shopbot/site-light/
