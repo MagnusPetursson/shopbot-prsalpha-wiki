@@ -19,6 +19,7 @@ for (const theme of ['dark','light']) {
   for (const f of readdirSync(dir).filter(f=>f.endsWith('.html'))) writeFileSync(join(out,f),offlineFonts(readFileSync(join(dir,f),'utf8')));
 }
 run('handbook.mjs');
+run('wiki.mjs', ['--light', '--print']);
 cpSync(join(FIG,'shopbot-handbook.pdf'),join(ROOT,'shopbot-handbook.pdf'));
 const wiki=join(FIG,'shopbot-wiki-light.html');
 // Printing needs the static figure and open answers, not the live animation loop.

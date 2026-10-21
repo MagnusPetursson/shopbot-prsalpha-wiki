@@ -4,7 +4,7 @@ A teaching and reference site for the **HÍ (University of Iceland) ShopBot PRSa
 
 **Read:** [Website](https://magnuspetursson.github.io/shopbot-prsalpha-wiki/) · [Light version](https://magnuspetursson.github.io/shopbot-prsalpha-wiki/light/) · [Student handbook PDF](https://magnuspetursson.github.io/shopbot-prsalpha-wiki/shopbot-handbook.pdf) · [Full wiki PDF](https://magnuspetursson.github.io/shopbot-prsalpha-wiki/shopbot-wiki.pdf)
 
-Machine-specific statements reflect instructor communication and reference photographs from October 2026. Open questions remain explicitly marked. Follow the lab's current induction and the manufacturer's current instructions; this is not an official ShopBot publication.
+This guide covers HÍ’s ShopBot PRSalpha 144-60, with SB3 3.8.70 and control-box firmware 224. Follow the lab’s current induction and the manufacturer’s current instructions. This is not an official ShopBot publication.
 
 ## Rebuild
 
@@ -18,7 +18,7 @@ PYTHON=.venv/bin/python CHROME=/path/to/chromium node build.mjs
 
 Playwright controls the supplied browser, so a separate Playwright browser download is not needed.
 
-The command rebuilds the dark site in the repository root, the light site in `light/`, and both PDFs. It uses the selected source modules in `generator/figures/shopbot/`, the drawing helpers in `generator/kit/`, the procedure and instructor data in `generator/research/`, and the rendered stills and fonts in `print-assets/`. Intermediate HTML and PDFs in the generator directory are ignored by Git.
+The command rebuilds the dark site in the repository root, the light site in `light/`, and both PDFs. It uses the selected source modules in `generator/figures/shopbot/`, the drawing helpers in `generator/kit/`, the operating procedures in `generator/research/`, and the rendered stills and fonts in `print-assets/`. Intermediate HTML and PDFs in the generator directory are ignored by Git.
 
 To preview under the same project subpath, serve the parent directory of this checkout:
 
@@ -32,6 +32,6 @@ GitHub Pages publishes the checked-in root of `main`. `.nojekyll` keeps the depl
 
 ## Publication and licences
 
-This public edition excludes private communication identifiers, internal research dumps, photographs and third-party manuals. All ten included JPGs are rendered stills from the site's own 3D model, not photographs of people. Source citations link to external documentation rather than redistributing it. Unique equipment identifiers are omitted from the public instructor data.
+This public edition excludes private communication identifiers, internal research dumps, photographs and third-party manuals. All ten included JPGs are rendered stills from the site's own 3D model, not photographs of people. Source citations link to external documentation rather than redistributing it. Unique equipment identifiers and the staff question record are not included.
 
 No blanket reuse licence is granted for the original teaching text, diagrams or project-specific code; rights remain with their respective holders pending an explicit licence choice. Publication alone is not an open-source licence. The included Anatomy drawing toolkit derives from [wheresryan22/anatomy](https://github.com/wheresryan22/anatomy), under its [MIT licence](licenses/anatomy-MIT.txt). IBM Plex Sans, IBM Plex Mono and Source Serif 4 are distributed under their SIL Open Font Licences in `licenses/`. ShopBot and other manufacturers retain their trademarks and documentation rights.

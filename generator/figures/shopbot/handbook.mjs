@@ -14,7 +14,7 @@ const S = await import("./site.mjs");
 const k = await import("../../kit/iso-kit.mjs");
 const V = await import("./visuals.mjs");
 const { PROSE_CSS, AFTER_FIGURE, MAINTENANCE, FAULTS_DOC } = await import("./prose.mjs");
-const { CAM, INSTRUCTOR, QUIZ, CALL_STAFF } = await import("./wiki-content.mjs");
+const { CAM, QUIZ, CALL_STAFF } = await import("./wiki-content.mjs");
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ASSETS = join(HERE, "print-assets");
@@ -100,7 +100,7 @@ ${still("part-fling", "<b><a href=\"#E22\">E22</a> · Part lifts off.</b> No tab
 ${still("usb-stopped", "<b><a href=\"#E02\">E02</a> · USB lost.</b> Motion stops but the spindle keeps turning and burns in one spot. Only the <span class='nw'>E-stop</span> kills it.")}
 </div>
 <figure class="hb-beats"><ol>${beat(1, "Screw on the toolpath, bit cutting at 12 000 rpm.")}${beat(2, "The CAM toolpath runs over the screw head.")}${beat(3, "Impact: carbide tip shatters, a bang like a gunshot.")}${beat(4, "Aftermath: broken shank, fragments, a chipped screw.")}</ol>
-<figcaption><b><a href="#E39">E39</a> · Bit hits a hold-down screw</b>, in four beats (fault E10 and key S in the 3D model's own list). Check every screw and clamp against the toolpaths in CAM before you run.</figcaption></figure>`, "hb-frozen")}
+<figcaption><b><a href="#E39">E39</a> · Bit hits a hold-down screw</b>, in four beats (key S in the online 3D model). Check every screw and clamp against the toolpaths in CAM before you run.</figcaption></figure>`, "hb-frozen")}
 ${hsec("Index", "Start from what you see", "Find what you see, not what you suspect. Each card names the most likely causes in order and points to the fault entry (E-number) in Appendix A.", S.symHtml, "hb-symptoms")}`);
 
 // 07 Feeds: the calculator as a static still at the worked example; table; rules of thumb; CAM checklist
@@ -113,7 +113,7 @@ const calcStill = V.chipCalc()
 const thumbs = (S.feedsNotes.match(/<p><b>Rules of thumb\.[\s\S]*?<\/p>/) || [""])[0];
 const feeds = chapter("feeds", `<figure class="hb-calc">${calcStill}<figcaption>The site's chipload calculator, frozen at the worked example: 6 mm two-flute, 14 000 rpm, 4200 mm/min.</figcaption></figure>
 <div class="hb-cols hb-why">${S.feedsIntro}<div class="sb-formula">f<sub>z</sub> = feed ÷ (rpm × flutes)</div>${S.feedsWorked}${thumbs}</div>
-${hsec("Starting points", "Used in Icelandic Fab Labs", "6 mm two-flute unless stated. Start here, then write what you used in the log so the next person starts from evidence.", `<table class="sb-ftab"><colgroup><col style="width:17%"><col style="width:13%"><col style="width:8%"><col style="width:11%"><col style="width:10%"><col></colgroup><thead><tr><th>Material</th><th>Cutter</th><th>rpm</th><th>Feed mm/min</th><th>mm/tooth</th><th>Notes</th></tr></thead><tbody>${S.FEEDTAB.map(([m, cu, r, f, z, n]) => `<tr><td>${m}</td><td>${cu}</td><td class="num">${r}</td><td class="num">${f}</td><td class="num">${z}</td><td class="note">${n}</td></tr>`).join("")}</tbody></table>`)}
+${hsec("Starting points", "Used in Icelandic Fab Labs", "6 mm two-flute unless stated. Record the material, cutter, feed, rpm and any fault in your job notes and report problems to staff.", `<table class="sb-ftab"><colgroup><col style="width:17%"><col style="width:13%"><col style="width:8%"><col style="width:11%"><col style="width:10%"><col></colgroup><thead><tr><th>Material</th><th>Cutter</th><th>rpm</th><th>Feed mm/min</th><th>mm/tooth</th><th>Notes</th></tr></thead><tbody>${S.FEEDTAB.map(([m, cu, r, f, z, n]) => `<tr><td>${m}</td><td>${cu}</td><td class="num">${r}</td><td class="num">${f}</td><td class="num">${z}</td><td class="note">${n}</td></tr>`).join("")}</tbody></table>`)}
 ${hsec("Checklist", "From CAM to the machine", "", S.stripH2(CAM))}`);
 
 // 08 Maintenance: calendar + why (the full published schedule is cut; glossary and I/O are Appendix B)
@@ -135,20 +135,17 @@ const appendix = `<section class="hb-ch hb-app" id="ch-appendix"><header class="
 <section class="hb-asec" id="glossary"><h2><span>B</span>Command glossary</h2><div class="hb-acols hb-gloss">${glossary}</div><h3 class="hb-ah3" id="io">Inputs, outputs and status LEDs</h3><div class="hb-acols hb-io">${S.proc(/^12\./)}</div></section>
 <section class="hb-asec" id="sources"><h2><span>C</span>Sources</h2><div class="hb-acols">${S.allSources.replace(/<a href="([^"]+)">[^<]+<\/a>/g, (m, u) => `<a href="${u}">${shortUrl(u)}</a>`)}</div></section></section>`;
 
-// Instructor: one-page open-questions box (content unchanged)
-const instructor = `<section class="hb-ch hb-instr" id="ch-instructor"><div class="hb-box"><div class="sb-kicker"><span>For the instructor</span>Open questions</div><h1>What this handbook cannot know about our machine</h1><div class="hb-acols">${S.stripH2(INSTRUCTOR)}</div></div></section>`;
-
 // ------------------------------------------------------------------ cover + contents
 const identity = (AFTER_FIGURE.match(/This machine's control box:[\s\S]*?SB3 version [\d.]+\./) || [""])[0];
 const TOC = [["rules"], ["machine"], ["run"], ["zero"], ["preflight"], ["trouble"], ["feeds"], ["maintain"], ["quiz"]]
   .map(([key]) => ({ id: `ch-${key}`, n: P[key].n, label: P[key].nav, find: P[key].title }))
   .concat([{ id: "faults", n: "A", label: "All 39 failure modes", find: "All 39 failure modes" }, { id: "glossary", n: "B", label: "Command glossary", find: "Command glossary" },
-    { id: "sources", n: "C", label: "Sources", find: "\nC Sources", exact: "Sources" }, { id: "ch-instructor", n: "", label: "For the instructor: open questions", find: "What this handbook cannot know" }]);
+    { id: "sources", n: "C", label: "Sources", find: "\nC Sources", exact: "Sources" }]);
 const cover = (pages) => `<section class="hb-cover"><div class="hb-cover-top"><div class="sb-kicker"><span>Handbook</span>For first-course students</div>
 <h1>The ShopBot PRSalpha <em>144-60</em></h1><p class="sb-lead">How it works, how to run it, what goes wrong. The printed companion to the lab's teaching site.</p></div>
 <div class="hb-cover-meta"><div><span>Lab</span>Prototyping Lab, University of Iceland</div><div><span>Date</span>${TODAY}</div><div><span>Version</span>Handbook 2 · this machine: ${identity.replace(/^This machine's control box: /, "").replace(/Model# (\d+)/, '<span class="nw">Model# $1</span>').replace(/SB3 version ([\d.]+)/, '<span class="nw">SB3 version $1</span>')}</div></div>
 <nav class="hb-toc" aria-label="Contents"><div class="hb-toc-h">Contents</div><ol>${TOC.map((t) => `<li><a href="#${t.id}"><span class="n">${t.n}</span><b>${t.label}</b><span class="pg">${pages?.[t.id] ?? ""}</span></a></li>`).join("")}</ol></nav>
-<p class="hb-cover-foot">Every claim carries a source number; the list is Appendix C. Read chapters 01–05 before your induction, tear out the pre-flight sheet (page ${pages?.["ch-preflight"] ?? "—"}) and keep it at the machine.</p></section>`;
+<p class="hb-cover-foot">References: Appendix C. Read chapters 01–05 before your induction, tear out the pre-flight sheet (page ${pages?.["ch-preflight"] ?? "—"}) and keep it at the machine.</p></section>`;
 
 // ------------------------------------------------------------------ print CSS
 const HB_CSS = `
@@ -409,16 +406,6 @@ ${PF_CSS}
 .hb-acols .sb-sources a{font-family:var(--anatomy-mono);font-size:7.5pt}
 .hb-acols>.sb-aside{font-size:9pt;margin-top:2mm}
 
-/* instructor: one-page box */
-.hb-box{border:1.5pt solid var(--anatomy-strong);border-radius:3px;padding:5mm 6mm 3mm}
-.hb-box h1{font-size:17pt;line-height:1.1;margin:0 0 3mm}
-.hb-box .hb-acols{font-size:9pt;line-height:1.3}
-.hb-box h3{font-size:9.8pt;margin:2.5mm 0 1mm;break-after:avoid}
-.hb-box .hb-acols>h3:first-of-type{margin-top:0}
-.hb-box ul{padding-left:4mm;margin:0 0 2mm}
-.hb-box li{margin:0 0 1mm;break-inside:avoid}
-.hb-box p{margin:0 0 2mm}
-
 /* cover */
 .hb-cover{display:flex;flex-direction:column;height:258mm}
 .hb-cover-top{padding:6mm 0 6mm;border-bottom:1.5px solid var(--anatomy-strong)}
@@ -442,7 +429,7 @@ ${PF_CSS}
 
 // ------------------------------------------------------------------ assemble, print, number, print again
 function build(pages) {
-  const body = `<style>${fontCss}${PROSE_CSS}${S.SHELL_CSS}${stripMedia(V.VIS_CSS)}${stripMedia(S.SITE_CSS)}${HB_CSS}</style><article class="sb-doc">${cover(pages)}${[rules, machine, run, zero, preflight, trouble, feeds, maintain, quiz].map((h) => localLinks(openAll(h))).join("\n")}${localLinks(appendix)}${instructor}</article>`;
+  const body = `<style>${fontCss}${PROSE_CSS}${S.SHELL_CSS}${stripMedia(V.VIS_CSS)}${stripMedia(S.SITE_CSS)}${HB_CSS}</style><article class="sb-doc">${cover(pages)}${[rules, machine, run, zero, preflight, trouble, feeds, maintain, quiz].map((h) => localLinks(openAll(h))).join("\n")}${localLinks(appendix)}</article>`;
   const html = k.pageHtml({ title: "ShopBot PRSalpha 144-60 — student handbook", theme: "light", body, width: 1200 });
   writeFileSync(HTML_OUT, html);
   return html;

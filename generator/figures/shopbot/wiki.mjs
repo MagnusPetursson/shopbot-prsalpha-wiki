@@ -4,11 +4,20 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import * as k from "../../kit/iso-kit.mjs";
 import { PROSE_CSS, AFTER_FIGURE, MAINTENANCE, FAULTS_DOC, SOURCES, faultsHtml } from "./prose.mjs";
-import { SAFETY, SYMPTOMS, FEEDS, CAM, INSTRUCTOR, QUIZ, PREFLIGHT, FIRSTJOB, CALL_STAFF, LAB_SOURCES } from "./wiki-content.mjs";
+import { SAFETY, SYMPTOMS, FEEDS, CAM, QUIZ, PREFLIGHT, FIRSTJOB, CALL_STAFF, LAB_SOURCES } from "./wiki-content.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const THEME = process.argv.includes("--light") ? "light" : "dark";
-const figure = readFileSync(join(HERE, THEME === "light" ? "fragment-figure-light.html" : "fragment-figure.html"), "utf8");
+const rawFigure = readFileSync(join(HERE, THEME === "light" ? "fragment-figure-light.html" : "fragment-figure.html"), "utf8");
+const PRINT = process.argv.includes("--print");
+const figure = PRINT ? rawFigure
+  .replace(/<div class="sb-transport"[\s\S]*?<\/div>/, "")
+  .replace(/<div class="sb-faults"[\s\S]*?<\/div>/, "")
+  .replace(/Press Run to cut[\s\S]*?what cures it\./, "The figures are static illustrations. The online 3D model runs a 600 × 400 mm profile and a 300 × 200 mm pocket in an 18 mm plywood sheet and demonstrates ten faults.")
+  .replace(/aria-label="ShopBot PRSalpha CNC router\.[^"]*"/, 'aria-label="Static illustration of the ShopBot PRSalpha CNC router"')
+  .replace("The cut: the groove the bit leaves in the sheet, live from the toolpath", "The cut: the groove the bit leaves in the sheet")
+  .replace(/The camera is fixed to the spindle,[^`]*?disappears into the sheet\./, "The tool detail shows the spindle nose, collet and cutter above the sheet.")
+  : rawFigure;
 const script = readFileSync(join(HERE, "fragment-script.js"), "utf8");
 const procPath = join(HERE, "..", "..", "research", "procedures.md");
 const procedures = existsSync(procPath) ? readFileSync(procPath, "utf8") : "";
@@ -93,17 +102,16 @@ const renumber = (html) => html.replace(/<h2( id="[^"]*")?>\s*\d+\s*·\s*/g, "<h
 const dropTitle = (html) => html.replace(/^\s*<h2[^>]*>[^<]*<\/h2>/, "");
 
 section("rules", "Before you touch it: the rules", dropTitle(SAFETY) + (PROC_SAFETY ? `<h3>ShopBot's own list, from the manuals</h3>${stripFirstH3(md(PROC_SAFETY, { shift: 1 }))}` : ""));
-section("machine", "The machine", `<p>The University's PRSalpha is a 12 × 5 ft moving-gantry router: the table stands still, a bridge carries the spindle along the table (X), a car carries it across the bridge (Y), and a plate lifts it (Z). Four closed-loop stepper motors turn pinions in racks; nothing is hydraulic, nothing is a ball screw. Learn the parts by name now: every fault later in this page is one of them failing.</p><div class="sb-figure-wrap" id="fig-anatomy">${figure}</div><p class="sb-aside">A turnable WebGL version of the same model, with zoom and a "follow tool" camera, is the separate page <code>ShopBot-PRSalpha-144-60-3D-webgl.html</code>.</p>${renumber(AFTER_FIGURE.split("<h2>3 · Failure modes</h2>")[0]).replace("<h2>The machine in numbers", "<h2>What it is, in numbers")}`);
+section("machine", "The machine", `<p>The University's PRSalpha is a 12 × 5 ft moving-gantry router: the table stands still, a bridge carries the spindle along the table (X), a car carries it across the bridge (Y), and a plate lifts it (Z). Four closed-loop stepper motors turn pinions in racks; nothing is hydraulic, nothing is a ball screw. Learn the parts by name now: every fault later in this page is one of them failing.</p><div class="sb-figure-wrap" id="fig-anatomy">${figure}</div><p class="sb-aside">Open the <a href="https://magnuspetursson.github.io/shopbot-prsalpha-wiki/webgl.html">online 3D model</a> to run the example job and view ten fault demonstrations.</p>${renumber(AFTER_FIGURE.split("<h2>3 · Failure modes</h2>")[0]).replace("<h2>The machine in numbers", "<h2>What it is, in numbers")}`);
 section("procedures", "Standard procedures", PROC_OPERATE ? md(PROC_OPERATE, { shift: 1 }) : `<p class="sb-labpractice">Procedures section pending.</p>`);
 section("firstjob", "Your first job, step by step", FIRSTJOB);
-section("preflight", "Pre-flight checklist (one page)", PREFLIGHT);
+section("preflight", "Pre-flight checklist", PREFLIGHT);
 section("symptoms", "Something went wrong: start from the symptom", dropTitle(SYMPTOMS) + `<h3 id="callstaff">When to stop and call staff</h3>${CALL_STAFF}`);
 section("faults", "Failure modes, one by one", `<p>Each entry: what you see, why, what to do. Numbers in brackets are the sources at the end. The ten the figure can act out carry their key.</p>${faultsHtml().replace(/<li>/g, (m, off, str) => { return m; })}`);
 section("feeds", "Feeds, speeds and the one number that matters", dropTitle(FEEDS));
 section("cam", "From CAM to the machine", dropTitle(CAM));
 section("maintenance", "Maintenance that prevents most of the above", dropTitle(renumber(MAINTENANCE)).replace(/<h2>What this page does not know[\s\S]*$/, "") + (PROC_MAINT ? `<h3>The published schedule, in full</h3>${md(PROC_MAINT, { shift: 1 }).replace(/<h3[^>]*>[^<]*<\/h3>/, "")}` : ""));
 section("reference", "Command and signal reference", PROC_REFERENCE ? md(PROC_REFERENCE, { shift: 1 }) : `<p class="sb-labpractice">Reference section pending.</p>`);
-section("instructor", "For the instructor", dropTitle(INSTRUCTOR));
 section("quiz", "Self-check before your first solo job", dropTitle(QUIZ));
 section("sources", "Sources", `<ol class="sb-sources">${[...SOURCES, ...LAB_SOURCES].map(([n, label, url]) => `<li value="${n}">${label}${url ? ` — <a href="${url}">${url}</a>` : ""}</li>`).join("")}</ol><p class="sb-aside">Manual page tags in the procedures: AG Assembly Guide 2022 [2] · QS Quick Start 2016 [4] · UG User Guide 2015 [11] · CR Command Reference 2015 [10] · HD Holding Down 2016 [12] · MS Maintenance Schedule 2016 [13] · TM Troubleshooting Mechanicals 2014 [16] · XY Manually Setting XY Zero [47].</p>`);
 
@@ -182,7 +190,7 @@ const tocLinks = [...document.querySelectorAll('.sb-toc a')];
 const secs = tocLinks.map((a) => document.querySelector(a.getAttribute('href')));
 new IntersectionObserver((entries) => { for (const en of entries) if (en.isIntersecting) { const i = secs.indexOf(en.target); tocLinks.forEach((a, j) => a.style.color = j === i ? 'var(--anatomy-strong)' : ''); } }, { rootMargin: '-10% 0px -80% 0px' }).observe && secs.forEach((s) => s && new IntersectionObserver((entries) => { for (const en of entries) if (en.isIntersecting) { const i = secs.indexOf(en.target); tocLinks.forEach((a, j) => a.style.color = j === i ? 'var(--anatomy-strong)' : ''); } }, { rootMargin: '-10% 0px -80% 0px' }).observe(s));
 `;
-const intro = `<div class="sb-kicker">Teaching page · University of Iceland prototyping lab</div><h1>The ShopBot PRSalpha 144-60: how it works, how to run it, what goes wrong</h1><p class="sb-lead">Read sections 1, 2 and 4 before your induction; section 3 is the detail behind section 4. Print section 5 and keep it at the machine until the procedures are in your hands. When something goes wrong, go to section 6 and start from what you see. The interactive figure in section 2 can act out nine of the faults; all 38 are in section 7.</p>`;
+const intro = `<div class="sb-kicker">Teaching page · University of Iceland prototyping lab</div><h1>The ShopBot PRSalpha 144-60: how it works, how to run it, what goes wrong</h1><p class="sb-lead">Read sections 1, 2 and 4 before your induction; section 3 is the detail behind section 4. Print section 5 and keep it at the machine until the procedures are in your hands. When something goes wrong, go to section 6 and start from what you see. The figures in the PDF are static illustrations. The <a href="https://magnuspetursson.github.io/shopbot-prsalpha-wiki/webgl.html">online 3D model</a> demonstrates ten faults; all 39 are described in section 7.</p>`;
 const body = `<style>${PROSE_CSS}${WIKI_CSS}</style><div class="sb-wiki">${toc}<article class="sb-doc">${intro}${bodyHtml}</article></div>`;
 const page = k.pageHtml({ title: "ShopBot PRSalpha 144-60 — operating, maintenance and debugging", theme: THEME, body, script: script + "\n" + WIKI_JS, width: 1060 });
 const name = THEME === "light" ? "shopbot-wiki-light.html" : "shopbot-wiki.html";

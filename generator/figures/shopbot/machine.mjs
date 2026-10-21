@@ -83,75 +83,75 @@ export const chipload = (feedCmS, rpm = MACHINE.rpm, flutes = MACHINE.flutes) =>
 
 export const FAULTS = [
   {
-    id: "alpha", key: "1", name: "Alpha fault",
+    id: "alpha", key: "1", e: "01", name: "Alpha fault",
     parts: ["xmotor.near", "xmotor.far", "endplate.near", "endplate.far", "box.led"],
     symptom: "Everything stops dead mid-cut; the red fault LED on the control box lights and the software reports an alpha alarm.",
     cause: "A closed-loop alphaStep motor was pushed past what its correction could hold: an obstruction, a clamp struck at speed, chips packed into the rack, or a damaged motor cable. (At 1.8° of lag the driver starts correcting; the alarm comes when correction fails.)",
-    cure: "Read the driver LED blink code, remove the cause, reset, then re-home (C3) and re-zero; the displayed position is no longer accurate after a fault.",
+    cure: "Stop and call staff; do not open the cabinet. Staff check the driver and clear the cause. Reset, re-home (C3) and re-zero after recovery; position is lost.",
   },
   {
-    id: "zzero", key: "2", name: "Z-zero not sensed",
+    id: "zzero", key: "2", e: "05", name: "Z-zero not sensed",
     parts: ["zplate", "zclip", "zlead"],
     symptom: "C2 drives the bit down onto the plate without stopping, or refuses to start because input 1 is already on.",
     cause: "The circuit never closes: the lead broken inside its coil or at the clip, the clip knocked off the carriage plate or biting paint or dust instead of bare aluminium, a dirty plate or bit, or an open connector; or Safe-Z pull-up set to 0 so the routine halts after the first touch.",
     cure: "Clip stays clamped on bare aluminium of the carriage plate (circuit: plate → spindle → collet → bit), plate under the bit; before every C2 touch the plate to the bit and watch input 1 light and clear; clean contacts, check the lead; keep a positive safe pull-up. Store the plate and clip in their holder on the car.",
   },
   {
-    id: "prox", key: "3", name: "Homing switch missed",
+    id: "prox", key: "3", e: "04", name: "Homing switch missed",
     parts: ["prox.x", "prox.y"],
     symptom: "During C3 the gantry runs into the hard stop, or a limit trips mid-job and the cut stops.",
     cause: "Inductive switch misaligned to its metal target, input 2/3 polarity misconfigured, a bad switch or cable, or a failed input channel.",
     cure: "Test the switch with a metal target and watch inputs 2 and 3; fix alignment or the fault rather than disabling limits.",
   },
   {
-    id: "rpm", key: "4", name: "Spindle off / wrong RPM",
+    id: "rpm", key: "4", e: "07", name: "Spindle off / wrong RPM",
     parts: ["vfd", "spindle"],
     symptom: "A still bit is dragged through the sheet and snaps, or the cut burns at 12000 rpm when 8000 was typed.",
     cause: "Interlock key off, pendant Start not pressed at the “Press START on control before pressing OK” prompt, RPM typed in the TR window without Enter, the RPM window closed, or the VFD left in LOCAL.",
     cure: "Key on, output 1 on, pendant Start before OK; type the RPM and press Enter, confirm the VFD readout, listen before the bit enters the stock.",
   },
   {
-    id: "collet", key: "5", name: "Bit slips in collet",
+    id: "collet", key: "5", e: "10", name: "Bit slips in collet",
     parts: ["collet", "tool"],
     symptom: "The cut gets deeper pass by pass; eventually the bit pulls out or breaks through the spoilboard.",
     cause: "Dirty or worn ER25 collet, nut not snapped onto the collet before the bit, wrong torque for the nut, a 1/4 in bit in a 6 mm collet, or too much stick-out; the motor encoder cannot see a bit sliding in its collet.",
-    cure: "Clean taper, collet and nut; snap collet into nut first; match shank size; torque per nut type; replace collets after 400–700 h or any crash; re-zero Z.",
+    cure: "Clean taper, collet and nut; snap collet into nut first; match shank size; use the tightening method for the standard ER25 nut supplied for this HSD spindle; replace collets after 400–700 h or any crash; re-zero Z.",
   },
   {
-    id: "holddown", key: "6", name: "Part lifts off",
+    id: "holddown", key: "6", e: "22", name: "Part lifts off",
     parts: ["clamp", "stock.part"],
     symptom: "On the final pass the cut-out piece rises, catches the bit and is flung off the table; the bit breaks.",
     cause: "Nothing holds the part once the profile closes: no tabs or onion skin, no screws in the part, clamps only at the sheet edge, or bowed stock springing up as it is freed.",
     cure: "Leave tabs or a 0.25–0.75 mm onion skin; screw the part and the waste into the spoilboard (screws in planned safe zones); shim bowed stock flat under the clamps; cut through on the last pass only; never reach for a loose part while the tool moves.",
   },
   {
-    id: "rack", key: "7", name: "Rack dust / backlash",
+    id: "rack", key: "7", e: "16", name: "Rack dust / backlash",
     parts: ["xrack.near", "xrack.far", "pinion"],
     symptom: "Position creeps a few steps every pass; the second profile pass is offset from the first.",
     cause: "Chips packed in the rack teeth, a worn pinion, a loose pinion set screw, or a spring-loaded motor mount that has lost tension so the pinion skips.",
     cure: "Brush racks and pinions clean every 40 h, then a small blob of light grease every 150 mm and run the axes; check push-pull play, set screws and spring tension; replace pinions on schedule.",
   },
   {
-    id: "usb", key: "8", name: "USB lost",
+    id: "usb", key: "8", e: "02", name: "USB lost",
     parts: ["pc", "cable.usb"],
     symptom: "The software freezes or reports a USB failure; the gantry stops dead mid-cut but the spindle keeps running.",
     cause: "PC power settings putting the PC or its USB port to sleep mid-file (sleep, screen saver, USB selective suspend); a loose or over-long USB cable (over 3 m, extensions, hubs); electrical noise (EMI) from the spindle, VFD or nearby equipment.",
     cure: "Dedicated PC with sleep, screen saver and USB selective suspend off; a short, direct, seated USB cable (under 3 m, no hub, ferrite), routed away from the spindle and VFD leads; on a dropout hit E-stop, then re-home and re-zero.",
   },
   {
-    id: "clampstrike", key: "9", name: "Clamp strike",
+    id: "clampstrike", key: "9", e: "21", name: "Clamp strike",
     parts: ["clamp", "tool"],
     symptom: "A rapid move at safe Z drags the bit into a clamp; an alpha fault or a broken bit follows.",
     cause: "CAM clearance height (15 mm here) is below the clamp height, or the Z reference changed between setup and post.",
     cure: "Set clearance above the tallest fixture plus margin, keep screws in planned safe zones, preview the rapid links (SP) before cutting (SM).",
   },
   {
-    // key S (screw): 1-9 are taken and 0 is the whole view; the viewer lists it as E10
-    id: "screw", key: "S", e: "10", name: "Bit hits a hold-down screw",
+    // Fault IDs match the teaching reference; keyboard shortcuts are independent.
+    id: "screw", key: "S", e: "39", name: "Bit hits a hold-down screw",
     parts: ["tool", "collet"],
     symptom: "A loud bang mid-cut with the spindle running; the bit is broken off and a screw head in the waste is chewed up.",
     cause: "A hold-down screw sits on the toolpath (placed by eye, or the toolpath was changed after screwing down), or the CAM clearance height is below the screw heads so a move between cuts runs into one. Carbide is brittle: it shatters on steel.",
-    cure: "Spacebar, spindle off, key OFF and tell staff; treat the bit and possibly the collet as scrap. Put screws only in planned safe zones of the waste, draw them in CAM and check every toolpath and rapid against them; set the clearance above the tallest screw head and clamp.",
+    cure: "Spacebar, spindle off, key OFF and removed before reaching in; tell staff; treat the bit and possibly the collet as scrap. Put screws only in planned safe zones of the waste, draw them in CAM and check every toolpath and rapid against them; set the clearance above the tallest screw head and clamp.",
   },
 ];
 
@@ -169,7 +169,7 @@ const IMPACT = [345.33, 170.75, 92.0]; // world cm: where the bit meets the head
 export const FAULT_STAGES = {
   alpha: {
     short: "Stops dead mid-cut; the driver LED turns red.",
-    todo: "Read the driver's blink code, clear the rack or obstruction, press Reset, then re-home (C3) and re-zero.",
+    todo: "Stop and call staff. Staff read the driver code and clear the cause; students do not open the cabinet. After recovery: Reset, C3, re-zero.",
     beats: [
       { cam: { az: 38, el: 30, dist: 560, target: [0, 118, 100], rel: "gantry" }, focus: GANTRY, culprit: [], caption: "Mid-cut, one closed-loop X motor on each end plate pulls the gantry along its rack. The two must stay in step." },
       { hide: ["hose", "endplate.far", "xmotor.far.mount"], cam: { az: -22, el: 16, dist: 38, target: [0, 18, 88], rel: "gantry" }, focus: ["xmotor.far", "pinion.x.far", "shaft.x.far", "xrack.far", "endplate.far", "roller.x.far"], culprit: ["pinion.x.far"], caption: "Chips packed in the far rack: the far pinion rides up out of the teeth and skips. (End plate removed to show it.)", callouts: [{ part: "pinion.x.far", at: "top", text: "Far pinion · skipping teeth" }] },

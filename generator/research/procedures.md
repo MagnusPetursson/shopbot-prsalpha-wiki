@@ -1,6 +1,6 @@
-# ShopBot PRSalpha 144-60: operating procedures fact file (student-facing)
+# ShopBot PRSalpha 144-60: operating procedures
 Machine: University of Iceland prototyping lab, PRSalpha 144-60, alpha controller, HSD-class spindle with VFD.
-Audience: first-time CNC students. Every claim has a source tag in brackets.
+Audience: first-time CNC students. References use the source tags below.
 **Source tags**
 - [QS p.N] = Quick-Start Guide for PRSalpha and PRSstandard, Oct 2016 (printed page number)
 - [UG p.N] = ShopBot User Guide, March 2015
@@ -9,39 +9,34 @@ Audience: first-time CNC students. Every claim has a source tag in brackets.
 - [MS p.N] = PRS Maintenance Schedule, 2016
 - [TM p.N] = SBG00203 Troubleshooting Mechanicals, 2014
 - [XY p.N] = Manually Setting X and Y Zero Locations, 2016
-- = earlier cited research file `prsalpha.md`. It draws on sources that are not in this local set, so treat its claims as secondary.
+- [AG p.N] = PRSalpha Assembly Guide, May 2022
+- [FAQ] = ShopBot Technical Q&A / FAQ, Z-zero plate
+- [54] = Autodesk ShopBot OpenSBP post, listed in Sources
 
 ## 0. Safety rules that apply to every step
 - Wear eye and ear protection. This applies to the operator and to everyone watching [QS p.5].
 - Wear closed-toe shoes. Never wear gloves at the machine [QS p.5].
 - Never put your hands on the rails. The machine can move without warning [QS p.5].
 - Never leave the machine running unattended. A spinning tool makes heat and is a fire risk. Keep a working extinguisher within reach [QS p.5; UG p.5].
-- Know where the Emergency Stop is at all times [QS p.5]. The User Guide describes two E-stop buttons on a PRSalpha [UG p.14], but this lab's machine currently has **one**: the red mushroom on the wall-mounted pendant by the monitor. The red-and-yellow rotary handle on the control cabinet is the power disconnect, not an E-stop (instructor and lab photos, Oct 2026). More E-stops are planned after the move to Fab Lab Saga.
+- Know where the E-stop is before operating. This machine has **one**: the red mushroom on the wall-mounted pendant by the monitor. The red-and-yellow rotary handle on the control cabinet is the power disconnect, not an E-stop [QS p.5].
 - During a cut, stand within reach of the keyboard or the STOP button and away from the tool path [UG p.6].
 - Position the dust skirt correctly. It guards against flying particles [UG p.6; UG p.45].
 - Practise with the software before you turn on the spindle [UG p.5].
-- Turn off the spindle before you load the workpiece, position it or change the bit [UG p.5].
+- Before reaching into the machine: spindle off and stopped, interlock key OFF and removed, keypad closed, no file loaded or paused. Keep the key in your pocket while loading or moving material, changing a bit or cleaning [UG p.5; QS p.5].
 
-## 1. Power-up and shutdown
+## 1. Power-up and leaving the machine
 ### Power-up order
 1. Check the area first. Inspect the wiring, the dust hoses and the table surface [MS p.3]. Check the rails and racks. They must be clean, with no chips or scraps [QS p.18]. Do not run the machine if a motor cable is damaged [QS p.18].
 2. Do not push the gantry by hand. If it looks out of square against the end stops, tell staff; squaring and pinion alignment are a staff task [MS p.3; TM p.19].
 3. Turn on the control box. The box must be on before SB3 opens, or the software cannot connect [UG p.10; QS p.11]. A "thunk" when the motors power up and a hum at standstill are normal [UG p.64].
-4. Release the E-stop if it was latched (it releases by **twisting**; instructor-confirmed), then press **Reset** on the wall-mounted pendant by the monitor (its three buttons are Reset, Start and E-stop). Input 4 on the screen must stop flashing before the machine will move [CR p.39; UG p.47].
-5. Start the PC and launch SB3 (version 3.8.70 on this machine). Double-click the ShopBot 3 icon [QS p.10]. The correct machine settings are already loaded on the control PC; do not reload or change them (instructor-confirmed). The ShopBot USB should use the same port every time [QS p.9]. **Sleep mode and screen savers must be off.** If they are on, a long file can stop mid-cut [UG p.10]. If SB3 starts in Preview mode, the tool is not connected. Check the box and the USB [UG p.10; CR p.27].
+4. Release the E-stop by **twisting** it if it was latched, then press **Reset** on the wall-mounted pendant by the monitor (its three buttons are Reset, Start and E-stop). Input 4 on the screen must stop flashing before the machine will move [CR p.39; UG p.47].
+5. Start the PC and launch SB3 (version 3.8.70 on this machine). Double-click the ShopBot 3 icon [QS p.10]. The correct machine settings are already loaded on the control PC; do not reload or change them. The ShopBot USB should use the same port every time [QS p.9]. **Sleep mode and screen savers must be off.** If they are on, a long file can stop mid-cut [UG p.10]. If SB3 starts in Preview mode, the tool is not connected. Check the box and the USB [UG p.10; CR p.27].
 6. Open Spindle RPM Control (Tools → Spindle RPM Control). Keep this window open the whole session: SB3 talks to the VFD — the spindle's speed controller, the box with the rpm display — only while it is open [QS p.15].
-7. Engage the spindle interlock key. ShopBot supplies the key attached to the collet wrench [QS p.12]. Insert it into the safety lockout next to the power switch and turn it to **ENGAGED** [QS p.12].
-   - LAB PRACTICE (unverified): in this lab the key currently stays in the machine; attaching it to the collet wrench is planned but not yet done. This is reported current practice, not manufacturer-approved isolation: for bit changes and hands-on work, still turn it OFF and remove it [UG p.5].
-8. Switch the dust collector on **at the collector itself**; it is switched manually, not by SB3 (instructor-confirmed). It stays on for the whole job [MS p.3].
+7. With everyone clear of the machine, insert the spindle interlock key into the safety lockout next to the power switch and turn it to **ENGAGED** [QS p.12]. Before hands-on work, stop the spindle, turn the key OFF and remove it. Keep it in your pocket [UG p.5].
+8. Switch the dust collector on **at the collector itself**; it is switched manually, not by SB3. It stays on for the whole job [MS p.3].
 9. Warm up, home, then zero: C5 (the lab's standard warm-up), then C3, then C2 [MS p.3].
-### Shutdown order
-The steps below are from the ShopBot manuals. The lab has no agreed shutdown order of its own yet (instructor, Oct 2026); a proposal is being drafted separately.
-1. Finish or stop the file. Raise Z and move the gantry clear (JH) [CR p.17].
-2. Turn off the spindle. Click output 1 again or close the keypad window [QS p.13]. Every output switches off when you exit SB3 [CR p.27].
-3. Exit SB3. Pressing Esc twice from the main menu exits the software [UG p.11].
-4.
-5. With the motors unpowered, do not push or bump the gantry. Position is lost and the software cannot detect it [UG p.20]. A pushed motor acts as a generator and can damage its driver [UG p.64; CR p.20].
-
+### When you are finished
+**Users never power down the machine.** Finish or stop the file and leave the machine powered for lab staff. Do not exit SB3, turn off the control cabinet or switch off the spindle controller. Use the E-stop in an emergency, not as an end-of-session switch. Follow “After the job” for spindle stopping, key removal and cleanup.
 ## 2. Keypad and jogging (K / SK)
 ### Opening and closing the keypad
 - Type **K** (shortcut for **SK**) or click the yellow keypad icon in the red Position window [QS p.11; CR p.26].
@@ -66,7 +61,7 @@ The steps below are from the ShopBot manuals. The lab has no agreed shutdown ord
 ### Before a test move
 - Park Z at a safe height below the Z proximity switch, near the middle of the deck [QS p.11].
 ### Spacebar vs the yellow/red STOP button
-- **Spacebar (and Enter, or the on-screen Stop button):** a ramped software stop. Z pulls out of the material and position is kept, so you can continue [CR p.39]. **Treat the spindle as live afterwards**: it may keep turning, coast, or restart when you resume. Wait until it has visibly stopped and the key is OFF before your hand goes near the bit [UG p.47; QS p.17].
+- **Spacebar (and Enter, or the on-screen Stop button):** a ramped software stop. Z pulls out of the material and position is kept, so you can continue [CR p.39]. **Treat the spindle as live afterwards**: it may keep turning, coast, or restart when you resume. A spacebar stop is not isolation. Before reaching near the bit, confirm that the spindle has stopped, the interlock key is OFF and removed, the keypad is closed and no file is loaded or paused. Keep clear before re-engaging the key or restarting [UG p.5; QS p.5; QS p.17].
 - **Yellow-and-red E-stop on the pendant:** a true E-stop wired to ES1–ES4 on the control board. It cuts power to the motors **and** the spindle [UG p.47]. On this machine it is the only E-stop; twist to release.
 ### Limits while jogging
 - If a limit (input 2 or 3) stops the keypad, the next keypad move ignores limits so you can drive off the switch. A new limit will **not** stop that move [CR p.38].
@@ -101,30 +96,30 @@ The steps below are from the ShopBot manuals. The lab has no agreed shutdown ord
 ### Clamps
 - Clamps hold strongly where there is no spare material for screws. Plan carefully so the bit avoids them [HD p.6].
 - Rapids need enough clearance height to pass over clamps [UG p.44].
-- Scrap-wood clamps can work: a rabbeted block, with the rabbet slightly shallower than the stock [HD p.6];: a flexible strip with a stop glued on [HD p.6].
+- Scrap-wood clamps can work: a rabbeted block, with the rabbet slightly shallower than the stock [HD p.6]; a flexible strip with a stop glued on [HD p.6].
 - Spring clamps and pistol-grip clamps tend to move. Check that they actually hold rigidly [UG p.44].
 ### Tabs and onion skin (holding parts inside the sheet)
 - **Tabs** are bridges of material left between the part and the sheet. CAM programs add them automatically [HD p.8]. SB3 can also add tabs when a file runs (FP Tab option, sized in VB) [CR p.11–12; UG p.45].
 - **Onion skin:** set the final depth slightly short of the stock thickness, typically **.010″–.030″** depending on material and part size [HD p.8]. It holds better and is easier to sand off than thick tabs [HD p.8]. It fails if stock thickness varies or the table is not flat [HD p.8].
 ### What this lab uses
-- We hold material three ways: **screws into the spoilboard through the waste, clamps, and shims under bowed stock**. Parts inside the sheet stay put with tabs or an onion skin. Plan the screw positions in CAM, clear of every toolpath. The lab imposes no screw type and no numeric clearance (instructor-confirmed); screws and clamps must still stay clear of every toolpath, including the tool's radius.
+- Use **screws through the waste into the spoilboard, clamps, and shims under bowed stock**. Retain freed parts with tabs or an onion skin. Plan every screw and clamp position in CAM, clear of the full cutter envelope, and verify all paths.
 
 ## 5. Tool (bit) change
 1. Make the spindle safe. Turn the spindle off [UG p.5]. Change bits only with the spindle stopped and the key OFF in your pocket [UG p.5]. Disengage the interlock key during bit changes.
 2. Clean everything. The collet, nut, spindle taper and shaft must be completely clean. Use a wire or brass brush, compressed air and/or mineral spirits to remove dust or excess grease [QS p.15; QS p.18]. Small contamination causes misalignment, imbalance and slippage [MS p.3].
 3. Assemble the ER25 collet into the nut **first**. Press the collet into the nut until it **clicks**. If it will not seat, press it in at a slight angle [QS p.15; TM p.15]. Check it: hold the nut upside down. The collet should hang without falling out [QS p.15].
 4. Insert the bit into the collet [QS p.15]. The collet must grip **only the shank**. No part of the flute may enter the collet. Ideally the shank fills **at least 75 %** of the collet length.
-5. Thread the nut, collet and bit together onto the spindle **without compressing the collet**. This is the instructor's preferred order. Threading the nut and collet on a few turns first and then inserting the bit [TM p.15] is also accepted.
+5. Thread the nut, collet and bit together onto the spindle **without compressing the collet**. [QS p.15].
 6. Hand-tighten the nut [QS p.15; TM p.15]. It must go on easily. If it resists, **do not force it**. Back it off and start again. Once it is finger-tight, check the bit has not slipped.
-7. Tighten fully with the hook spanner on the nut and the 27 mm wrench on the shaft [QS p.15; TM p.15]. Our nut is the slotted **ER25 mini nut** (lab photo, Oct 2026): torque **about 35–40 N·m (29 ft·lb)** [MS p.3; manufacturer charts 25 ft·lb–45 N·m]. The 95 ft·lb figure in the schedule is for the hex E-type nut on 5 hp spindles and would damage this nut. Without a torque wrench, staff demonstrate "tight".
+7. Tighten the standard ER25 nut supplied for the HSD AT/MT 1073-140 spindle using the hook spanner on the nut and the 27 mm wrench on the shaft. Follow the tightening method demonstrated during induction; do not use a torque value for a different nut [QS p.15; TM p.15].
 8. Do not over-tighten to stop a slipping bit. That damages the threads. A slipping bit means a dirty or worn collet [MS p.3].
 9. **Re-zero Z after every bit change** [QS p.14].
 ### Collet facts
-- The collet type is set by the spindle. HSD 2.2 hp and 4 hp spindles use **ER25** [TM p.15]; the instructor confirms ER25 on this machine.
+- This spindle uses **ER25 collets with the standard ER25 nut supplied for the HSD AT/MT 1073-140**. Select a collet that matches the tool shank [TM p.15].
 - The collet size must match the bit shank. Metric and inch collets are not interchangeable [TM p.15].
 - **Collet life:** collets are consumables; staff replace them on schedule or after any crash [MS p.3; TM p.13].
 - Replace the collet immediately after any "event": it was dropped, a bit broke inside it, or a plunge bottomed out on it [MS p.3; TM p.13].
-- Signs of a worn collet [TM p.14]: the bit creeps up into the collet and Z position is lost;: bits break at sane feeds;: a bit falls out;: a bit is hard to pull out.
+- Signs of a worn collet [TM p.14]: the bit creeps up into the collet and Z position is lost; bits break at sane feeds; a bit falls out; a bit is hard to pull out.
 
 ## 6. Z zero
 ### Choose the reference to match your CAM file
@@ -134,14 +129,14 @@ The steps below are from the ShopBot manuals. The lab has no agreed shutdown ord
 - Z must be zeroed every time the machine is turned on and every time the bit is changed [QS p.14].
 ### C2 with the Z-zero plate
 1. Work in Move/Cut mode [QS p.14].
-2. Check the ground clip is in place. In this lab **the clip stays clamped on the edge of the aluminium carriage plate**; the circuit runs through plate → spindle → collet → bit (instructor-confirmed; ShopBot's guide clips the spindle body [QS p.14]). Never clip onto the bit or the nut: the spindle throws it off.
+2. Check that the ground clip remains clamped to bare aluminium on the carriage-plate edge. The circuit runs through plate → spindle → collet → bit. Never clip onto the bit or nut.
 3. Place the plate directly under the bit, on the surface you chose [QS p.14].
-4. **Test the circuit.** Touch the plate to the bit. **Input 1** must light on screen and go out as soon as contact breaks [QS p.14]. If input 1 does not light, do not run C2. If the bit reaches the plate during C2 and does not reverse, press the **spacebar**; if Z still moves, use the **E-stop**. (The manuals do not describe C2's failure behaviour; the online FAQ says the bit keeps descending. Instructor to confirm on this SB3 version.)
+4. **Test the circuit.** Touch the plate to the stationary bit. **Input 1** must light on screen and go out as soon as contact breaks [QS p.14]. If input 1 does not light and clear, **do not run C2; call staff**. ShopBot’s FAQ warns that a failed contact circuit lets the bit keep descending [FAQ]. If the bit reaches the plate during C2 and does not reverse, press the **spacebar**; if Z still moves, use the **E-stop**. Do not rely on C2 to detect a failed contact circuit.
 5. Run **C2** or click the Z-zero button. Z touches the plate **twice**, then pulls up to a safe height [QS p.14].
 6. Leave the clip on the carriage plate, coil the lead, and put the plate back in its holder on the YZ car — the carriage that carries the spindle across the gantry [QS p.14].
-7. Verify the zero. **Before your hand goes under the bit:** spindle off and stopped, interlock key turned OFF and removed, keypad closed [UG p.5; QS p.5]. Over an open area, run **MZ,0** (staff check, if the zero looks wrong). Hold a sheet of paper by its far edge; it should just not slide under the bit [TM p.11; MS p.3]. If the bit is high or low, the plate thickness in setup is wrong. Measure the plate with calipers and enter the value on the third screen of **TS** (default **0.121″ / 3.073 mm**) [TM p.12].
+7. If the zero looks wrong, stop and call staff. Staff can check **MZ,0** over an open area and verify the plate thickness in **TS** (default **3.073 mm**) [TM p.11–12; MS p.3]. Keep hands clear during every commanded move. Before a hands-on check: spindle off and stopped, key OFF and removed, keypad closed, no file loaded or paused [UG p.5; QS p.5].
 ### Manual Z zero (ZZ): not taught
-- This lab always uses **C2** for Z zero. Manual **ZZ** with a paper feeler is not part of the student sequence (instructor-confirmed). ZZ remains in the command glossary for reference only [CR p.45].
+- Use **C2** for Z zero. Manual **ZZ** with a paper feeler is not part of the student procedure; ZZ is listed in the glossary for reference only [CR p.45].
 
 ## 7. XY zero: machine home vs job zero
 ### Home vs job zero
@@ -172,17 +167,15 @@ The steps below are from the ShopBot manuals. The lab has no agreed shutdown ord
 - Plunge from Z 0.
 - Then click START or press Enter.
 ### Spindle warm-up (C5)
-- Warm up before cutting if the spindle has sat idle for **more than 4 hours** [QS p.16].
-- C5 is the lab's standard warm-up (instructor-confirmed). Open Spindle RPM Control first, then run **C5**. It runs **9000, 10000 and 12000 RPM for 3 minutes each**, then switches the spindle off [QS p.16].
-- **Sources differ:** the Maintenance Schedule says warm up **6–9 minutes daily**, preferably with C5, and check the spindle fan works [MS p.3].
+- Before cutting at the start of the day or after more than **4 h idle**, open Spindle RPM Control and run **C5**. It runs **9000, 10 000 and 12 000 rpm for 3 min each**, then stops the spindle [QS p.16]. Check that the cooling fan runs [MS p.3].
 ### Setting RPM (TR / Spindle RPM Control)
 - **TR** opens the Spindle RPM Control window. In a part file, `TR,12000` requests 12000 RPM. This is a request, not a measured speed.
 - To change speed by hand: with the spindle running, click the RPM value, type the new value, press **Enter**. The VFD display must match [QS p.16].
 ### Spindle-start order on a PRSalpha
 - **Keypad test:** turn output 1 on in the keypad, then press the green **START** on the three-button pendant [QS p.12–13].
 - **Running a file:** after Start/Enter in FP, SB3 shows the prompt “Press START on control before pressing OK”. **PRSalpha:** press the pendant **Start BEFORE clicking OK** [QS p.17].
-- The canonical sequence, instructor-confirmed for this lab: **1.** Spindle RPM Control window open, RPM typed, Enter [QS p.15]. **2.** FP → Start. **3.** Screen prompt “Press START on control before pressing OK” → pendant green **START** [QS p.17]. **4.** Verify the spindle is running at the commanded speed; the VFD (Yaskawa V1000) display should show the RPM you typed [QS p.16]. **5.** OK on screen → cutting begins. There is no separate RUN step on the VFD.
-- Never assume the spindle is turning because the gantry is moving. A bit broke elsewhere because cutting began with the spindle stopped.
+- Start a job in this order: **1.** Spindle RPM Control window open, RPM typed, Enter [QS p.15]. **2.** FP → Start. **3.** Screen prompt “Press START on control before pressing OK” → pendant green **START** [QS p.17]. **4.** Verify the spindle is running at the commanded speed; the VFD (Yaskawa V1000) display should show the RPM you typed [QS p.16]. **5.** OK on screen → cutting begins. There is no separate RUN step on the VFD.
+- Never assume the spindle is turning because the axes move; a stationary cutter can break when driven into stock.
 ### Air-cut practice
 **Method 1, 3D offset** [QS p.16]:
 - Raise the bit above the material and run FP with **3D offset**. The current XYZ becomes 0,0,0 and the file runs in the air.
@@ -192,7 +185,7 @@ Before the real cut, set Offset back to **"No Offset"** [QS p.17].
 ### Watch the first plunge
 - Stay at the keyboard with your hand near the spacebar, and know where the E-stop is [UG p.6; QS p.5].
 - Be ready to pause if anything looks wrong [QS p.5].
-- Afterwards, feel the bit. At correct feeds and speeds it should be comfortable to touch, not hot, at the end of a cut [TM p.14].
+- Burning, smoke or excessive tool heat means something is wrong. Stop and report it; do not touch the cutter to test its temperature.
 
 ## 9. Pausing, stopping and resuming
 ### Software (soft) stop
@@ -200,7 +193,7 @@ Before the real cut, set Offset back to **"No Offset"** [QS p.17].
 - Position and zero are **kept**, so you can resume with no loss of location [CR p.39; QS p.17].
 - SB3 then prompts you for what to do next [UG p.14].
 - At very slow speeds the stop is immediate [UG p.14].
-- After a spacebar stop you can resume **without resetting the drivers** [UG p.47].
+- After a spacebar stop you can resume **without resetting the drivers** [UG p.47]. This is not isolation: before reaching in, stop the spindle, remove the interlock key, close the keypad and end the loaded/paused file. Keep clear before restarting.
 ### Emergency stop (PRSalpha)
 - The E-stop **immediately** stops the tool and removes spindle power. After about **5 s**, motor power is removed too [CR p.39].
 - **Position is lost:** rehome XY with C3 and re-zero Z with C2 before cutting again [CR p.39; QS p.17].
@@ -208,29 +201,29 @@ Before the real cut, set Offset back to **"No Offset"** [QS p.17].
 ### Resuming a file
 - **FG** loads a file in Goto/Single-Step mode. You can single-step or start from a chosen line [CR p.11].
 - FG can jump automatically to the **last line executed**, for example after a broken bit [CR p.11].
-- After an E-stop or driver fault: rehome and re-zero first, then use FG [CR p.39; CR p.11].
+- After an E-stop or driver fault: have staff clear the cause, rehome and re-zero first, then use FG [CR p.39; CR p.11].
+- Before resuming, enter the required RPM and press Enter. Confirm the actual speed on the VFD display before allowing cutting to continue; do not assume the previous RPM was retained.
 - **3D offset** (Offset = 1) treats the current X, Y and Z as 0,0,0 for that run [CR p.11–12]. Do not use it to resume a real cut unless you have deliberately set the start position. It shifts Z [QS p.16].
 - A file can contain **PAUSE**, which waits for a key, or **PAUSE n**, which waits n seconds. A comment line just before it is displayed as the message, for example "Change bits" [UG p.27].
 
 ## 10. After the job
-1. Let the file finish. Raise Z to a safe height if the file did not.
-2. Send the tool home. **JH** raises Z to Safe-Z if it is below that height, then jogs to XY 0,0 [CR p.17]. JH returns to the current **working** 0,0, not the proximity-switch home. Run **C3** if you need machine home [CR p.17; QS p.15].
-3. Turn off the spindle: click output 1 or close the keypad [QS p.13]. Wait for it to stop before reaching in [UG p.5].
-4. Remove the parts and hold-downs. Look out for loose small parts [QS p.5].
-5. Clean up. Brush or blow chips off the rails and racks [QS p.18; UG p.63]. Clean the collet, nut and bits, and inspect them for wear [QS p.18]. Check again at the end of each session to be ready for the next one [TM p.14].
-6. Logs. SB3 can write a part-file log and a system log, set in VD [CR p.35].
-
+1. Finish or stop the file. Stop the spindle (output 1 off) and wait until the bit has stopped [QS p.13].
+2. With everyone clear, raise Z to a safe height and jog the gantry clear of the work. **JH** raises Z to Safe-Z, then jogs to the current **working** XY 0,0, not the proximity-switch home; use it only if that route is clear [CR p.17].
+3. Close the keypad and end any loaded or paused file. Turn the interlock key OFF and remove it before reaching in. Keep it in your pocket during cleanup [UG p.5; QS p.5]. Switch the dust collector off at the collector.
+4. Remove parts, hold-downs and loose offcuts. Vacuum the deck and brush chips from the rails and racks. Remove, clean and stow the bit; inspect the collet and nut [QS p.18].
+5. Record the material, cutter, feed, rpm and any fault in your job notes. Report faults or damage to staff.
+6. **Leave the machine powered for lab staff. Users never power down the machine.** Do not exit SB3 or switch off the control cabinet or spindle controller. In an emergency, press the **E-stop**.
 ## 11. Command glossary
 | Command | Meaning | Src |
 |---|---|---|
 | MS | Set Move (feed) speed, XY/Z/A/B, in/s or mm/s | [CR p.20] |
 | JS | Set Jog (rapid) speed, XY/Z/A/B | [CR p.16] |
 | VS | Set all 8 move and jog speeds in one sheet | [CR p.42] |
-| TR | Opens Spindle RPM Control; `TR,n` requests n RPM in a file (SB3.5.5+) |; [QS p.15–16] |
+| TR | Opens Spindle RPM Control; `TR,n` requests n RPM in a file (SB3.5.5+) | [QS p.15–16] |
 | C2 | Z-zero with the plate (input 1): two touches, then pull-up | [QS p.14] |
 | C3 | XY homing using the proximity switches (inputs 2/3) | [QS p.15; UG p.20] |
 | C5 | Spindle warm-up: 9000/10000/12000 RPM for 3 min each, then off | [QS p.16] |
-| C6, C7, C9 | Custom cut slots. No locally customized commands are reported on this PC (instructor). The built-in C macros (C2, C3, C5) are still present; do not strip C-commands from posted files | — |
+| C6, C7, C9 | Custom-cut slots. Student procedures use the standard C2, C3 and C5 routines. Do not remove C-commands from posted files | — |
 | JZ | Jog Z to a location (or by a distance in relative mode) | [CR p.17] |
 | JH | Safe-Z, then jog to XY 0,0 | [CR p.17] |
 | J2 | Jog X,Y at Jog speed | [CR p.15] |
@@ -254,9 +247,9 @@ Before the real cut, set Offset back to **"No Offset"** [QS p.17].
 | FG | Run a file in Goto/single-step mode; resume from the last line | [CR p.11] |
 | SP / SM | Preview mode / Move-Cut mode | [CR p.28; CR p.27] |
 | PAUSE | In a file: wait for a key (`PAUSE n` = n seconds) | [UG p.27] |
-| CN,90 | Calls custom cut 90; per, a CAM post uses it to expose controller variables for a units check | |
+| CN,90 | Calls custom cut 90; the CAM post uses it to expose controller variables for a units check | [54] |
 | &var | Part-file variable, e.g. `&Zdepth = -0.52` then `MZ,&Zdepth` | [UG p.28] |
-| MO | Motors off and all outputs off | [CR p.20] |
+| MO | Staff only: motors off and all outputs off. Not an end-of-job command | [CR p.20] |
 | TS | ShopBot Setup: plate thickness, prox-switch offsets | [CR p.30; TM p.12] |
 | SF | File and move limit checking on/off | [CR p.26] |
 
@@ -267,7 +260,7 @@ Before the real cut, set Offset back to **"No Offset"** [QS p.17].
 | Input 2 | X proximity switch, configured as a limit (VN) | [CR p.39; UG p.46] |
 | Input 3 | Y proximity switch, configured as a limit (VN) | [CR p.39; UG p.46] |
 | Input 4 | Stop circuit. On an alpha: normally-closed E-stop, wired ES1–ES4; cannot be reassigned | [CR p.39; UG p.47] |
-| Input 5 | Z proximity switch (per the later assembly guide) | |
+| Input 5 | Z proximity switch | [2] |
 | Output 1 | Spindle/router (on an alpha, used with the pendant Start) | [QS p.12–13; UG p.74–75] |
 | Output 4 | Safety/"tool active" output; on during motion and with the keypad open | [CR p.27; UG p.48; QS p.12] |
 
@@ -285,19 +278,20 @@ Before the real cut, set Offset back to **"No Offset"** [QS p.17].
 
 1. **Stop.** Do not restart the file. The displayed coordinates can no longer be trusted [QS p.17].
 2. Make the spindle safe: off, interlock disengaged [QS p.13].
-3. Note which axis faulted and the **red LED blink pattern** on its driver.
+3. Record the screen message and tell staff which axis faulted. Staff read the **red LED blink pattern** on the driver; students do not open the control cabinet.
 4. Find and remove the cause: a collision, clamp, bound axis, too deep or too fast a cut, or damaged cable. Motor and driver faults can show only during movement.
 5. **Never unplug a motor cable with power on.** It can destroy the driver [UG p.64].
 6. Reset the drivers. A software spacebar stop does not need this; a driver or E-stop event does [UG p.47].
 7. **Rehome with C3 and re-zero Z with C2**, then resume with FG if appropriate [CR p.39; CR p.11].
 8. Do not reset repeatedly into the same fault. Report it to staff.
-- If an axis is not powered or locked after reset, check that its connectors are seated at both ends. Otherwise suspect the driver and call support [UG p.69–70].
-- Drivers and motors run warm. If either is **extremely hot** to the touch, there is a fault [UG p.64].
+- If an axis is not powered or locked after reset, stop and call staff. Connector and driver checks are staff tasks [UG p.69–70].
+- Drivers and motors run warm. Excessive heat indicates a fault; report it rather than touching electrical equipment [UG p.64].
 
 ## 14. Maintenance checklist
+Students clean accessible surfaces, inspect tooling and report problems. Mechanical adjustments, electrical checks, lubrication and servicing below are **staff tasks**, not permission to power down or open the machine.
 ### Daily, before cutting [MS p.3]
 1. Warm up the spindle for 6–9 min with C5. Confirm the spindle fan runs.
-2. Check the bit, collet and collet nut for wear and debris. Keep the spindle body, fans and airways clean. Tapers, shafts and collets must be scrupulously clean. Tighten to the correct torque (ER25 mini-nut 3 hp = 29 ft-lb; E-type 5 hp = 95 ft-lb).
+2. Check the bit, collet and collet nut for wear and debris. Keep the spindle body, fans and airways clean. Tapers, shafts and collets must be scrupulously clean. Use the tightening method for the standard ER25 nut supplied for the HSD AT/MT 1073-140; do not substitute a torque for another nut.
 3. Square the gantry against the end stops, hold it there, and press reset.
 4. Push-pull test each motor area: X1, X2, Y, Z. A slight click is acceptable, but no movement beyond a few thousandths. If there is play, adjust the motor-mount spring (**3½ turns after slack is removed**) and/or tighten the set screws.
 5. Move the machine around at both M and J speeds, or run a short warm-up routine.
@@ -311,7 +305,7 @@ Also daily [QS p.18]:
 - Check cables for cuts and pinch points.
 - Keep the rails and gear racks clear of chips.
 ### Every 40 h of use [MS p.3]
-1. **Rack greasing:**: Clean the X, Y and Z racks and pinions with a small brush. Add a **BB-sized blob of light grease every 6″**. Run each axis to its extents about **10 times**. Wipe off the excess and redo the X/Y push-pull test.
+1. **Rack greasing:** Clean the X, Y and Z racks and pinions with a small brush. Add a **BB-sized blob of light grease every 6″**. Run each axis to its extents about **10 times**. Wipe off the excess and redo the X/Y push-pull test.
 2. Clean the Z-assembly V-bearing edges with Scotch-Brite and WD-40, then wipe with light grease or machine oil. Clean and adjust the V-rollers as needed.
 3. Scrub the X and Y V-rails with Scotch-Brite soaked in WD-40, then wipe clean. Clean roller buildup with a small brass brush.
 4. Repeat the push-pull test and adjust the motor-mount springs (3½ turns past contact) or set screws.

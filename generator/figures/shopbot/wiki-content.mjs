@@ -1,6 +1,3 @@
-import { readFileSync } from "node:fs";
-import { dirname, join } from "node:path";
-import { fileURLToPath } from "node:url";
 // Wiki-only prose: safety, symptom index, feeds primer, CAM checklist, instructor notes, self-check.
 // Facts carry the source numbers of prose.mjs SOURCES plus the lab sources appended in wiki.mjs ([56]+).
 const c = (...n) => `<span class="sb-cite">[${n.join(",")}]</span>`;
@@ -12,23 +9,23 @@ export const SAFETY = `
 <li><b>Trained and signed off.</b> You run this machine only after the lab's induction and with the instructor's sign-off. Students who have not been signed off operate the machine only with a signed-off person at the E-stop.${c(4, 60)}</li>
 <li><b>Never alone, never tired.</b> Two people in the room; the second person knows where the E-stop is: the red button on the wall-mounted pendant by the monitor, the only one on this machine.${c(60, 63, 64)}</li>
 <li><b>Eye and ear protection for you and anyone watching</b>, from the moment the machine is powered. No gloves, loose clothing, hair, lanyards anywhere near the gantry.${c(4)}</li>
-<li><b>Hands off the rails and out of the cutting area whenever the control box is on</b> — unless the spindle is stopped, the keypad is closed and no file is loaded or paused. The machine can move without warning, in any direction.${c(4)}</li>
-<li><b>Key out for hands-on work.</b> Spindle off and stopped, interlock key OFF and in your pocket before you change a bit, touch the collet, or load, move or clamp material. Lab status: the key currently stays in the machine and tying it to the collet wrench is planned, not yet done — that is reported practice, not manufacturer isolation, so turn it OFF and take it out anyway.${c(4, 11, 63)}</li>
+<li><b>Hands off the rails and out of the cutting area whenever the control box is on</b> — unless the spindle is stopped, the interlock key is OFF and in your pocket, the keypad is closed and no file is loaded or paused. The machine can move without warning, in any direction.${c(4)}</li>
+<li><b>Key out for hands-on work.</b> Spindle off and stopped, interlock key OFF and in your pocket before you change a bit, touch the collet, or load, move or clamp material.${c(4, 11, 63)}</li>
 <li><b>Never leave a running job.</b> Fires start in dust under the brush when a tool rubs, hits a screw, or a dull cutter burns hardwood. Stand where you can see the cut and reach the E-stop.${c(4, 36, 43)}</li>
 <li><b>Know the two ways to stop</b> — the box below. Use them without hesitating; a ruined sheet is cheaper than anything else.${c(4, 10, 11)}</li>
 <li><b>Spindle at speed before OK.</b> When the screen says “Press START on control before pressing OK”, start the spindle from the pendant; it must be running at the commanded speed before you click OK — the box below. A still bit dragged through plywood snaps and the pieces fly.${c(4)}</li>
 <li><b>Extraction on.</b> Switch the dust collector on at the collector itself (it is manual; the software does not switch it). It runs whenever the spindle runs. If the hose comes off the foot or the brush skirt is damaged, stop and tell staff.${c(13)}</li>
-<li><b>Clean up.</b> Brush the rails and racks, vacuum the deck, put the bits back, report anything odd to staff. The next student's crash is often your chips packed into the rack.${c(13)}</li>
+<li><b>Clean up; leave the machine powered.</b> Stop the file and spindle, remove the key before reaching in, brush the rails and racks, vacuum the deck, put the bits back and report problems. Users never power down the machine; leave it for lab staff. Use E-stop in an emergency, not to finish a session.${c(13)}</li>
 </ul>
 
 <div class="sb-box sb-box-stop" id="stops"><h4>How to stop a PRSalpha</h4>
 <dl class="sb-table">
-<dt>Spacebar (or Enter, or the on-screen Stop)</dt><dd><b>Routine stop.</b> Motion ramps down, Z lifts to its safe height, position is kept, so you can resume. <b>Treat the spindle as live</b>: depending on setup it may keep turning, coast down, or restart when you resume. Never reach in until you have seen the bit stop; hands out before you resume.${c(4, 11)}</dd>
+<dt>Spacebar (or Enter, or the on-screen Stop)</dt><dd><b>Routine stop.</b> Motion ramps down, Z lifts to its safe height, position is kept, so you can resume. <b>Treat the spindle as live</b>: depending on setup it may keep turning, coast down, or restart when you resume. A spacebar stop is not isolation. Before reaching in: spindle stopped, key OFF and removed, keypad closed, no file loaded or paused. Keep clear before restarting.${c(4, 11)}</dd>
 <dt>E-stop (the red mushroom on the wall-mounted pendant by the monitor — the only E-stop on this machine. The red-and-yellow rotary handle on the control cabinet is the power disconnect, not an E-stop)</dt><dd><b>When something is wrong.</b> Cuts spindle power immediately and motor power about 5 s later. Afterwards the machine no longer knows where it is: twist the E-stop to release it, press pendant <b>Reset</b>, then <code>C3</code> and <code>C2</code> before cutting again. There is no soft "Stop" button on an alpha pendant; its three buttons are <b>Reset · Start · E-stop</b>.${c(2, 10, 11)}</dd>
 <dt>If the software has frozen or lost the controller</dt><dd>The spacebar does nothing and the spindle keeps running. <b>E-stop</b> is the only control that still kills the spindle.${c(10)}</dd>
 </dl></div>
 
-<div class="sb-box sb-box-start" id="spindle-start"><h4>How to start a job on a PRSalpha — the canonical sequence</h4>
+<div class="sb-box sb-box-start" id="spindle-start"><h4>How to start a job on a PRSalpha</h4>
 <ol>
 <li>Spindle RPM Control window open (Tools → Spindle RPM Control, or type <code>TR</code>), RPM typed, <b>Enter</b>. Leave the window open all session.${c(4)}</li>
 <li><code>FP</code>, pick the file, check Offset = <b>No Offset</b>, Start.${c(4)}</li>
@@ -43,7 +40,7 @@ export const SYMPTOMS = `
 <h2 id="symptoms">6 · Something went wrong: start from the symptom</h2>
 <p>Find what you see, not what you suspect. Each card names the most likely causes in order and links to the fault card (E-numbers in the next section) and, where the figure can act it out, to the figure key that plays it.</p>
 <div class="sb-symptoms">
-<div class="sb-sym"><div class="sb-sym-h">Everything stopped dead, red LED on the box, "location no longer accurate"</div><div>Alpha driver alarm. Note which driver's LED blinks and how many times, remove the cause (clamp strike, packed rack, cable), reset, <b>rehome and re-zero</b>. → <a href="#E01">E01</a> · ${fig("alpha", "figure key 1")}</div></div>
+<div class="sb-sym"><div class="sb-sym-h">Everything stopped dead, red LED on the box, "location no longer accurate"</div><div>Alpha driver alarm. Stop and call staff; do not open the cabinet. Staff check the driver alarm and cause (clamp strike, packed rack, cable). After recovery, <b>rehome and re-zero</b>. → <a href="#E01">E01</a> · ${fig("alpha", "figure key 1")}</div></div>
 <div class="sb-sym"><div class="sb-sym-h">Software froze or says the controller disconnected; spindle still running</div><div>USB dropped: the PC went to sleep or the cable was knocked. <b>Press an E-stop</b>: the software can no longer stop the machine and the E-stop is the only control that kills the spindle. Then fix the cause, Reset, C3, C2, resume with FG. → <a href="#E02">E02</a>, <a href="#E03">E03</a> · ${fig("usb", "figure key 8")}</div></div>
 <div class="sb-sym"><div class="sb-sym-h">C2 drives the bit into the plate and keeps going</div><div>Input 1 not seeing the touch: clip off, dirty plate, open lead. <b>Spacebar</b>; if Z still moves, <b>E-stop</b>. The circuit test (input 1 lights on contact) before C2 is the only guard against this. → <a href="#E05">E05</a> · ${fig("zzero", "figure key 2")}</div></div>
 <div class="sb-sym"><div class="sb-sym-h">C2 touches once and then stops with an error</div><div>Plate moved before the second touch; or (staff: check the C2 settings) a zero Safe-Z pull-up. → <a href="#E06">E06</a></div></div>
@@ -66,7 +63,7 @@ export const SYMPTOMS = `
 <div class="sb-sym"><div class="sb-sym-h">Preview plays, nothing moves</div><div>Software in Preview (SP) instead of Move/Cut (SM), or no controller connection. → <a href="#E33">E33</a></div></div>
 <div class="sb-sym"><div class="sb-sym-h">An axis moved when I touched the keyboard</div><div>The keypad window still had focus. Close it when you are done jogging. → <a href="#E34">E34</a></div></div>
 <div class="sb-sym"><div class="sb-sym-h">Spindle stopped with a code on its controller display</div><div>Overcurrent/overload. Stop the file, record the code, find the cause before resetting. → <a href="#E36">E36</a>, <a href="#E37">E37</a></div></div>
-<div class="sb-sym"><div class="sb-sym-h">I stopped the job and need to continue</div><div>Decide whether position survived (spacebar stop: yes; E-stop or driver fault: no → Reset, C3, re-zero). Then restart from a line with FG, spindle started by the canonical sequence. → <a href="#E30">E30</a>, <a href="#E31">E31</a></div></div>
+<div class="sb-sym"><div class="sb-sym-h">I stopped the job and need to continue</div><div>Decide whether position survived (spacebar stop: yes; E-stop or driver fault: no → Reset, C3, re-zero). Then restart from a line with FG, spindle started by the start sequence. → <a href="#E30">E30</a>, <a href="#E31">E31</a></div></div>
 </div>
 `;
 
@@ -84,7 +81,7 @@ export const FEEDS = `
 <dt>plastics (HDPE, acrylic)</dt><dd>single-flute O-flute, high feed, low rpm; the test is a clean curl, not a weld.${c(11, 35)}</dd>
 <dt>aluminium</dt><dd>possible but marginal on a router: shallow depth, high feed, lubricant, single flute; lower depth and raise feed if it welds.${c(35)}</dd>
 </dl>
-<p><b>Rules of thumb.</b> Plunge at half the XY feed or less; ramp into pockets. Keep the bit's stick-out as short as the job allows. If depth of cut is 2× the diameter, reduce chipload 25 %; at 3× diameter, 50 %. A spindle loses torque at low rpm: if it bogs, raise rpm and feed together to keep the chip the same. Write the numbers you used in the log so the next person starts from evidence.${c(11, 59)}</p>
+<p><b>Rules of thumb.</b> Plunge at half the XY feed or less; ramp into pockets. Keep the bit's stick-out as short as the job allows. If depth of cut is 2× the diameter, reduce chipload 25 %; at 3× diameter, 50 %. A spindle loses torque at low rpm: if it bogs, raise rpm and feed together to keep the chip the same. Record the material, cutter, feed, rpm and any fault in your job notes and report problems to staff.${c(11, 59)}</p>
 `;
 
 export const CAM = `
@@ -95,46 +92,27 @@ export const CAM = `
 <li><b>Origin corner and Z reference.</b> Which corner is X0 Y0? Is Z0 the <b>material top</b> or the <b>table surface</b> (<code>&amp;PWZorigin</code> in the posted file)? It must match what you touch with C2. Bed zero with a top-zero file puts every rapid and retract <i>inside</i> the stock and every cut a sheet thickness into the spoilboard; the reverse cuts air.${c(4, 6, 54)}</li>
 <li><b>Stock thickness measured</b>, not assumed. Plywood sold as 18 mm is 17.4–18.6 mm; through-cuts and onion skins depend on it.${c(56)}</li>
 <li><b>Clearance / retract height</b> above the tallest clamp or screw head, with margin — and below the Z stroke.${c(10, 12)}</li>
-<li><b>Hold-down planned in the CAM</b>: screw positions in the waste, screws and clamps clear of every toolpath including the tool's radius; tabs or a 0.25–0.75 mm onion skin for every part that will be freed. The lab sets no screw type or numeric clearance: plan it in the CAM and check it in the simulation.${c(12, 63)}</li>
-<li><b>Feeds, rpm, flutes, depth per pass</b> computed, not copied; first-pass depth sane (a wrong "maximum stepdown" once produced a 46 mm first plunge).${c(11, 62)}</li>
+<li><b>Hold-down planned in the CAM</b>: screw positions in the waste, screws and clamps clear of every toolpath including the tool's radius; tabs or a 0.25–0.75 mm onion skin for every part that will be freed. Plan the full cutter envelope in CAM and check it in the simulation.${c(12, 63)}</li>
+<li><b>Feeds, rpm, flutes, depth per pass</b> computed, not copied; check the first-pass depth in the simulation and posted file before running.${c(11, 62)}</li>
 <li><b>Simulate</b> and look for: straight plunges into solid stock, rapids posted as feed moves above the stock (slow and dangerous at clamp height), curves turned into thousands of tiny steps (the machine stutters) — ask staff about the post settings.${c(62)}</li>
 <li><b>One file per tool</b> unless you are sure of the tool-change prompts; name files with the tool and the date.${c(62)}</li>
 <li><b>Open the .sbp in a text editor</b> and read the header: units, <code>MS</code> feed, <code>TR</code> rpm, <code>&amp;PWZorigin</code>, the first <code>JZ</code> and <code>M3</code>. If a number surprises you, it will surprise the machine.${c(10, 62)}</li>
 </ol>
 `;
 
-export const INSTRUCTOR = (() => {
-  const audit = JSON.parse(readFileSync(join(dirname(fileURLToPath(import.meta.url)), "..", "..", "research", "instructor-questions-audit.json"), "utf8"));
-  const e = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-  const groups = [
-    ["confirmed", "Answered and integrated into the guide"],
-    ["partial", "Partly answered — what is still open"],
-    ["unresolved", "Still open"],
-    ["unknown_to_instructor", "Instructor unsure — not asked again"],
-  ];
-  const item = (q) => `<li data-instructor-question="${q.id}" data-instructor-status="${q.status}"><b>${q.id} · ${e(q.title)}.</b> ${q.answer ? `<span class="sb-iq-a">${e(q.answer)}</span>` : `<span class="sb-iq-q">${e(q.question)}</span>`}${q.remaining ? ` <span class="sb-iq-open"><b>Open:</b> ${e(q.remaining)}</span>` : ""}</li>`;
-  return `
-<h2 id="instructor">11 · For the instructor: answered and remaining machine details</h2>
-<p>Status of the sixteen instructor questions, from the instructor's answers of October 2026${c(63)} and the lab photographs of this HÍ machine${c(64)}. Open items are documentation gaps, not student setup tasks.</p>
-${groups.map(([s, h]) => { const qs = audit.questions.filter((q) => q.status === s); return qs.length ? `<h3>${h} (${qs.length})</h3>\n<ul class="sb-iq sb-iq-${s}">\n${qs.map(item).join("\n")}\n</ul>` : ""; }).join("\n")}
-<p>Not yet in the lab and therefore not invented here: a lab shutdown order and a machine/hour/fault log (proposals are being drafted separately). More E-stops are planned after the move to Fab Lab Saga; until then the wall pendant's E-stop is the only one.${c(63)}</p>
-<p>Already observed: an RPM typed without Enter did not take effect; after a pause the spindle returned at 12 000 rpm. Confirm actual RPM before resuming.${c(62)}</p>
-`;
-})();
-
 export const QUIZ = `
 <p>Passing this is part of the sign-off. Answers are under each question; think before you open them.</p>
 <ol class="sb-quiz">
 <li>The file is loaded, you clicked OK on the spindle prompt and the gantry is moving toward the stock — but the spindle is silent. What do you do in the next two seconds, and what went wrong?<details><summary>Answer</summary>Spacebar now; E-stop if the bit is already in the stock. You clicked OK before pressing START on the pendant (or the key/output 1 was off). See <a href="#spindle-start">the start sequence</a> and <a href="#E07">E07</a>, <a href="#E09">E09</a>.</details></li>
 <li>You press the E-stop halfway through a job. Which of X, Y and Z zero can you trust afterwards, and what must you do before restarting?<details><summary>Answer</summary>None. Release, pendant Reset, C3 to rehome, jog to the recorded job-origin coordinates and Z2 again, C2 for Z, then FG from a line before the stop. See <a href="#stops">Stops</a>, <a href="#E30">E30</a>.</details></li>
-<li>C2 ran and reported Z zero, but the first pass cuts 2 mm too deep across the whole sheet. Name three possible causes and the test for each.<details><summary>Answer</summary>Wrong plate thickness in the settings (measure the plate, check TS); zeroed on the wrong surface for the file's <code>&amp;PWZorigin</code> (read the header); bit slipping in the collet (witness mark on the shank, MZ,0 paper test after re-torque). <a href="#E05">E05</a>, <a href="#E10">E10</a>, <a href="#E32">E32</a>.</details></li>
+<li>C2 ran and reported Z zero, but the first pass cuts 2 mm too deep across the whole sheet. Name three possible causes and the test for each.<details><summary>Answer</summary>Wrong plate thickness in the settings (staff measure the plate and check TS); zeroed on the wrong surface for the file's <code>&amp;PWZorigin</code> (read the header); bit slipping in the collet (witness mark on the shank, staff check after correct tightening). <a href="#E05">E05</a>, <a href="#E10">E10</a>, <a href="#E32">E32</a>.</details></li>
 <li>The second profile pass is 1 mm to the left of the first. The alpha drivers did not alarm. Why could they not have noticed, and where do you look?<details><summary>Answer</summary>The loop is closed around the motor shaft: a pinion that jumps teeth or slips on its shaft, or packed chips in the rack, move the gantry without the motor knowing. Look at rack teeth, pinion set screws, motor spring tension, roller wheels. <a href="#E16">E16</a>–<a href="#E19">E19</a>.</details></li>
 <li>Your CAM file has Z0 at the material top; the lab convention for through-cuts is Z0 on the bed. What happens if you zero on the bed and run it anyway?<details><summary>Answer</summary>Every rapid and retract runs inside the stock and every cut goes a full sheet thickness into the spoilboard: crashed clamps, broken bit. Match <code>&amp;PWZorigin</code> to the surface you touch, every time. <a href="#E32">E32</a>.</details></li>
 <li>You want 0.15 mm/tooth with a 6 mm two-flute at 14 000 rpm. What feed in mm/min? What plunge?<details><summary>Answer</summary>14 000 × 2 × 0.15 = 4200 mm/min; plunge at half or less, ≤ 2100 mm/min, ramped if possible. <a href="#feeds">Feeds</a>.</details></li>
-<li>You pressed the spacebar to pause and want to check the cut. What must you confirm before your hand goes near the bit?<details><summary>Answer</summary>That the spindle has actually stopped turning: the spacebar pauses the file, the spindle may keep running, coast, or restart on resume. Wait, look, then reach. <a href="#stops">Stops</a>.</details></li>
+<li>You pressed the spacebar to pause and want to check the cut. What must you confirm before your hand goes near the bit?<details><summary>Answer</summary>A spacebar stop is not isolation. Before reaching near the bit, confirm that the spindle has stopped, the interlock key is OFF and removed, the keypad is closed and no file is loaded or paused. Keep clear before re-engaging the key or restarting. <a href="#stops">Stops</a>.</details></li>
 <li>The part you are cutting out is 300 × 200 mm. List three ways to keep it from flying on the last pass, and the drawback of each.<details><summary>Answer</summary>Tabs (hand finishing); onion skin 0.25–0.75 mm (hand finishing, needs accurate thickness); screws through the part into the spoilboard (holes, must be clear of toolpaths). <a href="#E22">E22</a>, <a href="#E23">E23</a>.</details></li>
 <li>What does the alphaStep driver's closed loop see, and what does it not see? Give one failure from each category.<details><summary>Answer</summary>Sees rotor position vs command: a stalled motor from a clamp strike alarms (E01). Does not see anything downstream of the shaft: a slipping pinion, a creeping bit, a moving sheet (E17, E10, E22).</details></li>
-<li>After the job: name five things you do before you walk away.<details><summary>Answer</summary>Spindle off, Z raised and gantry moved clear (JH), collector off; screws out and deck cleared; racks and rails brushed; bit out, cleaned and stowed; faults and damage reported to staff.</details></li>
+<li>After the job: name five things you do before you walk away.<details><summary>Answer</summary>Finish or stop the file and stop the spindle; raise Z and jog clear with everyone outside the cutting area; close the keypad, end the loaded/paused file and remove the key; clear and clean the deck and stow the bit; report faults. Leave the machine powered for lab staff. Users never power down the machine; E-stop is for emergencies.</details></li>
 <li>Name the three buttons on our pendant and what each does.<details><summary>Answer</summary>Reset re-enables the drives after an E-stop (twist the E-stop to release it first); green Start starts the spindle (when output 1 and the key allow it); E-stop cuts spindle power at once and motor power about 5 s later. <a href="#stops">Stops</a>.</details></li>
 <li>Where does the Z-plate's clip go, and where does the plate go back to?<details><summary>Answer</summary>Nowhere new: the clip stays clamped on the aluminium carriage plate; the circuit runs through plate → spindle → collet → bit. The plate goes back in its holder on the YZ car with the lead coiled. Never put the clip on the bit or nut: the spindle whips it off.</details></li>
 </ol>
@@ -147,18 +125,18 @@ export const FIRSTJOB = `
 <li><b>Read the .sbp</b> in a text editor: <code>&amp;PWZorigin</code>, units, <code>MS</code>, <code>TR</code>, the first <code>JZ</code> and <code>M3</code>. Anything surprising: back to step 1.</li>
 <li><b>Power.</b> Control box on → PC and SB3 (Move/Cut mode, <code>SM</code>) → Spindle RPM Control window open → key ENGAGED → E-stop twisted to release, pendant <b>Reset</b> → dust collector on, at the collector. The machine settings are already loaded; do not reload them.</li>
 <li><b><code>C5</code></b>, the standard warm-up, if the spindle is cold. <b><code>C3</code></b> home.</li>
-<li><b>Stock on.</b> Key OFF, spindle stopped. Sheet flat, screwed down where the CAM said. Key back in.</li>
-<li><b>Bit.</b> Key OFF. ER25 collet snapped into the nut, bit in (shank ≥ 75 % in the collet), then thread the assembly onto the spindle and torque for the nut fitted. Key back in.</li>
+<li><b>Stock on.</b> Spindle stopped, key OFF and removed, keypad closed, no file loaded or paused. Sheet flat, screwed down where the CAM said. Key back in.</li>
+<li><b>Bit.</b> Spindle stopped, key OFF and removed, keypad closed, no file loaded or paused. ER25 collet snapped into the nut, bit in (shank ≥ 75 % in the collet), then thread the assembly onto the spindle. Use the tightening method demonstrated for the standard ER25 nut supplied for this HSD spindle. Key back in.</li>
 <li><b>XY zero.</b> <code>K</code> to jog to the origin corner, close the keypad, <code>Z2</code>. Write the base coordinates down (you will need them after any E-stop).</li>
 <li><b>Z zero.</b> Clip stays on the carriage plate; plate on the bed (or stock top — whatever <code>&amp;PWZorigin</code> says), input 1 test, <code>C2</code> (always C2 — no manual zeroing), plate stowed.</li>
 <li><b>Air cut.</b> <code>FP</code>, Offset = 3D, bit raised above the stock by more than the deepest cut, run it with the spindle off and watch the path. Then Offset = No Offset; <code>C2</code> again if Z was moved.</li>
 <li><b>Cut.</b> RPM typed, Enter → <code>FP</code> → at the prompt “Press START on control before pressing OK”: pendant <b>START</b> → spindle running at the commanded speed, its display shows the rpm → <b>OK</b> → cutting begins. Hand at the spacebar for the first plunge. Watch the chips. Stay.</li>
-<li><b>Done.</b> Spindle off, Z up and gantry clear (<code>JH</code>), collector off at the collector. Key OFF. Parts out, screws out, deck vacuumed, racks brushed, bit out and stowed. Report anything odd to staff.</li>
+<li><b>Done.</b> Finish or stop the file; stop the spindle. With everyone clear, raise Z and jog clear; use <code>JH</code> only if the route to working XY 0,0 is clear. Close the keypad, end any loaded/paused file and remove the key before cleanup. Collector off; parts out, screws out, deck vacuumed, racks brushed, bit stowed. Report faults. Leave the machine powered for lab staff; users never power down. Use E-stop in an emergency.</li>
 </ol>
 `;
 
 export const CALL_STAFF = `
-<p>Stop, make the machine safe (spacebar, spindle off, key out — E-stop if anything is still wrong), and get a signed-off staff member before continuing if you see any of these:</p>
+<p>Stop (E-stop in an emergency). Before reaching in: spindle off and stopped, key OFF and removed, keypad closed, no file loaded or paused. Get a signed-off staff member before continuing if you see any of these:</p>
 <ul class="sb-rules">
 <li>A driver alarm (red LED, "location no longer accurate") for the second time in a session.</li>
 <li>Any fault code on the spindle controller's display.</li>
@@ -206,23 +184,23 @@ export const PREFLIGHT = `
 </ul></div>
 <div class="sb-pf-col"><h4>After</h4>
 <ul class="sb-ticks">
-<li>Spindle off, Z raised, gantry moved clear (JH), dust collector off at the collector</li>
-<li>Screws out, parts and offcuts cleared, deck vacuumed, racks and rails brushed</li>
+<li>File finished/stopped, spindle stopped; raise Z and jog clear with everyone outside the cutting area; collector off</li>
+<li>Key OFF and removed, keypad closed, no loaded/paused file before clearing parts, screws and offcuts; deck vacuumed, racks and rails brushed</li>
 <li>Bit removed, cleaned, back in its place; collet checked</li>
-<li>Anything odd (material, bit, feeds/rpm, sounds) told to staff — the lab has no machine log yet</li>
-<li>Faults or damage reported to the lab, not left for the next student</li>
+<li>Material, cutter, feed, rpm and any fault recorded in your job notes; problems told to staff</li>
+<li>Machine left powered for staff. Users never power down; E-stop is for emergencies</li>
 </ul></div>
 </div>
 `;
 
 export const LAB_SOURCES = [
-  [56, "Fab Academy 2025 Reykjavík, M. Pétursson: computer-controlled machining (plywood settings, Z on bed, tabs)", "https://fabacademy.org/2025/labs/reykjavik/students/magnus-petursson/"],
+  [56, "Fab Academy 2025 Reykjavík: computer-controlled machining (plywood settings, Z on bed, tabs)", "https://fabacademy.org/2025/labs/reykjavik/students/magnus-petursson/"],
   [57, "Fab Academy 2025 Ísafjörður group: 12 mm birch ply tests 10–18k rpm / 500–4000 mm/min", "https://fabacademy.org/2025/labs/isafjordur/group_assignments/group_week07/"],
   [58, "Fab Academy 2023 Akureyri, A. Sæmundsson: 6 mm 2-flute 14 000 rpm 5000 mm/min", "https://fabacademy.org/2023/labs/akureyri/students/andri-semundsson/assignments/08_ComputerControlledMachining/"],
   [59, "MIT CBA feeds and speeds table", "https://pub.pages.cba.mit.edu/feed_speeds/"],
   [60, "Fab Lab Reykjavík 2016 instructor material: screw clearance rule, Icelandic ShopBot safety manual (C2 requires input 1 indication)", "https://archive.fabacademy.org/2016/fablabreykjavik/students/112/Week7LessonsLearned.html"],
   [61, "Easy Composites EB700 tooling board datasheet (cutting data)", "https://media.easycomposites.co.uk/datasheets/EC-TDS-EB700-High-Temperature-Epoxy-Tooling-Board-v2.pdf"],
   [62, "Lab notes, University of Iceland PRSalpha, Oct 2026 (RPM after pause, Enter in the Spindle RPM Control window, Fusion post observations) — unpublished", ""],
-  [63, "Instructor communication, Oct 2026 — HÍ PRSalpha; unpublished", ""],
+  [63, "HÍ PRSalpha local configuration and operating procedures, October 2026 — unpublished", ""],
   [64, "Lab photographs of the HÍ PRSalpha, Oct 2026 (control-box, motor, spindle and VFD nameplates; wall-mounted pendant; cabinet rotary disconnect; ground clip on the carriage plate) — unpublished", ""],
 ];
