@@ -101,7 +101,7 @@ export const FAULTS = [
     parts: ["prox.x", "prox.y"],
     symptom: "During C3 the gantry runs into the hard stop, or a limit trips mid-job and the cut stops.",
     cause: "Inductive switch misaligned to its metal target, input 2/3 polarity misconfigured, a bad switch or cable, or a failed input channel.",
-    cure: "Test the switch with a metal target and watch inputs 2 and 3; fix alignment or the fault rather than disabling limits.",
+    cure: "Stop and call staff. Staff test the switch, inputs 2 and 3, alignment and wiring; never disable limits.",
   },
   {
     id: "rpm", key: "4", e: "07", name: "Spindle off / wrong RPM",
@@ -115,7 +115,7 @@ export const FAULTS = [
     parts: ["collet", "tool"],
     symptom: "The cut gets deeper pass by pass; eventually the bit pulls out or breaks through the spoilboard.",
     cause: "Dirty or worn ER25 collet, nut not snapped onto the collet before the bit, wrong torque for the nut, a 1/4 in bit in a 6 mm collet, or too much stick-out; the motor encoder cannot see a bit sliding in its collet.",
-    cure: "Clean taper, collet and nut; snap collet into nut first; match shank size; use the tightening method for the standard ER25 nut supplied for this HSD spindle; replace collets after 400–700 h or any crash; re-zero Z.",
+    cure: "Clean taper, collet and nut; snap collet into nut first; match shank size; use the tightening method demonstrated during induction; replace collets after 400–700 h or any crash; re-zero Z.",
   },
   {
     id: "holddown", key: "6", e: "22", name: "Part lifts off",
@@ -189,7 +189,7 @@ export const FAULT_STAGES = {
   },
   prox: {
     short: "C3 runs the gantry into the hard stop.",
-    todo: "Hold a metal target to the switch and watch inputs 2 and 3 on the screen; align the switch to its target or replace it — never disable the limits.",
+    todo: "Stop and call staff. Staff check the proximity switch, inputs 2 and 3 and target alignment; never disable the limits.",
     beats: [
       { hide: ["xchain"], cam: { az: 64, el: 34, dist: 150, target: [385, 216, 84] }, focus: ["prox", "endplate.near", "xrack.near", "xrail.near", "stand.endcap.near", "side.near"], culprit: [], caption: "C3 homing: the gantry runs toward X 0 until the target on its end plate passes the proximity switch.", callouts: [{ part: "prox.x", text: "X proximity switch" }, { part: "prox.x.target", text: "Target" }] },
       { hide: ["xchain"], cam: { az: 14, el: 42, dist: 58, target: [400, 218, 91] }, focus: ["prox", "endplate.near", "xrack.near", "xrail.near"], culprit: ["prox.x"], caption: "The target sweeps right over the switch — misaligned, the switch never changes state and inputs 2 and 3 stay as they were.", callouts: [{ part: "prox.x", text: "Prox switch · no change" }] },
@@ -259,7 +259,7 @@ export const FAULT_STAGES = {
   },
   screw: {
     short: "Loud bang: the bit hits a screw and breaks.",
-    todo: "Spacebar, spindle off, key OFF; tell staff; the bit and possibly the collet are scrap; re-check every screw position against the toolpaths in CAM before the next run.",
+    todo: "Spacebar (E-stop in an emergency), spindle stopped, key OFF and removed; tell staff; the bit and possibly the collet are scrap; re-check every screw position against the toolpaths in CAM before the next run.",
     beats: [
       { foot: false, cam: { az: 58, el: 34, dist: 72, target: [349, 172.5, 92] }, focus: SCREWZONE, culprit: ["screw.1"], caption: "Screws hold the waste down to the spoilboard. A screw gets hit when the CAM clearance height is set below its head, or when it is placed on the toolpath — like this one, on the profile line.", callouts: [{ part: "screw.1.head", at: "top", text: "Screw on the toolpath" }, { part: "screw.2.head", at: "top", text: "Screw in a safe zone" }, { tip: true, text: "Bit cutting · 12000 rpm" }] },
       { foot: false, xray: ["stock"], ghost: ["pathghost"], cam: { az: 66, el: 16, dist: 30, target: [347.2, 170.9, 92.4] }, focus: SCREWZONE, culprit: ["screw.1"], caption: "Spindle running, the bit feeds along the profile at 60 mm/s, straight at the screw head. Green is the toolpath from CAM: it runs right across the screw.", callouts: [{ part: "screw.1.head", at: "top", text: "Culprit · screw head on the path" }, { tip: true, text: "Bit at 12000 rpm · 60 mm/s" }, { point: [350.5, 170.6, 91.86], text: "Toolpath in CAM" }] },

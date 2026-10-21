@@ -30,7 +30,7 @@ function inline(s) {
     .replace(/\*\*([^*]+)\*\*/g, "<b>$1</b>")
     .replace(/(^|[^*])\*([^*\n]+)\*/g, "$1<i>$2</i>")
     .replace(/\[((?:(?:[A-Z]{2} p\.?\s?[0-9A-Za-z–-]+|R)\s*;?\s*)+)\]/g, (m, body) => '<span class="sb-cite">[' + body.replace(/\s*;\s*/g, "; ").replace(/ p\.?\s?/g, " ").trim() + ']</span>')
-    .replace(/LAB PRACTICE \(unverified\):/g, '<span class="sb-labpractice">Lab practice (unverified):</span>');
+;
 }
 function md(text, { shift = 0 } = {}) {
   const lines = text.replace(/\r/g, "").split("\n");
@@ -106,14 +106,14 @@ section("machine", "The machine", `<p>The University's PRSalpha is a 12 × 5 ft 
 section("procedures", "Standard procedures", PROC_OPERATE ? md(PROC_OPERATE, { shift: 1 }) : `<p class="sb-labpractice">Procedures section pending.</p>`);
 section("firstjob", "Your first job, step by step", FIRSTJOB);
 section("preflight", "Pre-flight checklist", PREFLIGHT);
-section("symptoms", "Something went wrong: start from the symptom", dropTitle(SYMPTOMS) + `<h3 id="callstaff">When to stop and call staff</h3>${CALL_STAFF}`);
-section("faults", "Failure modes, one by one", `<p>Each entry: what you see, why, what to do. Numbers in brackets are the sources at the end. The ten the figure can act out carry their key.</p>${faultsHtml().replace(/<li>/g, (m, off, str) => { return m; })}`);
+section("symptoms", "Something went wrong: start from the symptom", dropTitle(SYMPTOMS).replaceAll("figure key", "online model key").replace("where the figure can act it out", "where the online model can demonstrate it") + `<h3 id="callstaff">When to stop and call staff</h3>${CALL_STAFF}`);
+section("faults", "Failure modes, one by one", `<p>Each entry: what you see, why, what to do. Numbers in brackets are the sources at the end. Entries with a related online demonstration carry its keyboard shortcut.</p>${faultsHtml().replace(/<li>/g, (m, off, str) => { return m; })}`);
 section("feeds", "Feeds, speeds and the one number that matters", dropTitle(FEEDS));
 section("cam", "From CAM to the machine", dropTitle(CAM));
 section("maintenance", "Maintenance that prevents most of the above", dropTitle(renumber(MAINTENANCE)).replace(/<h2>What this page does not know[\s\S]*$/, "") + (PROC_MAINT ? `<h3>The published schedule, in full</h3>${md(PROC_MAINT, { shift: 1 }).replace(/<h3[^>]*>[^<]*<\/h3>/, "")}` : ""));
 section("reference", "Command and signal reference", PROC_REFERENCE ? md(PROC_REFERENCE, { shift: 1 }) : `<p class="sb-labpractice">Reference section pending.</p>`);
-section("quiz", "Self-check before your first solo job", dropTitle(QUIZ));
-section("sources", "Sources", `<ol class="sb-sources">${[...SOURCES, ...LAB_SOURCES].map(([n, label, url]) => `<li value="${n}">${label}${url ? ` — <a href="${url}">${url}</a>` : ""}</li>`).join("")}</ol><p class="sb-aside">Manual page tags in the procedures: AG Assembly Guide 2022 [2] · QS Quick Start 2016 [4] · UG User Guide 2015 [11] · CR Command Reference 2015 [10] · HD Holding Down 2016 [12] · MS Maintenance Schedule 2016 [13] · TM Troubleshooting Mechanicals 2014 [16] · XY Manually Setting XY Zero [47].</p>`);
+section("quiz", "Self-check before your first solo job", dropTitle(QUIZ).replace("Answers are under each question; think before you open them.", "Answers follow each question; try answering before reading on."));
+section("sources", "Sources", `<ol class="sb-sources">${[...SOURCES, ...LAB_SOURCES].map(([n, label, url]) => `<li value="${n}">${label}${url ? ` — <a href="${url}">${url}</a>` : ""}</li>`).join("")}</ol><p class="sb-aside">Manual page tags in the procedures: AG Assembly Guide 2022 [2] · QS Quick Start 2016 [4] · UG User Guide 2015 [11] · CR Command Reference 2015 [10] · HD Holding Down 2016 [12] · MS Maintenance Schedule 2016 [13] · TM Troubleshooting Mechanicals 2014 [16] · XY Manually Setting XY Zero [47] · FAQ Z-zero plate [6].</p>`);
 
 // give fault cards anchors E01…
 let bodyHtml = sections.map((s, i) => `<section class="sb-sec" id="${s.id}"><h2 class="sb-h2" id="h-${s.id}"><span class="sb-secnum">${i + 1}</span>${s.title}</h2>${s.html.replace(/<h2( id="[^"]*")?>/g, "<h3>").replace(/<\/h2>/g, "</h3>")}</section>`).join("");
@@ -175,7 +175,7 @@ const WIKI_CSS = `
 .sb-firstjob li{margin:0 0 8px;color:var(--anatomy-strong)}
 .sb-quiz details{margin:4px 0 0;font-size:13px;color:var(--anatomy-text)}
 .sb-quiz summary{cursor:pointer;color:var(--anatomy-muted);font-family:var(--anatomy-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase}
-@media print{body{color:#222}.sb-doc,.sb-doc p,.sb-doc li,.sb-doc td,.sb-sym,.sb-ticks{color:#1a1a1a}.sb-doc .sb-cite,.sb-doc h4,.sb-mdtable th{color:#555}.sb-toc{position:static;max-height:none}.sb-wiki{display:block}.sb-preflight{grid-template-columns:1fr 1fr}#preflight{break-after:page}.sb-sec{break-before:page}.sb-sec:first-of-type{break-before:auto}.sb-fault-list li,.sb-sym,.sb-box{break-inside:avoid}.sb-quiz details{display:block}.sb-quiz details>*:not(summary){display:block}.sb-transport,.sb-faults,.sb-views{display:none}}
+@media print{body{color:#222}.sb-doc,.sb-doc p,.sb-doc li,.sb-doc td,.sb-sym,.sb-ticks{color:#1a1a1a}.sb-doc .sb-cite,.sb-doc h4,.sb-mdtable th{color:#555}.sb-toc{position:static;max-height:none}.sb-wiki{display:block}.sb-preflight{grid-template-columns:1fr 1fr}#preflight{break-after:page}.sb-sec{break-before:page}.sb-sec:first-of-type{break-before:auto}.sb-fault-list li,.sb-sym,.sb-box{break-inside:avoid}.sb-quiz details{display:block}.sb-quiz>li{break-inside:avoid}.sb-sec h2,.sb-sec h3,.sb-sec h4{break-after:avoid}.sb-caption{break-inside:avoid}.sb-doc p{orphans:3;widows:3}.sb-transport,.sb-faults,.sb-views{display:none}}
 `;
 const WIKI_JS = `
 const openAll = () => { for (const d of document.querySelectorAll('.sb-quiz details')) d.open = true; };

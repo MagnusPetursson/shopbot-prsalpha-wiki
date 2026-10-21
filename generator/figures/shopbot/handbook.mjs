@@ -121,7 +121,7 @@ const maintain = chapter("maintain", `${V.maintGrid(S.maintCols)}${hsec("Why", "
 `);
 
 // 09 Quiz, answers open
-const quiz = chapter("quiz", openAll(S.relink(S.stripH2(QUIZ)).replace(/<summary>Answer<\/summary>/g, "<summary>Answer</summary><div>").replace(/<\/details>/g, "</div></details>")));
+const quiz = chapter("quiz", openAll(S.relink(S.stripH2(QUIZ)).replace("Answers are under each question; think before you open them.", "Answers follow each question; try answering before reading on.").replace(/<summary>Answer<\/summary>/g, "<summary>Answer</summary><div>").replace(/<\/details>/g, "</div></details>")));
 
 // Appendix: A faults E01-E39, B glossary, C sources  (9.5 pt, two columns)
 const fnum = (id) => Number(id.slice(1));

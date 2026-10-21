@@ -48,7 +48,7 @@ Audience: first-time CNC students. References use the source tags below.
 ### Moving the axes
 - **← →** move X. **↑ ↓** move Y. **Page Up / Page Down** move Z [CR p.26; QS p.11].
 - You can also click the blue arrows on screen [QS p.11].
-- **/** moves on the +X+Y diagonal; **`\`** moves on the +Y−X diagonal. Add Alt to reverse the diagonal; [CR p.26].
+- **/** moves on the +X+Y diagonal; **`\`** moves on the +Y−X diagonal. Add Alt to reverse the diagonal [CR p.26].
 - Hold **Ctrl** with an arrow to move at **Jog** speed instead of Move speed [CR p.26].
 ### Speeds
 - Move (feed) and Jog (rapid) speeds appear on the left of the Control Console. You can type new values there [UG p.10].
@@ -69,7 +69,7 @@ Audience: first-time CNC students. References use the source tags below.
 ## 3. Homing (C3, XY with proximity switches)
 - **C3** homes X and Y. The machine touches off each proximity switch, giving a repeatable start point [QS p.15]. It also sets the table base coordinates correctly [UG p.20].
 - **Input 2** is the X proximity switch and **input 3** is the Y proximity switch. Both are configured as limit switches [CR p.39; UG p.46]. By default, when either one triggers, motion stops and a "table limit" message asks whether to continue [UG p.46–47]. **VN** configures what these inputs do [UG p.47; CR p.38].
-- Turning limits off with VN does **not** stop the switches working for XY zeroing [CR p.39].
+- Students never change VN or disable limits; report a limit fault to staff [CR p.39].
 - If the machine stops with a limit message and nothing is at the end of the table, tell staff.
 - "Move off prox" prompt: C3 asks you to move the spindle carriage off a switch if it starts out sitting on one. Repeated prompts while the carriage is clear mean an input or target fault (polarity, target alignment, wiring). Report it rather than defeating the limits.
 - A proximity target must be met before the hard stop.
@@ -109,13 +109,13 @@ Audience: first-time CNC students. References use the source tags below.
 2. Clean everything. The collet, nut, spindle taper and shaft must be completely clean. Use a wire or brass brush, compressed air and/or mineral spirits to remove dust or excess grease [QS p.15; QS p.18]. Small contamination causes misalignment, imbalance and slippage [MS p.3].
 3. Assemble the ER25 collet into the nut **first**. Press the collet into the nut until it **clicks**. If it will not seat, press it in at a slight angle [QS p.15; TM p.15]. Check it: hold the nut upside down. The collet should hang without falling out [QS p.15].
 4. Insert the bit into the collet [QS p.15]. The collet must grip **only the shank**. No part of the flute may enter the collet. Ideally the shank fills **at least 75 %** of the collet length.
-5. Thread the nut, collet and bit together onto the spindle **without compressing the collet**. [QS p.15].
+5. Thread the nut, collet and bit together onto the spindle **without compressing the collet** [QS p.15].
 6. Hand-tighten the nut [QS p.15; TM p.15]. It must go on easily. If it resists, **do not force it**. Back it off and start again. Once it is finger-tight, check the bit has not slipped.
-7. Tighten the standard ER25 nut supplied for the HSD AT/MT 1073-140 spindle using the hook spanner on the nut and the 27 mm wrench on the shaft. Follow the tightening method demonstrated during induction; do not use a torque value for a different nut [QS p.15; TM p.15].
+7. Tighten the matching ER25 collet nut using the hook spanner on the nut and the 27 mm wrench on the shaft. Follow the tightening method demonstrated during induction; do not use a torque value for a different nut [QS p.15; TM p.15].
 8. Do not over-tighten to stop a slipping bit. That damages the threads. A slipping bit means a dirty or worn collet [MS p.3].
 9. **Re-zero Z after every bit change** [QS p.14].
 ### Collet facts
-- This spindle uses **ER25 collets with the standard ER25 nut supplied for the HSD AT/MT 1073-140**. Select a collet that matches the tool shank [TM p.15].
+- This spindle uses **ER25 collets with the matching ER25 collet nut**. Select a collet that matches the tool shank [TM p.15].
 - The collet size must match the bit shank. Metric and inch collets are not interchangeable [TM p.15].
 - **Collet life:** collets are consumables; staff replace them on schedule or after any crash [MS p.3; TM p.13].
 - Replace the collet immediately after any "event": it was dropped, a bit broke inside it, or a plunge bottomed out on it [MS p.3; TM p.13].
@@ -232,13 +232,13 @@ Before the real cut, set Offset back to **"No Offset"** [QS p.17].
 | MZ | Move Z at Move speed (`MZ,0` checks Z zero) | [CR p.21; TM p.11] |
 | SA / SR | Absolute / relative distances; use absolute in part files | [CR p.25; CR p.28] |
 | VD | Display values: linear units 0 = in, 1 = mm (3rd field), keypad fixed distance, logs | [CR p.35; UG p.21] |
-| VL | Table limits in base coordinates, plus a limit-check flag | [CR p.38; UG p.20] |
-| VN | Input assignment: limits on/off, input 4 stop mode, input modes | [CR p.38–39] |
+| VL | Staff only: table limits in base coordinates, plus a limit-check flag | [CR p.38; UG p.20] |
+| VN | Staff only: input assignment: limits on/off, input 4 stop mode, input modes | [CR p.38–39] |
 | VI | Comm port and driver channel settings (staff only) | [CR p.37] |
 | VO | Temporary tool offset (dual Z / air drill) | [CR p.40] |
 | SO | Set output n on/off: `SO,1,1` = output 1 on | [CR p.27; UG p.48] |
 | SK (K) | Keypad arrow control; Move mode only | [CR p.26] |
-| ZZ | Zero Z here | [CR p.45] |
+| ZZ | Zero Z here (reference only; students use C2) | [CR p.45] |
 | Z2 | Zero X and Y here | [CR p.43] |
 | Z3 | Zero X, Y and Z here | [CR p.44] |
 | ZX / ZY | Zero X only / Y only | [CR p.44–45] |
@@ -250,8 +250,8 @@ Before the real cut, set Offset back to **"No Offset"** [QS p.17].
 | CN,90 | Calls custom cut 90; the CAM post uses it to expose controller variables for a units check | [54] |
 | &var | Part-file variable, e.g. `&Zdepth = -0.52` then `MZ,&Zdepth` | [UG p.28] |
 | MO | Staff only: motors off and all outputs off. Not an end-of-job command | [CR p.20] |
-| TS | ShopBot Setup: plate thickness, prox-switch offsets | [CR p.30; TM p.12] |
-| SF | File and move limit checking on/off | [CR p.26] |
+| TS | Staff only: ShopBot Setup: plate thickness, prox-switch offsets | [CR p.30; TM p.12] |
+| SF | Staff only: file and move limit checking on/off | [CR p.26] |
 
 ## 12. Inputs, outputs and status indicators
 | I/O | Function on this machine | Src |
@@ -277,9 +277,9 @@ Before the real cut, set Offset back to **"No Offset"** [QS p.17].
 - What to do:
 
 1. **Stop.** Do not restart the file. The displayed coordinates can no longer be trusted [QS p.17].
-2. Make the spindle safe: off, interlock disengaged [QS p.13].
+2. Make the spindle safe: off and stopped, key OFF and removed, keypad closed, no file loaded or paused [UG p.5; QS p.13].
 3. Record the screen message and tell staff which axis faulted. Staff read the **red LED blink pattern** on the driver; students do not open the control cabinet.
-4. Find and remove the cause: a collision, clamp, bound axis, too deep or too fast a cut, or damaged cable. Motor and driver faults can show only during movement.
+4. Staff find and remove the cause: a collision, clamp, bound axis, too deep or too fast a cut, or damaged cable. Motor and driver faults can show only during movement.
 5. **Never unplug a motor cable with power on.** It can destroy the driver [UG p.64].
 6. Reset the drivers. A software spacebar stop does not need this; a driver or E-stop event does [UG p.47].
 7. **Rehome with C3 and re-zero Z with C2**, then resume with FG if appropriate [CR p.39; CR p.11].
@@ -290,8 +290,8 @@ Before the real cut, set Offset back to **"No Offset"** [QS p.17].
 ## 14. Maintenance checklist
 Students clean accessible surfaces, inspect tooling and report problems. Mechanical adjustments, electrical checks, lubrication and servicing below are **staff tasks**, not permission to power down or open the machine.
 ### Daily, before cutting [MS p.3]
-1. Warm up the spindle for 6–9 min with C5. Confirm the spindle fan runs.
-2. Check the bit, collet and collet nut for wear and debris. Keep the spindle body, fans and airways clean. Tapers, shafts and collets must be scrupulously clean. Use the tightening method for the standard ER25 nut supplied for the HSD AT/MT 1073-140; do not substitute a torque for another nut.
+1. Run C5 (9000, 10 000 and 12 000 rpm for 3 min each). Confirm the spindle fan runs.
+2. Check the bit, collet and collet nut for wear and debris. Keep the spindle body, fans and airways clean. Tapers, shafts and collets must be scrupulously clean. Use the tightening method demonstrated during induction; do not substitute a torque for another nut.
 3. Square the gantry against the end stops, hold it there, and press reset.
 4. Push-pull test each motor area: X1, X2, Y, Z. A slight click is acceptable, but no movement beyond a few thousandths. If there is play, adjust the motor-mount spring (**3½ turns after slack is removed**) and/or tighten the set screws.
 5. Move the machine around at both M and J speeds, or run a short warm-up routine.

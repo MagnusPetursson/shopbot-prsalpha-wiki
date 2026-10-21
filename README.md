@@ -18,7 +18,7 @@ PYTHON=.venv/bin/python CHROME=/path/to/chromium node build.mjs
 
 Playwright controls the supplied browser, so a separate Playwright browser download is not needed.
 
-The command rebuilds the dark site in the repository root, the light site in `light/`, and both PDFs. It uses the selected source modules in `generator/figures/shopbot/`, the drawing helpers in `generator/kit/`, the operating procedures in `generator/research/`, and the rendered stills and fonts in `print-assets/`. Intermediate HTML and PDFs in the generator directory are ignored by Git.
+The command rebuilds the dark site in the repository root, the light site in `light/`, and both PDFs. It uses the selected source modules in `generator/figures/shopbot/`, the drawing helpers in `generator/kit/`, the operating procedures in `generator/research/`, and the rendered stills and fonts in `print-assets/`. Intermediate HTML and PDFs in the generator directory are ignored by Git. After rebuilding, run `python3 generator/scripts/verify-publication.py` to check local links and fragments, policy text, PDF text/fonts and fault-reference IDs.
 
 To preview under the same project subpath, serve the parent directory of this checkout:
 

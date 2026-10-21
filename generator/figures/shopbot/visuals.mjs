@@ -136,8 +136,8 @@ export const stoppedFlow = () => `<div class="sb-tree" role="group" aria-label="
 <div class="sb-branch"><div class="sb-tree-q">Software frozen?<span>controller disconnected</span></div><div class="sb-tree-a sb-tree-stop">E-STOP now <a href="#E02">E02</a><span>only it still kills the spindle</span></div></div>
 <div class="sb-branch"><div class="sb-tree-q">Spindle fault code<span>on the VFD?</span></div><div class="sb-tree-a">Overload / overcurrent <a href="#E36">E36</a><span>record the code</span></div></div>
 </div>
-<div class="sb-tree-end"><b>Position is lost after any alarm or E-stop.</b><span class="sb-chain">Remove the cause <i>→</i> <code>Reset</code> <i>→</i> <code>C3</code> <i>→</i> re-zero (<code>Z2</code> from your notes, <code>C2</code>) <i>→</i> <code>FG</code> from a line before the stop</span></div>
-<div class="sb-tree-staff">${icon("alarm")}<span>Second alarm in a session · any VFD code · smoke · snapped or pulled bit <b>→ stop and call staff</b></span></div>
+<div class="sb-tree-end"><b>Position is lost after any alarm or E-stop.</b><span class="sb-chain">Staff clear the cause <i>→</i> <code>Reset</code> <i>→</i> <code>C3</code> <i>→</i> re-zero (<code>Z2</code> from your notes, <code>C2</code>) <i>→</i> <code>FG</code> from a line before the stop</span></div>
+<div class="sb-tree-staff">${icon("alarm")}<span>Driver alarm · any VFD code · smoke · snapped or pulled bit <b>→ stop and call staff</b></span></div>
 </div>`;
 
 // ---------- numbered sequence (horizontal on desktop, vertical on phones)
