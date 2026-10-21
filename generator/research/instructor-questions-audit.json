@@ -62,7 +62,7 @@
       "title": "Machine settings",
       "question": "Is the correct PRSalpha 144-60 settings profile already loaded on the teaching PC? Students should not reload it.",
       "status": "confirmed",
-      "answer": "Correct settings are already loaded on the control PC. CAM is mostly Autodesk Fusion; instructor calls the post “openSPB”, corresponding to the official ShopBot OpenSBP post. Manual setup checks are used.",
+      "answer": "Correct settings are already loaded on the control PC. Post with Autodesk Fusion's official ShopBot (OpenSBP) post processor. Manual setup checks are used.",
       "remaining": ""
     },
     {

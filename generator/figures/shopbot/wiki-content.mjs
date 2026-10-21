@@ -89,7 +89,7 @@ export const FEEDS = `
 
 export const CAM = `
 <h2 id="cam">8 · From CAM to the machine: the post-processing checklist</h2>
-<p>Most "machine" failures are decided at the computer. Go through this list every time you post a file (in this lab mostly Autodesk Fusion with the official ShopBot OpenSBP post — the instructor calls it “openSPB”). The correct machine settings are already loaded on the control PC; setup is then checked by hand at the machine.${c(54, 63)}</p>
+<p>Most "machine" failures are decided at the computer. Go through this list every time you post a file. Post with Autodesk Fusion's official ShopBot (OpenSBP) post processor. The correct machine settings are already loaded on the control PC; setup is then checked by hand at the machine.${c(54, 63)}</p>
 <ol class="sb-check">
 <li><b>Units.</b> File and software agree (mm). If SB3 stops with UNIT_ERROR, the file and SB3 disagree on mm/inch: re-post the file in mm. Do not change or reload the machine settings — they are already correct on the control PC; ask staff if the units still disagree.${c(10, 54, 63)}</li>
 <li><b>Origin corner and Z reference.</b> Which corner is X0 Y0? Is Z0 the <b>material top</b> or the <b>table surface</b> (<code>&amp;PWZorigin</code> in the posted file)? It must match what you touch with C2. Bed zero with a top-zero file puts every rapid and retract <i>inside</i> the stock and every cut a sheet thickness into the spoilboard; the reverse cuts air.${c(4, 6, 54)}</li>
