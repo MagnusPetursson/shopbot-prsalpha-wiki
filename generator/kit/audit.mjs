@@ -975,11 +975,16 @@ export function terminals(tubes, solids, { tolerance = 0.15, mounts = mountsOf(t
 
 export function looseEnds(tubes, solids, { state = 1, tolerance = 0.15 } = {}) {
   const out = [];
+  const mounts = mountsOf(tubes, solids, { tolerance });
   for (const tube of tubes) {
     const offset = offsetAt(tube, state);
     (tube.tips ?? []).forEach((tip, index) => {
       if (!tip) return;
-      const hit = solids.some((shape) => {
+      // Annular holders support the rim, not the empty centre. Reuse the
+      // full-rim terminal test, but only while the holder follows the hose.
+      const mount = mounts.get(tube)?.[index];
+      const follows = mount?.landed && sameOffset(offsetAt(mount.shape, state), offset);
+      const hit = follows || solids.some((shape) => {
         if ((shape.owner && shape.owner === tube.owner) || shape.name === tube.owner) return false;
         if (!sameOffset(offsetAt(shape, state), offset)) return false;
         const { min, max } = boundsOf(shape);

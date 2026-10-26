@@ -46,6 +46,10 @@ const FIT = [
   [-110, 0, 0], [480, 0, 0], [480, 300, 0], [-110, 300, 0],
   [-110, 0, 160], [480, 0, 160], [480, 300, 120], [-110, 300, 250],
   [GX, 20, 175], [GX, 230, 175],
+  // Include the real service-loop/boom extrema; the legacy table-only fit
+  // cropped the upper hose and stay after their routes were corrected.
+  [-20, 216, 300], [-20, 176, 292], [150, 128, 292],
+  [-112, 336, 140], [496, 132, 124],
 ];
 const P = k.fitProjection(FIT, W, H, { pad: 22, azimuth: AZIMUTH, elevation: ELEVATION });
 const LAYER = { farStatic: 0, farGantry: 1, nearStatic: 2, gantry: 3, car: 4, zaxis: 5, front: 6 };
@@ -117,7 +121,12 @@ box("deck.ply", [T.x0 + 2, FAR.inner, 86], [T.x1 - 2, NEAR.inner, 88], { tone: "
   const STRIP = { x: ORIGIN.x - MACHINE.travel.x + 20, y: NEAR.inner - 5, w: MACHINE.travel.x - 20, d: 3.4, r: 0.4 };
   box("deck.ruler", [STRIP.x, STRIP.y, DECK_TOP], [STRIP.x + STRIP.w, STRIP.y + STRIP.d, DECK_TOP + 0.4], { tone: "lo", crease: "none" }, { r: 0.4, steps: 2 });
   const ticks = k.topTicks(STRIP.x, STRIP.x + STRIP.w, 10, 5, STRIP.y + STRIP.d, DECK_TOP + 0.4, [-1.3, -2.4], P, "x");
-  put("deck.ruler.ticks", [200, STRIP.y, DECK_TOP + 0.4], Ln(ticks.minor, { tone: "lo" }) + Ln(ticks.major, { tone: "mid" }), [], { bias: 0.05 });
+  const tickShapes = [];
+  for (let x = Math.ceil(STRIP.x / 10) * 10; x <= STRIP.x + STRIP.w + 1e-9; x += 10) {
+    const y = STRIP.y + STRIP.d, z = DECK_TOP + 0.4;
+    tickShapes.push(A.tube([[x, y, z], [x, y + (Math.round(x / 10) % 5 === 0 ? -2.4 : -1.3), z]], 0.15));
+  }
+  put("deck.ruler.ticks", [200, STRIP.y, DECK_TOP + 0.4], Ln(ticks.minor, { tone: "lo" }) + Ln(ticks.major, { tone: "mid" }), tickShapes, { bias: 0.05 });
 }
 // the sheet
 const [sx1, sy1] = machineToWorld(STOCK_AT.x, STOCK_AT.y);
@@ -128,7 +137,7 @@ box("stock", [STOCK_W.x0, STOCK_W.y0, DECK_TOP], [STOCK_W.x1, STOCK_W.y1, STOCK_
   const [px1, py1] = machineToWorld(30, 26);
   const [px0, py0] = machineToWorld(90, 66);
   mesh({ kind: "box", name: "stock.part", min: [px0 + 0.4, py0 + 0.4, DECK_TOP + 0.05], max: [px1 - 0.4, py1 - 0.4, STOCK_TOP], tone: "mid" });
-  put("stock.part", [(px0 + px1) / 2, (py0 + py1) / 2, STOCK_TOP], `<g data-part="stock-part" class="sb-part">${S(k.slabOf({ x: px0 + 0.4, y: py0 + 0.4, w: px1 - px0 - 0.8, d: py1 - py0 - 0.8, r: 0.2 }, DECK_TOP + 0.05, STOCK.t, P, 1), { tone: "mid", crease: "none" })}</g>`, [], { bias: 0.02 });
+  put("stock.part", [(px0 + px1) / 2, (py0 + py1) / 2, STOCK_TOP], `<g data-part="stock-part" class="sb-part">${S(k.slabOf({ x: px0 + 0.4, y: py0 + 0.4, w: px1 - px0 - 0.8, d: py1 - py0 - 0.8, r: 0.2 }, DECK_TOP + 0.05, STOCK.t - 0.05, P, 1), { tone: "mid", crease: "none" })}</g>`, [A.slab({ x: px0 + 0.4, y: py0 + 0.4, w: px1 - px0 - 0.8, d: py1 - py0 - 0.8, r: 0.2 }, DECK_TOP + 0.05, STOCK.t - 0.05)], { bias: 0.02 });
 }
 // hold-down screws for the "bit hits a screw" fault (WebGL only; hidden in every other view): pan heads with a Torx
 // recess, shank down through the sheet into the spoilboard. screw.1 sits on the first profile pass, screw.2 in a safe zone.
@@ -192,7 +201,7 @@ mesh({ kind: "lathe", name: "zplate.post", F: { o: ZZ.post, a: [0, 0, 1], u: [1,
   const seam = Ln(k.sideSeam({ x: CB.x0, y: CB.y0, w: CB.x1 - CB.x0, d: CB.y1 - CB.y0, r: 0.8 }, CB.z0 + 3, P, 3), { tone: "faint" });
   box("box.cabinet", [CB.x0, CB.y0, CB.z0], [CB.x1, CB.y1, CB.z1], { tone: "mid" }, { r: 0.8, steps: 3, bevel: 0.6, inner: seam });
   // door: hinge dots on the -x edge, handle on the +x edge, yellow disconnect, LEDs, label
-  put("box.hinges", [CB.x0 + 2, face, 40], Dots([CB.z0 + 10, CB.z1 - 10].map((z) => at([CB.x0 + 2.5, face, z])), { size: 0.5, tone: "lo" }), [], { bias: 0.1 });
+  put("box.hinges", [CB.x0 + 2, face, 40], Dots([CB.z0 + 10, CB.z1 - 10].map((z) => at([CB.x0 + 2.5, face, z])), { size: 0.5, tone: "lo" }), [CB.z0 + 10, CB.z1 - 10].map(z => A.ball([CB.x0 + 2.5, face, z], 0.5 / KS)), { bias: 0.1 });
   box("box.handle", [CB.x1 - 5, face, 36], [CB.x1 - 3.6, face + 1.4, 46], { tone: "hi" }, { r: 0.5, steps: 3 });
   const DF = G.frameOf([CB.x0 + 10, face, CB.z1 - 10], AY, AZ, AX);
   disc("box.disconnect.base", DF, 0, 1.4, 3.6, { tone: "lo" }, { steps: 28 });
@@ -215,8 +224,9 @@ mesh({ kind: "lathe", name: "zplate.post", F: { o: ZZ.post, a: [0, 0, 1], u: [1,
   const VB = { x0: 250, x1: 272, y0: NEAR.inner - 18, y1: NEAR.inner, z0: 40, z1: 70 };
   for (const x of [VB.x0 + 3, VB.x1 - 5]) box("vfd.bracket", [x, VB.y1 - 3, VB.z1], [x + 2, VB.y1 + 2, SIDE_Z[0]], { tone: "lo" }, { r: 0.3, steps: 2 });
   box("vfd", [VB.x0, VB.y0, VB.z0], [VB.x1, VB.y1, VB.z1], { tone: "mid" }, { r: 0.8, steps: 3, bevel: 0.5, inner: Ln(k.sideSeam({ x: VB.x0, y: VB.y0, w: VB.x1 - VB.x0, d: VB.y1 - VB.y0, r: 0.8 }, VB.z1 - 10, P, 3), { tone: "faint" }) });
-  put("vfd.window", [VB.x0 + 11, VB.y1, VB.z1 - 5], `<g class="sb-window">${Ln(path3([[VB.x0 + 5, VB.y1 + 0.01, VB.z1 - 7], [VB.x0 + 17, VB.y1 + 0.01, VB.z1 - 7], [VB.x0 + 17, VB.y1 + 0.01, VB.z1 - 3.5], [VB.x0 + 5, VB.y1 + 0.01, VB.z1 - 3.5]], true), { tone: "lo" })}</g>`, [], { bias: 0.1 });
-  put("vfd.keys", [VB.x0 + 11, VB.y1, VB.z1 - 14], Dots([VB.z1 - 12, VB.z1 - 15].flatMap((z) => [7, 11, 15].map((dx) => at([VB.x0 + dx, VB.y1 + 0.01, z]))), { size: 0.45, tone: "lo" }), [], { bias: 0.1 });
+  const windowLine = [[VB.x0 + 5, VB.y1 + 0.01, VB.z1 - 7], [VB.x0 + 17, VB.y1 + 0.01, VB.z1 - 7], [VB.x0 + 17, VB.y1 + 0.01, VB.z1 - 3.5], [VB.x0 + 5, VB.y1 + 0.01, VB.z1 - 3.5]];
+  put("vfd.window", [VB.x0 + 11, VB.y1, VB.z1 - 5], `<g class="sb-window">${Ln(path3(windowLine, true), { tone: "lo" })}</g>`, [A.tube([...windowLine, windowLine[0]], 0.15)], { bias: 0.1 });
+  put("vfd.keys", [VB.x0 + 11, VB.y1, VB.z1 - 14], Dots([VB.z1 - 12, VB.z1 - 15].flatMap((z) => [7, 11, 15].map((dx) => at([VB.x0 + dx, VB.y1 + 0.01, z]))), { size: 0.45, tone: "lo" }), [VB.z1 - 12, VB.z1 - 15].flatMap(z => [7, 11, 15].map(dx => A.ball([VB.x0 + dx, VB.y1 + 0.01, z], 0.45 / KS))), { bias: 0.1 });
   cable("cable.box.in", [[CB.x0 + 30, CB.y1 - 5, CB.z1], [CB.x0 + 30, CB.y1 - 5, 75], [CB.x0 + 30, CB.y1, 75]], 0.7, { tone: "lo", bend: 2, ends: [true, false] });
   // PC on a cart beyond the X = 0 end, with the USB lead to the box
   setLayer(LAYER.front, "stand");
@@ -224,7 +234,8 @@ mesh({ kind: "lathe", name: "zplate.post", F: { o: ZZ.post, a: [0, 0, 1], u: [1,
   box("pc.cart.base", [PC.x, PC.y, 2.4], [PC.x + 44, PC.y + 36, 4.8], { tone: "lo" }, { r: 1, steps: 3 });
   for (const [dx, dy] of [[3, 3], [38, 3], [3, 30], [38, 30]]) {
     const F = G.frameOf([PC.x + dx + 1.5, PC.y + dy + 1.5, 0], AZ, AX, AY);
-    // The small plan-view wheels sit on the floor; previously their top missed the base by 2.3 cm.
+    // The original caster was a 2 mm plan-view disc without ground metadata.
+    // Give it a visible wheel height and seat the raised base on its top.
     disc("pc.cart.caster", F, 0, 2.4, 2.6, { tone: "lo" }, { steps: 20, ground: true });
     // Segment posts at the shelves and tray arms: a single painter item cannot wrap a shelf.
     for (const [z0, z1] of [[4.8, 40], [42, 85.8], [87.4, 88]])
@@ -406,7 +417,7 @@ const CX = [GX + CAR.x[0], GX + CAR.x[1]];
     for (let i = 0; i <= turns * 10; i++) { const a = (i / 10) * Math.PI * 2; coil.push([fx0 + 1.4 + rr * Math.sin(a), CY - 13.6 + rr * (1 - Math.cos(a)) - rr, top - (top - bottom) * (i / (turns * 10))]); }
     coil.push([fx0 + 1.3, CY - 14.6, 103.4], [fx0 + 0.9, CY - 15, 105], [fx0 + 0.85, CY - 15, 109.4]);
     mesh({ kind: "tube", name: "zlead.stored", route: coil, r: 0.12, tone: "lo" });
-    put("zlead.stored", [fx0 + 1.4, CY - 13.6, 114], Ln(path3([[fx0 + 1.4, CY - 13.6, 123], [fx0 + 1.4, CY - 13.6, 104.5]]), { tone: "lo", free: true }), [], { bias: 0.2 });
+    put("zlead.stored", [fx0, CY - 13, 114], Ln(path3([[fx0 + 1.4, CY - 13.6, 123], [fx0 + 1.4, CY - 13.6, 104.5]]), { tone: "lo", free: true }), [A.tube([[fx0 + 1.4, CY - 13.6, 123], [fx0 + 1.4, CY - 13.6, 104.5]], 0.15)]);
   }
   // Y cable-carrier bracket from the beam top to the car top
   box("ychain.car", [CX[0], CY + YCHAIN.carY, CAR.z[1]], [CX[1], CY + YCHAIN.carY + 2, YCHAIN.topZ + 2 * YCHAIN.r - 1.6], { tone: "lo" });
@@ -495,8 +506,8 @@ const HOSE_LENGTH = 340;
   const stayTop = [POST[0] + dir[0] * 3.4, POST[1] + dir[1] * 3.4, 292];
   const stayEnd = G.add3(G.add3([POST[0], POST[1], 250], G.mul3(dir, len * 0.62)), [0, 0, 3.4]);
   const stayAxis = G.unit3(G.sub3(stayEnd, stayTop));
-  disc("boom.stay.mount", G.frameAlong(stayTop, stayAxis), -0.9, 0, 0.45, { tone: "lo" });
-  disc("boom.stay.mount", G.frameAlong(stayEnd, stayAxis), 0, 0.9, 0.6, { tone: "lo" });
+  disc("boom.stay.mount", G.frameAlong(stayTop, stayAxis), -0.9, 0, 0.45, { tone: "lo" }, { owner: "boom.post.upper" });
+  disc("boom.stay.mount", G.frameAlong(stayEnd, stayAxis), 0, 0.9, 0.6, { tone: "lo" }, { owner: "boom.arm" });
   cable("boom.stay", [stayTop, stayEnd], 0.35, { tone: "lo", bend: 1, limp: false });
   box("boom.tip.mount", [BOOM_TIP[0] - 2, BOOM_TIP[1] - 2, BOOM_TIP[2] + 2.4], [BOOM_TIP[0] + 2, BOOM_TIP[1] + 2, BOOM_TIP[2] + 6], { tone: "lo" });
   box("boom.tip.mount", [BOOM_TIP[0] - 2, BOOM_HOSE[1] + 5.8, 256], [BOOM_TIP[0] + 2, BOOM_TIP[1] + 2, 258], { tone: "lo" });
