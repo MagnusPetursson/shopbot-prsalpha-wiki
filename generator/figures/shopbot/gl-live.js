@@ -165,7 +165,8 @@ class Builder {
     for (let i = 0; i < n; i++) {
       const j = (i + 1) % n;
       this.quad(low[i], low[j], high[j], high[i], t, id, m);
-      this.seg(low[i], low[j], t, id, m); this.seg(high[i], high[j], t, id, m); this.seg(low[i], high[i], t, id, m);
+      if (!entry.smoothRing || i === 1 || i === 3) { this.seg(low[i], low[j], t, id, m); this.seg(high[i], high[j], t, id, m); }
+      if (!entry.smoothRing) this.seg(low[i], high[i], t, id, m);
     }
     for (let i = 1; i < n - 1; i++) { this.tri(low[0], low[i + 1], low[i], t, id, m); this.tri(high[0], high[i], high[i + 1], t, id, m); }
   }

@@ -103,14 +103,32 @@ function prism(name, F, poly, s0, s1, style = {}, { extra = "", inner = "", bias
   put(name, centre, S(prismPaths(F, poly, s0, s1), { tone: "mid", ...style, inner }) + extra, [shape], { bias });
   return shape;
 }
-function turned(name, F, profile, style = {}, { extra = "", inner = "", bias = 0, smooth, steps, rims, bevel = 0, owner } = {}) {
+function turned(name, F, profile, style = {}, { extra = "", inner = "", bias = 0, smooth, steps, rims, bevel = 0, owner, ground } = {}) {
   const opts = { bevel, ...(smooth !== undefined ? { smooth } : {}), ...(steps ? { steps } : {}), ...(rims ? { rims } : {}) };
   const paths = G.solidOf(profile, F, P, opts);
   const mid = (profile[0][0] + profile[profile.length - 1][0]) / 2;
   mesh({ kind: "lathe", name, F: { o: F.o, a: F.a, u: F.u, v: F.v }, profile: profile.map((p) => [p[0], p[1]]), tone: style.tone ?? "mid" });
-  const shape = record(A.solid(F, profile, { name, owner }));
+  const shape = record(A.solid(F, profile, { name, owner, ground }));
   put(name, G.add3(F.o, G.mul3(F.a, mid)), S(paths, { tone: "mid", ...style, inner }) + extra, [shape], { bias });
   return shape;
+}
+// A hollow, depth-sortable fitting. Every sector is the same annular prism in SVG,
+// WebGL and the audit; no filled collision cylinder through the spindle/tool.
+function ring(name, F, s0, s1, rIn, rOut, style = {}, { steps = 32, ground = false } = {}) {
+  const owner = name;
+  record(A.lathe(F, [[s0, rIn], [s0, rOut], [s1, rOut], [s1, rIn]], { name, owner, ground, piece: ctx.piece }));
+  for (let i = 0; i < steps; i++) {
+    const a = i * Math.PI * 2 / steps, b = (i + 1) * Math.PI * 2 / steps;
+    const q = (r, t) => [r * Math.cos(t), r * Math.sin(t)];
+    const poly = [q(rIn, a), q(rOut, a), q(rOut, b), q(rIn, b)];
+    const shape = A.prism(F, poly, s0, s1, { name, owner, ground });
+    mesh({ kind: "prism", name, F, poly, s0, s1, tone: style.tone ?? "mid", smoothRing: true });
+    const mid = G.add3(F.o, G.add3(G.mul3(F.a, (s0 + s1) / 2), G.add3(G.mul3(F.u, (rIn + rOut) / 2 * Math.cos((a + b) / 2)), G.mul3(F.v, (rIn + rOut) / 2 * Math.sin((a + b) / 2)))));
+    const paths = prismPaths(F, poly, s0, s1);
+    // Sector boundaries are a tessellation, not engraved radial seams.
+    paths.outline = ""; paths.crease = "";
+    put(name, mid, S(paths, style), [shape]);
+  }
 }
 function disc(name, F, s0, s1, r, style = {}, options = {}) {
   return turned(name, F, [[s0, r], [s1, r]], style, options);
@@ -148,5 +166,5 @@ function cable(name, points, r = 0.5, { tone = "mid", bend = 3, ends = [true, tr
   return route;
 }
 
-return { R, record, ctx, put, mesh, MESH, box, prism, turned, disc, cable, prismPaths, rect, XF, YF, AX, AY, AZ, at, S, Ln, Dots, Faded, path3, V, KS, CABLES, along };
+return { R, record, ctx, put, mesh, MESH, box, prism, turned, disc, ring, cable, prismPaths, rect, XF, YF, AX, AY, AZ, at, S, Ln, Dots, Faded, path3, V, KS, CABLES, along };
 }

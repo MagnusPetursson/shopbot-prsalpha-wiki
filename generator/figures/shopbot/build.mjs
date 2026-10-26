@@ -50,7 +50,7 @@ const FIT = [
 const P = k.fitProjection(FIT, W, H, { pad: 22, azimuth: AZIMUTH, elevation: ELEVATION });
 const LAYER = { farStatic: 0, farGantry: 1, nearStatic: 2, gantry: 3, car: 4, zaxis: 5, front: 6 };
 const K = makeKit(P, LAYER);
-const { R, record, ctx, put, mesh, MESH, box, prism, turned, disc, cable, rect, AX, AY, AZ, at, S, Ln, Dots, Faded, path3, V, KS } = K;
+const { R, record, ctx, put, mesh, MESH, box, prism, turned, disc, ring, cable, rect, AX, AY, AZ, at, S, Ln, Dots, Faded, path3, V, KS } = K;
 const setLayer = (layer, piece) => { ctx.layer = layer; if (piece) ctx.piece = piece; };
 
 // ---------------------------------------------------------------- the table
@@ -68,11 +68,9 @@ function leg(x, side) {
   disc("stand.stem", F, 3, 6, 1.1, { tone: "mid" });
   box("stand.leg", [x, y0, 6], [x + 7.5, y0 + 7.5, SIDE_Z[0]], { tone: "lo" }, { r: 0.6, steps: 3, inner: Ln(k.sideSeam({ x, y: y0, w: 7.5, d: 7.5, r: 0.6 }, 9, P, 3), { tone: "faint" }) });
   // gusset brace: a diagonal bar from the leg up to the side extrusion, on the +x side of the leg
-  const a = [x + 7.5, y0 + 3.75, 34];
-  const b = [x + 7.5 + 30, y0 + 3.75, SIDE_Z[0] + 1];
-  const dirv = G.unit3(G.sub3(b, a));
-  const BF = G.frameOf(a, dirv, AY, G.cross3(dirv, AY));
-  prism("stand.brace", BF, rect(-2.2, 2.2, -1, 1), 0, G.len3(G.sub3(b, a)), { tone: "lo" });
+  const edge = x + 7.5;
+  const BF = G.frameOf([0, y0 + 3.75 - 2.2, 0], AY, AX, AZ);
+  prism("stand.brace", BF, [[edge, 33], [edge + 30, SIDE_Z[0] - 2], [edge + 30, SIDE_Z[0]], [edge, 35]], 0, 4.4, { tone: "lo" });
   // upper table support: steel channel under the side at this station, reaching across to the other side
   if (side === NEAR) box("stand.support", [x, FAR.inner, SIDE_Z[0] - 6], [x + 7.5, NEAR.inner, SIDE_Z[0]], { tone: "lo" }, { r: 0.4, steps: 2 });
   // lower cross stretcher between the leg pair
@@ -178,8 +176,9 @@ mesh({ kind: "lathe", name: "zplate.post", F: { o: ZZ.post, a: [0, 0, 1], u: [1,
 // X proximity switch at the X = 0 end of the near side, target plate on the near end plate (drawn later)
 {
   const PXx = ORIGIN.x - SPX + PLATE.bottomHalf + 4;
-  box("prox.x.bracket", [PXx, NEAR.outer, SIDE_Z[1] - 8], [PXx + 2, NEAR.outer + 3, SIDE_Z[1] - 2], { tone: "mid" }, { r: 0.3, steps: 2 });
-  const F = G.frameOf([PXx + 2, NEAR.outer + 1.5, SIDE_Z[1] - 5], [-1, 0, 0], AZ, AY);
+  box("prox.x.bracket", [PXx, NEAR.outer, 80], [PXx + 2, NEAR.outer + 4.9, 84], { tone: "mid" });
+  box("prox.x.bracket", [PXx, NEAR.outer + 2.9, 84], [PXx + 2, NEAR.outer + 4.9, 90], { tone: "mid" });
+  const F = G.frameOf([PXx, NEAR.outer + 3.9, SIDE_Z[1] - 5], [-1, 0, 0], AZ, AY);
   disc("prox.x", F, 0, 4, 0.9, { tone: "hi" }, { extra: Ln(G.arcOf(F, 3.2, 0.9, P), { tone: "faint" }) });
 }
 
@@ -218,15 +217,18 @@ mesh({ kind: "lathe", name: "zplate.post", F: { o: ZZ.post, a: [0, 0, 1], u: [1,
   box("vfd", [VB.x0, VB.y0, VB.z0], [VB.x1, VB.y1, VB.z1], { tone: "mid" }, { r: 0.8, steps: 3, bevel: 0.5, inner: Ln(k.sideSeam({ x: VB.x0, y: VB.y0, w: VB.x1 - VB.x0, d: VB.y1 - VB.y0, r: 0.8 }, VB.z1 - 10, P, 3), { tone: "faint" }) });
   put("vfd.window", [VB.x0 + 11, VB.y1, VB.z1 - 5], `<g class="sb-window">${Ln(path3([[VB.x0 + 5, VB.y1 + 0.01, VB.z1 - 7], [VB.x0 + 17, VB.y1 + 0.01, VB.z1 - 7], [VB.x0 + 17, VB.y1 + 0.01, VB.z1 - 3.5], [VB.x0 + 5, VB.y1 + 0.01, VB.z1 - 3.5]], true), { tone: "lo" })}</g>`, [], { bias: 0.1 });
   put("vfd.keys", [VB.x0 + 11, VB.y1, VB.z1 - 14], Dots([VB.z1 - 12, VB.z1 - 15].flatMap((z) => [7, 11, 15].map((dx) => at([VB.x0 + dx, VB.y1 + 0.01, z]))), { size: 0.45, tone: "lo" }), [], { bias: 0.1 });
-  cable("cable.box.in", [[CB.x0 + 30, CB.y0 + 6, CB.z1], [CB.x0 + 30, CB.y0 + 6, CB.z1 + 1.2], [CB.x0 + 30, CB.y1 - 6, SIDE_Z[0] - 1]], 0.7, { tone: "lo", bend: 2, ends: [true, false] });
+  cable("cable.box.in", [[CB.x0 + 30, CB.y1 - 5, CB.z1], [CB.x0 + 30, CB.y1 - 5, 75], [CB.x0 + 30, CB.y1, 75]], 0.7, { tone: "lo", bend: 2, ends: [true, false] });
   // PC on a cart beyond the X = 0 end, with the USB lead to the box
   setLayer(LAYER.front, "stand");
   const PC = { x: 452, y: 96 };
-  box("pc.cart.base", [PC.x, PC.y, 0], [PC.x + 44, PC.y + 36, 2.4], { tone: "lo" }, { r: 1, steps: 3 });
+  box("pc.cart.base", [PC.x, PC.y, 2.4], [PC.x + 44, PC.y + 36, 4.8], { tone: "lo" }, { r: 1, steps: 3 });
   for (const [dx, dy] of [[3, 3], [38, 3], [3, 30], [38, 30]]) {
     const F = G.frameOf([PC.x + dx + 1.5, PC.y + dy + 1.5, 0], AZ, AX, AY);
-    disc("pc.cart.caster", F, -0.1, 0.1, 2.6, { tone: "lo" }, { steps: 20 });
-    box("pc.cart.post", [PC.x + dx, PC.y + dy, 2.4], [PC.x + dx + 3, PC.y + dy + 3, 88], { tone: "lo" }, { r: 0.4, steps: 2 });
+    // The small plan-view wheels sit on the floor; previously their top missed the base by 2.3 cm.
+    disc("pc.cart.caster", F, 0, 2.4, 2.6, { tone: "lo" }, { steps: 20, ground: true });
+    // Segment posts at the shelves and tray arms: a single painter item cannot wrap a shelf.
+    for (const [z0, z1] of [[4.8, 40], [42, 85.8], [87.4, 88]])
+      box("pc.cart.post", [PC.x + dx, PC.y + dy, z0], [PC.x + dx + 3, PC.y + dy + 3, z1], { tone: "lo" }, { r: 0.4, steps: 2 });
   }
   box("pc.cart.shelf", [PC.x - 1, PC.y - 1, 40], [PC.x + 45, PC.y + 37, 42], { tone: "lo" }, { r: 0.8, steps: 3 });
   box("pc.cart.top", [PC.x - 1, PC.y - 1, 88], [PC.x + 45, PC.y + 37, 90.4], { tone: "mid" }, { r: 0.8, steps: 3, bevel: 0.4 });
@@ -254,18 +256,23 @@ mesh({ kind: "lathe", name: "zplate.post", F: { o: ZZ.post, a: [0, 0, 1], u: [1,
     turned(`pendant.${name}`, up(y), [[0.7, 1.15], [1.1, 1.15], [1.2, 0.9]], { tone: "mid" }, { steps: 20 });
   }
   disc("pendant.gland", G.frameOf([pcx, PD.y1, PD.z0 + 2], AY, AZ, AX), 0, 1.8, 0.9, { tone: "lo" }, { steps: 16 });
-  cable("cable.pendant", [[pcx, PD.y1 + 1.8, PD.z0 + 2], [pcx, TR.y1 + 3, TR.z1 + 1.6], [pcx + 1, TR.y1 + 5, 70], [PC.x + 16, TR.y1 + 9, 44], [404, 198, 44], [CB.x1, 199, 46]], 0.4, { tone: "lo", bend: 4, ends: [false, true] });
-  cable("cable.usb", [[PC.x + 22, PC.y + 18, 60], [PC.x - 6, PC.y + 30, 50], [CB.x1 + 14, CB.y0 + 10, 30], [CB.x1 - 10, CB.y0 + 12, CB.z0 + 1]], 0.5, { tone: "lo", bend: 6, shells: [true, true] });
+  cable("cable.pendant", [[pcx, PD.y1 + 1.8, PD.z0 + 2], [pcx, TR.y1 + 3, TR.z1 + 2.2], [pcx + 1, TR.y1 + 5, 70], [PC.x + 16, TR.y1 + 9, 44], [404, 198, 44], [CB.x1, 199, 46]], 0.4, { tone: "lo", bend: 4, ends: [false, true] });
+  cable("cable.usb", [[PC.x + 22, PC.y + 18, 60], [PC.x + 16, PC.y + 18, 60], [PC.x + 12, PC.y + 30, 50], [CB.x1 + 18, CB.y0 + 10, 30], [CB.x1 + 6, CB.y0 + 10, 30], [CB.x1, CB.y0 + 10, 30]], 0.5, { tone: "lo", bend: 6, shells: [true, true] });
 }
 
 // ---------------------------------------------------------------- X cable carrier trough and brackets (front side)
-const XCHAIN = { troughY: 224.5, troughZ: 67, fixedX: 203, bracketZ: 95, r: 14 };
+const XCHAIN = { troughY: 244, troughZ: 69.2, fixedX: 203, bracketZ: 97.2, r: 14 };
 {
   setLayer(LAYER.front, "stand");
-  const TR = { y0: 221, y1: 228, z0: 64, z1: 70, x0: 15, x1: 391 };
-  box("xchain.trough", [TR.x0, TR.y0, TR.z0], [TR.x1, TR.y1, TR.z1], { tone: "lo" }, { r: 0.3, steps: 2, inner: Ln(path3([[TR.x0 + 1, TR.y1 + 0.01, TR.z0 + 2], [TR.x1 - 1, TR.y1 + 0.01, TR.z0 + 2]]), { tone: "faint", free: true }) });
-  for (const x of [60, 203, 350]) box("xchain.bracket", [x, NEAR.outer, TR.z0], [x + 2.4, TR.y0, TR.z0 + 2], { tone: "lo" }, { r: 0.3, steps: 2 });
-  R.route("xchain", G.fillet(xChainRoute({ xchain: XCHAIN }, GX), 6, 10, { P, tube: 2.2 }), 2.2, { limp: true, piece: "stand", touch: ["xchain.trough", "endplate.near"] });
+  const TR = { y0: 240.5, y1: 247.5, z0: 66, z1: 72, x0: 15, x1: 391 };
+  box("xchain.trough", [TR.x0, TR.y0, TR.z0], [TR.x1, TR.y1, TR.z0 + 1], { tone: "lo" });
+  for (const y of [TR.y0, TR.y1 - 0.7]) box("xchain.trough", [TR.x0, y, TR.z0 + 1], [TR.x1, y + 0.7, TR.z1], { tone: "lo" });
+  box("xchain.fixed", [XCHAIN.fixedX - 1.2, TR.y0 + 0.7, TR.z0 + 1], [XCHAIN.fixedX, TR.y1 - 0.7, TR.z1], { tone: "lo" });
+  for (const x of [60, 203, 350]) {
+    box("xchain.bracket", [x, NEAR.outer, TR.z0 - 2], [x + 2.4, NEAR.outer + 2.4, 76], { tone: "lo" });
+    box("xchain.bracket", [x, NEAR.outer + 2.4, TR.z0 - 2], [x + 2.4, TR.y1, TR.z0], { tone: "lo" });
+  }
+  R.route("xchain", G.fillet(xChainRoute({ xchain: XCHAIN }, GX), 6, 10, { P, tube: 2.2 }), 2.2, { limp: true, piece: "stand", touch: ["xchain.trough"] });
 }
 
 // ---------------------------------------------------------------- gantry
@@ -287,7 +294,7 @@ function endPlate(side, tag) {
     const WF = G.frameOf([GX + dx, wy[0], RAIL_Z[1] + 3.4], AY, AZ, AX);
     disc(`roller.x.${tag}`, WF, 0, wy[1] - wy[0], 3.8, { tone: "hi" }, { extra: Ln(G.circleOf(WF, sgn > 0 ? 0 : wy[1] - wy[0], 1.6, P, 16), { tone: "faint" }) });
     const AF = G.frameOf([GX + dx, py[0], RAIL_Z[1] + 3.4], AY, AZ, AX);
-    disc(`axle.x.${tag}`, AF, 0, PLATE.t + (sgn > 0 ? 0.8 : 0), 1, { tone: "mid" }, { steps: 12 });
+    disc(`axle.x.${tag}`, AF, sgn > 0 ? PLATE.t : -0.8, sgn > 0 ? PLATE.t + 0.8 : 0, 1, { tone: "mid" }, { steps: 12 });
   }
   // pinion in the rack plane, meshing on top of the rack; shaft through the plate to the gearbox outside
   const pz = RACK_Z[1] + 2.3;
@@ -295,7 +302,7 @@ function endPlate(side, tag) {
   const PF = G.frameOf([GX, rky[0], pz], AY, AZ, AX);
   disc(`pinion.x.${tag}`, PF, 0, RACK_T, 2.3, { tone: "hi" }, { steps: 30, extra: Faded(G.ribsOf(PF, 0, RACK_T, 2.3, 30, P, { fade: [0.1, 0.5] }), { tone: "lo" }) });
   const shy = sgn > 0 ? [rackOuter, outer + 1] : [outer - 1, rackOuter];
-  disc(`shaft.x.${tag}`, G.frameOf([GX, shy[0], pz], AY, AZ, AX), 0, shy[1] - shy[0], 0.8, { tone: "mid" }, { steps: 12 });
+  disc(`shaft.x.${tag}`, G.frameOf([GX, sgn > 0 ? rackOuter : inner, pz], AY, AZ, AX), 0, PLATE.gap, 0.8, { tone: "mid" }, { steps: 12 });
   // blue slotted motor mount plate on the outer face
   const mpy = sgn > 0 ? [outer, outer + 1] : [outer - 1, outer];
   const mpFace = sgn > 0 ? mpy[1] + 0.01 : mpy[0] - 0.01;
@@ -310,7 +317,10 @@ function endPlate(side, tag) {
   const CF = G.frameOf([GX, sgn > 0 ? my[1] : my[0] - 1.6, pz], AY, AZ, AX);
   disc(`xmotor.${tag}.cap`, CF, 0, 1.6, 2, { tone: "lo" }, { steps: 16 });
   // upper X cable-carrier bracket and the proximity target on the near plate
-  if (sgn > 0) box("xchain.upper", [GX - 2, outer, XCHAIN.bracketZ - 3], [GX + 2, XCHAIN.troughY + 1, XCHAIN.bracketZ - 1], { tone: "lo" }, { r: 0.3, steps: 2 });
+  if (sgn > 0) {
+    box("xchain.upper", [GX - 2, outer, 94], [GX, XCHAIN.troughY + 3, 95], { tone: "lo" });
+    box("xchain.upper", [GX - 2, XCHAIN.troughY - 3, 95], [GX, XCHAIN.troughY + 3, 100], { tone: "lo" });
+  }
   if (sgn > 0) box("prox.x.target", [GX + PLATE.bottomHalf - 4, outer, PLATE.z0 + 2], [GX + PLATE.bottomHalf + 4, outer + 0.4, PLATE.z0 + 8], { tone: "mid" }, { r: 0.2, steps: 2 });
   return { inner, outer };
 }
@@ -332,7 +342,7 @@ const BEAM_Y = [farEnd.inner, nearEnd.inner];
   const F = G.frameOf([GX + BEAM.half, BEAM_Y[0] + 9, BEAM.z[0] + 18], AX, AZ, AY);
   disc("prox.y", F, 0, 3.6, 0.9, { tone: "hi" }, { extra: Ln(G.arcOf(F, 2.8, 0.9, P), { tone: "faint" }) });
   box("ychain.trough", [GX - BEAM.half, BEAM_Y[0] + 4, BEAM.z[1]], [GX + 1.2, BEAM_Y[1] - 4, BEAM.z[1] + 3], { tone: "lo" }, { r: 0.3, steps: 2 });
-  box("ychain.fixed", [GX - 4, BEAM_Y[0] + 18, BEAM.z[1] + 3], [GX, BEAM_Y[0] + 22, BEAM.z[1] + 6], { tone: "lo" }, { r: 0.3, steps: 2 });
+  box("ychain.fixed", [GX - 4, BEAM_Y[0] + 18, BEAM.z[1] + 3], [GX, BEAM_Y[0] + 20, BEAM.z[1] + 6.2], { tone: "lo" }, { r: 0.3, steps: 2 });
 }
 const YCHAIN = { x: GX - 2, fixedY: BEAM_Y[0] + 20, topZ: BEAM.z[1] + 3 + 1.6, r: 8, carY: -8 };
 
@@ -343,12 +353,12 @@ const CX = [GX + CAR.x[0], GX + CAR.x[1]];
   for (const dy of [-14, 14]) {
     const WF = G.frameOf([GX + 7.4, CY + dy, BEAM.z[1] + 2.5 + 3.1], AX, AZ, AY);
     disc("roller.y.top", WF, 0, 2.2, 3.5, { tone: "hi" }, { extra: Ln(G.circleOf(WF, 2.2, 1.4, P, 16), { tone: "faint" }) });
-    disc("axle.y.top", G.frameOf([GX + 9.6, CY + dy, BEAM.z[1] + 5.6], AX, AZ, AY), 0, CX[1] - GX - 9.6 + 0.6, 1, { tone: "mid" }, { steps: 12 });
+    for (const [x0, x1] of [[GX + 9.6, CX[0]], [CX[1], CX[1] + 0.6]]) disc("axle.y.top", G.frameOf([x0, CY + dy, BEAM.z[1] + 5.6], AX, AZ, AY), 0, x1 - x0, 1, { tone: "mid" }, { steps: 12 });
   }
   for (const dy of [-17, 17]) {
     const WF = G.frameOf([GX + 7.8, CY + dy, BEAM.z[0] - 2.6], AX, AZ, AY);
     disc("roller.y.low", WF, 0, 2.2, 3, { tone: "hi" }, { extra: Ln(G.circleOf(WF, 2.2, 1.2, P, 16), { tone: "faint" }) });
-    disc("axle.y.low", G.frameOf([GX + 10, CY + dy, BEAM.z[0] - 2.6], AX, AZ, AY), 0, CX[1] - GX - 10 + 0.6, 1, { tone: "mid" }, { steps: 12 });
+    disc("axle.y.low", G.frameOf([CX[1], CY + dy, BEAM.z[0] - 2.6], AX, AZ, AY), 0, 0.6, 1, { tone: "mid" }, { steps: 12 });
   }
   const poly = [[-CAR.half, CAR.z[0]], [-7, CAR.z[0]], [-5, CAR.z[0] + 4], [5, CAR.z[0] + 4], [7, CAR.z[0]], [CAR.half, CAR.z[0]], [CAR.half, CAR.z[1]], [-CAR.half, CAR.z[1]]];
   const F = G.frameOf([CX[0], CY, 0], AX, AY, AZ);
@@ -356,10 +366,10 @@ const CX = [GX + CAR.x[0], GX + CAR.x[1]];
   prism("car.plate", F, poly, 0, CAR.x[1] - CAR.x[0], { tone: "lo" }, { extra: bolts });
   // Y motor: pinion behind the plate on the rack, slotted mount, gearbox and motor pointing at the viewer
   const pz = 111 + 2.3;
-  const my = CY + 14;
+  const my = CY + 16;
   const PF = G.frameOf([GX + BEAM.half, my, pz], AX, AZ, AY);
   disc("pinion.y", PF, 0, RACK_T, 2.3, { tone: "hi" }, { steps: 30, extra: Faded(G.ribsOf(PF, 0, RACK_T, 2.3, 30, P, { fade: [0.1, 0.5] }), { tone: "lo" }) });
-  disc("shaft.y", G.frameOf([GX + BEAM.half + RACK_T, my, pz], AX, AZ, AY), 0, CX[1] + 1 - (GX + BEAM.half + RACK_T), 0.8, { tone: "mid" }, { steps: 12 });
+  disc("shaft.y", G.frameOf([GX + BEAM.half + RACK_T, my, pz], AX, AZ, AY), 0, CX[0] - (GX + BEAM.half + RACK_T), 0.8, { tone: "mid" }, { steps: 12 });
   box("ymotor.mount", [CX[1], my - 6, pz - 6], [CX[1] + 1, my + 6, pz + 6], { tone: "lo" }, { r: 1, steps: 3, extra: Ln([[-4.5, pz + 4], [4.5, pz + 4], [-4.5, pz - 4], [4.5, pz - 4]].map(([dy, z]) => path3([[CX[1] + 1.01, my + dy - 1, z], [CX[1] + 1.01, my + dy + 1, z]])).join(""), { tone: "lo", free: true }) });
   const GF = G.frameOf([CX[1] + 1, my, pz], AX, AZ, AY);
   turned("ymotor.gearbox", GF, [[0, 3.2], [3.6, 3.2], [3.8, 2.8, 1], [4.2, 2.6]], { tone: "mid" }, { inner: Ln(G.arcOf(GF, 1.3, 3.2, P), { tone: "faint" }) });
@@ -368,14 +378,15 @@ const CX = [GX + CAR.x[0], GX + CAR.x[1]];
   disc("ymotor.cap", G.frameOf([CX[1] + 13.7, my, pz], AX, AZ, AY), 0, 1.6, 2, { tone: "lo" }, { steps: 16 });
   // Z bearing blocks either side of the Z extrusion
   for (const s of [-1, 1]) for (const z of [103, 125]) {
-    const y = s > 0 ? [CY + ZX.half + 0.5, CY + ZX.half + 4] : [CY - ZX.half - 4, CY - ZX.half - 0.5];
+    const y = s > 0 ? [CY + ZX.half, CY + ZX.half + 4] : [CY - ZX.half - 4, CY - ZX.half];
     box(`zbearing.${s > 0 ? "near" : "far"}`, [CX[1], y[0], z], [GX + ZX.x[0] + 0.2, y[1], z + 6], { tone: "mid" }, { r: 0.4, steps: 2, extra: Dots([at([GX + ZX.x[0] + 0.21, (y[0] + y[1]) / 2, z + 3])], { size: 0.5, tone: "hi" }) });
   }
   // Z motor on a bracket from the car top, pinion on the Z rack
   const zpz = 152;
   const zmy = CY + ZX.half + RACK_T + 2.3;
   box("zmotor.arm", [CX[0], CY + ZX.half + 2.6, CAR.z[1]], [CX[1] + 1, CY + ZX.half + 12, zpz + 6], { tone: "lo" }, { r: 0.4, steps: 2 });
-  box("zmotor.mount", [CX[1] + 1, CY + ZX.half + 2.6, zpz - 6], [GX + ZX.x[0] + 5.5, zmy + 6, zpz + 6], { tone: "lo" }, { r: 1, steps: 3 });
+  box("zmotor.mount", [GX + ZX.x[0] + 4.5, CY + ZX.half + 2.6, zpz - 6], [GX + ZX.x[0] + 5.5, zmy + 6, zpz + 6], { tone: "lo" }, { r: 1, steps: 3 });
+  box("zmotor.bridge", [CX[1] + 1, CY + ZX.half + 2.6, zpz + 6], [GX + ZX.x[0] + 5.5, zmy + 6, zpz + 7], { tone: "lo" });
   const ZPF = G.frameOf([GX + ZX.x[0] + 1.5, zmy, zpz], AX, AZ, AY);
   disc("pinion.z", ZPF, 0, 3, 2.3, { tone: "hi" }, { steps: 30, extra: Faded(G.ribsOf(ZPF, 0, 3, 2.3, 30, P, { fade: [0.1, 0.5] }), { tone: "lo" }) });
   const ZGF = G.frameOf([GX + ZX.x[0] + 5.5, zmy, zpz], AX, AZ, AY);
@@ -398,7 +409,8 @@ const CX = [GX + CAR.x[0], GX + CAR.x[1]];
     put("zlead.stored", [fx0 + 1.4, CY - 13.6, 114], Ln(path3([[fx0 + 1.4, CY - 13.6, 123], [fx0 + 1.4, CY - 13.6, 104.5]]), { tone: "lo", free: true }), [], { bias: 0.2 });
   }
   // Y cable-carrier bracket from the beam top to the car top
-  box("ychain.car", [GX - 3, CY + YCHAIN.carY - 1, YCHAIN.topZ + 2 * YCHAIN.r - 2], [CX[1], CY + YCHAIN.carY + 1, YCHAIN.topZ + 2 * YCHAIN.r], { tone: "lo" }, { r: 0.3, steps: 2 });
+  box("ychain.car", [CX[0], CY + YCHAIN.carY, CAR.z[1]], [CX[1], CY + YCHAIN.carY + 2, YCHAIN.topZ + 2 * YCHAIN.r - 1.6], { tone: "lo" });
+  box("ychain.car", [GX - 4, CY + YCHAIN.carY, YCHAIN.topZ + 2 * YCHAIN.r - 1.6], [CX[1], CY + YCHAIN.carY + 2, YCHAIN.topZ + 2 * YCHAIN.r + 1.6], { tone: "lo" });
   R.route("ychain", G.fillet(yChainRoute({ ychain: YCHAIN }, CY), 5, 10, { P, tube: 1.6 }), 1.6, { limp: true, piece: "car", touch: ["ychain.trough", "ychain.car"] });
 }
 
@@ -413,10 +425,10 @@ let HOSE = null;
   box("zrack", [zx[0] + 1.5, CY + ZX.half, ZB + 2], [zx[0] + 4.5, CY + ZX.half + RACK_T, ZB + 62], { tone: "hi" }, { r: 0.2, steps: 2 });
   // hose bracket on top of the extrusion: arm forward, ring the hose passes through
   box("hose.bracket.foot", [zx[0], CY - 4, ZB + ZX.z[1]], [zx[1], CY + 4, ZB + ZX.z[1] + 2], { tone: "lo" }, { r: 0.3, steps: 2 });
-  box("hose.bracket.arm", [zx[0] + 2, CY - 16, ZB + ZX.z[1] + 2], [zx[0] + 4, CY + 2, ZB + ZX.z[1] + 4], { tone: "lo" }, { r: 0.3, steps: 2 });
-  box("hose.bracket.arm2", [zx[0] + 2, CY - 16, ZB + ZX.z[1] + 2], [GX + SPX, CY - 14, ZB + ZX.z[1] + 4], { tone: "lo" }, { r: 0.3, steps: 2 });
-  const HR = G.frameOf([GX + SPX, CY - 15, ZB + ZX.z[1] + 4], AZ, AX, AY);
-  turned("hose.bracket.ring", HR, [[0, 5.6], [2.4, 5.6]], { tone: "lo" });
+  box("hose.bracket.arm", [zx[0] + 2, CY - 24, ZB + ZX.z[1] + 2], [zx[0] + 4, CY + 2, ZB + ZX.z[1] + 4], { tone: "lo" }, { r: 0.3, steps: 2 });
+  box("hose.bracket.arm2", [zx[0] + 4, CY - 24, ZB + ZX.z[1] + 2], [GX + SPX - 5.6, CY - 22, ZB + ZX.z[1] + 4], { tone: "lo" }, { r: 0.3, steps: 2 });
+  const HR = G.frameOf([GX + SPX, CY - 23, ZB + ZX.z[1] + 4], AZ, AX, AY);
+  ring("hose.bracket.ring", HR, 0, 2.4, 4.8, 5.6, { tone: "lo" });
   // spindle mount plate and the two clamp blocks
   box("spindle.plate", [zx[1], CY - 11, ZB + 3], [zx[1] + 1.5, CY + 11, ZB + 40], { tone: "hi" }, { r: 0.6, steps: 3, bevel: 0.4, extra: Dots([[-8, ZB + 7], [8, ZB + 7], [-8, ZB + 36], [8, ZB + 36]].map(([dy, z]) => at([zx[1] + 1.51, CY + dy, z])), { size: 0.5, tone: "lo" }) });
   for (const z of [ZB + 8, ZB + 26]) box("spindle.clamp", [zx[1] + 1.5, CY - 7.8, z], [GX + SPX - 5.5, CY + 7.8, z + 4], { tone: "mid" }, { r: 0.4, steps: 2 });
@@ -452,58 +464,70 @@ let HOSE = null;
     box("zclip.flat.boot", [O[0] + 0.1, O[1] + 1.8, O[2] - 1.1], [O[0] + 1.1, O[1] + 4.6, O[2] + 1.1], { tone: "lo" }, { r: 0.3, steps: 2 });
   }
   // two-part dust foot clamped on the nose collar, brush below, port on the +y side angled up
-  turned("dustfoot.ring", SF, [[ZB - 1, 7.2], [ZB + 1.6, 7.2], [ZB + 1.6, 6.4], [ZB + 3.6, 6.4], [ZB + 3.8, 4.6, 1], [ZB + 4, 3.5]], { tone: "mid" }, { inner: Ln(G.arcOf(SF, ZB + 0.3, 7.2, P), { tone: "faint" }) });
+  ring("dustfoot.ring", SF, ZB - 1, ZB + 1.6, 3.5, 7.2, { tone: "mid" });
+  ring("dustfoot.ring", SF, ZB + 1.6, ZB + 4, 3.5, 6.4, { tone: "mid" });
   mesh({ kind: "lines", name: "dustfoot.brush", tone: "lo", segments: Array.from({ length: 64 }, (_, i) => { const a = (i / 64) * Math.PI * 2; const x = GX + SPX + 7.2 * Math.cos(a), y = CY + 7.2 * Math.sin(a); return [[x, y, ZB - 1], [x, y, ZB - 6.6]]; }) });
-  put("dustfoot.brush", [GX + SPX, CY, ZB - 3.8], Faded(G.ribsOf(SF, ZB - 6.6, ZB - 1, 7.2, 64, P, { fade: [0.08, 0.5], seams: "last" }), { tone: "lo" }), [record(A.disc(SF, ZB - 6.6, ZB - 1, 7.2, { name: "dustfoot.brush" }))], { bias: -0.2 });
-  const PORT_DIR = [0, -0.62, 0.78];
-  const PORT_AT = [GX + SPX, CY - 6.6, ZB + 1.2];
+  put("dustfoot.brush", [GX + SPX, CY, ZB - 3.8], Faded(G.ribsOf(SF, ZB - 6.6, ZB - 1, 7.2, 64, P, { fade: [0.08, 0.5], seams: "last" }), { tone: "lo" }), [record(A.lathe(SF, [[ZB - 6.6, 7.1], [ZB - 1, 7.1], [ZB - 1, 7.3], [ZB - 6.6, 7.3]], { name: "dustfoot.brush" }))], { bias: -0.2 });
+  const PORT_DIR = [0, -0.8, 0.6];
+  const PORT_AT = [GX + SPX, CY - 9.2, ZB - 1];
   const HF = G.frameOf(PORT_AT, PORT_DIR, AX, G.cross3(PORT_DIR, AX));
   turned("dustfoot.port", HF, [[0, 4.4], [5, 4.4], [5, 4.9], [6.2, 4.9]], { tone: "mid" }, { steps: 32 });
-  HOSE = { portAt: [SPX + PORT_DIR[0] * 6.2, -6.6 + PORT_DIR[1] * 6.2, ZB + 1.2 + PORT_DIR[2] * 6.2], portDir: PORT_DIR, bracketAt: [SPX, -15, ZB + ZX.z[1] + 5.2], r: 4.8 };
+  HOSE = { portAt: [SPX + PORT_DIR[0] * 6.2, -9.2 + PORT_DIR[1] * 6.2, ZB - 1 + PORT_DIR[2] * 6.2], portDir: PORT_DIR, bracketAt: [SPX, -23, ZB + ZX.z[1] + 5.2], r: 4.8 };
   R.route("hose.foot", G.fillet(hoseFootRoute({ hose: HOSE }, 0, 0).map(([x, y, z]) => [x + GX, y + CY, z]), 10, 10, { P, tube: HOSE.r }), HOSE.r, { limp: true, piece: "zaxis", touch: ["dustfoot.port", "hose.bracket.ring"] });
 }
 
 // ---------------------------------------------------------------- boom and dust collector (far corner of the front side)
 const BOOM_TIP = [150, 140, 250];
+const BOOM_HOSE = [150, 128, 262];
 const HOSE_LENGTH = 340;
 {
   setLayer(LAYER.farStatic, "collector");
-  const POST = [-34, 236];
+  const POST = [-20, 216];
   const PF = G.frameOf([POST[0], POST[1], 0], AZ, AX, AY);
-  disc("boom.base", PF, 0, 2, 14, { tone: "lo" }, { steps: 32 });
-  disc("boom.post", PF, 2, 250, 3.2, { tone: "mid" });
+  disc("boom.base", PF, 0, 2, 14, { tone: "lo" }, { steps: 32, ground: true });
+  disc("boom.post", PF, 2, 247.6, 3.2, { tone: "mid" });
   const dir = G.unit3(G.sub3(BOOM_TIP, [POST[0], POST[1], 250]));
   const len = G.len3(G.sub3(BOOM_TIP, [POST[0], POST[1], 250]));
   const AF = G.frameOf([POST[0], POST[1], 250], dir, AZ, G.cross3(dir, AZ));
   disc("boom.arm", AF, 0, len, 2.4, { tone: "mid" });
-  disc("boom.post.upper", PF, 250, 292, 2, { tone: "mid" });
+  disc("boom.post.upper", PF, 252.4, 292, 2, { tone: "mid" });
   disc("boom.cap", PF, 292, 294, 2.6, { tone: "lo" });
-  const stayTop = [POST[0], POST[1], 290];
-  const stayEnd = G.add3([POST[0], POST[1], 250], G.mul3(dir, len * 0.62));
+  const stayTop = [POST[0] + dir[0] * 3.4, POST[1] + dir[1] * 3.4, 292];
+  const stayEnd = G.add3(G.add3([POST[0], POST[1], 250], G.mul3(dir, len * 0.62)), [0, 0, 3.4]);
+  const stayAxis = G.unit3(G.sub3(stayEnd, stayTop));
+  disc("boom.stay.mount", G.frameAlong(stayTop, stayAxis), -0.9, 0, 0.45, { tone: "lo" });
+  disc("boom.stay.mount", G.frameAlong(stayEnd, stayAxis), 0, 0.9, 0.6, { tone: "lo" });
   cable("boom.stay", [stayTop, stayEnd], 0.35, { tone: "lo", bend: 1, limp: false });
-  disc("boom.tip", G.frameOf(BOOM_TIP, AZ, AX, AY), -4, 0, 5.6, { tone: "lo" });
+  box("boom.tip.mount", [BOOM_TIP[0] - 2, BOOM_TIP[1] - 2, BOOM_TIP[2] + 2.4], [BOOM_TIP[0] + 2, BOOM_TIP[1] + 2, BOOM_TIP[2] + 6], { tone: "lo" });
+  box("boom.tip.mount", [BOOM_TIP[0] - 2, BOOM_HOSE[1] + 5.8, 256], [BOOM_TIP[0] + 2, BOOM_TIP[1] + 2, 258], { tone: "lo" });
+  ring("boom.tip", G.frameOf(BOOM_HOSE, AZ, AX, AY), -6, 2, 4.8, 5.8, { tone: "lo" });
   // two-bag dust collector: frame on casters, impeller housing with the motor behind it, upper filter bag, lower bag, inlet
-  const DC = { x: -70, y: 262 };
-  for (const [dx, dy] of [[-24, -24], [24, -24], [-24, 24], [24, 24]]) disc("collector.caster", G.frameOf([DC.x + dx, DC.y + dy, 3], AX, AZ, AY), -1.4, 1.4, 3.2, { tone: "lo" }, { steps: 20 });
-  box("collector.base", [DC.x - 30, DC.y - 30, 6], [DC.x + 30, DC.y + 30, 9], { tone: "lo" }, { r: 1, steps: 3 });
-  for (const dx of [-26, 26]) box("collector.upright", [DC.x + dx - 2, DC.y - 2, 9], [DC.x + dx + 2, DC.y + 2, 215], { tone: "lo" }, { r: 0.4, steps: 2 });
-  box("collector.crossbar", [DC.x - 28, DC.y - 2, 213], [DC.x + 28, DC.y + 2, 216], { tone: "lo" }, { r: 0.4, steps: 2 });
+  const DC = { x: -78, y: 282 };
+  for (const [dx, dy] of [[-24, -24], [24, -24], [-24, 24], [24, 24]]) disc("collector.caster", G.frameOf([DC.x + dx, DC.y + dy, 3.2], AX, AZ, AY), -1.4, 1.4, 3.2, { tone: "lo" }, { steps: 20, ground: true });
+  box("collector.base", [DC.x - 34, DC.y - 30, 6.4], [DC.x + 34, DC.y + 54, 9], { tone: "lo" }, { r: 1, steps: 3 });
+  for (const dx of [-32, 32]) box("collector.upright", [DC.x + dx - 2, DC.y - 2, 9], [DC.x + dx + 2, DC.y + 2, 216], { tone: "lo" }, { r: 0.4, steps: 2 });
+  box("collector.crossbar", [DC.x - 34, DC.y - 2, 216], [DC.x + 34, DC.y + 2, 219], { tone: "lo" }, { r: 0.4, steps: 2 });
   const CF = G.frameOf([DC.x, DC.y, 0], AZ, AX, AY);
   turned("collector.bag.lower", CF, [[12, 20], [20, 25], [60, 26], [100, 25], [106, 23]], { tone: "mid" }, { inner: Ln(G.arcOf(CF, 50, 26, P), { tone: "faint" }) });
   disc("collector.band.lower", CF, 106, 108.5, 24, { tone: "lo" });
-  const IH = G.frameOf([DC.x - 8, DC.y, 128], AX, AZ, AY);
+  const IH = G.frameOf([DC.x - 8, DC.y + 46, 120], AX, AZ, AY);
   turned("collector.housing", IH, [[0, 17], [16, 17], [16, 6], [17, 6]], { tone: "mid" }, { inner: Ln(G.arcOf(IH, 8, 17, P), { tone: "faint" }) });
-  const MH = G.frameOf([DC.x - 30, DC.y, 128], AX, AZ, AY);
-  turned("collector.motor", MH, [[0, 9], [22, 9], [22.5, 7.5, 1], [23, 4]], { tone: "hi" }, { extra: Faded(G.ribsOf(MH, 2, 20, 9, 24, P, { fade: [0.1, 0.55], seams: true }), { tone: "lo" }) });
-  const IN = G.frameOf([DC.x + 9, DC.y, 128], AX, AZ, AY);
+  const MH = G.frameOf([DC.x - 30, DC.y + 46, 120], AX, AZ, AY);
+  turned("collector.motor", MH, [[0, 9], [21.5, 9], [21.9, 7.5, 1], [22, 4]], { tone: "hi" }, { extra: Faded(G.ribsOf(MH, 2, 20, 9, 24, P, { fade: [0.1, 0.55], seams: true }), { tone: "lo" }) });
+  const IN = G.frameOf([DC.x + 9, DC.y + 46, 120], AX, AZ, AY);
   disc("collector.inlet", IN, 0, 7, 5.6, { tone: "mid" }, { extra: Dots(G.dotsOf(IN, 7, 4.6, 6, P, { fade: [0.04, 0.42] }), { size: 0.45, tone: "lo" }) });
-  disc("collector.collar", CF, 108.5, 112, 20, { tone: "mid" });
-  turned("collector.bag.upper", CF, [[112, 23], [118, 26], [160, 26], [206, 24], [212, 18]], { tone: "mid" }, { inner: Ln(G.arcOf(CF, 160, 26, P), { tone: "faint" }) });
-  disc("collector.band.upper", CF, 110, 112.5, 24.5, { tone: "lo" });
-  disc("collector.band.top", CF, 212, 214, 18, { tone: "lo" });
+  disc("collector.collar", CF, 108.5, 132, 24.5, { tone: "mid" });
+  // A saddle on the impeller housing, not a box buried halfway through it.
+  const duct = [[DC.y + 24.5, 115], ...Array.from({ length: 17 }, (_, i) => { const z = 115 + i * 10 / 16; return [DC.y + 46 - Math.sqrt(17 ** 2 - (z - 120) ** 2), z]; }), [DC.y + 24.5, 125]];
+  prism("collector.duct", G.frameOf([DC.x - 5, 0, 0], AX, AY, AZ), duct, 0, 10, { tone: "mid" });
+  for (const [x0, x1] of [[-30, -24.5], [24.5, 30]]) box("collector.support", [DC.x + x0, DC.y - 2, 108.5], [DC.x + x1, DC.y + 2, 112], { tone: "lo" });
+  box("collector.motor.stand", [DC.x - 18, DC.y + 38, 9], [DC.x - 8, DC.y + 54, 103], { tone: "lo" });
+  turned("collector.bag.upper", CF, [[134.5, 26], [160, 26], [206, 24], [212, 18]], { tone: "mid" }, { inner: Ln(G.arcOf(CF, 160, 26, P), { tone: "faint" }) });
+  disc("collector.band.upper", CF, 132, 134.5, 26, { tone: "lo" });
+  disc("collector.band.top", CF, 212, 216, 18, { tone: "lo" });
   // hose from the boom tip back along the arm, down the post, across the floor to the inlet
-  cable("hose.floor", [[BOOM_TIP[0], BOOM_TIP[1], BOOM_TIP[2] + 2], [POST[0] + 6, POST[1] - 4, 252], [POST[0] + 4, POST[1] - 6, 180], [POST[0] + 2, POST[1] - 8, 60], [POST[0] - 6, POST[1] + 10, 24], [DC.x + 40, DC.y, 60], [DC.x + 24, DC.y, 128], [DC.x + 16, DC.y, 128]], HOSE.r, { tone: "hi", bend: 16, ends: [false, false], rings: { pitch: 2.6, fade: [0.1, 0.55], tone: "lo" }, maxLength: 22, pieceOf: "collector" });
-  R.route("hose.boom", G.fillet(hoseBoomRoute({ hose: HOSE, boomTip: BOOM_TIP, hoseLength: HOSE_LENGTH }, GX, CY, 0), 14, 10, { P, tube: HOSE.r }), HOSE.r, { limp: true, piece: "stand", touch: ["boom.tip", "hose.bracket.ring"] });
+  cable("hose.floor", [BOOM_HOSE, [BOOM_HOSE[0], BOOM_HOSE[1], 286], [POST[0], POST[1] - 40, 286], [POST[0], POST[1] - 40, 180], [POST[0], POST[1] - 40, 50], [POST[0] + 48, POST[1] + 48, 50], [DC.x + 48, DC.y + 46, 100], [DC.x + 36, DC.y + 46, 120], [DC.x + 16, DC.y + 46, 120]], HOSE.r, { tone: "hi", bend: 28, ends: [false, false], rings: { pitch: 2.6, fade: [0.1, 0.55], tone: "lo" }, maxLength: 22, pieceOf: "collector" });
+  R.route("hose.boom", G.fillet(hoseBoomRoute({ hose: HOSE, boomTip: BOOM_HOSE, hoseLength: HOSE_LENGTH }, GX, CY, 0), 14, 10, { P, tube: HOSE.r }), HOSE.r, { limp: true, piece: "stand", touch: ["boom.tip", "hose.bracket.ring"] });
 }
 
 // ---------------------------------------------------------------- ORDER, SVG
@@ -533,7 +557,7 @@ const DATA = {
   inset: { P: INSET.P, KS: INSET.KS, Z0: INSET.Z0, flute: INSET.flute, W: INSET.W, H: INSET.H },
   rest: { gx: GX, cy: CY, zb: ZB, spx: SPX, stockTop: STOCK_TOP },
   origin: ORIGIN, machine: MACHINE, feed: FEED, safeZ: SAFE_Z, program: PROG, faults: FAULTS, stock: STOCK, speed: SPEED,
-  routes: { xchain: XCHAIN, ychain: YCHAIN, hose: HOSE, boomTip: BOOM_TIP, hoseLength: HOSE_LENGTH },
+  routes: { xchain: XCHAIN, ychain: YCHAIN, hose: HOSE, boomTip: BOOM_HOSE, hoseLength: HOSE_LENGTH },
 };
 
 const CSS = readFileSync(join(HERE, "shopbot.css"), "utf8");

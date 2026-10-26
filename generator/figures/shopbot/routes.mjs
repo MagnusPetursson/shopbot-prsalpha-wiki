@@ -50,6 +50,9 @@ export function hoseBoomRoute(g, gx, cy, dz) {
   const tip = g.boomTip;
   const span = Math.hypot(tip[0] - b[0], tip[1] - b[1]);
   const slack = Math.max(0, g.hoseLength - span - Math.abs(tip[2] - b[2]));
-  const mid = [(b[0] + tip[0]) / 2, (b[1] + tip[1]) / 2, Math.min(b[2], tip[2]) + 10 - slack * 0.45];
-  return [b, [b[0], b[1], b[2] + 8], mid, [tip[0], tip[1], tip[2] - 6], tip];
+  // Keep the service loop above the head and gantry. The old slack heuristic
+  // pulled its middle down through the Y carrier and beam. This is illustrative
+  // routing, not a fixed-length hose simulation.
+  const mid = [(b[0] + tip[0]) / 2, (b[1] + tip[1]) / 2, Math.max(b[2] + 28, tip[2] - 36)];
+  return [b, [b[0], b[1], b[2] + 24], mid, [tip[0], tip[1], tip[2] - 24], tip];
 }
