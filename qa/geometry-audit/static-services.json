@@ -1,0 +1,42 @@
+[
+  {
+    "theme": "dark",
+    "route": "hose.foot",
+    "static_matches_live": true
+  },
+  {
+    "theme": "dark",
+    "route": "hose.boom",
+    "static_matches_live": true
+  },
+  {
+    "theme": "dark",
+    "route": "xchain",
+    "static_matches_live": true
+  },
+  {
+    "theme": "dark",
+    "route": "ychain",
+    "static_matches_live": true
+  },
+  {
+    "theme": "-light",
+    "route": "hose.foot",
+    "static_matches_live": true
+  },
+  {
+    "theme": "-light",
+    "route": "hose.boom",
+    "static_matches_live": true
+  },
+  {
+    "theme": "-light",
+    "route": "xchain",
+    "static_matches_live": true
+  },
+  {
+    "theme": "-light",
+    "route": "ychain",
+    "static_matches_live": true
+  }
+]

@@ -1,0 +1,17 @@
+wrote 3d 378 KB 468 meshes
+wrote shopbot-light.html 1140 KB 519 items scale 1.025 266 solids az 46 el 26
+clearance: 0 problems
+clearance apart: 0 problems
+terminals: 0 ends not on a mount
+loose ends: 0
+screen folds: 0
+support: 0 unsupported solids · 0 hanging tubes · 0 sunk pairs
+depth order: 0 problems
+through in mid-flight: 0 pairs
+self-overlap: 0 chunks whose outline crosses itself on screen
+wobble: 0 smoothed profiles whose slope turns between its ends
+saddles off their host apart: 0
+stand-in shapes: 0 items whose recorded shape covers too little of what it draws
+crowding: 0 pairs where a bend or end touches another line on screen
+audit · 9 tubes · 266 solids · 519 items · 1 depth states · 2505 overlaps · 2505 order rules · 8.6 s
+audit passed

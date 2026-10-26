@@ -1,5 +1,5 @@
-wrote 3d 357 KB 405 meshes
-wrote shopbot.html 981 KB 456 items scale 0.939 265 solids az 46 el 26
+wrote 3d 378 KB 468 meshes
+wrote shopbot.html 1140 KB 519 items scale 1.025 266 solids az 46 el 26
 clearance: 0 problems
 clearance apart: 0 problems
 terminals: 0 ends not on a mount
@@ -13,5 +13,5 @@ wobble: 0 smoothed profiles whose slope turns between its ends
 saddles off their host apart: 0
 stand-in shapes: 0 items whose recorded shape covers too little of what it draws
 crowding: 0 pairs where a bend or end touches another line on screen
-audit · 9 tubes · 265 solids · 456 items · 1 depth states · 2071 overlaps · 2071 order rules · 9.9 s
+audit · 9 tubes · 266 solids · 519 items · 1 depth states · 2505 overlaps · 2505 order rules · 7.5 s
 audit passed

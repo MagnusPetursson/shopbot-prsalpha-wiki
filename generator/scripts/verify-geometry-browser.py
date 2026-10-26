@@ -57,7 +57,7 @@ with sync_playwright() as pw:
             ('whole',{'az':46,'el':26,'dist':940,'target':[190,160,125]}),
             ('collector',{'az':46,'el':22,'dist':365,'target':[-40,275,130]}),
             ('services',{'az':46,'el':30,'dist':325,'target':[235,150,142]}),
-            ('cart',{'az':40,'el':22,'dist':170,'target':[466,130,55]})]:
+            ('cart',{'az':40,'el':22,'dist':215,'target':[466,130,60]})]:
             page.evaluate('(v)=>__gl.setView(v)',v); page.wait_for_timeout(160)
             page.screenshot(path=str(out/f'webgl-{theme or "dark"}-{name}.png'),full_page=True)
             state=page.evaluate('__gl.inspect()'); assert state['glError']==0
@@ -98,7 +98,7 @@ with sync_playwright() as pw:
         suffix = '-light' if theme else ''
         page.goto((root/'generator/figures/shopbot'/f'shopbot{suffix}.html').as_uri())
         assert page.locator('.sb-stage svg').count()>0, 'No static SVG figure'
-        clipped = page.evaluate('''Array.from(document.querySelectorAll('.sb-stage .it')).map(e=>{const b=e.getBBox();return {name:e.dataset.name,x:b.x,y:b.y,right:b.x+b.width,bottom:b.y+b.height}}).filter(b=>b.x<0||b.y<0||b.right>700||b.bottom>470)''')
+        clipped = page.evaluate('''Array.from(document.querySelectorAll('.sb-stage .it')).map(e=>{const b=e.getBBox(),v=e.ownerSVGElement.viewBox.baseVal;return {name:e.dataset.name,x:b.x,y:b.y,right:b.x+b.width,bottom:b.y+b.height,width:v.width,height:v.height}}).filter(b=>b.x<0||b.y<0||b.right>b.width||b.bottom>b.height)''')
         assert not clipped, ('Static geometry cropped',clipped)
         page.screenshot(path=str(out/f'fallback-{theme or "dark"}-phone.png'),full_page=True)
         result['fallback'].append({'theme':theme or 'dark','svg_count':page.locator('.sb-stage svg').count(),'source':'generator SVG; not a no-JS WebGL fallback'});page.close()

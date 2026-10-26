@@ -1,0 +1,24 @@
+wrote 3d 357 KB 405 meshes
+wrote shopbot.html 978 KB 456 items scale 1.019 265 solids az 46 el 26
+clearance: 0 problems
+clearance apart: 0 problems
+terminals: 0 ends not on a mount
+loose ends: 4
+  share 1  hose.foot end touches nothing that moves with it   at [255.0, 103.6, 172.5]
+  share 1  hose.floor start touches nothing that moves with it   at [150.0, 128.0, 262.0]
+  share 1  hose.boom start touches nothing that moves with it   at [255.0, 103.6, 172.5]
+  share 1  hose.boom end touches nothing that moves with it   at [150.0, 128.0, 262.0]
+screen folds: 0
+support: 0 unsupported solids · 0 hanging tubes · 0 sunk pairs
+depth order: 0 problems
+through in mid-flight: 0 pairs
+self-overlap: 0 chunks whose outline crosses itself on screen
+wobble: 0 smoothed profiles whose slope turns between its ends
+saddles off their host apart: 0
+stand-in shapes: 0 items whose recorded shape covers too little of what it draws
+crowding: 2 pairs where a bend or end touches another line on screen
+  share 0  boom.stay end  ×  boom.arm (rod)   outlines 0.39 apart px, 1.86 apart in depth   at screen 263.4,51.2
+  share 0  boom.stay start  ×  boom.post.upper (rod)   outlines 0.89 apart px, 1.47 apart in depth   at screen 156.3,-1.0
+items with no shape: 6  deck.ruler.ticks, stock.part, box.hinges, vfd.window, vfd.keys, zlead.stored
+audit · 9 tubes · 265 solids · 456 items · 1 depth states · 2076 overlaps · 2076 order rules · 5.4 s
+audit failed: 12 problems

@@ -1,0 +1,190 @@
+{
+  "base": "https://mptvpc.tailc30766.ts.net/shopbot-wip/",
+  "dns_mode": "explicit live Tailscale self-IP mapping; local MagicDNS lookup failed",
+  "ip_fallback": "http://100.105.58.60/shopbot-wip/",
+  "reader_files_verified": 24,
+  "review_files_verified": 6,
+  "byte_identical": true,
+  "files": [
+    {
+      "path": "zero.html",
+      "http_status": 200,
+      "bytes": 1242191,
+      "sha256": "cf7c6129dae9b7f626cb72bd63d2e504a131c158005f87ef3552395a63d509d8"
+    },
+    {
+      "path": "maintain.html",
+      "http_status": 200,
+      "bytes": 1250043,
+      "sha256": "53675b755b332430fe7822ad3f7c5db0aa1d406a66c6c178d50e2854b3e3ed33"
+    },
+    {
+      "path": "trouble.html",
+      "http_status": 200,
+      "bytes": 1257791,
+      "sha256": "94b323cce00b16502de71cdfcf3aea323be72ec88e35abce15e305ac0c61ea1b"
+    },
+    {
+      "path": "quiz.html",
+      "http_status": 200,
+      "bytes": 1223840,
+      "sha256": "516fd81b1a4e06ffe797b81ed6955d340ade1bfb6e9dc449eadd797c3c28f72e"
+    },
+    {
+      "path": "run.html",
+      "http_status": 200,
+      "bytes": 1253114,
+      "sha256": "e6e02027f60fa675a5693133b7d99fc6414dedd4ffea36f450f7f5eb8db74f90"
+    },
+    {
+      "path": "machine.html",
+      "http_status": 200,
+      "bytes": 1231025,
+      "sha256": "7aff42da0c3bb582eb222409051a1c0e56b81cf1d8767073127ad3e0901e9aaa"
+    },
+    {
+      "path": "webgl.html",
+      "http_status": 200,
+      "bytes": 1559621,
+      "sha256": "92aa6a28f72f95d36d3a2f6aebe633c35414c97e8ce8d5b1e3fa1ba5cf7388be"
+    },
+    {
+      "path": "preflight.html",
+      "http_status": 200,
+      "bytes": 1221924,
+      "sha256": "d45d7e0f35057c195aa35702bf03fadcb0b6449a9faef440917107cbff05a1d5"
+    },
+    {
+      "path": "index.html",
+      "http_status": 200,
+      "bytes": 1228792,
+      "sha256": "edded5a8aaae9734de2de21bf3b6f3953bddc7f59346a01783f99f602af4a2f8"
+    },
+    {
+      "path": "rules.html",
+      "http_status": 200,
+      "bytes": 1231494,
+      "sha256": "e4ea41b2ff5206c6288bad77665e1ea3d3c7400bda56562607a4ca5201ff0092"
+    },
+    {
+      "path": "feeds.html",
+      "http_status": 200,
+      "bytes": 1231149,
+      "sha256": "a9fe41dfb82e6cef4462c48be22bf7edcfe268c0b7ad3bed74ed33754f8c0d3c"
+    },
+    {
+      "path": "light/zero.html",
+      "http_status": 200,
+      "bytes": 1242196,
+      "sha256": "b16916c5822de47909a616cf493cd041dd8313c7ed1cb3320fc50e53a62b99ce"
+    },
+    {
+      "path": "light/maintain.html",
+      "http_status": 200,
+      "bytes": 1250048,
+      "sha256": "45794ca0d9ce2a6fe443767fed3c72523c6aafb780183d0b495c4436d111f102"
+    },
+    {
+      "path": "light/trouble.html",
+      "http_status": 200,
+      "bytes": 1257796,
+      "sha256": "908c4e08fc06d48d48b0fefcd3f2511d00ee6047c7ca61656d40e56d1f2035b1"
+    },
+    {
+      "path": "light/quiz.html",
+      "http_status": 200,
+      "bytes": 1223845,
+      "sha256": "6e43846024a36521c16bc25c50030f6873df47a69de199fd86f87577e9aec397"
+    },
+    {
+      "path": "light/run.html",
+      "http_status": 200,
+      "bytes": 1253119,
+      "sha256": "0b841ef6305cd524c2ae12d1ae54ce26e79738edcfd1298f65658ed3027ff69d"
+    },
+    {
+      "path": "light/machine.html",
+      "http_status": 200,
+      "bytes": 1231030,
+      "sha256": "2c1d8420a3bcae64633fb5014b0cf46010efc71647f6a8d8fd49087debf81d3e"
+    },
+    {
+      "path": "light/webgl.html",
+      "http_status": 200,
+      "bytes": 1559626,
+      "sha256": "a5e7489407afc34c907fbcfd1ec71452da0d0078bb45b7b612c012cbf5fac475"
+    },
+    {
+      "path": "light/preflight.html",
+      "http_status": 200,
+      "bytes": 1221929,
+      "sha256": "7c010c8586f2d06dc1363397a9128cb4c2f2ec6ab32885bedda8b5bb296b9211"
+    },
+    {
+      "path": "light/index.html",
+      "http_status": 200,
+      "bytes": 1228797,
+      "sha256": "09dcc6bdab52e33f80fc1d34f4b72b5f546d59b6fba65e57ceda90b1fbf25397"
+    },
+    {
+      "path": "light/rules.html",
+      "http_status": 200,
+      "bytes": 1231499,
+      "sha256": "10fd735d6c105e7cc8cc71a877c09bcd6597318606c1f814025462f7f678b0b8"
+    },
+    {
+      "path": "light/feeds.html",
+      "http_status": 200,
+      "bytes": 1231154,
+      "sha256": "f2a47ce1b5f590fbf606a85614a5c7f21966bd3442a8807a5fc43b5cbe8d5a36"
+    },
+    {
+      "path": "shopbot-handbook.pdf",
+      "http_status": 200,
+      "bytes": 2445581,
+      "sha256": "f9649d5176f47dd73d3426ae8a257f06e650fbc4b7dcca4462455156bb4478a2"
+    },
+    {
+      "path": "shopbot-wiki.pdf",
+      "http_status": 200,
+      "bytes": 4605782,
+      "sha256": "2c1e1af3f65ec1af7078549173401af59a6b52ca27dc6ab8a5d7981ba3c9c015"
+    },
+    {
+      "path": "TRIAGE.md",
+      "http_status": 200,
+      "bytes": 8501,
+      "sha256": "79052b4b0db71c569e35c9859c0072888051867f41b63a7f5c23ae78f6b109f9"
+    },
+    {
+      "path": "qa/geometry-audit/FINDINGS.md",
+      "http_status": 200,
+      "bytes": 28746,
+      "sha256": "c6cf5c5367a6de2e7a445bc02188bcebdc69bcca87d31f5a49dda62abf11b30e"
+    },
+    {
+      "path": "qa/geometry-audit/triage.json",
+      "http_status": 200,
+      "bytes": 98056,
+      "sha256": "410286ae299b6d792eef157a929e39b07438d583592d1a429ee3e043b04689aa"
+    },
+    {
+      "path": "qa/geometry-audit/before.log",
+      "http_status": 200,
+      "bytes": 19038,
+      "sha256": "24202124569e7ba8451cfdb0f178b49e6ff5db333e6e5379cb8936cf076090c6"
+    },
+    {
+      "path": "qa/geometry-audit/after.log",
+      "http_status": 200,
+      "bytes": 760,
+      "sha256": "a38b9a3e8f4ad5a9b49ff78da4b34825a5c1e61738a5ca8f75f0921f55d65f28"
+    },
+    {
+      "path": "qa/geometry-audit/after-light.log",
+      "http_status": 200,
+      "bytes": 766,
+      "sha256": "02163b2b4228717f0d966eb030d3ab13096d3ede272bc598c7b96fea9c381542"
+    }
+  ]
+}

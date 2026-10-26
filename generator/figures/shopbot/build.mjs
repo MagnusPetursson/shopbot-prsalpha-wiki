@@ -4,6 +4,7 @@ import { fileURLToPath } from "node:url";
 import * as k from "../../kit/iso-kit.mjs";
 import * as G from "../../kit/lathe.mjs";
 import * as A from "../../kit/audit.mjs";
+import { tubePieces, tubeSvg } from "../../kit/tube.mjs";
 import { kitScript } from "../../scripts/inline-kit.mjs";
 import { makeKit } from "./kit-helpers.mjs";
 import { buildInset } from "./inset.mjs";
@@ -17,8 +18,8 @@ const THEME = process.argv.includes("--light") ? "light" : "dark";
 // ---------------------------------------------------------------- camera
 // Viewer stands off the X = 0 end on the front side: the end plates, the spindle face of the YZ car, the control box
 // and the PC are all toward the viewer.
-const W = 700;
-const H = 470;
+const W = 720;
+const H = 510;
 const AZIMUTH = Number(process.env.AZ ?? 46);
 const ELEVATION = Number(process.env.EL ?? 26);
 
@@ -49,7 +50,8 @@ const FIT = [
   // Include the real service-loop/boom extrema; the legacy table-only fit
   // cropped the upper hose and stay after their routes were corrected.
   [-20, 216, 300], [-20, 176, 292], [150, 128, 292],
-  [-112, 336, 140], [496, 132, 124],
+  [-112, 336, 9], // collector base corner, including its support plinth
+
 ];
 const P = k.fitProjection(FIT, W, H, { pad: 22, azimuth: AZIMUTH, elevation: ELEVATION });
 const LAYER = { farStatic: 0, farGantry: 1, nearStatic: 2, gantry: 3, car: 4, zaxis: 5, front: 6 };
@@ -474,16 +476,17 @@ let HOSE = null;
     box("zclip.flat", [O[0], O[1] - 0.6, O[2] - 1.2], [O[0] + 1.2, O[1] + 1.8, O[2] + 1.2], { tone: "hi" }, { r: 0.3, steps: 2 });
     box("zclip.flat.boot", [O[0] + 0.1, O[1] + 1.8, O[2] - 1.1], [O[0] + 1.1, O[1] + 4.6, O[2] + 1.1], { tone: "lo" }, { r: 0.3, steps: 2 });
   }
-  // two-part dust foot clamped on the nose collar, brush below, port on the +y side angled up
+  // two-part dust foot clamped on the nose collar, brush below, port on the -y side angled up
   ring("dustfoot.ring", SF, ZB - 1, ZB + 1.6, 3.5, 7.2, { tone: "mid" });
   ring("dustfoot.ring", SF, ZB + 1.6, ZB + 4, 3.5, 6.4, { tone: "mid" });
   mesh({ kind: "lines", name: "dustfoot.brush", tone: "lo", segments: Array.from({ length: 64 }, (_, i) => { const a = (i / 64) * Math.PI * 2; const x = GX + SPX + 7.2 * Math.cos(a), y = CY + 7.2 * Math.sin(a); return [[x, y, ZB - 1], [x, y, ZB - 6.6]]; }) });
   put("dustfoot.brush", [GX + SPX, CY, ZB - 3.8], Faded(G.ribsOf(SF, ZB - 6.6, ZB - 1, 7.2, 64, P, { fade: [0.08, 0.5], seams: "last" }), { tone: "lo" }), [record(A.lathe(SF, [[ZB - 6.6, 7.1], [ZB - 1, 7.1], [ZB - 1, 7.3], [ZB - 6.6, 7.3]], { name: "dustfoot.brush" }))], { bias: -0.2 });
   const PORT_DIR = [0, -0.8, 0.6];
-  const PORT_AT = [GX + SPX, CY - 9.2, ZB - 1];
+  const PORT_AT = [GX + SPX, CY - 9.0, ZB - 1];
   const HF = G.frameOf(PORT_AT, PORT_DIR, AX, G.cross3(PORT_DIR, AX));
-  turned("dustfoot.port", HF, [[0, 4.4], [5, 4.4], [5, 4.9], [6.2, 4.9]], { tone: "mid" }, { steps: 32 });
-  HOSE = { portAt: [SPX + PORT_DIR[0] * 6.2, -9.2 + PORT_DIR[1] * 6.2, ZB - 1 + PORT_DIR[2] * 6.2], portDir: PORT_DIR, bracketAt: [SPX, -23, ZB + ZX.z[1] + 5.2], r: 4.8 };
+  ring("dustfoot.port", HF, 0, 5, 3.8, 4.6, { tone: "mid" });
+  ring("dustfoot.port", HF, 5, 6.2, 4.0, 4.9, { tone: "mid" });
+  HOSE = { portAt: [SPX + PORT_DIR[0] * 6.2, -9.0 + PORT_DIR[1] * 6.2, ZB - 1 + PORT_DIR[2] * 6.2], portDir: PORT_DIR, bracketAt: [SPX, -23, ZB + ZX.z[1] + 5.2], r: 4.8 };
   R.route("hose.foot", G.fillet(hoseFootRoute({ hose: HOSE }, 0, 0).map(([x, y, z]) => [x + GX, y + CY, z]), 10, 10, { P, tube: HOSE.r }), HOSE.r, { limp: true, piece: "zaxis", touch: ["dustfoot.port", "hose.bracket.ring"] });
 }
 
@@ -546,7 +549,20 @@ A.settle(R, P);
 R.items.sort((a, b) => a.layer - b.layer || a.key - b.key);
 const itemSvg = (item) => `<g class="it" data-name="${item.name}" data-piece="${item.piece}"${item.attrs ?? ""}>${item.svg}</g>${item.slot ? `<g data-part="${item.slot}"></g>` : ""}`;
 const ofLayer = (id) => R.items.filter((item) => item.layer === id).map(itemSvg).join("");
-const live = (name, piece) => `<g class="it" data-name="${name}" data-piece="${piece}" data-part="${name}-live"></g>`;
+// Print and no-JS SVGs need the same initial services as the live figure.
+// Empty animation slots previously omitted both hose legs and both carriers
+// from the PDF even though their recorded audit routes existed.
+const serviceSvg = (name) => {
+  const route = R.routes.find(route => route.name === name);
+  if (!route) throw new Error(`Missing recorded service route: ${name}`);
+  const chain = name === "xchain" || name === "ychain";
+  const rings = chain ? { pitch: 1.8, fade: [0.05, 0.6], tone: "lo" } : { pitch: 2.6, fade: [0.1, 0.55], tone: "lo" };
+  const maxLength = { "hose.foot": 16, "hose.boom": 20, xchain: 12, ychain: 10 }[name];
+  const pieces = tubePieces(route.points, route.r, P, { maxLength, spacing: Math.min(1.6, Math.max(0.6, route.r)), rings });
+  pieces.sort((a, b) => G.dot3(a.mid, V) - G.dot3(b.mid, V));
+  return pieces.map(piece => tubeSvg(piece, { tone: chain ? "mid" : "hi" })).join("");
+};
+const live = (name, piece) => `<g class="it" data-name="${name}" data-piece="${piece}" data-part="${name}-live">${serviceSvg(name)}</g>`;
 const body = [
   ...back,
   `<g class="sb-static">${ofLayer(LAYER.farStatic)}</g>`,

@@ -8,3 +8,6 @@ generator/figures/shopbot/*.pdf
 generator/figures/shopbot/fragment-script.js
 generator/figures/shopbot/site/
 generator/figures/shopbot/site-light/
+# Reproducible QA intermediates; retain reports/contact sheets, not every raster page.
+qa/geometry-audit/pdf/*/
+qa/geometry-audit/before-*.pdf
