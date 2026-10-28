@@ -15,13 +15,13 @@ export const SAFETY = `
 <li><b>Know the two ways to stop</b> — the box below. Use them without hesitating; a ruined sheet is cheaper than anything else.${c(4, 10, 11)}</li>
 <li><b>Spindle at speed before OK.</b> When the screen says “Press START on control before pressing OK”, start the spindle from the pendant; it must be running at the commanded speed before you click OK — the box below. A still bit dragged through plywood snaps and the pieces fly.${c(4)}</li>
 <li><b>Extraction on.</b> Switch the dust collector on at the collector itself (it is manual; the software does not switch it). It runs whenever the spindle runs. If the hose comes off the foot or the brush skirt is damaged, stop and tell staff.${c(13)}</li>
-<li><b>Clean up; leave the machine powered.</b> Stop the file and spindle, remove the key before reaching in, brush the rails and racks, vacuum the deck, put the bits back and report problems. Users never power down the machine; leave it for lab staff. Use E-stop in an emergency, not to finish a session.${c(13)}</li>
+<li><b>Clean up; leave the machine powered.</b> Stop the file and spindle, remove the key before reaching in, brush the rails and racks, vacuum the deck, put the bits back and report problems. Users never power down the machine; leave it for lab staff.${c(13)}</li>
 </ul>
 
 <div class="sb-box sb-box-stop" id="stops"><h4>Stopping a PRSalpha</h4>
 <dl class="sb-table">
 <dt>Spacebar (or Enter, or the on-screen Stop)</dt><dd><b>Routine stop.</b> Motion ramps down, Z lifts to its safe height, position is kept, so you can resume. <b>Treat the spindle as live</b>: depending on setup it may keep turning, coast down, or restart when you resume. A spacebar stop is not isolation. Before reaching in: spindle stopped, key OFF and removed, keypad closed, no file loaded or paused. Keep clear before restarting.${c(4, 11)}</dd>
-<dt>E-stop (the red mushroom on the wall-mounted pendant by the monitor — the only E-stop on this machine. The red-and-yellow rotary handle on the control cabinet is the power disconnect, not an E-stop)</dt><dd><b>When something is wrong.</b> Cuts spindle power immediately and motor power about 5 s later. Afterwards the machine no longer knows where it is: twist the E-stop to release it, press pendant <b>Reset</b>, then <code>C3</code> and <code>C2</code> before cutting again. There is no soft "Stop" button on an alpha pendant; its three buttons are <b>Reset · Start · E-stop</b>.${c(2, 10, 11)}</dd>
+<dt>E-stop (the red mushroom on the wall-mounted pendant by the monitor)</dt><dd><b>When something is wrong.</b> Cuts spindle power immediately and motor power about 5 s later. Afterwards the machine no longer knows where it is: twist the E-stop to release it, press pendant <b>Reset</b>, then <code>C3</code> and <code>C2</code> before cutting again. The pendant's three buttons are <b>Reset · Start · E-stop</b>.${c(2, 10, 11)}</dd>
 <dt>If the software has frozen or lost the controller</dt><dd>The spacebar does nothing and the spindle keeps running. <b>E-stop</b> is the only control that still kills the spindle.${c(10)}</dd>
 </dl></div>
 
@@ -30,7 +30,7 @@ export const SAFETY = `
 <li>Spindle RPM Control window open (Tools → Spindle RPM Control, or type <code>TR</code>), RPM typed, <b>Enter</b>. Leave the window open all session.${c(4)}</li>
 <li><code>FP</code>, pick the file, check Offset = <b>No Offset</b>, Start.${c(4)}</li>
 <li>The screen prompts “Press START on control before pressing OK”. Press the green <b>START on the three-button pendant</b>.${c(4, 63)}</li>
-<li>Check the spindle is running at the commanded speed; the VFD's rpm display should show the number you typed. There is no separate RUN step on the VFD.${c(4, 63)}</li>
+<li>Check the spindle is running at the commanded speed; the VFD's rpm display should show the number you typed.${c(4, 63)}</li>
 <li>Only then: <b>OK</b> on the screen. Cutting begins. Hand near the stop for the first plunge.${c(4, 63)}</li>
 </ol>
 </div>

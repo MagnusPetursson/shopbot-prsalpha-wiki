@@ -476,25 +476,25 @@ const OPEN_JS = `const openHash=()=>{const id=decodeURIComponent(location.hash.s
 // ---- 1 Rules
 export const RULES = [
   ["Trained and signed off.", "You run this machine only after the induction and the instructor's sign-off. Until then, only with a signed-off person at the <span class='nw'>E-stop</span>."],
-  ["Never alone, never tired.", "Two people in the room; the second one knows where the <span class='nw'>E-stop</span> is: the red button on the wall-mounted pendant by the monitor. It is the only one."],
+  ["Never alone, never tired.", "Two people in the room; the second one knows where the <span class='nw'>E-stop</span> is: the red button on the wall-mounted pendant by the monitor."],
   ["Eye and ear protection for you and onlookers.", "From the moment the machine is powered. No gloves, loose clothing, hair or lanyards near the gantry."],
   ["Hands out of the cutting area while the control box is on.", "The only exception: spindle stopped, keypad closed, no file loaded or paused, and the key OFF in your pocket. It can move without warning, in any direction."],
   ["Key out for hands-on work.", "Spindle stopped, interlock key OFF and in your pocket before you change a bit, touch the collet, or load, move or clamp material."],
   ["Never leave a running job.", "Dust under the brush catches when a tool rubs, hits a screw or burns hardwood. Stand where you can see the cut and reach the <span class='nw'>E-stop</span>."],
   ["Know the two ways to stop.", "Spacebar for routine; <span class='nw'>E-stop</span> when something is wrong. Use them without hesitating; a ruined sheet is cheap."],
-  ["Spindle at speed before OK.", "When the screen says “Press START on control before pressing OK”: pendant START, check the spindle runs at the commanded speed, then OK — cutting begins. No separate RUN on the VFD. A still bit dragged through plywood snaps."],
+  ["Spindle at speed before OK.", "When the screen says “Press START on control before pressing OK”: pendant START, check the spindle runs at the commanded speed, then OK — cutting begins. A still bit dragged through plywood snaps."],
   ["Extraction on.", "Switch the dust collector on at the collector itself (manual; SB3 does not switch it). It runs whenever the spindle runs. If the hose comes off the foot or the brush skirt is damaged, stop and tell staff."],
-  ["Clean up; leave the machine powered.", "Stop the file and spindle; key out before cleanup. Clear and clean the deck, stow the bit, report faults. Users never power down the machine; leave it for lab staff. Use E-stop in an emergency, not to finish a session."],
+  ["Clean up; leave the machine powered.", "Stop the file and spindle; key out before cleanup. Clear and clean the deck, stow the bit, report faults. Users never power down the machine; leave it for lab staff."],
 ];
 export const stopsBox = `<section class="sb-panel sb-panel-stop" id="stops"><div class="sb-panel-h">${V.icon("stop")}<h2>Stopping the machine</h2></div><p class="sb-panel-sub">Spacebar for a routine stop, E-stop when something is wrong. Use either without hesitating.</p><div class="sb-stopgrid">
 <div>${V.spacebar()}<span class="what ok">Routine · position kept</span><h3>Spacebar</h3><p>Or Enter, or on-screen Stop. Motion ramps down, Z lifts, position is kept, you can resume. <b>Treat the spindle as live</b> — it may keep turning, coast, or restart on resume. Before reaching in: spindle stopped, key OFF and removed, keypad closed, no file loaded or paused. Keep clear before restarting.${c(4, 11)}</p></div>
-<div>${V.pendant()}<span class="what bad">Something is wrong · position lost</span><h3><span class='nw'>E-stop</span></h3><p>The red button on the wall-mounted pendant by the monitor — the only <span class='nw'>E-stop</span> on this machine (the red-and-yellow rotary handle on the control cabinet is the power disconnect, not an <span class='nw'>E-stop</span>). Spindle power off at once, motors ~5 s later. Position is <b>lost</b>: twist to release → pendant <b>Reset</b> → <code>C3</code> → <code>C2</code>. If the software has frozen, <span class='nw'>E-stop</span> is the only control that still kills the spindle.${c(2, 10, 11)}</p></div>
+<div>${V.pendant()}<span class="what bad">Something is wrong · position lost</span><h3><span class='nw'>E-stop</span></h3><p>The red button on the wall-mounted pendant by the monitor. Spindle power off at once, motors ~5 s later. Position is <b>lost</b>: twist to release → pendant <b>Reset</b> → <code>C3</code> → <code>C2</code>. If the software has frozen, <span class='nw'>E-stop</span> is the only control that still kills the spindle.${c(2, 10, 11)}</p></div>
 </div></section>`;
 export const startBox = `<section class="sb-panel sb-panel-start" id="spindle-start"><div class="sb-panel-h">${V.icon("play")}<h2>Starting a job</h2></div><p class="sb-panel-sub">Pendant START before OK on the screen.</p>${V.flow([
   { title: "RPM typed, Enter", text: "Spindle RPM Control window (Tools menu or <code>TR</code>); leave it open." },
   { title: "<code>FP</code>, pick file, Start", text: "Offset = No Offset." },
   { title: "Pendant START", text: "When the screen says “Press START on control before pressing OK”. Green button.", hot: true },
-  { title: "Spindle at speed", text: "Check it runs at the commanded rpm (the VFD display). There is no separate RUN step on the VFD." },
+  { title: "Spindle at speed", text: "Check it runs at the commanded rpm (the VFD display)." },
   { title: "OK", text: "Cutting begins. Hand near the spacebar for the first plunge." },
 ])}</section>`;
 page(PAGES[0], 0, `<ol class="sb-tenrules">${RULES.map(([t, x]) => `<li><b>${t}</b><span>${x}</span></li>`).join("")}</ol>${stopsBox}${startBox}<div class="sb-measure" style="margin-top:72px">${details("ShopBot safety list (manuals)", proc(/^0\./))}</div>`);
@@ -506,7 +506,7 @@ export const numbersHtml = (numbers.match(/<h3>What it is, in numbers<\/h3>[\s\S
 page(PAGES[1], 1, `<div class="sb-stage-wrap"><iframe class="sb-gl-frame" src="webgl.html?embed" title="ShopBot PRSalpha 3D model: drag to orbit, wheel to zoom" loading="eager"></iframe>
 <div class="sb-stage-note"><span>The machine in 3D</span><a href="webgl.html">Open the model full screen →</a></div></div>
 <div class="sb-specrow">${V.stats([["Sheet", "12 × 5 ft"], ["Travel", "153 × 61 in"], ["Motors", "4 closed-loop alphaStep"], ["Drive", "7.2 : 1, rack and pinion"], ["Rapid", "30 in/s · 760 mm/s"], ["Spindle", "12 000 rpm typical, 6–18k"], ["Resolution", "0.0004 in ≈ 0.01&nbsp;mm"]])}</div>
-<p class="sb-measure sb-aside" id="rotary-axis"><b>Staff only, not part of the student course:</b> the rotary-axis chuck standing beside the table belongs to this machine but is not used in student jobs and is not shown in the 3D model. Leave it alone; ask staff.</p>
+<p class="sb-measure sb-aside" id="rotary-axis"><b>Rotary axis.</b> The chuck beside the table is for staff only. Leave it alone.</p>
 <div class="sb-measure sb-group">${details("How the mechanisms work", mech.replace(/<h3>[^<]*How the mechanisms work<\/h3>/, ""))}${details("The machine in numbers", numbersHtml)}</div>`);
 
 // ---- 3 Run a job

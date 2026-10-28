@@ -18,7 +18,7 @@ Audience: first-time CNC students. References use the source tags below.
 - Wear closed-toe shoes. Never wear gloves at the machine [QS p.5].
 - Never put your hands on the rails. The machine can move without warning [QS p.5].
 - Never leave the machine running unattended. A spinning tool makes heat and is a fire risk. Keep a working extinguisher within reach [QS p.5; UG p.5].
-- Know where the E-stop is before operating. This machine has **one**: the red mushroom on the wall-mounted pendant by the monitor. The red-and-yellow rotary handle on the control cabinet is the power disconnect, not an E-stop [QS p.5].
+- Know where the E-stop is before operating: the red mushroom on the wall-mounted pendant by the monitor [QS p.5].
 - During a cut, stand within reach of the keyboard or the STOP button and away from the tool path [UG p.6].
 - Position the dust skirt correctly. It guards against flying particles [UG p.6; UG p.45].
 - Practise with the software before you turn on the spindle [UG p.5].
@@ -33,10 +33,10 @@ Audience: first-time CNC students. References use the source tags below.
 5. Start the PC and launch SB3 (version 3.8.70 on this machine). Double-click the ShopBot 3 icon [QS p.10]. The correct machine settings are already loaded on the control PC; do not reload or change them. The ShopBot USB should use the same port every time [QS p.9]. **Sleep mode and screen savers must be off.** If they are on, a long file can stop mid-cut [UG p.10]. If SB3 starts in Preview mode, the tool is not connected. Check the box and the USB [UG p.10; CR p.27].
 6. Open Spindle RPM Control (Tools → Spindle RPM Control). Keep this window open the whole session: SB3 talks to the VFD — the spindle's speed controller, the box with the rpm display — only while it is open [QS p.15].
 7. With everyone clear of the machine, insert the spindle interlock key into the safety lockout next to the power switch and turn it to **ENGAGED** [QS p.12]. Before hands-on work, stop the spindle, turn the key OFF and remove it. Keep it in your pocket [UG p.5].
-8. Switch the dust collector on **at the collector itself**; it is switched manually, not by SB3. It stays on for the whole job [MS p.3].
+8. Switch the dust collector on **at the collector itself**. It stays on for the whole job [MS p.3].
 9. Warm up, home, then zero: C5 (the lab's standard warm-up), then C3, then C2 [MS p.3].
 ### Leaving the machine
-**Users never power down the machine.** Finish or stop the file and leave the machine powered for lab staff. Do not exit SB3, turn off the control cabinet or switch off the spindle controller. Use the E-stop in an emergency, not as an end-of-session switch. Follow “After the job” for spindle stopping, key removal and cleanup.
+**Users never power down the machine.** Finish or stop the file and leave the machine powered for lab staff. Do not exit SB3, turn off the control cabinet or switch off the spindle controller. Follow “After the job” for spindle stopping, key removal and cleanup.
 ## 2. Keypad and jogging (K / SK)
 ### Opening and closing the keypad
 - Type **K** (shortcut for **SK**) or click the yellow keypad icon in the red Position window [QS p.11; CR p.26].
@@ -62,7 +62,7 @@ Audience: first-time CNC students. References use the source tags below.
 - Park Z at a safe height below the Z proximity switch, near the middle of the deck [QS p.11].
 ### Spacebar vs the yellow/red STOP button
 - **Spacebar (and Enter, or the on-screen Stop button):** a ramped software stop. Z pulls out of the material and position is kept, so you can continue [CR p.39]. **Treat the spindle as live afterwards**: it may keep turning, coast, or restart when you resume. A spacebar stop is not isolation. Before reaching near the bit, confirm that the spindle has stopped, the interlock key is OFF and removed, the keypad is closed and no file is loaded or paused. Keep clear before re-engaging the key or restarting [UG p.5; QS p.5; QS p.17].
-- **Yellow-and-red E-stop on the pendant:** a true E-stop wired to ES1–ES4 on the control board. It cuts power to the motors **and** the spindle [UG p.47]. On this machine it is the only E-stop; twist to release.
+- **Yellow-and-red E-stop on the pendant:** a true E-stop wired to ES1–ES4 on the control board. It cuts power to the motors **and** the spindle [UG p.47]. Twist to release.
 ### Limits while jogging
 - If a limit (input 2 or 3) stops the keypad, the next keypad move ignores limits so you can drive off the switch. A new limit will **not** stop that move [CR p.38].
 
@@ -135,8 +135,6 @@ Audience: first-time CNC students. References use the source tags below.
 5. Run **C2** or click the Z-zero button. Z touches the plate **twice**, then pulls up to a safe height [QS p.14].
 6. Leave the clip on the carriage plate, coil the lead, and put the plate back in its holder on the YZ car — the carriage that carries the spindle across the gantry [QS p.14].
 7. If the zero looks wrong, stop and call staff. Staff can check **MZ,0** over an open area and verify the plate thickness in **TS** (default **3.073 mm**) [TM p.11–12; MS p.3]. Keep hands clear during every commanded move. Before a hands-on check: spindle off and stopped, key OFF and removed, keypad closed, no file loaded or paused [UG p.5; QS p.5].
-### Manual Z zero (ZZ): not taught
-- Use **C2** for Z zero. Manual **ZZ** with a paper feeler is not part of the student procedure; ZZ is listed in the glossary for reference only [CR p.45].
 
 ## 7. XY zero: machine home vs job zero
 ### Home vs job zero
@@ -174,7 +172,7 @@ Audience: first-time CNC students. References use the source tags below.
 ### Spindle-start order on a PRSalpha
 - **Keypad test:** turn output 1 on in the keypad, then press the green **START** on the three-button pendant [QS p.12–13].
 - **Running a file:** after Start/Enter in FP, SB3 shows the prompt “Press START on control before pressing OK”. **PRSalpha:** press the pendant **Start BEFORE clicking OK** [QS p.17].
-- Start a job in this order: **1.** Spindle RPM Control window open, RPM typed, Enter [QS p.15]. **2.** FP → Start. **3.** Screen prompt “Press START on control before pressing OK” → pendant green **START** [QS p.17]. **4.** Verify the spindle is running at the commanded speed; the VFD (Yaskawa V1000) display should show the RPM you typed [QS p.16]. **5.** OK on screen → cutting begins. There is no separate RUN step on the VFD.
+- Start a job in this order: **1.** Spindle RPM Control window open, RPM typed, Enter [QS p.15]. **2.** FP → Start. **3.** Screen prompt “Press START on control before pressing OK” → pendant green **START** [QS p.17]. **4.** Verify the spindle is running at the commanded speed; the VFD (Yaskawa V1000) display should show the RPM you typed [QS p.16]. **5.** OK on screen → cutting begins.
 - Never assume the spindle is turning because the axes move; a stationary cutter can break when driven into stock.
 ### Air-cut practice
 **Method 1, 3D offset** [QS p.16]:
@@ -223,7 +221,6 @@ Before the real cut, set Offset back to **"No Offset"** [QS p.17].
 | C2 | Z-zero with the plate (input 1): two touches, then pull-up | [QS p.14] |
 | C3 | XY homing using the proximity switches (inputs 2/3) | [QS p.15; UG p.20] |
 | C5 | Spindle warm-up: 9000/10000/12000 RPM for 3 min each, then off | [QS p.16] |
-| C6, C7, C9 | Custom-cut slots. Student procedures use the standard C2, C3 and C5 routines. Do not remove C-commands from posted files | — |
 | JZ | Jog Z to a location (or by a distance in relative mode) | [CR p.17] |
 | JH | Safe-Z, then jog to XY 0,0 | [CR p.17] |
 | J2 | Jog X,Y at Jog speed | [CR p.15] |
@@ -238,7 +235,7 @@ Before the real cut, set Offset back to **"No Offset"** [QS p.17].
 | VO | Temporary tool offset (dual Z / air drill) | [CR p.40] |
 | SO | Set output n on/off: `SO,1,1` = output 1 on | [CR p.27; UG p.48] |
 | SK (K) | Keypad arrow control; Move mode only | [CR p.26] |
-| ZZ | Zero Z here (reference only; students use C2) | [CR p.45] |
+| ZZ | Zero Z at the current position; students use C2 | [CR p.45] |
 | Z2 | Zero X and Y here | [CR p.43] |
 | Z3 | Zero X, Y and Z here | [CR p.44] |
 | ZX / ZY | Zero X only / Y only | [CR p.44–45] |
@@ -291,7 +288,7 @@ Before the real cut, set Offset back to **"No Offset"** [QS p.17].
 Students clean accessible surfaces, inspect tooling and report problems. Mechanical adjustments, electrical checks, lubrication and servicing below are **staff tasks**, not permission to power down or open the machine.
 ### Daily, before cutting [MS p.3]
 1. Run C5 (9000, 10 000 and 12 000 rpm for 3 min each). Confirm the spindle fan runs.
-2. Check the bit, collet and collet nut for wear and debris. Keep the spindle body, fans and airways clean. Tapers, shafts and collets must be scrupulously clean. Use the tightening method demonstrated during induction; do not substitute a torque for another nut.
+2. Check the bit, collet and collet nut for wear and debris. Keep the spindle body, fans and airways clean. Tapers, shafts and collets must be scrupulously clean. Tighten the nut the way you were shown at the induction.
 3. Square the gantry against the end stops, hold it there, and press reset.
 4. Push-pull test each motor area: X1, X2, Y, Z. A slight click is acceptable, but no movement beyond a few thousandths. If there is play, adjust the motor-mount spring (**3½ turns after slack is removed**) and/or tighten the set screws.
 5. Move the machine around at both M and J speeds, or run a short warm-up routine.

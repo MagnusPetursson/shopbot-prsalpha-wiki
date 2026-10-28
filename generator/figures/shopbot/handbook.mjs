@@ -71,7 +71,7 @@ const rules = chapter("rules", `<ol class="sb-tenrules">${S.RULES.map(([t, x]) =
 
 // 02 Machine: the WebGL viewer becomes a captioned still; the spec line; how the mechanisms work; the numbers
 const machine = chapter("machine", `<div class="hb-hero"><figure class="hb-still"><img src="${img("operator")}" alt=""></figure><div class="hb-hero-side"><p class="hb-cap"><b>The machine in 3D.</b> Still from the site's 3D model: table and spoilboard, the gantry (X bridge), the Y car carrying the spindle, the control PC and the wall pendant with the only <span class='nw'>E-stop</span>. Online, the model rotates and animates ten faults; chapter 06 shows five as stills.</p>${V.stats([["Sheet", "12 × 5 ft"], ["Travel", "153 × 61 in"], ["Motors", "4 closed-loop alphaStep"], ["Drive", "7.2 : 1, rack and pinion"], ["Rapid", "30 in/s · 760 mm/s"], ["Spindle", "12 000 rpm typical, 6–18k"], ["Resolution", "0.0004 in ≈ 0.01&nbsp;mm"]])}</div></div>
-<p class="sb-aside hb-note"><b>Staff only, not part of the student course:</b> the rotary-axis chuck standing beside the table belongs to this machine but is not used in student jobs. Leave it alone; ask staff.</p>
+<p class="sb-aside hb-note"><b>Rotary axis.</b> The chuck beside the table is for staff only. Leave it alone.</p>
 ${hsec("How it works", "How the mechanisms work", "", `<div class="hb-cols">${S.mech.replace(/^[\s\S]*?<h3>[^<]*How the mechanisms work<\/h3>/, "").replace(/<h3>Zeroing and homing<\/h3>[\s\S]*$/, "")}</div><p class="sb-aside hb-note">Zeroing and homing are chapter 04; dust extraction and hold-down are chapters 01 and 03.</p>`)}
 ${hsec("Reference", "The machine in numbers", "", S.numbersHtml, "hb-numbers")}`);
 
