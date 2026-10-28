@@ -656,7 +656,7 @@ writeFileSync(join(HERE, THEME === "light" ? "shopbot-explainer-light.html" : "s
   const esc = (t) => String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
   const btn = (attrs, label, extra = "") => `<button type="button" ${attrs}${extra}>${label}</button>`;
   const faultList = FAULTS.map((f) => `<li>${btn(`data-fault="${f.id}" aria-pressed="false"`, `<span class="sbx-e">E${f.e ?? f.key}</span><span class="sbx-fname">${esc(f.name)}</span><span class="sbx-fsym">${esc(FAULT_STAGES[f.id].short)}</span>`, ` aria-keyshortcuts="${f.key}"`)}</li>`).join("");
-  const presets = [["whole", "Whole machine", "0"], ["gantry", "Gantry", ""], ["tool", "At the tool", "F"], ["operator", "Operator's end", ""], ["under", "Under the table", ""], ["top", "Plan, from above", ""]]
+  const presets = [["whole", "Whole machine", "0"], ["gantry", "Gantry", ""], ["tool", "At the tool", "F"], ["operator", "Operator's end", ""], ["under", "Under the table", ""], ["top", "Plan view", ""]]
     .map(([id, label, key]) => `<li>${btn(`data-view="${id}" aria-pressed="false"`, `<span>${label}</span>${key ? `<kbd>${key}</kbd>` : ""}`)}</li>`).join("");
   const field = (id, label, min, max, step, unit, numMin = min, numMax = max) => `<div class="sbx-field"><label for="sbx-${id}">${label}</label><input id="sbx-${id}" type="range" data-cam="${id}" min="${min}" max="${max}" step="${step}"><input type="number" data-cam-num="${id}" min="${numMin}" max="${numMax}" step="1" aria-label="${label} value"><span class="sbx-unit">${unit}</span></div>`;
   const speeds = [1, 4, 12, 30].map((v) => `<option value="${v}"${v === SPEED ? " selected" : ""}>×${v}</option>`).join("");
@@ -666,13 +666,13 @@ writeFileSync(join(HERE, THEME === "light" ? "shopbot-explainer-light.html" : "s
 <section class="sbx-view" aria-label="3D viewer">
 <div class="sb-gl-stage" tabindex="0" role="application" aria-label="ShopBot PRSalpha CNC router in 3D. Drag or arrow keys to orbit, wheel or plus and minus to zoom, shift-drag or shift-arrows to pan. Space pauses the simulation; use the Run button to start. On the real machine Space stops motion. 1 to 9 and S stage a fault, N and P step through it, Escape closes it."><canvas aria-hidden="true"></canvas><div class="sbx-callouts" data-callouts aria-hidden="true"></div><div class="sb-gl-fallback" hidden>This browser has no WebGL2; use the SVG version of the figure.</div><span class="sb-sr" role="status" aria-live="polite" data-status></span></div>
 <header class="sbx-head"><h1>ShopBot PRSalpha 144-60</h1><span class="sbx-meta">Interactive 3D model</span><output class="sbx-readout" data-readout>idle</output></header>
-<footer class="sbx-cap"><span class="sbx-cap-n" data-beat>Ready</span><div class="sbx-cap-body"><p class="sbx-cap-text" data-caption></p><p class="sbx-cap-todo" data-todo hidden></p></div><div class="sbx-cap-nav" data-beatnav hidden>${btn(`data-beat-prev aria-label="Previous step" aria-keyshortcuts="P"`, "‹ Prev")}${btn("data-beat-replay", "Replay")}${btn(`data-beat-auto aria-pressed="true" title="Advance through the steps by itself"`, "Auto")}${btn(`data-beat-next aria-label="Next step" aria-keyshortcuts="N"`, "Next ›")}${btn(`data-beat-close aria-keyshortcuts="Escape"`, "Close")}</div></footer>
+<footer class="sbx-cap"><span class="sbx-cap-n" data-beat>Ready</span><div class="sbx-cap-body"><p class="sbx-cap-text" data-caption></p><p class="sbx-cap-todo" data-todo hidden></p></div><div class="sbx-cap-nav" data-beatnav hidden>${btn(`data-beat-prev aria-label="Previous step" aria-keyshortcuts="P"`, "‹ Prev")}${btn("data-beat-replay", "Replay")}${btn(`data-beat-auto aria-pressed="true" title="Advance the steps automatically"`, "Auto")}${btn(`data-beat-next aria-label="Next step" aria-keyshortcuts="N"`, "Next ›")}${btn(`data-beat-close aria-keyshortcuts="Escape"`, "Close")}</div></footer>
 ${btn(`class="sbx-drawer-btn" data-drawer-toggle aria-expanded="true" aria-controls="sbx-inspector"`, "Inspector")}
 </section>
 <aside class="sbx-inspector" id="sbx-inspector" aria-label="Inspector">
 <div class="sbx-tabs" role="tablist">${btn(`role="tab" data-tab="faults" aria-selected="true" aria-controls="sbx-p-faults"`, "Faults")}${btn(`role="tab" data-tab="views" aria-selected="false" aria-controls="sbx-p-views"`, "Views")}${btn(`role="tab" data-tab="job" aria-selected="false" aria-controls="sbx-p-job"`, "Job")}</div>
 <section class="sbx-panel" id="sbx-p-faults" role="tabpanel" data-panel="faults">
-<p class="sbx-lede">Pick a fault to stage it: the camera walks through what goes wrong, the culprit part turns red, the rest greys out. Keys 1–9 and S.</p>
+<p class="sbx-lede">Select a fault to animate it; the faulty part turns red and the rest greys out. Keys 1–9 and S.</p>
 <ol class="sbx-faults">${faultList}</ol>
 <div class="sbx-detail" data-fault-detail aria-live="polite" hidden></div>
 </section>
@@ -682,7 +682,7 @@ ${btn(`class="sbx-drawer-btn" data-drawer-toggle aria-expanded="true" aria-contr
 ${field("az", "Azimuth", -180, 180, 0.5, "°")}${field("el", "Elevation", -20, 89, 0.5, "°")}${field("dist", "Distance", 0, 1000, 1, "cm", 12, 3000)}${field("fov", "Field of view", 10, 90, 1, "°")}
 <div class="sbx-seg" role="group" aria-label="Projection">${btn(`data-proj="persp" aria-pressed="true"`, "Perspective")}${btn(`data-proj="ortho" aria-pressed="false" aria-keyshortcuts="O"`, "Orthographic")}</div>
 <div class="sbx-seg" role="group" aria-label="Theme">${btn(`data-theme-set="dark" aria-pressed="${THEME === "dark"}"`, "Dark")}${btn(`data-theme-set="light" aria-pressed="${THEME === "light"}"`, "Light")}</div>
-<div class="sbx-seg" role="group" aria-label="Options">${btn(`data-follow aria-pressed="false"`, "Follow tool")}${btn(`data-foot aria-pressed="false"`, "Dust foot off")}</div>
+<div class="sbx-seg" role="group" aria-label="Options">${btn(`data-follow aria-pressed="false"`, "Follow tool")}${btn(`data-foot aria-pressed="false"`, "Hide dust foot")}</div>
 <h2 class="sbx-h">Saved views</h2>
 <div class="sbx-seg">${btn("data-save-view", "Save view")}${btn("data-copy-link", "Copy link")}</div>
 <input class="sbx-link" data-link readonly aria-label="Link to this view">
@@ -698,7 +698,7 @@ ${btn(`data-rewind title="Rewind (Home)" aria-label="Rewind"`, ico("M2 2v8M10 2 
 </div>
 <div class="sbx-scrub"><input type="range" data-scrub min="0" max="${PROG.total.toFixed(2)}" step="0.1" value="0" aria-label="Position in the cutting file"><span class="sbx-num" data-time>0:00 / ${total}</span></div>
 <div class="sbx-field sbx-field-2"><label for="sbx-speed">Clock</label><select id="sbx-speed" data-speed>${speeds}</select><span class="sbx-unit">machine time</span></div>
-<div class="sbx-seg">${btn(`data-tour aria-pressed="false" aria-keyshortcuts="T"`, "Tour the file and every fault")}</div>
+<div class="sbx-seg">${btn(`data-tour aria-pressed="false" aria-keyshortcuts="T" title="Play the job file, then every fault (T)"`, "Guided tour")}</div>
 <h2 class="sbx-h">Keys</h2>
 <dl class="sbx-keys"><dt>Space</dt><dd>pause only</dd><dt>Home</dt><dd>rewind</dd><dt>[ ]</dt><dd>±10 s</dd><dt>, .</dt><dd>±1 s</dd><dt>Esc</dt><dd>reset</dd></dl>
 <p class="sbx-fine">Catalogue reference movement area ${Math.round(MACHINE.travel.x)} × ${Math.round(MACHINE.travel.y)} × ${MACHINE.travel.z} cm. The pendant carries Reset · Start · E-stop.</p>

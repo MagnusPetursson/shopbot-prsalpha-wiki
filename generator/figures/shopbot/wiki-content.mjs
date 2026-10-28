@@ -4,7 +4,7 @@ const c = (...n) => `<span class="sb-cite">[${n.join(",")}]</span>`;
 const fig = (id, text) => `<a class="sb-showfault" href="#fig-anatomy" data-show-fault="${id}">${text}</a>`;
 
 export const SAFETY = `
-<p>A 4 HP spindle turning a 6 mm cutter at 12 000 rpm does not know you are there. The machine moves at up to 760 mm/s between cuts and has no idea what a hand is. The rules below are ShopBot's own safety list plus the lab's; each one is there because the alternative is an injury, a broken machine or a fire.</p>
+<p>A 4 HP spindle turns a 6 mm cutter at 12 000 rpm, and the machine moves at up to 760 mm/s between cuts; nothing on it senses a hand in the way. The rules below are ShopBot's own safety list plus the lab's; each one is there because the alternative is an injury, a broken machine or a fire.</p>
 <ul class="sb-rules">
 <li><b>Trained and signed off.</b> You run this machine only after the lab's induction and with the instructor's sign-off. Students who have not been signed off operate the machine only with a signed-off person at the E-stop.${c(4, 60)}</li>
 <li><b>Never alone, never tired.</b> Two people in the room; the second person knows where the E-stop is: the red button on the wall-mounted pendant by the monitor, the only one on this machine.${c(60, 63, 64)}</li>
@@ -18,14 +18,14 @@ export const SAFETY = `
 <li><b>Clean up; leave the machine powered.</b> Stop the file and spindle, remove the key before reaching in, brush the rails and racks, vacuum the deck, put the bits back and report problems. Users never power down the machine; leave it for lab staff. Use E-stop in an emergency, not to finish a session.${c(13)}</li>
 </ul>
 
-<div class="sb-box sb-box-stop" id="stops"><h4>How to stop a PRSalpha</h4>
+<div class="sb-box sb-box-stop" id="stops"><h4>Stopping a PRSalpha</h4>
 <dl class="sb-table">
 <dt>Spacebar (or Enter, or the on-screen Stop)</dt><dd><b>Routine stop.</b> Motion ramps down, Z lifts to its safe height, position is kept, so you can resume. <b>Treat the spindle as live</b>: depending on setup it may keep turning, coast down, or restart when you resume. A spacebar stop is not isolation. Before reaching in: spindle stopped, key OFF and removed, keypad closed, no file loaded or paused. Keep clear before restarting.${c(4, 11)}</dd>
 <dt>E-stop (the red mushroom on the wall-mounted pendant by the monitor — the only E-stop on this machine. The red-and-yellow rotary handle on the control cabinet is the power disconnect, not an E-stop)</dt><dd><b>When something is wrong.</b> Cuts spindle power immediately and motor power about 5 s later. Afterwards the machine no longer knows where it is: twist the E-stop to release it, press pendant <b>Reset</b>, then <code>C3</code> and <code>C2</code> before cutting again. There is no soft "Stop" button on an alpha pendant; its three buttons are <b>Reset · Start · E-stop</b>.${c(2, 10, 11)}</dd>
 <dt>If the software has frozen or lost the controller</dt><dd>The spacebar does nothing and the spindle keeps running. <b>E-stop</b> is the only control that still kills the spindle.${c(10)}</dd>
 </dl></div>
 
-<div class="sb-box sb-box-start" id="spindle-start"><h4>How to start a job on a PRSalpha</h4>
+<div class="sb-box sb-box-start" id="spindle-start"><h4>Starting a job on a PRSalpha</h4>
 <ol>
 <li>Spindle RPM Control window open (Tools → Spindle RPM Control, or type <code>TR</code>), RPM typed, <b>Enter</b>. Leave the window open all session.${c(4)}</li>
 <li><code>FP</code>, pick the file, check Offset = <b>No Offset</b>, Start.${c(4)}</li>
@@ -37,8 +37,8 @@ export const SAFETY = `
 `;
 
 export const SYMPTOMS = `
-<h2 id="symptoms">6 · Something went wrong: start from the symptom</h2>
-<p>Find what you see, not what you suspect. Each card names the most likely causes in order and links to the fault card (E-numbers in the next section) and, where the figure can act it out, to the figure key that plays it.</p>
+<h2 id="symptoms">6 · Troubleshooting by symptom</h2>
+<p>Look up the symptom, not the suspected cause. Each card names the most likely causes in order and links to the fault card (E-numbers in the next section) and, where the figure can act it out, to the figure key that plays it.</p>
 <div class="sb-symptoms">
 <div class="sb-sym"><div class="sb-sym-h">Everything stopped dead, red LED on the box, "location no longer accurate"</div><div>Alpha driver alarm. Stop and call staff; do not open the cabinet. Staff check the driver alarm and cause (clamp strike, packed rack, cable). After recovery, <b>rehome and re-zero</b>. → <a href="#E01">E01</a> · ${fig("alpha", "figure key 1")}</div></div>
 <div class="sb-sym"><div class="sb-sym-h">Software froze or says the controller disconnected; spindle still running</div><div>USB dropped: the PC went to sleep or the cable was knocked. <b>Press an E-stop</b>: the software can no longer stop the machine and the E-stop is the only control that kills the spindle. Then fix the cause, Reset, C3, C2, resume with FG. → <a href="#E02">E02</a> · ${fig("usb", "figure key 8")}</div></div>
@@ -68,7 +68,7 @@ export const SYMPTOMS = `
 `;
 
 export const FEEDS = `
-<h2 id="feeds">7 · Feeds, speeds and the one number that matters</h2>
+<h2 id="feeds">7 · Feeds, speeds and chipload</h2>
 <p>The cutter removes a chip every time a flute passes. The thickness of that chip, the <b>chipload</b> f<sub>z</sub>, decides almost everything: too thin and the edge rubs, heats, dulls and burns; too thick and the cutter deflects, chatters and snaps.</p>
 <div class="sb-formula">f<sub>z</sub> = feed ÷ (rpm × flutes) &nbsp;&nbsp;&nbsp; feed = rpm × flutes × f<sub>z</sub></div>
 <p>Worked example (the calculator's default): 4200 mm/min ÷ (14 000 rpm × 2 flutes) = <b>0.15 mm per tooth</b>, a reasonable chip for a 6 mm cutter in plywood. <b>CAM works in mm/min; SB3 and the .sbp file use mm/s — divide by 60</b> (4200 mm/min = 70 mm/s).${c(11)}</p>
@@ -85,8 +85,8 @@ export const FEEDS = `
 `;
 
 export const CAM = `
-<h2 id="cam">8 · From CAM to the machine: the post-processing checklist</h2>
-<p>Most "machine" failures are decided at the computer. Go through this list every time you post a file. Post with Autodesk Fusion's official ShopBot (OpenSBP) post processor. The correct machine settings are already loaded on the control PC; setup is then checked by hand at the machine.${c(54, 63)}</p>
+<h2 id="cam">8 · Post-processing checklist</h2>
+<p>Most "machine" failures start in CAM. Check this list every time you post a file. Post with Autodesk Fusion's official ShopBot (OpenSBP) post processor. The correct machine settings are already loaded on the control PC; setup is then checked by hand at the machine.${c(54, 63)}</p>
 <ol class="sb-check">
 <li><b>Units.</b> File and software agree (mm). If SB3 stops with UNIT_ERROR, the file and SB3 disagree on mm/inch: re-post the file in mm. Do not change or reload the machine settings — they are already correct on the control PC; ask staff if the units still disagree.${c(10, 54, 63)}</li>
 <li><b>Origin corner and Z reference.</b> Which corner is X0 Y0? Is Z0 the <b>material top</b> or the <b>table surface</b> (<code>&amp;PWZorigin</code> in the posted file)? It must match what you touch with C2. Bed zero with a top-zero file puts every rapid and retract <i>inside</i> the stock and every cut a sheet thickness into the spoilboard; the reverse cuts air.${c(4, 6, 54)}</li>
@@ -101,7 +101,7 @@ export const CAM = `
 `;
 
 export const QUIZ = `
-<p>Passing this is part of the sign-off. Answers are under each question; think before you open them.</p>
+<p>Passing this is part of the sign-off. Answer each question before opening its answer.</p>
 <ol class="sb-quiz">
 <li>The file is loaded, you clicked OK on the spindle prompt and the gantry is moving toward the stock — but the spindle is silent. What do you do in the next two seconds, and what went wrong?<details><summary>Answer</summary>Spacebar now; E-stop if the bit is already in the stock. You clicked OK before pressing START on the pendant (or the key/output 1 was off). See <a href="#spindle-start">the start sequence</a> and <a href="#E07">E07</a>, <a href="#E09">E09</a>.</details></li>
 <li>You press the E-stop halfway through a job. Which of X, Y and Z zero can you trust afterwards, and what must you do before restarting?<details><summary>Answer</summary>None. Release, pendant Reset, C3 to rehome, jog to the recorded job-origin coordinates and Z2 again, C2 for Z, then FG from a line before the stop. See <a href="#stops">Stops</a>, <a href="#E30">E30</a>.</details></li>
@@ -119,7 +119,7 @@ export const QUIZ = `
 `;
 
 export const FIRSTJOB = `
-<p>The whole flow for one plywood part, in order, with the command you type at each step. Section 3 has the detail behind every line; this is the skeleton to hold in your head.</p>
+<p>The whole flow for one plywood part, in order, with the command you type at each step. Section 3 has the detail behind every line.</p>
 <ol class="sb-firstjob">
 <li><b>At the computer.</b> Autodesk Fusion (the lab's usual CAM): stock measured (write the thickness down), origin corner chosen, Z0 on the surface you will touch (lab convention for through-cuts: bed), screws placed in the waste, tabs or onion skin on every freed part, feeds computed (plywood: 14 000 rpm, 4200 mm/min, 3 mm per pass). Post with the ShopBot OpenSBP post, mm.</li>
 <li><b>Read the .sbp</b> in a text editor: <code>&amp;PWZorigin</code>, units, <code>MS</code>, <code>TR</code>, the first <code>JZ</code> and <code>M3</code>. Anything surprising: back to step 1.</li>

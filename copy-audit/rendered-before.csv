@@ -1,0 +1,1644 @@
+location,viewport,kind,text
+index.html,1440x900,title,The ShopBot PRSalpha 144-60 — ShopBot PRSalpha 144-60
+index.html,1440x900,heading,The ShopBot PRSalpha 144-60
+index.html,1440x900,heading,Two ways to stop it
+index.html,1440x900,heading,"Your first time, in six pages"
+index.html,1440x900,heading,The whole site
+index.html,1440x900,nav-link,ShopBot PRSalpha 144-60 PROTOTYPING LAB · UNIVERSITY OF ICELAND
+index.html,1440x900,nav-link,01 Rules
+index.html,1440x900,nav-link,02 The machine
+index.html,1440x900,nav-link,03 Run a job
+index.html,1440x900,nav-link,04 Zeroing
+index.html,1440x900,nav-link,05 Pre-flight
+index.html,1440x900,nav-link,06 Something’s wrong
+index.html,1440x900,nav-link,07 Feeds & CAM
+index.html,1440x900,nav-link,08 Maintenance
+index.html,1440x900,nav-link,09 Sign-off
+index.html,1440x900,nav-link,Light version
+index.html,1440x900,nav-link,Student handbook (PDF)
+index.html,1440x900,nav-link,Full wiki (PDF)
+index.html,1440x900,nav-link,Before your induction 01 Rules
+index.html,1440x900,nav-link,Learning how it works 02 The machine
+index.html,1440x900,nav-link,"Standing at the machine, about to cut 05 Pre-flight"
+index.html,1440x900,nav-link,"It stopped, or the cut went wrong 06 Something’s wrong"
+index.html,1440x900,nav-link,"Choosing feeds, posting a file 07 Feeds & CAM"
+index.html,1440x900,link,New here? Start with the rules →
+index.html,1440x900,link,"How to stop, in full"
+index.html,1440x900,link,Rules
+index.html,1440x900,link,The machine
+index.html,1440x900,link,Run a job
+index.html,1440x900,link,Zeroing
+index.html,1440x900,link,Pre-flight
+index.html,1440x900,link,Sign-off
+index.html,1440x900,link,01 Rules Ten rules and two procedures. Know them before the induction.
+index.html,1440x900,link,"02 The machine Four motors, three axes, one spindle. Turn the model; pick one of the ten faults in its side panel to watch it happen."
+index.html,1440x900,link,"03 Run a job Eleven steps from CAM to a finished part, with the command at each step."
+index.html,1440x900,link,04 Zeroing Three different zeros. Mixing them up is the most common first-week crash.
+index.html,1440x900,link,"05 Pre-flight Print it. Tick it, in order, every time."
+index.html,1440x900,link,"06 Something’s wrong Start from what you see. Stop first, diagnose second."
+index.html,1440x900,link,07 Feeds & CAM One number decides most cuts. Most machine failures are decided at the computer.
+index.html,1440x900,link,"08 Maintenance The published schedule, the command glossary, the I/O table, the sources."
+index.html,1440x900,link,09 Sign-off Twelve questions. Passing is part of the sign-off.
+index.html,1440x900,link,"3D 3D model, full screen Orbit, zoom and follow the tool through the posted job."
+index.html,1440x900,link,Maintenance → Sources
+index.html,1440x900,label,00 A TEACHING SITE FOR THE PROTOTYPING LAB
+index.html,1440x900,label,WHERE ARE YOU NOW?
+index.html,1440x900,label,BEFORE ANYTHING ELSE
+index.html,1440x900,label,THE ROUTE
+index.html,1440x900,label,CONTENTS
+index.html,1440x900,figcaption,"Spacebar — routine stop Motion ramps down, position is kept. Treat the spindle as live."
+index.html,1440x900,figcaption,"E-stop — something is wrong Spindle power off at once. Position is lost: Reset, C3, C2. How to stop, in full."
+index.html,1440x900,helper,01 Rules
+index.html,1440x900,helper,02 The machine
+index.html,1440x900,helper,03 Run a job
+index.html,1440x900,helper,04 Zeroing
+index.html,1440x900,helper,05 Pre-flight
+index.html,1440x900,helper,06 Something’s wrong
+index.html,1440x900,helper,07 Feeds & CAM
+index.html,1440x900,helper,08 Maintenance
+index.html,1440x900,helper,09 Sign-off
+index.html,1440x900,helper,"How it works, how to run it, what goes wrong."
+index.html,1440x900,helper,Read them in this order before your first job. Then the pre-flight sheet does the remembering for you.
+index.html,1440x900,helper,1 Rules Before the induction.
+index.html,1440x900,helper,2 The machine Turn the model; play the ten faults from its side panel.
+index.html,1440x900,helper,"3 Run a job Eleven steps. Read once, then use the pre-flight."
+index.html,1440x900,helper,4 Zeroing Three zeros; the first-week crash.
+index.html,1440x900,helper,"5 Pre-flight Printed, at the machine, every job."
+index.html,1440x900,helper,"6 Sign-off Twelve questions, with answers."
+index.html,1440x900,helper,01 Rules Ten rules and two procedures. Know them before the induction.
+index.html,1440x900,helper,"02 The machine Four motors, three axes, one spindle. Turn the model; pick one of the ten faults in its side panel to watch it happen."
+index.html,1440x900,helper,"03 Run a job Eleven steps from CAM to a finished part, with the command at each step."
+index.html,1440x900,helper,04 Zeroing Three different zeros. Mixing them up is the most common first-week crash.
+index.html,1440x900,helper,"05 Pre-flight Print it. Tick it, in order, every time."
+index.html,1440x900,helper,"06 Something’s wrong Start from what you see. Stop first, diagnose second."
+index.html,1440x900,helper,07 Feeds & CAM One number decides most cuts. Most machine failures are decided at the computer.
+index.html,1440x900,helper,"08 Maintenance The published schedule, the command glossary, the I/O table, the sources."
+index.html,1440x900,helper,09 Sign-off Twelve questions. Passing is part of the sign-off.
+index.html,1440x900,helper,"3D 3D model, full screen Orbit, zoom and follow the tool through the posted job."
+index.html,1440x900,aria-label,Site (compact)
+index.html,1440x900,aria-label,Site
+index.html,1440x900,aria-label,Where are you now?
+index.html,1440x900,aria-label,Keyboard with the spacebar highlighted
+index.html,1440x900,aria-label,"Pendant: Reset, green Start, red E-stop"
+index.html,1440x900,alt,Keyboard with the spacebar highlighted
+index.html,1440x900,alt,"Pendant: Reset, green Start, red E-stop"
+index.html,1440x900,figure-label,SPACE
+index.html,1440x900,figure-label,RESET
+index.html,1440x900,figure-label,START
+index.html,1440x900,figure-label,spindle
+index.html,1440x900,figure-label,E-STOP
+rules.html,1440x900,title,Before you touch it — ShopBot PRSalpha 144-60
+rules.html,1440x900,summary,"ShopBot's own safety list, from the manuals"
+rules.html,1440x900,heading,Before you touch it
+rules.html,1440x900,heading,How to stop
+rules.html,1440x900,heading,Spacebar
+rules.html,1440x900,heading,E-stop
+rules.html,1440x900,heading,How to start a job
+rules.html,1440x900,nav-link,ShopBot PRSalpha 144-60 PROTOTYPING LAB · UNIVERSITY OF ICELAND
+rules.html,1440x900,nav-link,01 Rules
+rules.html,1440x900,nav-link,02 The machine
+rules.html,1440x900,nav-link,03 Run a job
+rules.html,1440x900,nav-link,04 Zeroing
+rules.html,1440x900,nav-link,05 Pre-flight
+rules.html,1440x900,nav-link,06 Something’s wrong
+rules.html,1440x900,nav-link,07 Feeds & CAM
+rules.html,1440x900,nav-link,08 Maintenance
+rules.html,1440x900,nav-link,09 Sign-off
+rules.html,1440x900,nav-link,Light version
+rules.html,1440x900,nav-link,Student handbook (PDF)
+rules.html,1440x900,nav-link,Full wiki (PDF)
+rules.html,1440x900,nav-link,PREVIOUS Start
+rules.html,1440x900,nav-link,NEXT · 02 The machine
+rules.html,1440x900,link,Maintenance → Sources
+rules.html,1440x900,label,01 RULES
+rules.html,1440x900,label,ROUTINE · POSITION KEPT
+rules.html,1440x900,label,SOMETHING IS WRONG · POSITION LOST
+rules.html,1440x900,helper,01 Rules
+rules.html,1440x900,helper,02 The machine
+rules.html,1440x900,helper,03 Run a job
+rules.html,1440x900,helper,04 Zeroing
+rules.html,1440x900,helper,05 Pre-flight
+rules.html,1440x900,helper,06 Something’s wrong
+rules.html,1440x900,helper,07 Feeds & CAM
+rules.html,1440x900,helper,08 Maintenance
+rules.html,1440x900,helper,09 Sign-off
+rules.html,1440x900,helper,Ten rules and two procedures. Know them before the induction.
+rules.html,1440x900,helper,"Trained and signed off. You run this machine only after the induction and the instructor's sign-off. Until then, only with a signed-off person at the E-stop."
+rules.html,1440x900,helper,"Never alone, never tired. Two people in the room; the second one knows where the E-stop is: the red button on the wall-mounted pendant by the monitor. It is the only one."
+rules.html,1440x900,helper,"Eyes and ears, for you and anyone watching. From the moment the machine is powered. No gloves, loose clothing, hair or lanyards near the gantry."
+rules.html,1440x900,helper,"Hands out of the cutting area while the control box is on. The only exception: spindle stopped, keypad closed, no file loaded or paused, and the key OFF in your pocket. It can move without warning, in any direction."
+rules.html,1440x900,helper,"Key out for hands-on work. Spindle stopped, interlock key OFF and in your pocket before you change a bit, touch the collet, or load, move or clamp material."
+rules.html,1440x900,helper,"Never leave a running job. Dust under the brush catches when a tool rubs, hits a screw or burns hardwood. Stand where you can see the cut and reach the E-stop."
+rules.html,1440x900,helper,Know the two ways to stop. Spacebar for routine; E-stop when something is wrong. Use them without hesitating; a ruined sheet is cheap.
+rules.html,1440x900,helper,"Spindle at speed before OK. When the screen says “Press START on control before pressing OK”: pendant START, check the spindle runs at the commanded speed, then OK — cutting begins. No separate RUN on the VFD. A still bit dragged through plywood snaps."
+rules.html,1440x900,helper,"Extraction on. Switch the dust collector on at the collector itself (manual; SB3 does not switch it). It runs whenever the spindle runs. If the hose comes off the foot or the brush skirt is damaged, stop and tell staff."
+rules.html,1440x900,helper,"Clean up; leave the machine powered. Stop the file and spindle; key out before cleanup. Clear and clean the deck, stow the bit, report faults. Users never power down the machine; leave it for lab staff. Use E-stop in an emergency, not to finish a session."
+rules.html,1440x900,helper,"Two controls, two meanings. Use them without hesitating."
+rules.html,1440x900,helper,"Or Enter, or on-screen Stop. Motion ramps down, Z lifts, position is kept, you can resume. Treat the spindle as live — it may keep turning, coast, or restart on resume. Before reaching in: spindle stopped, key OFF and removed, keypad closed, no file loaded or paused. Keep clear before restarting.[4,11]"
+rules.html,1440x900,helper,"The red button on the wall-mounted pendant by the monitor — the only E-stop on this machine (the red-and-yellow rotary handle on the control cabinet is the power disconnect, not an E-stop). Spindle power off at once, motors ~5 s later. Position is lost: twist to release → pendant Reset → C3 → C2. If the software has frozen, E-stop is the only control that still kills the spindle.[2,10,11]"
+rules.html,1440x900,helper,The one sequence. The pendant comes before OK.
+rules.html,1440x900,helper,"1 RPM typed, Enter Spindle RPM Control window (Tools menu or TR); leave it open."
+rules.html,1440x900,helper,"2 FP, pick file, Start Offset = No Offset."
+rules.html,1440x900,helper,3 Pendant START When the screen says “Press START on control before pressing OK”. Green button.
+rules.html,1440x900,helper,4 Spindle at speed Check it runs at the commanded rpm (the VFD display). There is no separate RUN step on the VFD.
+rules.html,1440x900,helper,5 OK Cutting begins. Hand near the spacebar for the first plunge.
+rules.html,1440x900,helper,Wear eye and ear protection. This applies to the operator and to everyone watching [QS 5].
+rules.html,1440x900,helper,Wear closed-toe shoes. Never wear gloves at the machine [QS 5].
+rules.html,1440x900,helper,Never put your hands on the rails. The machine can move without warning [QS 5].
+rules.html,1440x900,helper,Never leave the machine running unattended. A spinning tool makes heat and is a fire risk. Keep a working extinguisher within reach [QS 5; UG 5].
+rules.html,1440x900,helper,"Know where the E-stop is before operating. This machine has one: the red mushroom on the wall-mounted pendant by the monitor. The red-and-yellow rotary handle on the control cabinet is the power disconnect, not an E-stop [QS 5]."
+rules.html,1440x900,helper,"During a cut, stand within reach of the keyboard or the STOP button and away from the tool path [UG 6]."
+rules.html,1440x900,helper,Position the dust skirt correctly. It guards against flying particles [UG 6; UG 45].
+rules.html,1440x900,helper,Practise with the software before you turn on the spindle [UG 5].
+rules.html,1440x900,helper,"Before reaching into the machine: spindle off and stopped, interlock key OFF and removed, keypad closed, no file loaded or paused. Keep the key in your pocket while loading or moving material, changing a bit or cleaning [UG 5; QS 5]."
+rules.html,1440x900,aria-label,Site (compact)
+rules.html,1440x900,aria-label,Site
+rules.html,1440x900,aria-label,Keyboard with the spacebar highlighted
+rules.html,1440x900,aria-label,"Pendant: Reset, green Start, red E-stop"
+rules.html,1440x900,aria-label,Previous and next
+rules.html,1440x900,alt,Keyboard with the spacebar highlighted
+rules.html,1440x900,alt,"Pendant: Reset, green Start, red E-stop"
+rules.html,1440x900,figure-label,SPACE
+rules.html,1440x900,figure-label,RESET
+rules.html,1440x900,figure-label,START
+rules.html,1440x900,figure-label,spindle
+rules.html,1440x900,figure-label,E-STOP
+machine.html,1440x900,title,"What moves, and why — ShopBot PRSalpha 144-60"
+machine.html,1440x900,summary,How the mechanisms work
+machine.html,1440x900,summary,The machine in numbers
+machine.html,1440x900,heading,"What moves, and why"
+machine.html,1440x900,heading,2 · How the mechanisms work
+machine.html,1440x900,heading,The gantry (X)
+machine.html,1440x900,heading,The car (Y) and the Z plate
+machine.html,1440x900,heading,"Closed loop, but closed around the motor"
+machine.html,1440x900,heading,Spindle and VFD
+machine.html,1440x900,heading,Zeroing and homing
+machine.html,1440x900,heading,Dust extraction and hold-down
+machine.html,1440x900,nav-link,ShopBot PRSalpha 144-60 PROTOTYPING LAB · UNIVERSITY OF ICELAND
+machine.html,1440x900,nav-link,01 Rules
+machine.html,1440x900,nav-link,02 The machine
+machine.html,1440x900,nav-link,03 Run a job
+machine.html,1440x900,nav-link,04 Zeroing
+machine.html,1440x900,nav-link,05 Pre-flight
+machine.html,1440x900,nav-link,06 Something’s wrong
+machine.html,1440x900,nav-link,07 Feeds & CAM
+machine.html,1440x900,nav-link,08 Maintenance
+machine.html,1440x900,nav-link,09 Sign-off
+machine.html,1440x900,nav-link,Light version
+machine.html,1440x900,nav-link,Student handbook (PDF)
+machine.html,1440x900,nav-link,Full wiki (PDF)
+machine.html,1440x900,nav-link,PREVIOUS · 01 Rules
+machine.html,1440x900,nav-link,NEXT · 03 Run a job
+machine.html,1440x900,link,Open the model full screen →
+machine.html,1440x900,link,Maintenance → Sources
+machine.html,1440x900,label,02 THE MACHINE
+machine.html,1440x900,helper,01 Rules
+machine.html,1440x900,helper,02 The machine
+machine.html,1440x900,helper,03 Run a job
+machine.html,1440x900,helper,04 Zeroing
+machine.html,1440x900,helper,05 Pre-flight
+machine.html,1440x900,helper,06 Something’s wrong
+machine.html,1440x900,helper,07 Feeds & CAM
+machine.html,1440x900,helper,08 Maintenance
+machine.html,1440x900,helper,09 Sign-off
+machine.html,1440x900,helper,"Four motors, three axes, one spindle. Turn the model; pick one of the ten faults in its side panel to watch it happen."
+machine.html,1440x900,helper,12 × 5 ft
+machine.html,1440x900,helper,153 × 61 in
+machine.html,1440x900,helper,4 closed-loop alphaStep
+machine.html,1440x900,helper,"7.2 : 1, rack and pinion"
+machine.html,1440x900,helper,30 in/s · 760 mm/s
+machine.html,1440x900,helper,"12 000 rpm typical, 6–18k"
+machine.html,1440x900,helper,0.0004 in ≈ 0.01 mm
+machine.html,1440x900,helper,"Staff only, not part of the student course: the rotary-axis chuck standing beside the table belongs to this machine but is not used in student jobs and is not shown in the 3D model. Leave it alone; ask staff."
+machine.html,1440x900,helper,"“144-60” is the nominal sheet class, not the footprint. The 2023 specification sheet lists a 153 × 61 × 8 in (3.89 × 1.55 × 0.20 m) movement area and a 168 × 91 × 67 in (4.27 × 2.31 × 1.70 m) footprint; the May 2022 assembly guide still describes the conventional 6 in (152 mm) Z, with 12 in and 24 in tall-Z options.[1,2] These are catalogue reference dimensions, not usable clearance for a job. Before running a tall setup, have staff check that the stock, fixtures, tool length and retract height fit. Do not disable limits."
+machine.html,1440x900,helper,"bolted steel legs and supports with aluminium T-slot side extrusions; not a welded one-piece frame. Base layer 3/4 in plywood on 3/8 in carriage bolts, replaceable 3/4 in MDF spoilboard on top.[1,2,3]"
+machine.html,1440x900,helper,"hardened steel V-rails with V-roller bearings on X and Y; eccentric rollers set the preload on the YZ car. Z rides a captured rail on five bearings per side (three concentric, two eccentric).[1,13,18,19]"
+machine.html,1440x900,helper,"rack and pinion on all three axes, including Z. Two X motors (one per side), one Y, one Z. Pinions: 30 teeth on X and Y, 25 on Z. Gearboxes 7.2:1 low-backlash tapered-hob.[1,2,27]"
+machine.html,1440x900,helper,"This machine uses Oriental Motor ARM98AC-T7.2 alphaStep closed-loop steppers. Feedback is at the motor shaft — not at the rack, the bit or the workpiece.[2,23,27]"
+machine.html,1440x900,helper,"2482.8 steps/in on X and Y (0.0004 in ≈ 0.010 mm), 2979.4 steps/in on Z, resolution multiple 5.[1,27]"
+machine.html,1440x900,helper,"positioning 1800 in/min (30 in/s, 762 mm/s) XY and 900 in/min Z; up to 720 in/min (12 in/s) XY and 360 in/min Z under full cutting force; about 150 lbf of cutting force at 60 in/min.[1]"
+machine.html,1440x900,helper,"Windows PC → USB → PRSalpha control box (control board, four drivers, contactors) → motors. Files are OpenSBP .sbp text. 8 inputs / 8 outputs at 5 V logic (~5 mA). This machine's control box: Alpha control Box Model# 10372, firmware 224; SB3 version 3.8.70.[1,2,10,11]"
+machine.html,1440x900,helper,"Spindle: HSD AT/MT 1073-140. Nameplate rating: 3 kW S6, 220 V three-phase, 300 Hz, 18,000 rpm, 13 A. S6 is an intermittent periodic duty rating, not an S1 continuous-power claim, and 18,000 rpm is the nameplate operating speed, not a confirmed maximum. Spindle controller: Yaskawa V1000, CIMR-VU2A0020GAA. ER25 collets with their matching nut. 24 V cooling fan. (ShopBot's packages: HSD 2.2 or 4 HP, or Colombo 5 HP.)[2,20,21,41]"
+machine.html,1440x900,helper,"input 1 Z-zero plate, input 2 X proximity, input 3 Y proximity, input 4 stop circuit, input 5 Z proximity; output 1 spindle, output 4 safety/spindle-enable.[2]"
+machine.html,1440x900,helper,"The bridge is an aluminium extrusion between two end plates. Each plate hangs four V-rollers on the hardened rail that runs along the top of the side plate; two ride above, two below, so the car cannot lift. A motor on each end plate sits on a hinged mount pulled by a spring (3.5 turns past contact on spring mounts; on bolted motor plates, hold the pinion into the rack with 15–20 lb while tightening the four plate screws) so its pinion stays pressed into the rack on the outside of the side plate.[2,13] Both X motors receive identical step trains. If one side stalls, its driver alarms and everything stops. If a pinion jumps teeth or slips on its shaft, the motor still turns the commanded amount: the bridge racks out of square silently."
+machine.html,1440x900,helper,"The YZ car repeats the same idea rotated 90°: rollers on a V-rail across the face of the beam, one motor on a pinion in the beam's rack. The Z plate rides one captured rail between two rows of five V-bearings (three fixed, two eccentric) per side and is lifted by a vertical rack — no leadscrew — so it moves at the same 7.2:1 ratio as the other axes. Because the gear train back-drives, Z can drop when unpowered; never push any axis by hand with the motors connected — position is lost and the drivers can be damaged.[2,18,27] Too tight on the Z eccentrics means binding and lost position; too loose means a lateral slop you will see as a bad fourth side on every pocket.[18]"
+machine.html,1440x900,helper,"An alphaStep motor runs open-loop until rotor position deviates by ±1.8° from command; at that point the driver switches to closed-loop correction. If correction cannot hold (an obstruction, a wrong feed, a damaged cable), the driver alarms, the control board stops everything, and the software says the location is no longer accurate.[1,22,23,30] Red LED blink codes on the AS driver: 1 overheat (~85 °C heatsink), 2 overload (>5 s above max torque), 3 overvoltage, 4 speed error, 5 overcurrent, 6 overspeed, 7 EEPROM, 8 sensor.[22] What the loop cannot see: a pinion slipping on its shaft, a bit creeping in the collet, or a sheet moving under the clamps."
+machine.html,1440x900,helper,"The VFD makes the spindle's three-phase supply; the control box only tells it on (output 1 through the key interlock and the pendant Start) and, on packages with the RPM controller, how fast (the TR window or TR,12000 in a file, SB3.5.5 or newer).[4,21,53] The lab's full sequence: the screen prompts “Press START on control before pressing OK” → pendant Start → check the spindle runs at the commanded speed → OK → cutting begins. There is no separate RUN step on the VFD.[4] Warm-up (C5, the lab's standard routine): 9000, 10 000 and 12 000 rpm for 3 min each at the start of the day or after more than 4 h idle.[4,13] Chipload = feed ÷ (rpm × flutes); the figure runs a 6 mm two-flute bit at 60 mm/s and 12 000 rpm, 0.15 mm per tooth.[11]"
+machine.html,1440x900,helper,"C3 drives to the X and Y proximity switches and backs off to the configured home. C2 touches the Z-zero plate twice; input 1 must light when plate meets bit and clear when they separate. Zero can be the material top or the table surface — it has to match what the CAM post expects. If CAM assumed the stock top and you zeroed on the bed, every rapid and retract runs inside the material and every cut goes a sheet thickness into the spoilboard: crashes and broken bits. The reverse mismatch cuts air. Check &PWZorigin in the file header against the surface you touched.[4,6] In this lab the ground clip stays clamped on the aluminium carriage plate; the circuit runs through plate → spindle → collet → bit, and C2 is the only way students zero Z. Z2 sets a temporary job origin where the tool stands; SA/SR switch absolute/relative, and units are set in Values → Display (VD), not by any of those.[10,47]"
+machine.html,1440x900,helper,"The brush skirt under the spindle is clamped to the spindle collar; a 4 in flex hose runs to the collector. The dust collector is switched manually at the collector itself and is on whenever the spindle runs.[13] Hold-down is a separate matter and, in this lab, mechanical only: screws into the spoilboard through the waste, clamps and shims for bowed stock, and tabs or an onion skin of 0.25–0.75 mm for every part that will be freed from the sheet.[12]"
+machine.html,1440x900,aria-label,Site (compact)
+machine.html,1440x900,aria-label,Site
+machine.html,1440x900,aria-label,Previous and next
+machine.html,1440x900,tooltip,"ShopBot PRSalpha 3D model: drag to orbit, wheel to zoom"
+run.html,1440x900,title,Your first job — ShopBot PRSalpha 144-60
+run.html,1440x900,summary,Power-up and leaving the machine
+run.html,1440x900,summary,Keypad and jogging
+run.html,1440x900,summary,Homing (C3)
+run.html,1440x900,summary,Material and hold-down
+run.html,1440x900,summary,Tool change
+run.html,1440x900,summary,Loading and running a file
+run.html,1440x900,summary,"Pausing, stopping, resuming"
+run.html,1440x900,summary,After the job
+run.html,1440x900,heading,Your first job
+run.html,1440x900,heading,The detail behind each step
+run.html,1440x900,heading,Power-up order
+run.html,1440x900,heading,When you are finished
+run.html,1440x900,heading,Opening and closing the keypad
+run.html,1440x900,heading,Moving the axes
+run.html,1440x900,heading,Speeds
+run.html,1440x900,heading,Continuous vs Fixed keypad modes
+run.html,1440x900,heading,Before a test move
+run.html,1440x900,heading,Spacebar vs the yellow/red STOP button
+run.html,1440x900,heading,Limits while jogging
+run.html,1440x900,heading,When to rehome (C3)
+run.html,1440x900,heading,General rules
+run.html,1440x900,heading,Screws
+run.html,1440x900,heading,Clamps
+run.html,1440x900,heading,Tabs and onion skin (holding parts inside the sheet)
+run.html,1440x900,heading,What this lab uses
+run.html,1440x900,heading,Collet facts
+run.html,1440x900,heading,Preview first (SP)
+run.html,1440x900,heading,Move/Cut mode (SM)
+run.html,1440x900,heading,What the FP fill-in sheet asks [CR 12; QS 16–17]
+run.html,1440x900,heading,Spindle warm-up (C5)
+run.html,1440x900,heading,Setting RPM (TR / Spindle RPM Control)
+run.html,1440x900,heading,Spindle-start order on a PRSalpha
+run.html,1440x900,heading,Air-cut practice
+run.html,1440x900,heading,Watch the first plunge
+run.html,1440x900,heading,Software (soft) stop
+run.html,1440x900,heading,Emergency stop (PRSalpha)
+run.html,1440x900,heading,Resuming a file
+run.html,1440x900,nav-link,ShopBot PRSalpha 144-60 PROTOTYPING LAB · UNIVERSITY OF ICELAND
+run.html,1440x900,nav-link,01 Rules
+run.html,1440x900,nav-link,02 The machine
+run.html,1440x900,nav-link,03 Run a job
+run.html,1440x900,nav-link,04 Zeroing
+run.html,1440x900,nav-link,05 Pre-flight
+run.html,1440x900,nav-link,06 Something’s wrong
+run.html,1440x900,nav-link,07 Feeds & CAM
+run.html,1440x900,nav-link,08 Maintenance
+run.html,1440x900,nav-link,09 Sign-off
+run.html,1440x900,nav-link,Light version
+run.html,1440x900,nav-link,Student handbook (PDF)
+run.html,1440x900,nav-link,Full wiki (PDF)
+run.html,1440x900,nav-link,PREVIOUS · 02 The machine
+run.html,1440x900,nav-link,NEXT · 04 Zeroing
+run.html,1440x900,link,Maintenance → Sources
+run.html,1440x900,label,03 RUN A JOB
+run.html,1440x900,label,AT THE COMPUTER
+run.html,1440x900,label,CAM
+run.html,1440x900,label,Read the .sbp
+run.html,1440x900,label,POWER AND HOME
+run.html,1440x900,label,Power
+run.html,1440x900,label,"Warm up, home"
+run.html,1440x900,label,SET UP
+run.html,1440x900,label,Stock on
+run.html,1440x900,label,Bit
+run.html,1440x900,label,XY zero
+run.html,1440x900,label,Z zero
+run.html,1440x900,label,CUT
+run.html,1440x900,label,Air cut
+run.html,1440x900,label,Cut
+run.html,1440x900,label,FINISH
+run.html,1440x900,label,Done
+run.html,1440x900,label,MANUAL
+run.html,1440x900,helper,01 Rules
+run.html,1440x900,helper,02 The machine
+run.html,1440x900,helper,03 Run a job
+run.html,1440x900,helper,04 Zeroing
+run.html,1440x900,helper,05 Pre-flight
+run.html,1440x900,helper,06 Something’s wrong
+run.html,1440x900,helper,07 Feeds & CAM
+run.html,1440x900,helper,08 Maintenance
+run.html,1440x900,helper,09 Sign-off
+run.html,1440x900,helper,"Eleven steps from CAM to a finished part, with the command at each step."
+run.html,1440x900,helper,"1 CAM Mostly Autodesk Fusion. Stock measured, origin corner, Z0 surface, screws and clamps clear of every toolpath, tabs. Post with the ShopBot OpenSBP post, mm. Fusion · OpenSBP · mm"
+run.html,1440x900,helper,"2 Read the .sbp &PWZorigin, units, MS, TR, first JZ/M3. &PWZorigin MS TR JZ M3"
+run.html,1440x900,helper,"3 Power Control box on → E-stop twisted to release, pendant Reset → PC on, open SB3 (the ShopBot program) in Move/Cut mode (SM); the correct settings are already loaded, do not reload them → Spindle RPM window → key ENGAGED → dust collector on, at the collector. Reset SM"
+run.html,1440x900,helper,"4 Warm up, home C5 at the start of the day or after more than 4 h idle. C3 homes on the prox switches. C5 C3"
+run.html,1440x900,helper,"5 Stock on Spindle stopped, key OFF and removed, keypad closed, no file loaded or paused. Sheet flat, screwed where CAM said. Key back in, ENGAGED. key OFF"
+run.html,1440x900,helper,"6 Bit Spindle stopped, key OFF and removed, keypad closed, no file loaded or paused. ER25 collet snapped into the nut, bit in (≥ 75 % of the shank inside), then thread the assembly onto the spindle; torque. Key back in, ENGAGED. key OFF"
+run.html,1440x900,helper,"7 XY zero Jog to the file’s XY origin (K): centre in the zeroing example, or corner if CAM uses a corner. Close keypad, Z2. Record the base coordinates. K Z2"
+run.html,1440x900,helper,"8 Z zero Clip stays on the carriage plate. Plate on the right surface, test input 1: it must light on contact and clear on separation. If it fails, do not run C2; call staff. Then C2 (always), plate back in its holder. C2"
+run.html,1440x900,helper,"9 Air cut FP with Offset = 3D, bit raised more than the deepest cut, spindle off. Then No Offset. FP Offset 3D"
+run.html,1440x900,helper,10 Cut RPM + Enter → FP → screen prompt → pendant START → spindle at commanded speed → OK → cut. Hand on the spacebar. Stay at the machine until it finishes. TR Enter FP START OK
+run.html,1440x900,helper,"11 Done Finish or stop the file and stop the spindle. With everyone clear, raise Z and jog clear. Close the keypad, end any loaded/paused file and remove the key before cleanup. Collector off; clear, vacuum, brush and stow the bit. Report faults. Leave the machine powered for lab staff; users never power down. E-stop is for emergencies. Stop file key out"
+run.html,1440x900,helper,"Check the area first. Inspect the wiring, the dust hoses and the table surface [MS 3]. Check the rails and racks. They must be clean, with no chips or scraps [QS 18]. Do not run the machine if a motor cable is damaged [QS 18]."
+run.html,1440x900,helper,"Do not push the gantry by hand. If it looks out of square against the end stops, tell staff; squaring and pinion alignment are a staff task [MS 3; TM 19]."
+run.html,1440x900,helper,"Turn on the control box. The box must be on before SB3 opens, or the software cannot connect [UG 10; QS 11]. A ""thunk"" when the motors power up and a hum at standstill are normal [UG 64]."
+run.html,1440x900,helper,"Release the E-stop by twisting it if it was latched, then press Reset on the wall-mounted pendant by the monitor (its three buttons are Reset, Start and E-stop). Input 4 on the screen must stop flashing before the machine will move [CR 39; UG 47]."
+run.html,1440x900,helper,"Start the PC and launch SB3 (version 3.8.70 on this machine). Double-click the ShopBot 3 icon [QS 10]. The correct machine settings are already loaded on the control PC; do not reload or change them. The ShopBot USB should use the same port every time [QS 9]. Sleep mode and screen savers must be off. If they are on, a long file can stop mid-cut [UG 10]. If SB3 starts in Preview mode, the tool is not connected. Check the box and the USB [UG 10; CR 27]."
+run.html,1440x900,helper,"Open Spindle RPM Control (Tools → Spindle RPM Control). Keep this window open the whole session: SB3 talks to the VFD — the spindle's speed controller, the box with the rpm display — only while it is open [QS 15]."
+run.html,1440x900,helper,"With everyone clear of the machine, insert the spindle interlock key into the safety lockout next to the power switch and turn it to ENGAGED [QS 12]. Before hands-on work, stop the spindle, turn the key OFF and remove it. Keep it in your pocket [UG 5]."
+run.html,1440x900,helper,"Switch the dust collector on at the collector itself; it is switched manually, not by SB3. It stays on for the whole job [MS 3]."
+run.html,1440x900,helper,"Warm up, home, then zero: C5 (the lab's standard warm-up), then C3, then C2 [MS 3]."
+run.html,1440x900,helper,"Users never power down the machine. Finish or stop the file and leave the machine powered for lab staff. Do not exit SB3, turn off the control cabinet or switch off the spindle controller. Use the E-stop in an emergency, not as an end-of-session switch. Follow “After the job” for spindle stopping, key removal and cleanup."
+run.html,1440x900,helper,Type K (shortcut for SK) or click the yellow keypad icon in the red Position window [QS 11; CR 26].
+run.html,1440x900,helper,"The keypad works only in Move/Cut mode and not in Preview [CR 26]. If the icon is missing, select Mode → move/cut [QS 11]."
+run.html,1440x900,helper,Opening the keypad lights output 4 in the Position window [QS 12].
+run.html,1440x900,helper,Close it with the X in the corner [QS 11].
+run.html,1440x900,helper,"If a part file called SK, the file continues when you press Esc [CR 27]."
+run.html,1440x900,helper,Esc generally steps you back one level in SB3 [UG 11].
+run.html,1440x900,helper,← → move X. ↑ ↓ move Y. Page Up / Page Down move Z [CR 26; QS 11].
+run.html,1440x900,helper,You can also click the blue arrows on screen [QS 11].
+run.html,1440x900,helper,/ moves on the +X+Y diagonal; \ moves on the +Y−X diagonal. Add Alt to reverse the diagonal [CR 26].
+run.html,1440x900,helper,Hold Ctrl with an arrow to move at Jog speed instead of Move speed [CR 26].
+run.html,1440x900,helper,Move (feed) and Jog (rapid) speeds appear on the left of the Control Console. You can type new values there [UG 10].
+run.html,1440x900,helper,"You can also set them with MS (move), JS (jog) or VS (all eight speeds) [CR 16; CR 20; CR 42]."
+run.html,1440x900,helper,"Units are in/s or mm/s, not per minute [CR 20]."
+run.html,1440x900,helper,Jog speed is normally faster than Move speed and is used for positioning [UG 39].
+run.html,1440x900,helper,Continuous (normal): the axis moves while you hold the key [XY 5].
+run.html,1440x900,helper,"Fixed: click Fixed or press D. Each tap then moves one set increment. Set the increment in the box that appears, or in VD under ""KeyPad Fixed Distance"" [CR 26; XY 5]. Click Fixed again or press Esc to return to continuous motion [XY 5]. Use Fixed for fine positioning near the stock."
+run.html,1440x900,helper,"Park Z at a safe height below the Z proximity switch, near the middle of the deck [QS 11]."
+run.html,1440x900,helper,"Spacebar (and Enter, or the on-screen Stop button): a ramped software stop. Z pulls out of the material and position is kept, so you can continue [CR 39]. Treat the spindle as live afterwards: it may keep turning, coast, or restart when you resume. A spacebar stop is not isolation. Before reaching near the bit, confirm that the spindle has stopped, the interlock key is OFF and removed, the keypad is closed and no file is loaded or paused. Keep clear before re-engaging the key or restarting [UG 5; QS 5; QS 17]."
+run.html,1440x900,helper,Yellow-and-red E-stop on the pendant: a true E-stop wired to ES1–ES4 on the control board. It cuts power to the motors and the spindle [UG 47]. On this machine it is the only E-stop; twist to release.
+run.html,1440x900,helper,"If a limit (input 2 or 3) stops the keypad, the next keypad move ignores limits so you can drive off the switch. A new limit will not stop that move [CR 38]."
+run.html,1440x900,helper,"C3 homes X and Y. The machine touches off each proximity switch, giving a repeatable start point [QS 15]. It also sets the table base coordinates correctly [UG 20]."
+run.html,1440x900,helper,"Input 2 is the X proximity switch and input 3 is the Y proximity switch. Both are configured as limit switches [CR 39; UG 46]. By default, when either one triggers, motion stops and a ""table limit"" message asks whether to continue [UG 46–47]. VN configures what these inputs do [UG 47; CR 38]."
+run.html,1440x900,helper,Students never change VN or disable limits; report a limit fault to staff [CR 39].
+run.html,1440x900,helper,"If the machine stops with a limit message and nothing is at the end of the table, tell staff."
+run.html,1440x900,helper,"""Move off prox"" prompt: C3 asks you to move the spindle carriage off a switch if it starts out sitting on one. Repeated prompts while the carriage is clear mean an input or target fault (polarity, target alignment, wiring). Report it rather than defeating the limits."
+run.html,1440x900,helper,A proximity target must be met before the hard stop.
+run.html,1440x900,helper,Where C3 lands (its offset from the switches) is set in TS (Tools → ShopBot Setup) [QS 15; XY 3–6; CR 30].
+run.html,1440x900,helper,At the start of every session [MS 3].
+run.html,1440x900,helper,Whenever the power has been off [UG 20].
+run.html,1440x900,helper,After the gantry was pushed by hand or moved with the motors unpowered [UG 20].
+run.html,1440x900,helper,After an E-stop on an alpha. Re-home XY and re-zero Z before cutting again [CR 39; QS 17].
+run.html,1440x900,helper,"After a driver fault or ""location no longer accurate""."
+run.html,1440x900,helper,After you have moved the zero point and want the standard one back [UG 20].
+run.html,1440x900,helper,Never cut material that is not firmly secured. This includes any cutouts or offcuts the file will free [UG 5].
+run.html,1440x900,helper,Never push material by hand into a moving bit [UG 5].
+run.html,1440x900,helper,Small cut-free parts can be caught by the bit and thrown. Choose the hold-down method as part of planning [HD 5; QS 16].
+run.html,1440x900,helper,"The worst hazard is the bit hitting a clamp or screw. Plan every path, including rapids, so clamps are clear [UG 44; HD 6]."
+run.html,1440x900,helper,Screw into the spoilboard. This is quick and suits most materials [HD 5].
+run.html,1440x900,helper,Keep every screw clear of the cut path [HD 5].
+run.html,1440x900,helper,"For larger jobs, run a separate drilling file first to make screw holes in safe places, then screw down and run the main cut [HD 5; UG 44]."
+run.html,1440x900,helper,"While that drilling file runs, one clamp at each end is enough. An end mill drilling puts little sideways force on the stock [HD 5]."
+run.html,1440x900,helper,Clamps hold strongly where there is no spare material for screws. Plan carefully so the bit avoids them [HD 6].
+run.html,1440x900,helper,Rapids need enough clearance height to pass over clamps [UG 44].
+run.html,1440x900,helper,"Scrap-wood clamps can work: a rabbeted block, with the rabbet slightly shallower than the stock [HD 6]; a flexible strip with a stop glued on [HD 6]."
+run.html,1440x900,helper,Spring clamps and pistol-grip clamps tend to move. Check that they actually hold rigidly [UG 44].
+run.html,1440x900,helper,"Tabs are bridges of material left between the part and the sheet. CAM programs add them automatically [HD 8]. SB3 can also add tabs when a file runs (FP Tab option, sized in VB) [CR 11–12; UG 45]."
+run.html,1440x900,helper,"Onion skin: set the final depth slightly short of the stock thickness, typically .010″–.030″ depending on material and part size [HD 8]. It holds better and is easier to sand off than thick tabs [HD 8]. It fails if stock thickness varies or the table is not flat [HD 8]."
+run.html,1440x900,helper,"Use screws through the waste into the spoilboard, clamps, and shims under bowed stock. Retain freed parts with tabs or an onion skin. Plan every screw and clamp position in CAM, clear of the full cutter envelope, and verify all paths."
+run.html,1440x900,helper,1 Screw in the waste.
+run.html,1440x900,helper,"2 Profile cut, 0.2 mm into the board."
+run.html,1440x900,helper,3 Tab or onion skin (0.25–0.75 mm) keeps the part from flying.
+run.html,1440x900,helper,4 Clearance height above every screw head and clamp.
+run.html,1440x900,helper,1 Spindle nose.
+run.html,1440x900,helper,"2 Matching nut for the ER25 collet. Snap the collet into the nut first, insert the bit, then thread the assembly onto the spindle. Use the tightening method demonstrated during induction; do not use a torque for a different nut."
+run.html,1440x900,helper,"3 Collet: clean, right size for the shank."
+run.html,1440x900,helper,4 Shank ≥ 75 % in the collet.
+run.html,1440x900,helper,5 Flutes never inside the nut.
+run.html,1440x900,helper,6 Stick-out as short as the job allows.
+run.html,1440x900,helper,Make the spindle safe. Turn the spindle off [UG 5]. Change bits only with the spindle stopped and the key OFF in your pocket [UG 5]. Disengage the interlock key during bit changes.
+run.html,1440x900,helper,"Clean everything. The collet, nut, spindle taper and shaft must be completely clean. Use a wire or brass brush, compressed air and/or mineral spirits to remove dust or excess grease [QS 15; QS 18]. Small contamination causes misalignment, imbalance and slippage [MS 3]."
+run.html,1440x900,helper,"Assemble the ER25 collet into the nut first. Press the collet into the nut until it clicks. If it will not seat, press it in at a slight angle [QS 15; TM 15]. Check it: hold the nut upside down. The collet should hang without falling out [QS 15]."
+run.html,1440x900,helper,Insert the bit into the collet [QS 15]. The collet must grip only the shank. No part of the flute may enter the collet. Ideally the shank fills at least 75 % of the collet length.
+run.html,1440x900,helper,"Thread the nut, collet and bit together onto the spindle without compressing the collet [QS 15]."
+run.html,1440x900,helper,"Hand-tighten the nut [QS 15; TM 15]. It must go on easily. If it resists, do not force it. Back it off and start again. Once it is finger-tight, check the bit has not slipped."
+run.html,1440x900,helper,Tighten the matching ER25 collet nut using the hook spanner on the nut and the 27 mm wrench on the shaft. Follow the tightening method demonstrated during induction; do not use a torque value for a different nut [QS 15; TM 15].
+run.html,1440x900,helper,Do not over-tighten to stop a slipping bit. That damages the threads. A slipping bit means a dirty or worn collet [MS 3].
+run.html,1440x900,helper,Re-zero Z after every bit change [QS 14].
+run.html,1440x900,helper,This spindle uses ER25 collets with the matching ER25 collet nut. Select a collet that matches the tool shank [TM 15].
+run.html,1440x900,helper,The collet size must match the bit shank. Metric and inch collets are not interchangeable [TM 15].
+run.html,1440x900,helper,Collet life: collets are consumables; staff replace them on schedule or after any crash [MS 3; TM 13].
+run.html,1440x900,helper,"Replace the collet immediately after any ""event"": it was dropped, a bit broke inside it, or a plunge bottomed out on it [MS 3; TM 13]."
+run.html,1440x900,helper,Signs of a worn collet [TM 14]: the bit creeps up into the collet and Z position is lost; bits break at sane feeds; a bit falls out; a bit is hard to pull out.
+run.html,1440x900,helper,SP switches to Preview mode. Running SP again clears the preview [CR 28; UG 11].
+run.html,1440x900,helper,"FP opens the Part File dialog. Pick the .sbp file, then press Enter to accept the fill-in sheet and Enter again to run it in preview [UG 13]."
+run.html,1440x900,helper,"FP also runs most G-code files (.tap, .nc). Select ""ALL"" file types to see them [CR 12]."
+run.html,1440x900,helper,In preview the tool does not move. The position readouts reset when you leave Preview [CR 28].
+run.html,1440x900,helper,Use preview with software limit checking (SF/VL) to confirm every move stays inside the table [UG 20; CR 38].
+run.html,1440x900,helper,SM makes all commands drive the real machine [CR 27].
+run.html,1440x900,helper,"Click ""Cut Part"" or use File → Part File Load (FP) [QS 16–17]."
+run.html,1440x900,helper,"Proportion X, Y, Z (default 1,1,1)."
+run.html,1440x900,helper,Repetitions (default 1).
+run.html,1440x900,helper,Offset: none / 1 = 3D / 2 = 2D. None is the default.
+run.html,1440x900,helper,"Plunge, used for template files."
+run.html,1440x900,helper,Tab feature on/off.
+run.html,1440x900,helper,Plunge from Z 0.
+run.html,1440x900,helper,Then click START or press Enter.
+run.html,1440x900,helper,"Before cutting at the start of the day or after more than 4 h idle, open Spindle RPM Control and run C5. It runs 9000, 10 000 and 12 000 rpm for 3 min each, then stops the spindle [QS 16]. Check that the cooling fan runs [MS 3]."
+run.html,1440x900,helper,"TR opens the Spindle RPM Control window. In a part file, TR,12000 requests 12000 RPM. This is a request, not a measured speed."
+run.html,1440x900,helper,"To change speed by hand: with the spindle running, click the RPM value, type the new value, press Enter. The VFD display must match [QS 16]."
+run.html,1440x900,helper,"Keypad test: turn output 1 on in the keypad, then press the green START on the three-button pendant [QS 12–13]."
+run.html,1440x900,helper,"Running a file: after Start/Enter in FP, SB3 shows the prompt “Press START on control before pressing OK”. PRSalpha: press the pendant Start BEFORE clicking OK [QS 17]."
+run.html,1440x900,helper,"Start a job in this order: 1. Spindle RPM Control window open, RPM typed, Enter [QS 15]. 2. FP → Start. 3. Screen prompt “Press START on control before pressing OK” → pendant green START [QS 17]. 4. Verify the spindle is running at the commanded speed; the VFD (Yaskawa V1000) display should show the RPM you typed [QS 16]. 5. OK on screen → cutting begins. There is no separate RUN step on the VFD."
+run.html,1440x900,helper,Never assume the spindle is turning because the axes move; a stationary cutter can break when driven into stock.
+run.html,1440x900,helper,"Method 1, 3D offset [QS 16]:"
+run.html,1440x900,helper,"Raise the bit above the material and run FP with 3D offset. The current XYZ becomes 0,0,0 and the file runs in the air."
+run.html,1440x900,helper,The gap between the bit and the stock must be larger than the file's maximum cut depth.
+run.html,1440x900,helper,"Method 2, spindle off [UG 13]: run the file in Move/Cut with the spindle off, above the material, to check the motion. Before the real cut, set Offset back to ""No Offset"" [QS 17]."
+run.html,1440x900,helper,"Stay at the keyboard with your hand near the spacebar, and know where the E-stop is [UG 6; QS 5]."
+run.html,1440x900,helper,Be ready to pause if anything looks wrong [QS 5].
+run.html,1440x900,helper,"Burning, smoke or excessive tool heat means something is wrong. Stop and report it; do not touch the cutter to test its temperature."
+run.html,1440x900,helper,"Press the spacebar (or Enter, or the on-screen Stop). Motion ramps down and Z lifts out of the material [CR 39; QS 17]."
+run.html,1440x900,helper,"Position and zero are kept, so you can resume with no loss of location [CR 39; QS 17]."
+run.html,1440x900,helper,SB3 then prompts you for what to do next [UG 14].
+run.html,1440x900,helper,At very slow speeds the stop is immediate [UG 14].
+run.html,1440x900,helper,"After a spacebar stop you can resume without resetting the drivers [UG 47]. This is not isolation: before reaching in, stop the spindle, remove the interlock key, close the keypad and end the loaded/paused file. Keep clear before restarting."
+run.html,1440x900,helper,"The E-stop immediately stops the tool and removes spindle power. After about 5 s, motor power is removed too [CR 39]."
+run.html,1440x900,helper,Position is lost: rehome XY with C3 and re-zero Z with C2 before cutting again [CR 39; QS 17].
+run.html,1440x900,helper,Use the E-stop for emergencies. Use the spacebar for routine stops [CR 39].
+run.html,1440x900,helper,FG loads a file in Goto/Single-Step mode. You can single-step or start from a chosen line [CR 11].
+run.html,1440x900,helper,"FG can jump automatically to the last line executed, for example after a broken bit [CR 11]."
+run.html,1440x900,helper,"After an E-stop or driver fault: have staff clear the cause, rehome and re-zero first, then use FG [CR 39; CR 11]."
+run.html,1440x900,helper,"Before resuming, enter the required RPM and press Enter. Confirm the actual speed on the VFD display before allowing cutting to continue; do not assume the previous RPM was retained."
+run.html,1440x900,helper,"3D offset (Offset = 1) treats the current X, Y and Z as 0,0,0 for that run [CR 11–12]. Do not use it to resume a real cut unless you have deliberately set the start position. It shifts Z [QS 16]."
+run.html,1440x900,helper,"A file can contain PAUSE, which waits for a key, or PAUSE n, which waits n seconds. A comment line just before it is displayed as the message, for example ""Change bits"" [UG 27]."
+run.html,1440x900,helper,Finish or stop the file. Stop the spindle (output 1 off) and wait until the bit has stopped [QS 13].
+run.html,1440x900,helper,"With everyone clear, raise Z to a safe height and jog the gantry clear of the work. JH raises Z to Safe-Z, then jogs to the current working XY 0,0, not the proximity-switch home; use it only if that route is clear [CR 17]."
+run.html,1440x900,helper,Close the keypad and end any loaded or paused file. Turn the interlock key OFF and remove it before reaching in. Keep it in your pocket during cleanup [UG 5; QS 5]. Switch the dust collector off at the collector.
+run.html,1440x900,helper,"Remove parts, hold-downs and loose offcuts. Vacuum the deck and brush chips from the rails and racks. Remove, clean and stow the bit; inspect the collet and nut [QS 18]."
+run.html,1440x900,helper,"Record the material, cutter, feed, rpm and any fault in your job notes. Report faults or damage to staff."
+run.html,1440x900,helper,"Leave the machine powered for lab staff. Users never power down the machine. Do not exit SB3 or switch off the control cabinet or spindle controller. In an emergency, press the E-stop."
+run.html,1440x900,aria-label,Site (compact)
+run.html,1440x900,aria-label,Site
+run.html,1440x900,aria-label,"Hold-down in section: screws, profile cut, tabs, clearance"
+run.html,1440x900,aria-label,"Collet, nut and bit in section"
+run.html,1440x900,aria-label,Previous and next
+run.html,1440x900,alt,"Hold-down in section: screws, profile cut, tabs, clearance"
+run.html,1440x900,alt,"Collet, nut and bit in section"
+run.html,1440x900,figure-label,spoilboard
+run.html,1440x900,figure-label,the part
+run.html,1440x900,figure-label,1
+run.html,1440x900,figure-label,2
+run.html,1440x900,figure-label,3
+run.html,1440x900,figure-label,4
+run.html,1440x900,figure-label,5
+run.html,1440x900,figure-label,6
+zero.html,1440x900,title,"Home, job zero and Z zero — ShopBot PRSalpha 144-60"
+zero.html,1440x900,summary,Homing (C3) in detail
+zero.html,1440x900,summary,"Z zero in detail (C2, plate thickness)"
+zero.html,1440x900,summary,"XY zero in detail (Z2, ZX/ZY, fixed offsets)"
+zero.html,1440x900,heading,"Home, job zero and Z zero"
+zero.html,1440x900,heading,"Home and job zero, from above"
+zero.html,1440x900,heading,Z zero with the plate
+zero.html,1440x900,heading,"Same file, wrong surface"
+zero.html,1440x900,heading,When to rehome (C3)
+zero.html,1440x900,heading,Choose the reference to match your CAM file
+zero.html,1440x900,heading,C2 with the Z-zero plate
+zero.html,1440x900,heading,Manual Z zero (ZZ): not taught
+zero.html,1440x900,heading,Home vs job zero
+zero.html,1440x900,heading,Fixed C3 offsets
+zero.html,1440x900,nav-link,ShopBot PRSalpha 144-60 PROTOTYPING LAB · UNIVERSITY OF ICELAND
+zero.html,1440x900,nav-link,01 Rules
+zero.html,1440x900,nav-link,02 The machine
+zero.html,1440x900,nav-link,03 Run a job
+zero.html,1440x900,nav-link,04 Zeroing
+zero.html,1440x900,nav-link,05 Pre-flight
+zero.html,1440x900,nav-link,06 Something’s wrong
+zero.html,1440x900,nav-link,07 Feeds & CAM
+zero.html,1440x900,nav-link,08 Maintenance
+zero.html,1440x900,nav-link,09 Sign-off
+zero.html,1440x900,nav-link,Light version
+zero.html,1440x900,nav-link,Student handbook (PDF)
+zero.html,1440x900,nav-link,Full wiki (PDF)
+zero.html,1440x900,nav-link,PREVIOUS · 03 Run a job
+zero.html,1440x900,nav-link,NEXT · 05 Pre-flight
+zero.html,1440x900,link,"C3 Machine home Where the prox switches say 0,0. Fixed. Everything else is measured from here."
+zero.html,1440x900,link,"Z2 Job zero (X, Y) The point your CAM file calls X0 Y0. This example uses the centre of the material. Z2 zeros X and Y, not Z."
+zero.html,1440x900,link,C2 Z zero Material top or table surface — whichever &PWZorigin in the file says. Found with the plate.
+zero.html,1440x900,link,Maintenance → Sources
+zero.html,1440x900,label,04 ZEROING
+zero.html,1440x900,label,FIGURE 1 · PLAN
+zero.html,1440x900,label,FIGURE 2 · SIDE
+zero.html,1440x900,label,FIGURE 3 · THE CLASSIC CRASH
+zero.html,1440x900,helper,01 Rules
+zero.html,1440x900,helper,02 The machine
+zero.html,1440x900,helper,03 Run a job
+zero.html,1440x900,helper,04 Zeroing
+zero.html,1440x900,helper,05 Pre-flight
+zero.html,1440x900,helper,06 Something’s wrong
+zero.html,1440x900,helper,07 Feeds & CAM
+zero.html,1440x900,helper,08 Maintenance
+zero.html,1440x900,helper,09 Sign-off
+zero.html,1440x900,helper,Three different zeros. Mixing them up is the most common first-week crash.
+zero.html,1440x900,helper,1 Gantry (X bridge): runs along the table on two X motors.
+zero.html,1440x900,helper,2 Spindle on the Y car: runs across the gantry.
+zero.html,1440x900,helper,3 X proximity switch · input 2.
+zero.html,1440x900,helper,4 Y proximity switch · input 3.
+zero.html,1440x900,helper,"5 Machine home 0,0. C3 finds it on the prox switches. Fixed."
+zero.html,1440x900,helper,"6 XY job zero — Z2 at the material centre. Match the centre origin in CAM. A corner origin is also possible, but only when the file uses it. Z2 does not set Z height; use C2 for Z."
+zero.html,1440x900,helper,1 Spindle and collet nut on the aluminium carriage plate.
+zero.html,1440x900,helper,"2 Bit: C2 lowers it until it touches the plate, twice, then lifts."
+zero.html,1440x900,helper,"3 Ground clip: it stays clamped on the aluminium carriage plate, on the edge. Leave it there; never on the bit or nut."
+zero.html,1440x900,helper,4 Z-zero plate on the surface the file expects (stock top here).
+zero.html,1440x900,helper,"5 Input 1 on the SB3 screen lights on contact, goes out when lifted. The green dashes are the circuit: plate → bit → spindle → carriage plate → clip → lead → plate."
+zero.html,1440x900,helper,"6 One coiled lead, plate to clip. Nothing else to connect."
+zero.html,1440x900,helper,"CAM assumed the stock top; you touched the plate on the bed. Every rapid and retract now runs inside the material and every cut goes a sheet thickness into the spoilboard: clamps hit, bit snaps. The reverse mismatch cuts air. Read &PWZorigin in the file header before C2, every time.[4,54]"
+zero.html,1440x900,helper,"C3 homes X and Y. The machine touches off each proximity switch, giving a repeatable start point [QS 15]. It also sets the table base coordinates correctly [UG 20]."
+zero.html,1440x900,helper,"Input 2 is the X proximity switch and input 3 is the Y proximity switch. Both are configured as limit switches [CR 39; UG 46]. By default, when either one triggers, motion stops and a ""table limit"" message asks whether to continue [UG 46–47]. VN configures what these inputs do [UG 47; CR 38]."
+zero.html,1440x900,helper,Students never change VN or disable limits; report a limit fault to staff [CR 39].
+zero.html,1440x900,helper,"If the machine stops with a limit message and nothing is at the end of the table, tell staff."
+zero.html,1440x900,helper,"""Move off prox"" prompt: C3 asks you to move the spindle carriage off a switch if it starts out sitting on one. Repeated prompts while the carriage is clear mean an input or target fault (polarity, target alignment, wiring). Report it rather than defeating the limits."
+zero.html,1440x900,helper,A proximity target must be met before the hard stop.
+zero.html,1440x900,helper,Where C3 lands (its offset from the switches) is set in TS (Tools → ShopBot Setup) [QS 15; XY 3–6; CR 30].
+zero.html,1440x900,helper,At the start of every session [MS 3].
+zero.html,1440x900,helper,Whenever the power has been off [UG 20].
+zero.html,1440x900,helper,After the gantry was pushed by hand or moved with the motors unpowered [UG 20].
+zero.html,1440x900,helper,After an E-stop on an alpha. Re-home XY and re-zero Z before cutting again [CR 39; QS 17].
+zero.html,1440x900,helper,"After a driver fault or ""location no longer accurate""."
+zero.html,1440x900,helper,After you have moved the zero point and want the standard one back [UG 20].
+zero.html,1440x900,helper,"Material top: best when depth must be precise, for example an inlay pocket [QS 14]."
+zero.html,1440x900,helper,"Table (spoilboard) surface: best for through-cutting wood, because sheet thickness varies [QS 14]."
+zero.html,1440x900,helper,The CAM setting and what you do at the table must match. A mismatch ruins material and breaks bits [QS 14].
+zero.html,1440x900,helper,Z must be zeroed every time the machine is turned on and every time the bit is changed [QS 14].
+zero.html,1440x900,helper,Work in Move/Cut mode [QS 14].
+zero.html,1440x900,helper,Check that the ground clip remains clamped to bare aluminium on the carriage-plate edge. The circuit runs through plate → spindle → collet → bit. Never clip onto the bit or nut.
+zero.html,1440x900,helper,"Place the plate directly under the bit, on the surface you chose [QS 14]."
+zero.html,1440x900,helper,"Test the circuit. Touch the plate to the stationary bit. Input 1 must light on screen and go out as soon as contact breaks [QS 14]. If input 1 does not light and clear, do not run C2; call staff. ShopBot’s FAQ warns that a failed contact circuit lets the bit keep descending [FAQ]. If the bit reaches the plate during C2 and does not reverse, press the spacebar; if Z still moves, use the E-stop. Do not rely on C2 to detect a failed contact circuit."
+zero.html,1440x900,helper,"Run C2 or click the Z-zero button. Z touches the plate twice, then pulls up to a safe height [QS 14]."
+zero.html,1440x900,helper,"Leave the clip on the carriage plate, coil the lead, and put the plate back in its holder on the YZ car — the carriage that carries the spindle across the gantry [QS 14]."
+zero.html,1440x900,helper,"If the zero looks wrong, stop and call staff. Staff can check MZ,0 over an open area and verify the plate thickness in TS (default 3.073 mm) [TM 11–12; MS 3]. Keep hands clear during every commanded move. Before a hands-on check: spindle off and stopped, key OFF and removed, keypad closed, no file loaded or paused [UG 5; QS 5]."
+zero.html,1440x900,helper,Use C2 for Z zero. Manual ZZ with a paper feeler is not part of the student procedure; ZZ is listed in the glossary for reference only [CR 45].
+zero.html,1440x900,helper,"Machine home (C3): a repeatable XY origin taken from the proximity switches [QS 15]. C2 and C3 also set the table base coordinates, which software limit checking (SF/VL) uses [UG 20; CR 26]."
+zero.html,1440x900,helper,"Job (working) zero: wherever you zero X and Y for this job. Z2 zeros X and Y [CR 43]. ZX zeros X only and ZY zeros Y only [CR 44–45]. On the keypad, the blue ""Zero Axes"" button does the same [XY 5]. VA sets the axes to any chosen value. VA 0,0 is equivalent to Z2 [UG 18]."
+zero.html,1440x900,helper,Re-zeroing the working coordinates does not lose the base coordinates. ZT sets the base zero [CR 44]. ST restores the working display to base coordinates [CR 28; UG 19].
+zero.html,1440x900,helper,"After setting a temporary 0,0, write down the coordinates so you can find it again [QS 15]."
+zero.html,1440x900,helper,"2D offset in FP: the current XY becomes the file's 0,0 for that run only, and Z is not shifted. Use it to place or nest parts [UG 18–19; CR 12]."
+zero.html,1440x900,helper,Where C3 lands relative to the switches is a staff setting (TS). Students never change it.
+zero.html,1440x900,aria-label,Site (compact)
+zero.html,1440x900,aria-label,Site
+zero.html,1440x900,aria-label,"Plan view: machine home at the table reference, XY job zero at the centre of the material"
+zero.html,1440x900,aria-label,"Side view: spindle on its carriage plate, ground clip clamped on the plate edge, one coiled lead to the Z-zero plate on the stock, the sensing circuit, and input 1 on the SB3 screen"
+zero.html,1440x900,aria-label,Z zero on the stock top: cuts as planned
+zero.html,1440x900,aria-label,Z zero on the bed: every move a sheet too deep
+zero.html,1440x900,aria-label,Previous and next
+zero.html,1440x900,alt,"Plan view: machine home at the table reference, XY job zero at the centre of the material"
+zero.html,1440x900,alt,"Side view: spindle on its carriage plate, ground clip clamped on the plate edge, one coiled lead to the Z-zero plate on the stock, the sensing circuit, and input 1 on the SB3 screen"
+zero.html,1440x900,alt,Z zero on the stock top: cuts as planned
+zero.html,1440x900,alt,Z zero on the bed: every move a sheet too deep
+zero.html,1440x900,figure-label,stock
+zero.html,1440x900,figure-label,+X
+zero.html,1440x900,figure-label,+Y
+zero.html,1440x900,figure-label,1
+zero.html,1440x900,figure-label,2
+zero.html,1440x900,figure-label,3
+zero.html,1440x900,figure-label,4
+zero.html,1440x900,figure-label,5
+zero.html,1440x900,figure-label,6
+zero.html,1440x900,figure-label,spoilboard
+zero.html,1440x900,figure-label,carriage plate
+zero.html,1440x900,figure-label,inputs
+zero.html,1440x900,figure-label,SB3 screen
+zero.html,1440x900,figure-label,Z0
+zero.html,1440x900,figure-label,you touched the stock top
+zero.html,1440x900,figure-label,cuts as planned
+zero.html,1440x900,figure-label,you touched the bed
+zero.html,1440x900,figure-label,every move a sheet too deep
+preflight.html,1440x900,title,Pre-flight checklist — ShopBot PRSalpha 144-60
+preflight.html,1440x900,button,Print this page
+preflight.html,1440x900,heading,Pre-flight checklist
+preflight.html,1440x900,heading,Before power
+preflight.html,1440x900,heading,Power and zeroing
+preflight.html,1440x900,heading,Running
+preflight.html,1440x900,heading,After
+preflight.html,1440x900,nav-link,ShopBot PRSalpha 144-60 PROTOTYPING LAB · UNIVERSITY OF ICELAND
+preflight.html,1440x900,nav-link,01 Rules
+preflight.html,1440x900,nav-link,02 The machine
+preflight.html,1440x900,nav-link,03 Run a job
+preflight.html,1440x900,nav-link,04 Zeroing
+preflight.html,1440x900,nav-link,05 Pre-flight
+preflight.html,1440x900,nav-link,06 Something’s wrong
+preflight.html,1440x900,nav-link,07 Feeds & CAM
+preflight.html,1440x900,nav-link,08 Maintenance
+preflight.html,1440x900,nav-link,09 Sign-off
+preflight.html,1440x900,nav-link,Light version
+preflight.html,1440x900,nav-link,Student handbook (PDF)
+preflight.html,1440x900,nav-link,Full wiki (PDF)
+preflight.html,1440x900,nav-link,PREVIOUS · 04 Zeroing
+preflight.html,1440x900,nav-link,NEXT · 06 Something’s wrong
+preflight.html,1440x900,link,Maintenance → Sources
+preflight.html,1440x900,label,05 PRE-FLIGHT
+preflight.html,1440x900,helper,01 Rules
+preflight.html,1440x900,helper,02 The machine
+preflight.html,1440x900,helper,03 Run a job
+preflight.html,1440x900,helper,04 Zeroing
+preflight.html,1440x900,helper,05 Pre-flight
+preflight.html,1440x900,helper,06 Something’s wrong
+preflight.html,1440x900,helper,07 Feeds & CAM
+preflight.html,1440x900,helper,08 Maintenance
+preflight.html,1440x900,helper,09 Sign-off
+preflight.html,1440x900,helper,"Print it. Tick it, in order, every time."
+preflight.html,1440x900,helper,"Print this section on its own and keep it at the machine. Tick every line, in order, every time. If a line cannot be ticked, stop and ask."
+preflight.html,1440x900,helper,Signed-off operator present; second person knows the E-stop (wall pendant by the monitor)
+preflight.html,1440x900,helper,"Glasses, ear protection; no gloves, loose sleeves, hair, lanyards"
+preflight.html,1440x900,helper,"Table and rails clear of tools, offcuts, clamps from the last job"
+preflight.html,1440x900,helper,"Dust hose on the foot, brush skirt intact"
+preflight.html,1440x900,helper,"Key OFF and in your pocket for the bit change; bit correct and sharp, collet clean, nut torqued, stick-out minimal"
+preflight.html,1440x900,helper,"Stock: thickness measured and written down, flat on the deck"
+preflight.html,1440x900,helper,"Hold-down planned: screws/clamps outside every toolpath, tabs or onion skin for freed parts"
+preflight.html,1440x900,helper,"Control box on → E-stop twisted to release, pendant Reset pressed (input 4 not flashing) → PC on, SB3 open in Move/Cut mode (SM)"
+preflight.html,1440x900,helper,Spindle RPM Control window open; interlock key in and ENGAGED; dust collector switched on at the collector
+preflight.html,1440x900,helper,C5 warm-up at the start of the day or after 4 h idle
+preflight.html,1440x900,helper,C3: machine homes on both proximity switches without complaint
+preflight.html,1440x900,helper,"Read the .sbp header: mm, and which surface is Z0 (&PWZorigin: material top or table), feed, rpm, first Z move sane"
+preflight.html,1440x900,helper,Jog to the CAM file’s XY origin (centre or corner); Z2 (or ZX/ZY). The drawing uses the material centre
+preflight.html,1440x900,helper,"C2: clip in place on the carriage plate, plate under the bit on the surface the file expects; touch plate to bit — input 1 lights and goes out; run C2 (two touches, lift); clip stays on the plate, Z-zero plate back in its holder on the car"
+preflight.html,1440x900,helper,Keypad closed before FP
+preflight.html,1440x900,helper,"Air cut a new file: FP with Offset = 3D, bit raised above the stock by more than the file's deepest cut, spindle may stay off; then Offset = No Offset and C2 again if you moved Z"
+preflight.html,1440x900,helper,RPM typed in the Spindle RPM Control window and Enter
+preflight.html,1440x900,helper,"FP → prompt “Press START on control before pressing OK”: pendant START, spindle at commanded speed, VFD shows the rpm, then OK (no separate VFD RUN)"
+preflight.html,1440x900,helper,"Hand near the spacebar, E-stop in reach, for the first plunge and the first pass"
+preflight.html,1440x900,helper,"Watch the chips: ribbons/curls good, dust and smoke bad"
+preflight.html,1440x900,helper,Never leave the room while it runs
+preflight.html,1440x900,helper,"File finished/stopped, spindle stopped; raise Z and jog clear with everyone outside the cutting area; collector off"
+preflight.html,1440x900,helper,"Key OFF and removed, keypad closed, no loaded/paused file before clearing parts, screws and offcuts; deck vacuumed, racks and rails brushed"
+preflight.html,1440x900,helper,"Bit removed, cleaned, back in its place; collet checked"
+preflight.html,1440x900,helper,"Material, cutter, feed, rpm and any fault recorded in your job notes; problems told to staff"
+preflight.html,1440x900,helper,Machine left powered for staff. Users never power down; E-stop is for emergencies
+preflight.html,1440x900,aria-label,Site (compact)
+preflight.html,1440x900,aria-label,Site
+preflight.html,1440x900,aria-label,Previous and next
+trouble.html,1440x900,title,Something went wrong — ShopBot PRSalpha 144-60
+trouble.html,1440x900,summary,"E01 Alpha driver fault — “location no longer ACCURATE”[1,22,30] key 1"
+trouble.html,1440x900,summary,"E02 USB disconnect / communications failure[7,55] key 8"
+trouble.html,1440x900,summary,E03 Dust hose off the foot / skirt torn[13]
+trouble.html,1440x900,summary,"E04 C3 homes early, fails, or asks to “move off prox”[2,6,49] key 3"
+trouble.html,1440x900,summary,"E05 Z plate not detected[4,6] key 2"
+trouble.html,1440x900,summary,"E06 C2 touches but stops[4,6] key 2"
+trouble.html,1440x900,summary,"E07 Spindle will not start[4,21,24,25] key 4"
+trouble.html,1440x900,summary,"E08 RPM will not change[4,6,52] key 4"
+trouble.html,1440x900,summary,E09 Wrong spindle-start order[4] key 4
+trouble.html,1440x900,summary,"E10 Bit slips in the collet[4,13,16,31] key 5"
+trouble.html,1440x900,summary,"E11 Tool pull-out read as axis drift[1,13,16] key 5"
+trouble.html,1440x900,summary,"E12 Broken bits — chipload, plunge, ramping[10,11,25,26]"
+trouble.html,1440x900,summary,"E13 Plastic melts / aluminium welds to the cutter[11,35]"
+trouble.html,1440x900,summary,E14 Plywood tear-out[11]
+trouble.html,1440x900,summary,"E15 Burning in hardwood[4,11]"
+trouble.html,1440x900,summary,"E16 Dust packed in rack teeth[13,32] key 7"
+trouble.html,1440x900,summary,"E17 Worn rack or pinion[13,15,16,33] key 7"
+trouble.html,1440x900,summary,"E18 Loose pinion set screw / tired motor spring[2,13,15] key 7"
+trouble.html,1440x900,summary,"E19 Roller bearings loose or over-tight[13,16,18,19]"
+trouble.html,1440x900,summary,"E20 Debris on the V-rails[13,16]"
+trouble.html,1440x900,summary,"E21 Crash into a clamp or screw[1,4,12] key 9"
+trouble.html,1440x900,summary,"E22 Part lifts or flies[4,12,29] key 6"
+trouble.html,1440x900,summary,"E23 Clamps or shims let go[12,11] key 6"
+trouble.html,1440x900,summary,"E24 Climb vs conventional[11,12,16]"
+trouble.html,1440x900,summary,"E25 Fire in the dust path[4,36,43]"
+trouble.html,1440x900,summary,"E26 Wrong XY zero / origin corner[4,26,42,47]"
+trouble.html,1440x900,summary,"E27 Inch/mm or SA/SR mismatch[10,11,27,54]"
+trouble.html,1440x900,summary,"E28 Retract height too low for clamps[10,12] key 9"
+trouble.html,1440x900,summary,"E29 Retract beyond Z stroke[1,2,10]"
+trouble.html,1440x900,summary,"E30 “Stop button pressed” / won't resume[4,11]"
+trouble.html,1440x900,summary,E31 Restarting a broken job by line[10]
+trouble.html,1440x900,summary,"E32 Table-surface vs part-surface zero[4,13]"
+trouble.html,1440x900,summary,"E33 Stuck in Preview[10,34]"
+trouble.html,1440x900,summary,"E34 Accidental keyboard jog[4,47]"
+trouble.html,1440x900,summary,"E35 Table limit trips mid-cut[2,10,11]"
+trouble.html,1440x900,summary,"E36 VFD overcurrent / overload[24,30,39]"
+trouble.html,1440x900,summary,"E37 Motor/driver overheating, spindle fan dead[2,13,22,41]"
+trouble.html,1440x900,summary,"E38 Gantry out of square[2,13,16] key 1"
+trouble.html,1440x900,summary,"E39 Bit hits a hold-down screw[1,4,12] key S"
+trouble.html,1440x900,summary,"Driver and controller alarms, in detail"
+trouble.html,1440x900,heading,Something went wrong
+trouble.html,1440x900,heading,Start from what you see
+trouble.html,1440x900,heading,Stop and call staff when
+trouble.html,1440x900,heading,All 39 failure modes
+trouble.html,1440x900,nav-link,ShopBot PRSalpha 144-60 PROTOTYPING LAB · UNIVERSITY OF ICELAND
+trouble.html,1440x900,nav-link,01 Rules
+trouble.html,1440x900,nav-link,02 The machine
+trouble.html,1440x900,nav-link,03 Run a job
+trouble.html,1440x900,nav-link,04 Zeroing
+trouble.html,1440x900,nav-link,05 Pre-flight
+trouble.html,1440x900,nav-link,06 Something’s wrong
+trouble.html,1440x900,nav-link,07 Feeds & CAM
+trouble.html,1440x900,nav-link,08 Maintenance
+trouble.html,1440x900,nav-link,09 Sign-off
+trouble.html,1440x900,nav-link,Light version
+trouble.html,1440x900,nav-link,Student handbook (PDF)
+trouble.html,1440x900,nav-link,Full wiki (PDF)
+trouble.html,1440x900,nav-link,E01
+trouble.html,1440x900,nav-link,E02
+trouble.html,1440x900,nav-link,E03
+trouble.html,1440x900,nav-link,E04
+trouble.html,1440x900,nav-link,E05
+trouble.html,1440x900,nav-link,E06
+trouble.html,1440x900,nav-link,E07
+trouble.html,1440x900,nav-link,E08
+trouble.html,1440x900,nav-link,E09
+trouble.html,1440x900,nav-link,E10
+trouble.html,1440x900,nav-link,E11
+trouble.html,1440x900,nav-link,E12
+trouble.html,1440x900,nav-link,E13
+trouble.html,1440x900,nav-link,E14
+trouble.html,1440x900,nav-link,E15
+trouble.html,1440x900,nav-link,E16
+trouble.html,1440x900,nav-link,E17
+trouble.html,1440x900,nav-link,E18
+trouble.html,1440x900,nav-link,E19
+trouble.html,1440x900,nav-link,E20
+trouble.html,1440x900,nav-link,E21
+trouble.html,1440x900,nav-link,E22
+trouble.html,1440x900,nav-link,E23
+trouble.html,1440x900,nav-link,E24
+trouble.html,1440x900,nav-link,E25
+trouble.html,1440x900,nav-link,E26
+trouble.html,1440x900,nav-link,E27
+trouble.html,1440x900,nav-link,E28
+trouble.html,1440x900,nav-link,E29
+trouble.html,1440x900,nav-link,E30
+trouble.html,1440x900,nav-link,E31
+trouble.html,1440x900,nav-link,E32
+trouble.html,1440x900,nav-link,E33
+trouble.html,1440x900,nav-link,E34
+trouble.html,1440x900,nav-link,E35
+trouble.html,1440x900,nav-link,E36
+trouble.html,1440x900,nav-link,E37
+trouble.html,1440x900,nav-link,E38
+trouble.html,1440x900,nav-link,E39
+trouble.html,1440x900,nav-link,PREVIOUS · 05 Pre-flight
+trouble.html,1440x900,nav-link,NEXT · 07 Feeds & CAM
+trouble.html,1440x900,link,E01
+trouble.html,1440x900,link,E02
+trouble.html,1440x900,link,E36
+trouble.html,1440x900,link,figure key 1
+trouble.html,1440x900,link,figure key 8
+trouble.html,1440x900,link,E05
+trouble.html,1440x900,link,figure key 2
+trouble.html,1440x900,link,E06
+trouble.html,1440x900,link,E04
+trouble.html,1440x900,link,figure key 3
+trouble.html,1440x900,link,E07
+trouble.html,1440x900,link,E09
+trouble.html,1440x900,link,figure key 4
+trouble.html,1440x900,link,E08
+trouble.html,1440x900,link,E10
+trouble.html,1440x900,link,E11
+trouble.html,1440x900,link,figure key 5
+trouble.html,1440x900,link,E12
+trouble.html,1440x900,link,E21
+trouble.html,1440x900,link,E39
+trouble.html,1440x900,link,E28
+trouble.html,1440x900,link,figure key S
+trouble.html,1440x900,link,E13
+trouble.html,1440x900,link,E14
+trouble.html,1440x900,link,E24
+trouble.html,1440x900,link,E15
+trouble.html,1440x900,link,E25
+trouble.html,1440x900,link,E16
+trouble.html,1440x900,link,E17
+trouble.html,1440x900,link,E18
+trouble.html,1440x900,link,E19
+trouble.html,1440x900,link,E38
+trouble.html,1440x900,link,figure key 7
+trouble.html,1440x900,link,E20
+trouble.html,1440x900,link,E22
+trouble.html,1440x900,link,E23
+trouble.html,1440x900,link,figure key 6
+trouble.html,1440x900,link,E26
+trouble.html,1440x900,link,E32
+trouble.html,1440x900,link,E27
+trouble.html,1440x900,link,figure key 9
+trouble.html,1440x900,link,E29
+trouble.html,1440x900,link,E35
+trouble.html,1440x900,link,E33
+trouble.html,1440x900,link,E34
+trouble.html,1440x900,link,E37
+trouble.html,1440x900,link,E30
+trouble.html,1440x900,link,E31
+trouble.html,1440x900,link,The machine
+trouble.html,1440x900,link,Maintenance → Sources
+trouble.html,1440x900,label,06 SOMETHING’S WRONG
+trouble.html,1440x900,label,INDEX
+trouble.html,1440x900,label,REFERENCE
+trouble.html,1440x900,label,WHAT YOU SEE
+trouble.html,1440x900,label,WHY
+trouble.html,1440x900,label,WHAT TO DO
+trouble.html,1440x900,helper,01 Rules
+trouble.html,1440x900,helper,02 The machine
+trouble.html,1440x900,helper,03 Run a job
+trouble.html,1440x900,helper,04 Zeroing
+trouble.html,1440x900,helper,05 Pre-flight
+trouble.html,1440x900,helper,06 Something’s wrong
+trouble.html,1440x900,helper,07 Feeds & CAM
+trouble.html,1440x900,helper,08 Maintenance
+trouble.html,1440x900,helper,09 Sign-off
+trouble.html,1440x900,helper,"Start from what you see. Stop first, diagnose second."
+trouble.html,1440x900,helper,"Find what you see, not what you suspect. Each card names the most likely causes in order and links to the fault card (E-numbers in the next section) and, where the figure can act it out, to the figure key that plays it."
+trouble.html,1440x900,helper,"Stop (E-stop in an emergency). Before reaching in: spindle off and stopped, key OFF and removed, keypad closed, no file loaded or paused. Get a signed-off staff member before continuing if you see any of these:"
+trouble.html,1440x900,helper,"A driver alarm (red LED, ""location no longer accurate"")."
+trouble.html,1440x900,helper,Any fault code on the spindle controller's display.
+trouble.html,1440x900,helper,"C3 nags ""move off prox"" or runs into the end of the table."
+trouble.html,1440x900,helper,Input 4 keeps flashing after Reset; input 1 does not light in the circuit test.
+trouble.html,1440x900,helper,"A damaged, pinched or hot motor or spindle cable; the dust hose off the foot or split."
+trouble.html,1440x900,helper,"Smoke, embers, burning smell, or hot dust under the brush."
+trouble.html,1440x900,helper,"A bit that pulled out, snapped, or hit a screw or clamp."
+trouble.html,1440x900,helper,"Anything in the glossary marked staff only (VN, VL, SF, ZT, TS offsets, eccentrics, pinion re-engagement, VFD parameters)."
+trouble.html,1440x900,helper,"Open a row for what you see, why, and what to do. Faults the 3D model on The machine can act out show their key (1–9 or S) and are bold in the index."
+trouble.html,1440x900,helper,"E01 Alpha driver fault — “location no longer ACCURATE”[1,22,30] key 1 WHAT YOU SEE Abrupt stop, driver-fault dialog, red LED on the box; coordinates untrustworthy. WHY Obstruction or excessive load, chips in the rack, a struck clamp, a damaged motor cable; AS drivers also trip on heat, voltage, speed and sensor faults. WHAT TO DO Stop and call staff. Staff check the driver LED and cause; students do not open the cabinet. After recovery, reset, re-home (C3) and re-zero. Reduce feed or depth if it was the cut."
+trouble.html,1440x900,helper,"E02 USB disconnect / communications failure[7,55] key 8 WHAT YOU SEE SB3 loses the controller mid-file; spindle keeps running. WHY PC power management (USB selective suspend, sleep), long or damaged cable. WHAT TO DO E-stop first and call staff. Staff check PC power settings and the direct USB cable (under 3 m, no extension). Rehome and re-zero after recovery."
+trouble.html,1440x900,helper,"E03 Dust hose off the foot / skirt torn[13] WHAT YOU SEE Chips everywhere, dust in the air, the brush not sweeping. WHY Hose pulled off the foot by a long move; brush skirt torn or lost. WHAT TO DO Stop, spindle off, refit the hose or tell staff; never cut without the foot on."
+trouble.html,1440x900,helper,"E04 C3 homes early, fails, or asks to “move off prox”[2,6,49] key 3 WHAT YOU SEE Wrong zero, stop before the target, or a nagging prox dialog. WHY Misaligned target, swapped input polarity, bad switch or cable, dead input channel. WHAT TO DO Stop and call staff to check inputs 2/3, target alignment and wiring. Do not disable limits."
+trouble.html,1440x900,helper,"E05 Z plate not detected[4,6] key 2 WHAT YOU SEE Input 1 stays dark; the bit keeps descending. WHY Clip knocked off the carriage plate or on paint/dust, a dirty plate or bit, dirty contact, open lead or connector. WHAT TO DO Test input 1 before every C2; it must light on contact and clear on separation. If it fails, do not run C2. If Z fails to reverse at contact, spacebar; if Z still moves, E-stop. Call staff."
+trouble.html,1440x900,helper,"E06 C2 touches but stops[4,6] key 2 WHAT YOU SEE First touch registers, routine halts. WHY Plate moved before the second touch; or (staff: check the C2 settings) a zero Safe-Z pull-up. WHAT TO DO Leave the plate until both touches finish. If C2 halts, stop and call staff; students do not change pull-up settings."
+trouble.html,1440x900,helper,"E07 Spindle will not start[4,21,24,25] key 4 WHAT YOU SEE Axes move; spindle stays still; a still bit snaps instantly. WHY Interlock key off, no output 1 / pendant Start, VFD in LOCAL, or a drive fault. WHAT TO DO Stop the file. Check the key, output 1 and pendant Start sequence with everyone clear. If it still fails, call staff; do not change VFD parameters."
+trouble.html,1440x900,helper,"E08 RPM will not change[4,6,52] key 4 WHAT YOU SEE Typed value ignored; speed stays as before. WHY RPM window closed, Enter not pressed, wrong VFD selected, RPM-board USB lost, legacy keypad-only VFD. WHAT TO DO Open TR, type the required rpm and press Enter; confirm on the VFD display. If it does not respond, stop and call staff; do not change drive settings."
+trouble.html,1440x900,helper,"E09 Wrong spindle-start order[4] key 4 WHAT YOU SEE File starts with a still spindle. WHY Pendant green START pressed after OK (alpha wants it before), or not at all. WHAT TO DO At the spindle prompt: pendant START, hear it reach speed, read the rpm on the VFD, then OK."
+trouble.html,1440x900,helper,"E10 Bit slips in the collet[4,13,16,31] key 5 WHAT YOU SEE Cuts get deeper pass by pass; Z zero seems to drift. WHY Dirty or worn ER25 collet, nut not snapped onto the collet first, wrong torque, wrong shank size. WHAT TO DO Clean taper/collet/nut; collet into nut first; use the tightening method demonstrated during induction, not a torque for another nut; replace collets after 400–700 h or any incident."
+trouble.html,1440x900,helper,"E11 Tool pull-out read as axis drift[1,13,16] key 5 WHAT YOU SEE Depth changes while coordinates look right; witness mark on the shank has moved. WHY Inadequate grip; the motor encoder cannot see a bit sliding. WHAT TO DO Compare Z zero before/after a test cut; replace suspect collet and bit; don't clamp on the flutes."
+trouble.html,1440x900,helper,"E12 Broken bits — chipload, plunge, ramping[10,11,25,26] WHAT YOU SEE Snapped cutter, chatter, spindle bogging. WHY Wrong feed/rpm/depth, aggressive straight plunge, dull cutter — or a spindle that was never running. WHAT TO DO Maker's chipload chart, ramped entries, reduce depth; distinguish VR acceleration ramping from CAM entry ramps."
+trouble.html,1440x900,helper,"E13 Plastic melts / aluminium welds to the cutter[11,35] WHAT YOU SEE Gummed flutes, fused chips, repeated breakage. WHY Feed too low for rpm, recutting chips, heat. WHAT TO DO Make chips not heat: faster feed, shallower depth, proper evacuation."
+trouble.html,1440x900,helper,"E14 Plywood tear-out[11] WHAT YOU SEE Frayed veneer, rough edges. WHY Cut direction, dull or wrong geometry, grain, feed. WHAT TO DO Sharp compression or down-cut tooling, test both directions on scrap; don't slow down until it burns."
+trouble.html,1440x900,helper,"E15 Burning in hardwood[4,11] WHAT YOU SEE Scorched edge, smoke, hot dust. WHY Too slow, rubbing with a dull tool. WHAT TO DO Sharp tool, correct chipload; stop and check for embers; never leave a running job."
+trouble.html,1440x900,helper,"E16 Dust packed in rack teeth[13,32] key 7 WHAT YOU SEE Ticking, uneven motion, erratic Z. WHY Chips filling the gear mesh. WHAT TO DO Brush racks and pinions clean, then light grease (schedule: BB-sized blob every 6 in, run the axes, wipe excess)."
+trouble.html,1440x900,helper,"E17 Worn rack or pinion[13,15,16,33] key 7 WHAT YOU SEE Oval circles, Z notches at certain heights, reversal play. WHY Worn teeth or poor mesh. WHAT TO DO Push-pull test, inspect full travel, replace pinions as a set; CC circle test separates mechanics from bad CAD."
+trouble.html,1440x900,helper,"E18 Loose pinion set screw / tired motor spring[2,13,15] key 7 WHAT YOU SEE Clunks, sudden registration loss, backlash. WHY Pinion moving on its shaft or not fully engaged. WHAT TO DO Staff task: tighten set screw and key, set spring preload and full-width engagement; rehome afterwards."
+trouble.html,1440x900,helper,"E19 Roller bearings loose or over-tight[13,16,18,19] WHAT YOU SEE Lateral Z slop, bad fourth pocket wall, binding, axis faults. WHY Eccentrics wrongly set, contamination, worn bearings. WHAT TO DO Staff task: adjust eccentrics with drives disengaged; replace worn bearings rather than overtighten."
+trouble.html,1440x900,helper,"E20 Debris on the V-rails[13,16] WHAT YOU SEE Bumps that repeat at one spot. WHY Build-up on rail edges or rollers. WHAT TO DO Scotchbrite + WD-40 on rails, brass brush on rollers, every 40 h."
+trouble.html,1440x900,helper,"E21 Crash into a clamp or screw[1,4,12] key 9 WHAT YOU SEE Bang, broken cutter, alarm, shifted cut. WHY Toolpath or rapid intersects hardware. WHAT TO DO Stop, inspect tool/mount/drives, fix clearance, rehome and re-zero; plan screw zones."
+trouble.html,1440x900,helper,"E22 Part lifts or flies[4,12,29] key 6 WHAT YOU SEE Sheet rises or a cut-out catches the bit and is thrown. WHY Poor hold-down, bowed stock, no tabs. WHAT TO DO Screws in the waste, tabs or 0.25–0.75 mm onion skin, never reach in."
+trouble.html,1440x900,helper,"E23 Clamps or shims let go[12,11] key 6 WHAT YOU SEE Sheet shifts after the first passes; parts come out the right shape in the wrong place. WHY Spring or pistol-grip clamps creeping, shims loosening as the sheet relaxes, too few screws, screws only at the edge. WHAT TO DO Screws into the spoilboard through the waste, at least every 300–400 mm and near every freed part; re-check clamps after the first pass; shim bowed stock flat before screwing."
+trouble.html,1440x900,helper,"E24 Climb vs conventional[11,12,16] WHAT YOU SEE One direction chatters, the other is clean. WHY Edge engagement changes with direction; looseness compounds it. WHAT TO DO Verify mechanics and hold-down first; climb on the finishing pass often helps, test on scrap."
+trouble.html,1440x900,helper,"E25 Fire in the dust path[4,36,43] WHAT YOU SEE Sparks, smoke, smouldering dust. WHY Friction heat, screws hitting the impeller, hidden fasteners. WHAT TO DO Never unattended; keep fasteners out of the intake; extinguisher within reach."
+trouble.html,1440x900,helper,"E26 Wrong XY zero / origin corner[4,26,42,47] WHAT YOU SEE Right shape, wrong place. WHY Job origin differs from the CAM origin; jogging confused with zeroing; Z2 and C3 mixed up. WHAT TO DO Home with C3, move to the chosen origin, Z2; verify the CAM corner; air-cut first."
+trouble.html,1440x900,helper,"E27 Inch/mm or SA/SR mismatch[10,11,27,54] WHAT YOU SEE Toolpath scaled or offset; speeds absurd. WHY Active units don't match the file; wrong distance mode; edited unit values. WHAT TO DO Check units in Values → Display before loading; the Autodesk post's CN,90 header only checks units, it doesn't set them."
+trouble.html,1440x900,helper,"E28 Retract height too low for clamps[10,12] key 9 WHAT YOU SEE Traverse hits a clamp though the contours clear. WHY CAM clearance below fixture height, or Z reference changed. WHAT TO DO Clearance = tallest fixture + margin; preview rapid links."
+trouble.html,1440x900,helper,"E29 Retract beyond Z stroke[1,2,10] WHAT YOU SEE Z-limit message, top-stop approach. WHY Safe height + offset + tool length exceeds usable Z travel. Have staff check that the setup fits before running. WHAT TO DO Revise fixtures/toolpath; don't disable limits to reach the unreachable."
+trouble.html,1440x900,helper,"E30 “Stop button pressed” / won't resume[4,11] WHAT YOU SEE Stopped dialog, no motion. WHY Input 4 still active, E-stop latched, driver not reset. WHAT TO DO Clear the cause; after an electrical E-stop rehome and re-zero — positions did not survive."
+trouble.html,1440x900,helper,"E31 Restarting a broken job by line[10] WHAT YOU SEE Half-cut part; restarting from line 1 recuts or collides. WHY Restart point lacks speed, spindle, offset state. WHAT TO DO Re-establish zeros, FG (File Load in Goto mode), pick the line, approach at verified safe Z."
+trouble.html,1440x900,helper,"E32 Table-surface vs part-surface zero[4,13] WHAT YOU SEE Rapids and retracts run inside the stock, cuts go a sheet thickness into the spoilboard (bed zero, top-zero CAM) — or the whole job cuts air (the reverse). WHY C2 zeroed to one surface, CAM assumed the other. WHAT TO DO Match CAM zero option to the touched surface at every setup."
+trouble.html,1440x900,helper,"E33 Stuck in Preview[10,34] WHAT YOU SEE Animation, no motion. WHY SP active instead of SM; or no controller connection. WHAT TO DO Check connection, then SM; never toggle with hands in the envelope."
+trouble.html,1440x900,helper,"E34 Accidental keyboard jog[4,47] WHAT YOU SEE Axis moves when an arrow key is pressed. WHY Keypad window has focus. WHAT TO DO Exit keypad when done; Fixed increments for fine approach."
+trouble.html,1440x900,helper,"E35 Table limit trips mid-cut[2,10,11] WHAT YOU SEE Limit warning near an edge. WHY Real limit, wrong base offset, VL/SF/VN settings, false input. WHAT TO DO Check coordinates and switch state; limits use the base system, not Z2 zero."
+trouble.html,1440x900,helper,"E36 VFD overcurrent / overload[24,30,39] WHAT YOU SEE Spindle stops with a drive code; gantry may keep moving. WHY Load, acceleration demand, short, loose motor wiring. WHAT TO DO Stop the file, record the Yaskawa code and call staff. Staff clear the cause before resetting; do not open the cabinet or change parameters."
+trouble.html,1440x900,helper,"E37 Motor/driver overheating, spindle fan dead[2,13,22,41] WHAT YOU SEE AS code 1, thermal stop, no fan noise. WHY Driver heatsink at ~85 °C, blocked cooling, failed 24 V fan. WHAT TO DO Stop and call staff. Cooling-system and fan-cable checks are staff tasks."
+trouble.html,1440x900,helper,"E38 Gantry out of square[2,13,16] key 1 WHAT YOU SEE Diagonals differ; corners not 90°. WHY Gantry reset with sides misaligned; unequal mesh; table shifted. WHAT TO DO Stop and call staff for gantry alignment and diagonal checks; validate squareness before cutting again."
+trouble.html,1440x900,helper,"E39 Bit hits a hold-down screw[1,4,12] key S WHAT YOU SEE A loud bang mid-cut with the spindle running; the bit breaks off and a screw head in the waste is chewed up. WHY A screw placed on or too close to a toolpath, or the CAM clearance height set below the screw heads so a move between cuts runs into one. Carbide shatters on steel. WHAT TO DO Spacebar (E-stop in an emergency), spindle stopped, key OFF and removed, tell staff; the bit and possibly the collet are scrap. Screws only in planned safe zones of the waste, drawn in CAM and checked against every toolpath and rapid; clearance above the tallest screw head."
+trouble.html,1440x900,helper,"If an obstruction or heavy cutting load makes a closed-loop alpha driver fall behind, it tries to correct, then raises an alarm, stops the machine and shows an alarm message."
+trouble.html,1440x900,helper,"Typical SB3 wording: ""Driver fault! (location no longer ACCURATE)""."
+trouble.html,1440x900,helper,What to do:
+trouble.html,1440x900,helper,Stop. Do not restart the file. The displayed coordinates can no longer be trusted [QS 17].
+trouble.html,1440x900,helper,"Make the spindle safe: off and stopped, key OFF and removed, keypad closed, no file loaded or paused [UG 5; QS 13]."
+trouble.html,1440x900,helper,Record the screen message and tell staff which axis faulted. Staff read the red LED blink pattern on the driver; students do not open the control cabinet.
+trouble.html,1440x900,helper,"Staff find and remove the cause: a collision, clamp, bound axis, too deep or too fast a cut, or damaged cable. Motor and driver faults can show only during movement."
+trouble.html,1440x900,helper,Never unplug a motor cable with power on. It can destroy the driver [UG 64].
+trouble.html,1440x900,helper,Reset the drivers. A software spacebar stop does not need this; a driver or E-stop event does [UG 47].
+trouble.html,1440x900,helper,"Rehome with C3 and re-zero Z with C2, then resume with FG if appropriate [CR 39; CR 11]."
+trouble.html,1440x900,helper,Do not reset repeatedly into the same fault. Report it to staff.
+trouble.html,1440x900,helper,"If an axis is not powered or locked after reset, stop and call staff. Connector and driver checks are staff tasks [UG 69–70]."
+trouble.html,1440x900,helper,Drivers and motors run warm. Excessive heat indicates a fault; report it rather than touching electrical equipment [UG 64].
+trouble.html,1440x900,aria-label,Site (compact)
+trouble.html,1440x900,aria-label,Site
+trouble.html,1440x900,aria-label,The machine stopped: what to do
+trouble.html,1440x900,aria-label,Filter symptoms and faults
+trouble.html,1440x900,aria-label,Jump to a fault
+trouble.html,1440x900,aria-label,Previous and next
+trouble.html,1440x900,placeholder,"Filter symptoms and faults — e.g. spindle, Z, plywood"
+feeds.html,1440x900,title,"Feeds, speeds and the post — ShopBot PRSalpha 144-60"
+feeds.html,1440x900,summary,"Why chipload, with a worked example"
+feeds.html,1440x900,summary,"Ranges, sources and rules of thumb"
+feeds.html,1440x900,heading,"Feeds, speeds and the post"
+feeds.html,1440x900,heading,Used in Icelandic Fab Labs
+feeds.html,1440x900,heading,Starting points used in Icelandic Fab Labs (6 mm two-flute unless stated)
+feeds.html,1440x900,heading,From CAM to the machine
+feeds.html,1440x900,nav-link,ShopBot PRSalpha 144-60 PROTOTYPING LAB · UNIVERSITY OF ICELAND
+feeds.html,1440x900,nav-link,01 Rules
+feeds.html,1440x900,nav-link,02 The machine
+feeds.html,1440x900,nav-link,03 Run a job
+feeds.html,1440x900,nav-link,04 Zeroing
+feeds.html,1440x900,nav-link,05 Pre-flight
+feeds.html,1440x900,nav-link,06 Something’s wrong
+feeds.html,1440x900,nav-link,07 Feeds & CAM
+feeds.html,1440x900,nav-link,08 Maintenance
+feeds.html,1440x900,nav-link,09 Sign-off
+feeds.html,1440x900,nav-link,Light version
+feeds.html,1440x900,nav-link,Student handbook (PDF)
+feeds.html,1440x900,nav-link,Full wiki (PDF)
+feeds.html,1440x900,nav-link,PREVIOUS · 06 Something’s wrong
+feeds.html,1440x900,nav-link,NEXT · 08 Maintenance
+feeds.html,1440x900,link,Maintenance → Sources
+feeds.html,1440x900,label,07 FEEDS & CAM
+feeds.html,1440x900,label,Spindle speed
+feeds.html,1440x900,label,Feed
+feeds.html,1440x900,label,Flutes
+feeds.html,1440x900,label,Cutter Ø
+feeds.html,1440x900,label,STARTING POINTS
+feeds.html,1440x900,label,MATERIAL
+feeds.html,1440x900,label,CUTTER
+feeds.html,1440x900,label,RPM
+feeds.html,1440x900,label,FEED MM/MIN
+feeds.html,1440x900,label,MM/TOOTH
+feeds.html,1440x900,label,NOTES
+feeds.html,1440x900,label,CHECKLIST
+feeds.html,1440x900,helper,01 Rules
+feeds.html,1440x900,helper,02 The machine
+feeds.html,1440x900,helper,03 Run a job
+feeds.html,1440x900,helper,04 Zeroing
+feeds.html,1440x900,helper,05 Pre-flight
+feeds.html,1440x900,helper,06 Something’s wrong
+feeds.html,1440x900,helper,07 Feeds & CAM
+feeds.html,1440x900,helper,08 Maintenance
+feeds.html,1440x900,helper,09 Sign-off
+feeds.html,1440x900,helper,One number decides most cuts. Most machine failures are decided at the computer.
+feeds.html,1440x900,helper,"Green band: ShopBot's plywood range for a ¼ in cutter (0.13–0.5 mm/tooth), scaled to the cutter Ø. Too thin: rubbing, heat, burn. Too thick: deflection, chatter, snapped bit. Plunge at ≤ half the feed."
+feeds.html,1440x900,helper,"6 mm two-flute unless stated. Record the material, cutter, feed, rpm and any fault in your job notes and report problems to staff."
+feeds.html,1440x900,helper,Birch / spruce plywood
+feeds.html,1440x900,helper,6 mm 2-flute
+feeds.html,1440x900,helper,14 000
+feeds.html,1440x900,helper,4 200
+feeds.html,1440x900,helper,0.15
+feeds.html,1440x900,helper,"Labs report 2000–6500 mm/min (0.07–0.23 mm/tooth); below ~3600 mm/min at 14 000 rpm you are under ShopBot's range. 3 mm pass, 40 % stepover; down-cut to 3 mm then up-cut to 0.2 mm past the thickness; tabs 12 × 3 mm. To go gentler, drop rpm, not feed.[11,56,57,58]"
+feeds.html,1440x900,helper,MDF
+feeds.html,1440x900,helper,¼ in
+feeds.html,1440x900,helper,—
+feeds.html,1440x900,helper,similar to plywood
+feeds.html,1440x900,helper,0.33–0.40
+feeds.html,1440x900,helper,Fine dust: extraction and a mask. MIT's table; plunge ≤ 50 % of the XY feed.[59]
+feeds.html,1440x900,helper,EB700 epoxy tooling board
+feeds.html,1440x900,helper,12 mm 3-flute
+feeds.html,1440x900,helper,8 000
+feeds.html,1440x900,helper,8 400
+feeds.html,1440x900,helper,0.35
+feeds.html,1440x900,helper,"Plunge 300 mm/min; adaptive 20 mm max / 5 mm fine stepdown. One worked job, not a validated recipe; respirator.[61]"
+feeds.html,1440x900,helper,PU foam / tooling foam
+feeds.html,1440x900,helper,0.28–0.33
+feeds.html,1440x900,helper,Cuts easily; the dust is the hazard.[59]
+feeds.html,1440x900,helper,"Plastics (HDPE, acrylic)"
+feeds.html,1440x900,helper,1-flute (O-flute)
+feeds.html,1440x900,helper,low
+feeds.html,1440x900,helper,high
+feeds.html,1440x900,helper,"The test is a clean curl, not a weld.[11,35]"
+feeds.html,1440x900,helper,Aluminium
+feeds.html,1440x900,helper,1-flute
+feeds.html,1440x900,helper,"Marginal on a router: shallow depth, lubricant; if it welds, less depth and more feed.[35]"
+feeds.html,1440x900,helper,"The cutter removes a chip every time a flute passes. The thickness of that chip, the chipload fz, decides almost everything: too thin and the edge rubs, heats, dulls and burns; too thick and the cutter deflects, chatters and snaps."
+feeds.html,1440x900,helper,"Worked example (the calculator's default): 4200 mm/min ÷ (14 000 rpm × 2 flutes) = 0.15 mm per tooth, a reasonable chip for a 6 mm cutter in plywood. CAM works in mm/min; SB3 and the .sbp file use mm/s — divide by 60 (4200 mm/min = 70 mm/s).[11]"
+feeds.html,1440x900,helper,"Start at 14 000 rpm, 4200 mm/min (0.15 mm/tooth), 3 mm pass, 40 % stepover. Icelandic labs report 2000–6500 mm/min working (0.07–0.23 mm/tooth), but below ~3600 mm/min at 14 000 rpm you are under ShopBot's plywood chipload range (0.13–0.5 mm/tooth for a ¼ in cutter): if you need to go gentler, drop rpm, not feed.[11] down-cut to 3 mm then up-cut to 0.2 mm past the thickness, tabs 12 × 3 mm.[56,57,58]"
+feeds.html,1440x900,helper,"similar feeds, expect fine dust: extraction and a mask. MIT's table: ¼ in cutter 0.33–0.40 mm/tooth, plunge ≤ 50 % of the XY feed.[59]"
+feeds.html,1440x900,helper,"8000 rpm, 8400 mm/min (0.35 mm/tooth), plunge 300 mm/min, adaptive 20 mm max / 5 mm fine stepdown — one worked job, not a validated recipe; respirator.[61]"
+feeds.html,1440x900,helper,0.28–0.33 mm/tooth; it cuts easily but the dust is the hazard.[59]
+feeds.html,1440x900,helper,"single-flute O-flute, high feed, low rpm; the test is a clean curl, not a weld.[11,35]"
+feeds.html,1440x900,helper,"possible but marginal on a router: shallow depth, high feed, lubricant, single flute; lower depth and raise feed if it welds.[35]"
+feeds.html,1440x900,helper,"Rules of thumb. Plunge at half the XY feed or less; ramp into pockets. Keep the bit's stick-out as short as the job allows. If depth of cut is 2× the diameter, reduce chipload 25 %; at 3× diameter, 50 %. A spindle loses torque at low rpm: if it bogs, raise rpm and feed together to keep the chip the same. Record the material, cutter, feed, rpm and any fault in your job notes and report problems to staff.[11,59]"
+feeds.html,1440x900,helper,"Most ""machine"" failures are decided at the computer. Go through this list every time you post a file. Post with Autodesk Fusion's official ShopBot (OpenSBP) post processor. The correct machine settings are already loaded on the control PC; setup is then checked by hand at the machine.[54,63]"
+feeds.html,1440x900,helper,"Units. File and software agree (mm). If SB3 stops with UNIT_ERROR, the file and SB3 disagree on mm/inch: re-post the file in mm. Do not change or reload the machine settings — they are already correct on the control PC; ask staff if the units still disagree.[10,54,63]"
+feeds.html,1440x900,helper,"Origin corner and Z reference. Which corner is X0 Y0? Is Z0 the material top or the table surface (&PWZorigin in the posted file)? It must match what you touch with C2. Bed zero with a top-zero file puts every rapid and retract inside the stock and every cut a sheet thickness into the spoilboard; the reverse cuts air.[4,6,54]"
+feeds.html,1440x900,helper,"Stock thickness measured, not assumed. Plywood sold as 18 mm is 17.4–18.6 mm; through-cuts and onion skins depend on it.[56]"
+feeds.html,1440x900,helper,"Clearance / retract height above the tallest clamp or screw head, with margin — and below the Z stroke.[10,12]"
+feeds.html,1440x900,helper,"Hold-down planned in the CAM: screw positions in the waste, screws and clamps clear of every toolpath including the tool's radius; tabs or a 0.25–0.75 mm onion skin for every part that will be freed. Plan the full cutter envelope in CAM and check it in the simulation.[12,63]"
+feeds.html,1440x900,helper,"Feeds, rpm, flutes, depth per pass computed, not copied; check the first-pass depth in the simulation and posted file before running.[11,62]"
+feeds.html,1440x900,helper,"Simulate and look for: straight plunges into solid stock, rapids posted as feed moves above the stock (slow and dangerous at clamp height), curves turned into thousands of tiny steps (the machine stutters) — ask staff about the post settings.[62]"
+feeds.html,1440x900,helper,One file per tool unless you are sure of the tool-change prompts; name files with the tool and the date.[62]
+feeds.html,1440x900,helper,"Open the .sbp in a text editor and read the header: units, MS feed, TR rpm, &PWZorigin, the first JZ and M3. If a number surprises you, it will surprise the machine.[10,62]"
+feeds.html,1440x900,aria-label,Site (compact)
+feeds.html,1440x900,aria-label,Site
+feeds.html,1440x900,aria-label,Previous and next
+feeds.html,1440x900,figure-label,0.0
+feeds.html,1440x900,figure-label,0.1
+feeds.html,1440x900,figure-label,0.2
+feeds.html,1440x900,figure-label,0.3
+feeds.html,1440x900,figure-label,0.4
+feeds.html,1440x900,figure-label,0.5
+maintain.html,1440x900,title,Maintenance and reference — ShopBot PRSalpha 144-60
+maintain.html,1440x900,summary,Why maintenance matters here
+maintain.html,1440x900,summary,"The published schedule, in full"
+maintain.html,1440x900,summary,Command glossary
+maintain.html,1440x900,summary,"Inputs, outputs and status LEDs"
+maintain.html,1440x900,summary,Sources
+maintain.html,1440x900,heading,Maintenance and reference
+maintain.html,1440x900,heading,"What to do, and when"
+maintain.html,1440x900,heading,"Daily, before cutting [MS 3]"
+maintain.html,1440x900,heading,Every 40 h of use [MS 3]
+maintain.html,1440x900,heading,Monthly (from Troubleshooting Mechanicals)
+maintain.html,1440x900,heading,"Quarterly (40 h/week) to semi-annual (20 h/week): everything above, plus [MS 3–4]"
+maintain.html,1440x900,heading,"Semi-annual (40 h/week) to annual (20 h/week): everything above, plus [MS 4]"
+maintain.html,1440x900,heading,Z bearing adjustment outline (staff task)
+maintain.html,1440x900,heading,YZ-car lower wheel adjustment outline (staff task)
+maintain.html,1440x900,heading,Squareness check
+maintain.html,1440x900,heading,"Commands, signals and sources"
+maintain.html,1440x900,heading,Reading the indicators
+maintain.html,1440x900,nav-link,ShopBot PRSalpha 144-60 PROTOTYPING LAB · UNIVERSITY OF ICELAND
+maintain.html,1440x900,nav-link,01 Rules
+maintain.html,1440x900,nav-link,02 The machine
+maintain.html,1440x900,nav-link,03 Run a job
+maintain.html,1440x900,nav-link,04 Zeroing
+maintain.html,1440x900,nav-link,05 Pre-flight
+maintain.html,1440x900,nav-link,06 Something’s wrong
+maintain.html,1440x900,nav-link,07 Feeds & CAM
+maintain.html,1440x900,nav-link,08 Maintenance
+maintain.html,1440x900,nav-link,09 Sign-off
+maintain.html,1440x900,nav-link,Light version
+maintain.html,1440x900,nav-link,Student handbook (PDF)
+maintain.html,1440x900,nav-link,Full wiki (PDF)
+maintain.html,1440x900,nav-link,Command glossary
+maintain.html,1440x900,nav-link,"Inputs, outputs and LEDs"
+maintain.html,1440x900,nav-link,Sources
+maintain.html,1440x900,nav-link,PREVIOUS · 07 Feeds & CAM
+maintain.html,1440x900,nav-link,NEXT · 09 Sign-off
+maintain.html,1440x900,link,https://www.fablabnepal.org/storage/uploads/66f01f7b-e155-498b-b9c1-ededefd3f47d/PRSalphaSpecSheet_JUN2023.pdf
+maintain.html,1440x900,link,https://shopbottools.com/wp-content/uploads/2024/01/SBG00443_PRSalpha_Assembly.pdf
+maintain.html,1440x900,link,https://wiki.makesantafe.org/shopbotassembly.pdf
+maintain.html,1440x900,link,https://shopbottools.com/wp-content/uploads/2024/01/QuickstartGuidePRSAlphaStandard.pdf
+maintain.html,1440x900,link,https://shopbottools.com/support-resources/faq
+maintain.html,1440x900,link,https://shopbottools.com/ufaq/communication-issues
+maintain.html,1440x900,link,https://shopbottools.com/wp-content/uploads/2024/01/SBG00253150707CommandRefV3.pdf
+maintain.html,1440x900,link,https://shopbottools.com/wp-content/uploads/2024/01/SBG-00142-User-Guide-20150317.pdf
+maintain.html,1440x900,link,https://shopbottools.com/wp-content/uploads/2024/01/holdingdown.pdf
+maintain.html,1440x900,link,https://shopbottools.com/wp-content/uploads/2024/01/PRSMaintenanceSchedule.pdf
+maintain.html,1440x900,link,https://shopbottools.com/wp-content/uploads/2024/01/SBG00264_Replacing_Pinion_Gears-2.pdf
+maintain.html,1440x900,link,https://shopbottools.com/wp-content/uploads/2024/01/SBG-00203-TroubleShooting-Mechanicals-2014-10-24.pdf
+maintain.html,1440x900,link,https://shopbottools.com/wp-content/uploads/2024/01/Static_Reduction_in_CNC_Dust_Collection_Systems.pdf
+maintain.html,1440x900,link,https://shopbottools.com/wp-content/uploads/2024/01/AdjustPRSZBearings.pdf
+maintain.html,1440x900,link,https://shopbottools.com/wp-content/uploads/2024/01/Adjusting-the-Lower-Wheels-on-the-YZ-Car.pdf
+maintain.html,1440x900,link,https://shopbottools.com/products/spindles
+maintain.html,1440x900,link,https://shopbottools.com/wp-content/uploads/2024/01/HSDSpindleInstallPRSAlpha.pdf
+maintain.html,1440x900,link,https://www.orientalmotor.com/products/pdfs/connection/AS-RoHS_connection_operation.pdf
+maintain.html,1440x900,link,https://www.orientalmotor.com/products/pdfs/2012-2013/A/usa_st_as.pdf
+maintain.html,1440x900,link,https://shopbottools.com/wp-content/uploads/2024/01/V1000.pdf
+maintain.html,1440x900,link,http://fabacademy.org/2020/labs/uae/shopbot/shopbot.html
+maintain.html,1440x900,link,https://fabacademy.org/2024/labs/charlotte/students/richard-shan/lessons/week7/cutting
+maintain.html,1440x900,link,https://shopbottools.com/wp-content/uploads/2024/01/SBG-00171-Settings-Unit-Values-2014-12-17.pdf
+maintain.html,1440x900,link,https://shopbottools.com/products/vacuum
+maintain.html,1440x900,link,https://shopbottools.com/2006/09/09/holding-things-down
+maintain.html,1440x900,link,https://www.talkshopbot.com/forum/archive/index.php/t-25063.html
+maintain.html,1440x900,link,https://www.talkshopbot.com/forum/printthread.php?page=1&t=24846
+maintain.html,1440x900,link,https://www.talkshopbot.com/forum/archive/index.php/t-8151.html
+maintain.html,1440x900,link,https://www.talkshopbot.com/forum/archive/index.php/t-2897.html
+maintain.html,1440x900,link,https://www.talkshopbot.com/forum/archive/index.php/t-2666.html
+maintain.html,1440x900,link,https://www.talkshopbot.com/forum/archive/index.php/t-9779.html
+maintain.html,1440x900,link,https://www.talkshopbot.com/forum/printthread.php?page=1&t=14808
+maintain.html,1440x900,link,https://shopbottools.com/wp-content/uploads/2024/01/VFD-S_manual_en.pdf
+maintain.html,1440x900,link,https://www.upload.sorotec.de/doku/manuals/Operating_Manual_HSD_AT-MT.pdf
+maintain.html,1440x900,link,http://www.100kgarages.com/blog/2017/01/machining-two-sided-3d-model-solidworks
+maintain.html,1440x900,link,https://www.talkshopbot.com/forum/archive/index.php/t-16772.html
+maintain.html,1440x900,link,https://www.talkshopbot.com/forum/archive/index.php/t-8987.html
+maintain.html,1440x900,link,https://shopbottools.com/wp-content/uploads/2024/01/ManuallySettingXYZeroLocations.pdf
+maintain.html,1440x900,link,https://www.talkshopbot.com/forum/printthread.php?page=1&t=25095
+maintain.html,1440x900,link,https://www.talkshopbot.com/forum/archive/index.php/t-3077.html
+maintain.html,1440x900,link,https://shopbottools.com/wp-content/uploads/2024/01/RPMControllerYaskawa-2015-04-06.pdf
+maintain.html,1440x900,link,https://cam.autodesk.com/posts/post.php?name=shopbot
+maintain.html,1440x900,link,https://shopbottools.com/wp-content/uploads/2024/01/DTQuickStartGuide.pdf
+maintain.html,1440x900,link,https://fabacademy.org/2025/labs/reykjavik/students/magnus-petursson/
+maintain.html,1440x900,link,https://fabacademy.org/2025/labs/isafjordur/group_assignments/group_week07/
+maintain.html,1440x900,link,https://fabacademy.org/2023/labs/akureyri/students/andri-semundsson/assignments/08_ComputerControlledMachining/
+maintain.html,1440x900,link,https://pub.pages.cba.mit.edu/feed_speeds/
+maintain.html,1440x900,link,https://archive.fabacademy.org/2016/fablabreykjavik/students/112/Week7LessonsLearned.html
+maintain.html,1440x900,link,https://media.easycomposites.co.uk/datasheets/EC-TDS-EB700-High-Temperature-Epoxy-Tooling-Board-v2.pdf
+maintain.html,1440x900,link,Maintenance → Sources
+maintain.html,1440x900,label,08 MAINTENANCE
+maintain.html,1440x900,label,CALENDAR
+maintain.html,1440x900,label,REFERENCE
+maintain.html,1440x900,label,COMMAND
+maintain.html,1440x900,label,MEANING
+maintain.html,1440x900,label,SRC
+maintain.html,1440x900,label,I/O
+maintain.html,1440x900,label,FUNCTION ON THIS MACHINE
+maintain.html,1440x900,helper,01 Rules
+maintain.html,1440x900,helper,02 The machine
+maintain.html,1440x900,helper,03 Run a job
+maintain.html,1440x900,helper,04 Zeroing
+maintain.html,1440x900,helper,05 Pre-flight
+maintain.html,1440x900,helper,06 Something’s wrong
+maintain.html,1440x900,helper,07 Feeds & CAM
+maintain.html,1440x900,helper,08 Maintenance
+maintain.html,1440x900,helper,09 Sign-off
+maintain.html,1440x900,helper,"The published schedule, the command glossary, the I/O table, the sources."
+maintain.html,1440x900,helper,"Summary of ShopBot's PRS Maintenance Schedule and the maintenance appendix; the full published schedule, with the rack-greasing and bearing-adjustment procedures, is below.[2,13]"
+maintain.html,1440x900,helper,C5 warm-up at the start of the day
+maintain.html,1440x900,helper,"Vacuum deck, brush racks and rails"
+maintain.html,1440x900,helper,Check the brush skirt and that the hose is on the foot
+maintain.html,1440x900,helper,Listen: ticks and bumps are debris
+maintain.html,1440x900,helper,"Record material, cutter, feed, rpm and faults in your job notes; report problems"
+maintain.html,1440x900,helper,"Wipe rails, light grease on the racks (BB-sized dab per 6 in, work in, wipe excess)"
+maintain.html,1440x900,helper,Check pinion set screws and motor spring tension
+maintain.html,1440x900,helper,"Check collet, nut and spindle nose for scoring"
+maintain.html,1440x900,helper,Roller/eccentric preload on the car and Z
+maintain.html,1440x900,helper,"Rack and pinion wear, re-engagement"
+maintain.html,1440x900,helper,Cable carriers and connectors
+maintain.html,1440x900,helper,VFD fan runs
+maintain.html,1440x900,helper,"Check gantry square (diagonal test), table flatness"
+maintain.html,1440x900,helper,Spoilboard surfacing
+maintain.html,1440x900,helper,Proximity switch gap and function
+maintain.html,1440x900,helper,Replace collets at 400–700 h or any incident
+maintain.html,1440x900,helper,"Students clean accessible surfaces, inspect tooling and report faults. Mechanical adjustments, lubrication and servicing are staff tasks."
+maintain.html,1440x900,helper,"Daily: C5 warm-up and listen for the fan; inspect bit, collet, nut, hose; check alignment without pushing the gantry; tell staff if it is out of square. Jog, C3, C2.[13,4]"
+maintain.html,1440x900,helper,"Every 40 h: brush X/Y/Z racks and pinions, then a BB-sized blob of light grease every 6 in, run the axes ~10 times, wipe the excess; Scotchbrite + WD-40 on the V-rails, brass brush on the rollers; push-pull play check at every drive.[13]"
+maintain.html,1440x900,helper,"Quarterly / semiannually: spin-test rollers, tighten pinion set screws, check Z eccentrics and spindle square; back up settings with US (restore with UR).[13,18]"
+maintain.html,1440x900,helper,"Semiannually at 40 h/week: all pinions replaced, Z extrusion stripped, cleaned and re-set, collets replaced as required.[13]"
+maintain.html,1440x900,helper,"Students clean accessible surfaces, inspect tooling and report problems. Mechanical adjustments, electrical checks, lubrication and servicing below are staff tasks, not permission to power down or open the machine."
+maintain.html,1440x900,helper,"Run C5 (9000, 10 000 and 12 000 rpm for 3 min each). Confirm the spindle fan runs."
+maintain.html,1440x900,helper,"Check the bit, collet and collet nut for wear and debris. Keep the spindle body, fans and airways clean. Tapers, shafts and collets must be scrupulously clean. Use the tightening method demonstrated during induction; do not substitute a torque for another nut."
+maintain.html,1440x900,helper,"Square the gantry against the end stops, hold it there, and press reset."
+maintain.html,1440x900,helper,"Push-pull test each motor area: X1, X2, Y, Z. A slight click is acceptable, but no movement beyond a few thousandths. If there is play, adjust the motor-mount spring (3½ turns after slack is removed) and/or tighten the set screws."
+maintain.html,1440x900,helper,"Move the machine around at both M and J speeds, or run a short warm-up routine."
+maintain.html,1440x900,helper,Run C3.
+maintain.html,1440x900,helper,Run C2.
+maintain.html,1440x900,helper,"Verify the zero with MZ,0 over the surface."
+maintain.html,1440x900,helper,"Visually inspect the machine, wiring, dust hoses and table."
+maintain.html,1440x900,helper,Check that the dust collector works.
+maintain.html,1440x900,helper,Also daily [QS 18]:
+maintain.html,1440x900,helper,Clean bits with solvent and discard dull or damaged ones.
+maintain.html,1440x900,helper,Check cables for cuts and pinch points.
+maintain.html,1440x900,helper,Keep the rails and gear racks clear of chips.
+maintain.html,1440x900,helper,"Rack greasing: Clean the X, Y and Z racks and pinions with a small brush. Add a BB-sized blob of light grease every 6″. Run each axis to its extents about 10 times. Wipe off the excess and redo the X/Y push-pull test."
+maintain.html,1440x900,helper,"Clean the Z-assembly V-bearing edges with Scotch-Brite and WD-40, then wipe with light grease or machine oil. Clean and adjust the V-rollers as needed."
+maintain.html,1440x900,helper,"Scrub the X and Y V-rails with Scotch-Brite soaked in WD-40, then wipe clean. Clean roller buildup with a small brass brush."
+maintain.html,1440x900,helper,Repeat the push-pull test and adjust the motor-mount springs (3½ turns past contact) or set screws.
+maintain.html,1440x900,helper,Grease (staff):
+maintain.html,1440x900,helper,MS says light grease [MS 3].
+maintain.html,1440x900,helper,TM recommends heavy automotive or industrial grease [TM 7].
+maintain.html,1440x900,helper,"UG says any regular bearing grease, and that grease does not trap debris badly [UG 63]."
+maintain.html,1440x900,helper,"The Quick-Start, by contrast, says to remove excess grease from the collet and nut, so keep grease off tooling [QS 15]."
+maintain.html,1440x900,helper,"Drop and re-engage the X and Y pinions, at least monthly or whenever there is play. Press with 15–20 lb while tightening the 4 motor-plate screws [TM 4–5]."
+maintain.html,1440x900,helper,Check that the YZ-car lower rollers are seated [TM 9].
+maintain.html,1440x900,helper,Check that the spindle is tight in its bracket [TM 17].
+maintain.html,1440x900,helper,"With the motors removed or disengaged from the racks, move each axis through its full travel. Check for looseness or binding."
+maintain.html,1440x900,helper,"With the motors removed, spin-test every X and Y car V-roller."
+maintain.html,1440x900,helper,Tighten all pinion set screws. Replace pinions and key stock if they show movement.
+maintain.html,1440x900,helper,Adjust the Z-axis V-roller bearing eccentrics with the provided flat wrench.
+maintain.html,1440x900,helper,Check the spindle is square and aligned.
+maintain.html,1440x900,helper,Remove the lower YZ-car V-roller dust covers and adjust the eccentrics.
+maintain.html,1440x900,helper,Update software and firmware.
+maintain.html,1440x900,helper,Back up settings with US (a C:\SB BKUP folder exists if ShopBot did a support visit). Restore with UR.
+maintain.html,1440x900,helper,"Replace all pinions. TM also says pinions are consumables, to be replaced every 6–12 months [TM 7]."
+maintain.html,1440x900,helper,"Remove, clean, inspect, reassemble, lubricate and adjust the complete Z extrusion assembly."
+maintain.html,1440x900,helper,"Replace the collets, and the collet nuts if they are damaged."
+maintain.html,1440x900,helper,"Too loose: the top or lower bearings spin freely and do not touch the inner captured rail. The Z axis shows sideways ""slop"" [TM 18]."
+maintain.html,1440x900,helper,"Too tight: Z loses steps, binds or stops abruptly. The inner rail wears early [TM 18]."
+maintain.html,1440x900,helper,"Adjust the eccentrics with the flat wrench a little at a time [MS 4]. The full procedure is ShopBot's ""Adjust PRS Z Car Bearings"" document [TM 18]."
+maintain.html,1440x900,helper,"Uneven or slanted step-downs: first check the spindle is tight in its bracket, then the Z bearings [TM 17]."
+maintain.html,1440x900,helper,Test: grip the bottom of the YZ car and pull it toward you. It must not move away from the cross-beam [TM 9].
+maintain.html,1440x900,helper,"Symptom when wrong: a part cuts correctly on 3 sides with a bad 4th side, consistent with cut direction [TM 9]."
+maintain.html,1440x900,helper,"Hint: drop the Y pinion out of the rack first, so you can feel how freely the car rolls while held against the beam. Re-engage the pinion afterwards [TM 10]."
+maintain.html,1440x900,helper,"Adjustment: the two lower bearings have eccentric nuts. Rotate each slightly counter-clockwise to tighten [UG 64]. The full procedure is ""Adjusting the Lower Wheels on the YZ car"" [TM 10]."
+maintain.html,1440x900,helper,Cut or scribe a large rectangle (for example 30″×50″) and compare the diagonals. They should be equal [TM 19].
+maintain.html,1440x900,helper,"If they differ, first re-square the gantry against the end stops [TM 19–20]."
+maintain.html,1440x900,helper,MS
+maintain.html,1440x900,helper,"Set Move (feed) speed, XY/Z/A/B, in/s or mm/s"
+maintain.html,1440x900,helper,[CR 20]
+maintain.html,1440x900,helper,JS
+maintain.html,1440x900,helper,"Set Jog (rapid) speed, XY/Z/A/B"
+maintain.html,1440x900,helper,[CR 16]
+maintain.html,1440x900,helper,VS
+maintain.html,1440x900,helper,Set all 8 move and jog speeds in one sheet
+maintain.html,1440x900,helper,[CR 42]
+maintain.html,1440x900,helper,TR
+maintain.html,1440x900,helper,"Opens Spindle RPM Control; TR,n requests n RPM in a file (SB3.5.5+)"
+maintain.html,1440x900,helper,[QS 15–16]
+maintain.html,1440x900,helper,C2
+maintain.html,1440x900,helper,"Z-zero with the plate (input 1): two touches, then pull-up"
+maintain.html,1440x900,helper,[QS 14]
+maintain.html,1440x900,helper,C3
+maintain.html,1440x900,helper,XY homing using the proximity switches (inputs 2/3)
+maintain.html,1440x900,helper,[QS 15; UG 20]
+maintain.html,1440x900,helper,C5
+maintain.html,1440x900,helper,"Spindle warm-up: 9000/10000/12000 RPM for 3 min each, then off"
+maintain.html,1440x900,helper,[QS 16]
+maintain.html,1440x900,helper,"C6, C7, C9"
+maintain.html,1440x900,helper,"Custom-cut slots. Student procedures use the standard C2, C3 and C5 routines. Do not remove C-commands from posted files"
+maintain.html,1440x900,helper,—
+maintain.html,1440x900,helper,JZ
+maintain.html,1440x900,helper,Jog Z to a location (or by a distance in relative mode)
+maintain.html,1440x900,helper,[CR 17]
+maintain.html,1440x900,helper,JH
+maintain.html,1440x900,helper,"Safe-Z, then jog to XY 0,0"
+maintain.html,1440x900,helper,J2
+maintain.html,1440x900,helper,"Jog X,Y at Jog speed"
+maintain.html,1440x900,helper,[CR 15]
+maintain.html,1440x900,helper,J3
+maintain.html,1440x900,helper,"Jog X,Y,Z at Jog speed"
+maintain.html,1440x900,helper,M2 / M3
+maintain.html,1440x900,helper,Move XY / XYZ at Move (cutting) speed
+maintain.html,1440x900,helper,[CR 17–18]
+maintain.html,1440x900,helper,MZ
+maintain.html,1440x900,helper,"Move Z at Move speed (MZ,0 checks Z zero)"
+maintain.html,1440x900,helper,[CR 21; TM 11]
+maintain.html,1440x900,helper,SA / SR
+maintain.html,1440x900,helper,Absolute / relative distances; use absolute in part files
+maintain.html,1440x900,helper,[CR 25; CR 28]
+maintain.html,1440x900,helper,VD
+maintain.html,1440x900,helper,"Display values: linear units 0 = in, 1 = mm (3rd field), keypad fixed distance, logs"
+maintain.html,1440x900,helper,[CR 35; UG 21]
+maintain.html,1440x900,helper,VL
+maintain.html,1440x900,helper,"Staff only: table limits in base coordinates, plus a limit-check flag"
+maintain.html,1440x900,helper,[CR 38; UG 20]
+maintain.html,1440x900,helper,VN
+maintain.html,1440x900,helper,"Staff only: input assignment: limits on/off, input 4 stop mode, input modes"
+maintain.html,1440x900,helper,[CR 38–39]
+maintain.html,1440x900,helper,VI
+maintain.html,1440x900,helper,Comm port and driver channel settings (staff only)
+maintain.html,1440x900,helper,[CR 37]
+maintain.html,1440x900,helper,VO
+maintain.html,1440x900,helper,Temporary tool offset (dual Z / air drill)
+maintain.html,1440x900,helper,[CR 40]
+maintain.html,1440x900,helper,SO
+maintain.html,1440x900,helper,"Set output n on/off: SO,1,1 = output 1 on"
+maintain.html,1440x900,helper,[CR 27; UG 48]
+maintain.html,1440x900,helper,SK (K)
+maintain.html,1440x900,helper,Keypad arrow control; Move mode only
+maintain.html,1440x900,helper,[CR 26]
+maintain.html,1440x900,helper,ZZ
+maintain.html,1440x900,helper,Zero Z here (reference only; students use C2)
+maintain.html,1440x900,helper,[CR 45]
+maintain.html,1440x900,helper,Z2
+maintain.html,1440x900,helper,Zero X and Y here
+maintain.html,1440x900,helper,[CR 43]
+maintain.html,1440x900,helper,Z3
+maintain.html,1440x900,helper,"Zero X, Y and Z here"
+maintain.html,1440x900,helper,[CR 44]
+maintain.html,1440x900,helper,ZX / ZY
+maintain.html,1440x900,helper,Zero X only / Y only
+maintain.html,1440x900,helper,[CR 44–45]
+maintain.html,1440x900,helper,ZT
+maintain.html,1440x900,helper,Staff only. Redefines the table base coordinates that limit checking and C3 rely on; never use it for a job origin (use Z2). ST resets the working display to base
+maintain.html,1440x900,helper,[CR 44; CR 28]
+maintain.html,1440x900,helper,FP
+maintain.html,1440x900,helper,"Load and run a part file (fill-in sheet: proportion, reps, offset, tabs)"
+maintain.html,1440x900,helper,[CR 12]
+maintain.html,1440x900,helper,FG
+maintain.html,1440x900,helper,Run a file in Goto/single-step mode; resume from the last line
+maintain.html,1440x900,helper,[CR 11]
+maintain.html,1440x900,helper,SP / SM
+maintain.html,1440x900,helper,Preview mode / Move-Cut mode
+maintain.html,1440x900,helper,[CR 28; CR 27]
+maintain.html,1440x900,helper,PAUSE
+maintain.html,1440x900,helper,In a file: wait for a key (PAUSE n = n seconds)
+maintain.html,1440x900,helper,[UG 27]
+maintain.html,1440x900,helper,"CN,90"
+maintain.html,1440x900,helper,Calls custom cut 90; the CAM post uses it to expose controller variables for a units check
+maintain.html,1440x900,helper,[54]
+maintain.html,1440x900,helper,&var
+maintain.html,1440x900,helper,"Part-file variable, e.g. &Zdepth = -0.52 then MZ,&Zdepth"
+maintain.html,1440x900,helper,[UG 28]
+maintain.html,1440x900,helper,MO
+maintain.html,1440x900,helper,Staff only: motors off and all outputs off. Not an end-of-job command
+maintain.html,1440x900,helper,TS
+maintain.html,1440x900,helper,"Staff only: ShopBot Setup: plate thickness, prox-switch offsets"
+maintain.html,1440x900,helper,[CR 30; TM 12]
+maintain.html,1440x900,helper,SF
+maintain.html,1440x900,helper,Staff only: file and move limit checking on/off
+maintain.html,1440x900,helper,Input 1
+maintain.html,1440x900,helper,Z-zero plate. Lights when bit and plate touch
+maintain.html,1440x900,helper,Input 2
+maintain.html,1440x900,helper,"X proximity switch, configured as a limit (VN)"
+maintain.html,1440x900,helper,[CR 39; UG 46]
+maintain.html,1440x900,helper,Input 3
+maintain.html,1440x900,helper,"Y proximity switch, configured as a limit (VN)"
+maintain.html,1440x900,helper,Input 4
+maintain.html,1440x900,helper,"Stop circuit. On an alpha: normally-closed E-stop, wired ES1–ES4; cannot be reassigned"
+maintain.html,1440x900,helper,[CR 39; UG 47]
+maintain.html,1440x900,helper,Input 5
+maintain.html,1440x900,helper,Z proximity switch
+maintain.html,1440x900,helper,[2]
+maintain.html,1440x900,helper,Output 1
+maintain.html,1440x900,helper,"Spindle/router (on an alpha, used with the pendant Start)"
+maintain.html,1440x900,helper,[QS 12–13; UG 74–75]
+maintain.html,1440x900,helper,Output 4
+maintain.html,1440x900,helper,"Safety/""tool active"" output; on during motion and with the keypad open"
+maintain.html,1440x900,helper,[CR 27; UG 48; QS 12]
+maintain.html,1440x900,helper,An active input turns green in the input section of the Position window [UG 46].
+maintain.html,1440x900,helper,"Output 4 lights when the keypad opens [QS 12]. Its default mode is −1: on with the warning signal before a move, off at the end of it [CR 27]."
+maintain.html,1440x900,helper,"Inputs are 5 V TTL. An input reads ON when pulled to ground, which is why the Z-plate clip closes input 1 [UG 46]."
+maintain.html,1440x900,helper,"Outputs are 5 V TTL, about 5 mA. They signal relays and must not power accessories directly [UG 47]."
+maintain.html,1440x900,helper,"Motor driver LEDs (alpha AS-type drivers): green OPERATION, red ALARM. The red LED blinks a fault code."
+maintain.html,1440x900,helper,"ShopBot PRSalpha Specifications, JUL 2023 (FabLab Nepal mirror) — https://www.fablabnepal.org/storage/uploads/66f01f7b-e155-498b-b9c1-ededefd3f47d/PRSalphaSpecSheet_JUN2023.pdf"
+maintain.html,1440x900,helper,"ShopBot SBG00443 PRSalpha Assembly Guide, May 2022 (incl. dust-foot and maintenance appendices) — https://shopbottools.com/wp-content/uploads/2024/01/SBG00443_PRSalpha_Assembly.pdf"
+maintain.html,1440x900,helper,"ShopBot PRS Assembly Manual, legacy edition — https://wiki.makesantafe.org/shopbotassembly.pdf"
+maintain.html,1440x900,helper,"ShopBot Quick-Start Guide, PRSalpha and PRSstandard, Oct 2016 — https://shopbottools.com/wp-content/uploads/2024/01/QuickstartGuidePRSAlphaStandard.pdf"
+maintain.html,1440x900,helper,"ShopBot Technical Q&A / FAQ (Z-zero plate, connections, RPM controller, XY homing) — https://shopbottools.com/support-resources/faq"
+maintain.html,1440x900,helper,ShopBot Communication Issues FAQ — https://shopbottools.com/ufaq/communication-issues
+maintain.html,1440x900,helper,"ShopBot Command Reference, Control Software and OpenSBP, 2015 — https://shopbottools.com/wp-content/uploads/2024/01/SBG00253150707CommandRefV3.pdf"
+maintain.html,1440x900,helper,"ShopBot SBG00142 User Guide, March 2015 — https://shopbottools.com/wp-content/uploads/2024/01/SBG-00142-User-Guide-20150317.pdf"
+maintain.html,1440x900,helper,"ShopBot Holding Down Material for Cutting, Aug 2016 — https://shopbottools.com/wp-content/uploads/2024/01/holdingdown.pdf"
+maintain.html,1440x900,helper,"ShopBot PRS Maintenance Schedule, Sept 2016 — https://shopbottools.com/wp-content/uploads/2024/01/PRSMaintenanceSchedule.pdf"
+maintain.html,1440x900,helper,ShopBot Replacing Pinion Gears — https://shopbottools.com/wp-content/uploads/2024/01/SBG00264_Replacing_Pinion_Gears-2.pdf
+maintain.html,1440x900,helper,"ShopBot SBG00203 Troubleshooting Mechanicals, Oct 2014 — https://shopbottools.com/wp-content/uploads/2024/01/SBG-00203-TroubleShooting-Mechanicals-2014-10-24.pdf"
+maintain.html,1440x900,helper,ShopBot Static Reduction in CNC Dust Collection Systems — https://shopbottools.com/wp-content/uploads/2024/01/Static_Reduction_in_CNC_Dust_Collection_Systems.pdf
+maintain.html,1440x900,helper,"ShopBot Adjusting the PRS Z-Axis Bearings, Oct 2016 — https://shopbottools.com/wp-content/uploads/2024/01/AdjustPRSZBearings.pdf"
+maintain.html,1440x900,helper,ShopBot Adjusting the Lower Wheels on the YZ-Car — https://shopbottools.com/wp-content/uploads/2024/01/Adjusting-the-Lower-Wheels-on-the-YZ-Car.pdf
+maintain.html,1440x900,helper,"ShopBot spindle packages (HSD, Colombo, ER25, RPM controller) — https://shopbottools.com/products/spindles"
+maintain.html,1440x900,helper,ShopBot Installing an HSD Spindle: PRS Alpha / Yaskawa V1000 — https://shopbottools.com/wp-content/uploads/2024/01/HSDSpindleInstallPRSAlpha.pdf
+maintain.html,1440x900,helper,Oriental Motor AS-Series Connection and Operation (alarm codes) — https://www.orientalmotor.com/products/pdfs/connection/AS-RoHS_connection_operation.pdf
+maintain.html,1440x900,helper,Oriental Motor AS-Series alphaStep catalog 2012/2013 (closed-loop changeover) — https://www.orientalmotor.com/products/pdfs/2012-2013/A/usa_st_as.pdf
+maintain.html,1440x900,helper,Yaskawa V1000 Technical Manual (ShopBot-hosted) — https://shopbottools.com/wp-content/uploads/2024/01/V1000.pdf
+maintain.html,1440x900,helper,"Fab Academy UAE 2020: ShopBot feeds/speeds, broken tool with spindle off — http://fabacademy.org/2020/labs/uae/shopbot/shopbot.html"
+maintain.html,1440x900,helper,"Fab Academy, R. Shan 2024: cutting setup and 16 in X datum offset — https://fabacademy.org/2024/labs/charlotte/students/richard-shan/lessons/week7/cutting"
+maintain.html,1440x900,helper,"ShopBot SBG00171 Settings / Unit Values, Dec 2014 (motors, pinions, steps/in) — https://shopbottools.com/wp-content/uploads/2024/01/SBG-00171-Settings-Unit-Values-2014-12-17.pdf"
+maintain.html,1440x900,helper,ShopBot vacuum hold-down products (Fein Turbo II) — https://shopbottools.com/products/vacuum
+maintain.html,1440x900,helper,"ShopBot blog: Holding Things Down (2006), Fein Turbo III and bowed plywood — https://shopbottools.com/2006/09/09/holding-things-down"
+maintain.html,1440x900,helper,"TalkShopBot t-25063: PRSalpha driver fault, damaged cable [indexed excerpt] — https://www.talkshopbot.com/forum/archive/index.php/t-25063.html"
+maintain.html,1440x900,helper,TalkShopBot t-24846: bit slipping ~0.5 in [indexed excerpt] — https://www.talkshopbot.com/forum/printthread.php?page=1&t=24846
+maintain.html,1440x900,helper,TalkShopBot t-8151: HDU dust packed in Z rack [indexed excerpt] — https://www.talkshopbot.com/forum/archive/index.php/t-8151.html
+maintain.html,1440x900,helper,"TalkShopBot t-2897: worn rack/pinion, Z position errors [indexed excerpt] — https://www.talkshopbot.com/forum/archive/index.php/t-2897.html"
+maintain.html,1440x900,helper,TalkShopBot t-2666: Preview vs Move/Cut mode [indexed excerpt] — https://www.talkshopbot.com/forum/archive/index.php/t-2666.html
+maintain.html,1440x900,helper,TalkShopBot t-9779: aluminium welding to cutter [indexed excerpt] — https://www.talkshopbot.com/forum/archive/index.php/t-9779.html
+maintain.html,1440x900,helper,TalkShopBot t-14808: drilling heat / fire with vacuum hold-down [indexed excerpt] — https://www.talkshopbot.com/forum/printthread.php?page=1&t=14808
+maintain.html,1440x900,helper,"Delta VFD-S User Manual, 2008 (ShopBot-hosted) — https://shopbottools.com/wp-content/uploads/2024/01/VFD-S_manual_en.pdf"
+maintain.html,1440x900,helper,HSD AT/MT Operating Manual (Sorotec mirror) — https://www.upload.sorotec.de/doku/manuals/Operating_Manual_HSD_AT-MT.pdf
+maintain.html,1440x900,helper,"100kGarages: Machining a two-sided 3D model (C3, Z2 workflow) — http://www.100kgarages.com/blog/2017/01/machining-two-sided-3d-model-solidworks"
+maintain.html,1440x900,helper,TalkShopBot t-16772: screws at the collector impeller [indexed excerpt] — https://www.talkshopbot.com/forum/archive/index.php/t-16772.html
+maintain.html,1440x900,helper,"TalkShopBot t-8987: vacuum through MDF, onion skins, blowers [indexed excerpt] — https://www.talkshopbot.com/forum/archive/index.php/t-8987.html"
+maintain.html,1440x900,helper,"ShopBot Manually Setting XY Zero Locations (Fixed keypad, C3 offsets) — https://shopbottools.com/wp-content/uploads/2024/01/ManuallySettingXYZeroLocations.pdf"
+maintain.html,1440x900,helper,TalkShopBot t-25095: proximity input mismatch / “move off prox” [indexed excerpt] — https://www.talkshopbot.com/forum/printthread.php?page=1&t=25095
+maintain.html,1440x900,helper,TalkShopBot t-3077 (2005): Delta VFD speed set at keypad [indexed excerpt] — https://www.talkshopbot.com/forum/archive/index.php/t-3077.html
+maintain.html,1440x900,helper,"ShopBot SBG00338 Installing the Spindle RPM Controller (Yaskawa), 2015 — https://shopbottools.com/wp-content/uploads/2024/01/RPMControllerYaskawa-2015-04-06.pdf"
+maintain.html,1440x900,helper,"Autodesk ShopBot OpenSBP post (SA / CN,90 unit check) — https://cam.autodesk.com/posts/post.php?name=shopbot"
+maintain.html,1440x900,helper,ShopBot Desktop Quick-Start (Windows sleep / USB power settings) — https://shopbottools.com/wp-content/uploads/2024/01/DTQuickStartGuide.pdf
+maintain.html,1440x900,helper,"Fab Academy 2025 Reykjavík: computer-controlled machining (plywood settings, Z on bed, tabs) — https://fabacademy.org/2025/labs/reykjavik/students/magnus-petursson/"
+maintain.html,1440x900,helper,Fab Academy 2025 Ísafjörður group: 12 mm birch ply tests 10–18k rpm / 500–4000 mm/min — https://fabacademy.org/2025/labs/isafjordur/group_assignments/group_week07/
+maintain.html,1440x900,helper,"Fab Academy 2023 Akureyri, A. Sæmundsson: 6 mm 2-flute 14 000 rpm 5000 mm/min — https://fabacademy.org/2023/labs/akureyri/students/andri-semundsson/assignments/08_ComputerControlledMachining/"
+maintain.html,1440x900,helper,MIT CBA feeds and speeds table — https://pub.pages.cba.mit.edu/feed_speeds/
+maintain.html,1440x900,helper,"Fab Lab Reykjavík 2016 instructor material: screw clearance rule, Icelandic ShopBot safety manual (C2 requires input 1 indication) — https://archive.fabacademy.org/2016/fablabreykjavik/students/112/Week7LessonsLearned.html"
+maintain.html,1440x900,helper,Easy Composites EB700 tooling board datasheet (cutting data) — https://media.easycomposites.co.uk/datasheets/EC-TDS-EB700-High-Temperature-Epoxy-Tooling-Board-v2.pdf
+maintain.html,1440x900,helper,"Lab notes, University of Iceland PRSalpha, Oct 2026 (RPM after pause, Enter in the Spindle RPM Control window, Fusion post observations) — unpublished"
+maintain.html,1440x900,helper,"HÍ PRSalpha local configuration and operating procedures, October 2026 — unpublished"
+maintain.html,1440x900,helper,"Lab photographs of the HÍ PRSalpha, Oct 2026 (control-box, motor, spindle and VFD nameplates; wall-mounted pendant; cabinet rotary disconnect; ground clip on the carriage plate) — unpublished"
+maintain.html,1440x900,helper,Manual tags: AG Assembly Guide 2022 [2] · QS Quick Start 2016 [4] · UG User Guide 2015 [11] · CR Command Reference 2015 [10] · HD Holding Down [12] · MS Maintenance Schedule [13] · TM Troubleshooting Mechanicals [16] · XY Manually Setting XY Zero [47] · FAQ Z-zero plate [6].
+maintain.html,1440x900,aria-label,Site (compact)
+maintain.html,1440x900,aria-label,Site
+maintain.html,1440x900,aria-label,Maintenance calendar
+maintain.html,1440x900,aria-label,Reference sections
+maintain.html,1440x900,aria-label,Previous and next
+quiz.html,1440x900,title,Self-check — ShopBot PRSalpha 144-60
+quiz.html,1440x900,summary,ANSWER
+quiz.html,1440x900,heading,Self-check
+quiz.html,1440x900,nav-link,ShopBot PRSalpha 144-60 PROTOTYPING LAB · UNIVERSITY OF ICELAND
+quiz.html,1440x900,nav-link,01 Rules
+quiz.html,1440x900,nav-link,02 The machine
+quiz.html,1440x900,nav-link,03 Run a job
+quiz.html,1440x900,nav-link,04 Zeroing
+quiz.html,1440x900,nav-link,05 Pre-flight
+quiz.html,1440x900,nav-link,06 Something’s wrong
+quiz.html,1440x900,nav-link,07 Feeds & CAM
+quiz.html,1440x900,nav-link,08 Maintenance
+quiz.html,1440x900,nav-link,09 Sign-off
+quiz.html,1440x900,nav-link,Light version
+quiz.html,1440x900,nav-link,Student handbook (PDF)
+quiz.html,1440x900,nav-link,Full wiki (PDF)
+quiz.html,1440x900,nav-link,PREVIOUS · 08 Maintenance
+quiz.html,1440x900,nav-link,BACK TO Start
+quiz.html,1440x900,link,the start sequence
+quiz.html,1440x900,link,E07
+quiz.html,1440x900,link,E09
+quiz.html,1440x900,link,Stops
+quiz.html,1440x900,link,E30
+quiz.html,1440x900,link,E05
+quiz.html,1440x900,link,E10
+quiz.html,1440x900,link,E32
+quiz.html,1440x900,link,E16
+quiz.html,1440x900,link,E19
+quiz.html,1440x900,link,Feeds
+quiz.html,1440x900,link,E22
+quiz.html,1440x900,link,E23
+quiz.html,1440x900,link,Maintenance → Sources
+quiz.html,1440x900,label,09 SIGN-OFF
+quiz.html,1440x900,helper,01 Rules
+quiz.html,1440x900,helper,02 The machine
+quiz.html,1440x900,helper,03 Run a job
+quiz.html,1440x900,helper,04 Zeroing
+quiz.html,1440x900,helper,05 Pre-flight
+quiz.html,1440x900,helper,06 Something’s wrong
+quiz.html,1440x900,helper,07 Feeds & CAM
+quiz.html,1440x900,helper,08 Maintenance
+quiz.html,1440x900,helper,09 Sign-off
+quiz.html,1440x900,helper,Twelve questions. Passing is part of the sign-off.
+quiz.html,1440x900,helper,Passing this is part of the sign-off. Answers are under each question; think before you open them.
+quiz.html,1440x900,helper,"The file is loaded, you clicked OK on the spindle prompt and the gantry is moving toward the stock — but the spindle is silent. What do you do in the next two seconds, and what went wrong? ANSWER Spacebar now; E-stop if the bit is already in the stock. You clicked OK before pressing START on the pendant (or the key/output 1 was off). See the start sequence and E07, E09."
+quiz.html,1440x900,helper,"You press the E-stop halfway through a job. Which of X, Y and Z zero can you trust afterwards, and what must you do before restarting? ANSWER None. Release, pendant Reset, C3 to rehome, jog to the recorded job-origin coordinates and Z2 again, C2 for Z, then FG from a line before the stop. See Stops, E30."
+quiz.html,1440x900,helper,"C2 ran and reported Z zero, but the first pass cuts 2 mm too deep across the whole sheet. Name three possible causes and the test for each. ANSWER Wrong plate thickness in the settings (staff measure the plate and check TS); zeroed on the wrong surface for the file's &PWZorigin (read the header); bit slipping in the collet (witness mark on the shank, staff check after correct tightening). E05, E10, E32."
+quiz.html,1440x900,helper,"The second profile pass is 1 mm to the left of the first. The alpha drivers did not alarm. Why could they not have noticed, and where do you look? ANSWER The loop is closed around the motor shaft: a pinion that jumps teeth or slips on its shaft, or packed chips in the rack, move the gantry without the motor knowing. Look at rack teeth, pinion set screws, motor spring tension, roller wheels. E16–E19."
+quiz.html,1440x900,helper,"Your CAM file has Z0 at the material top; the lab convention for through-cuts is Z0 on the bed. What happens if you zero on the bed and run it anyway? ANSWER Every rapid and retract runs inside the stock and every cut goes a full sheet thickness into the spoilboard: crashed clamps, broken bit. Match &PWZorigin to the surface you touch, every time. E32."
+quiz.html,1440x900,helper,"You want 0.15 mm/tooth with a 6 mm two-flute at 14 000 rpm. What feed in mm/min? What plunge? ANSWER 14 000 × 2 × 0.15 = 4200 mm/min; plunge at half or less, ≤ 2100 mm/min, ramped if possible. Feeds."
+quiz.html,1440x900,helper,"You pressed the spacebar to pause and want to check the cut. What must you confirm before your hand goes near the bit? ANSWER A spacebar stop is not isolation. Before reaching near the bit, confirm that the spindle has stopped, the interlock key is OFF and removed, the keypad is closed and no file is loaded or paused. Keep clear before re-engaging the key or restarting. Stops."
+quiz.html,1440x900,helper,"The part you are cutting out is 300 × 200 mm. List three ways to keep it from flying on the last pass, and the drawback of each. ANSWER Tabs (hand finishing); onion skin 0.25–0.75 mm (hand finishing, needs accurate thickness); screws through the part into the spoilboard (holes, must be clear of toolpaths). E22, E23."
+quiz.html,1440x900,helper,"What does the alphaStep driver's closed loop see, and what does it not see? Give one failure from each category. ANSWER Sees rotor position vs command: a stalled motor from a clamp strike alarms (E01). Does not see anything downstream of the shaft: a slipping pinion, a creeping bit, a moving sheet (E17, E10, E22)."
+quiz.html,1440x900,helper,"After the job: name five things you do before you walk away. ANSWER Finish or stop the file and stop the spindle; raise Z and jog clear with everyone outside the cutting area; close the keypad, end the loaded/paused file and remove the key; clear and clean the deck and stow the bit; report faults. Leave the machine powered for lab staff. Users never power down the machine; E-stop is for emergencies."
+quiz.html,1440x900,helper,Name the three buttons on our pendant and what each does. ANSWER Reset re-enables the drives after an E-stop (twist the E-stop to release it first); green Start starts the spindle (when output 1 and the key allow it); E-stop cuts spindle power at once and motor power about 5 s later. Stops.
+quiz.html,1440x900,helper,"Where does the Z-plate's clip go, and where does the plate go back to? ANSWER Nowhere new: the clip stays clamped on the aluminium carriage plate; the circuit runs through plate → spindle → collet → bit. The plate goes back in its holder on the YZ car with the lead coiled. Never put the clip on the bit or nut: the spindle whips it off."
+quiz.html,1440x900,aria-label,Site (compact)
+quiz.html,1440x900,aria-label,Site
+quiz.html,1440x900,aria-label,Previous and next
+webgl.html,1440x900,title,ShopBot PRSalpha 144-60 — 3D
+webgl.html,1440x900,button,Inspector
+webgl.html,1440x900,button,Faults
+webgl.html,1440x900,button,Views
+webgl.html,1440x900,button,Job
+webgl.html,1440x900,button,E01 Alpha fault Stops dead mid-cut; the driver LED turns red.
+webgl.html,1440x900,button,E05 Z-zero not sensed C2 drives the bit into the plate.
+webgl.html,1440x900,button,E04 Homing switch missed C3 runs the gantry into the hard stop.
+webgl.html,1440x900,button,E07 Spindle off / wrong RPM A still bit is dragged through the sheet.
+webgl.html,1440x900,button,E10 Bit slips in collet Each pass cuts deeper than the last.
+webgl.html,1440x900,button,E22 Part lifts off The cut-out part is flung off the table.
+webgl.html,1440x900,button,E16 Rack dust / backlash Pass 2 lands offset from pass 1.
+webgl.html,1440x900,button,E02 USB lost File freezes; the spindle keeps turning.
+webgl.html,1440x900,button,E21 Clamp strike A rapid drags the bit into a clamp.
+webgl.html,1440x900,button,E39 Bit hits a hold-down screw Loud bang: the bit hits a screw and breaks.
+webgl.html,1440x900,summary,3D model CONTENTS
+webgl.html,1440x900,heading,ShopBot PRSalpha 144-60
+webgl.html,1440x900,nav-link,ShopBot PRSalpha 144-60 PROTOTYPING LAB · UNIVERSITY OF ICELAND
+webgl.html,1440x900,nav-link,01 Rules
+webgl.html,1440x900,nav-link,02 The machine
+webgl.html,1440x900,nav-link,03 Run a job
+webgl.html,1440x900,nav-link,04 Zeroing
+webgl.html,1440x900,nav-link,05 Pre-flight
+webgl.html,1440x900,nav-link,06 Something’s wrong
+webgl.html,1440x900,nav-link,07 Feeds & CAM
+webgl.html,1440x900,nav-link,08 Maintenance
+webgl.html,1440x900,nav-link,09 Sign-off
+webgl.html,1440x900,nav-link,"3D model, full screen"
+webgl.html,1440x900,nav-link,Light version
+webgl.html,1440x900,nav-link,Student handbook (PDF)
+webgl.html,1440x900,nav-link,Full wiki (PDF)
+webgl.html,1440x900,helper,01 Rules
+webgl.html,1440x900,helper,02 The machine
+webgl.html,1440x900,helper,03 Run a job
+webgl.html,1440x900,helper,04 Zeroing
+webgl.html,1440x900,helper,05 Pre-flight
+webgl.html,1440x900,helper,06 Something’s wrong
+webgl.html,1440x900,helper,07 Feeds & CAM
+webgl.html,1440x900,helper,08 Maintenance
+webgl.html,1440x900,helper,09 Sign-off
+webgl.html,1440x900,helper,Drag to orbit · wheel to zoom · shift-drag to pan · 1–9 or S stage a fault · Run button plays · Space pauses.
+webgl.html,1440x900,helper,"Pick a fault to stage it: the camera walks through what goes wrong, the culprit part turns red, the rest greys out. Keys 1–9 and S."
+webgl.html,1440x900,helper,E01 Alpha fault Stops dead mid-cut; the driver LED turns red.
+webgl.html,1440x900,helper,E05 Z-zero not sensed C2 drives the bit into the plate.
+webgl.html,1440x900,helper,E04 Homing switch missed C3 runs the gantry into the hard stop.
+webgl.html,1440x900,helper,E07 Spindle off / wrong RPM A still bit is dragged through the sheet.
+webgl.html,1440x900,helper,E10 Bit slips in collet Each pass cuts deeper than the last.
+webgl.html,1440x900,helper,E22 Part lifts off The cut-out part is flung off the table.
+webgl.html,1440x900,helper,E16 Rack dust / backlash Pass 2 lands offset from pass 1.
+webgl.html,1440x900,helper,E02 USB lost File freezes; the spindle keeps turning.
+webgl.html,1440x900,helper,E21 Clamp strike A rapid drags the bit into a clamp.
+webgl.html,1440x900,helper,E39 Bit hits a hold-down screw Loud bang: the bit hits a screw and breaks.
+webgl.html,1440x900,aria-label,Site (compact)
+webgl.html,1440x900,aria-label,Site
+webgl.html,1440x900,aria-label,3D viewer
+webgl.html,1440x900,aria-label,"ShopBot PRSalpha CNC router in 3D. Drag or arrow keys to orbit, wheel or plus and minus to zoom, shift-drag or shift-arrows to pan. Space pauses the simulation; use the Run button to start. On the real machine Space stops motion. 1 to 9 and S stage a fault, N and P step through it, Escape closes it."
+webgl.html,1440x900,aria-label,Previous step
+webgl.html,1440x900,aria-label,Next step
+webgl.html,1440x900,aria-label,Inspector
+webgl.html,1440x900,aria-label,Azimuth value
+webgl.html,1440x900,aria-label,Elevation value
+webgl.html,1440x900,aria-label,Distance value
+webgl.html,1440x900,aria-label,Field of view value
+webgl.html,1440x900,aria-label,Projection
+webgl.html,1440x900,aria-label,Theme
+webgl.html,1440x900,aria-label,Options
+webgl.html,1440x900,aria-label,Link to this view
+webgl.html,1440x900,aria-label,File transport
+webgl.html,1440x900,aria-label,Rewind
+webgl.html,1440x900,aria-label,Back 10 seconds
+webgl.html,1440x900,aria-label,Forward 10 seconds
+webgl.html,1440x900,aria-label,Position in the cutting file
+webgl.html,1440x900,tooltip,Advance through the steps by itself
+webgl.html,1440x900,tooltip,Rewind (Home)
+webgl.html,1440x900,tooltip,Back 10 s ([)
+webgl.html,1440x900,tooltip,Play / pause simulation (Space pauses only)
+webgl.html,1440x900,tooltip,Forward 10 s (])
+webgl.html,1440x900,button,Whole machine 0
+webgl.html,1440x900,button,Gantry
+webgl.html,1440x900,button,At the tool F
+webgl.html,1440x900,button,Operator's end
+webgl.html,1440x900,button,Under the table
+webgl.html,1440x900,button,"Plan, from above"
+webgl.html,1440x900,button,Perspective
+webgl.html,1440x900,button,Orthographic
+webgl.html,1440x900,button,Dark
+webgl.html,1440x900,button,Light
+webgl.html,1440x900,button,Follow tool
+webgl.html,1440x900,button,Dust foot off
+webgl.html,1440x900,button,Save view
+webgl.html,1440x900,button,Copy link
+webgl.html,1440x900,heading,PRESETS
+webgl.html,1440x900,heading,CAMERA
+webgl.html,1440x900,heading,SAVED VIEWS
+webgl.html,1440x900,heading,KEYS
+webgl.html,1440x900,label,Azimuth
+webgl.html,1440x900,label,Elevation
+webgl.html,1440x900,label,Distance
+webgl.html,1440x900,label,Field of view
+webgl.html,1440x900,helper,Whole machine 0
+webgl.html,1440x900,helper,Gantry
+webgl.html,1440x900,helper,At the tool F
+webgl.html,1440x900,helper,Operator's end
+webgl.html,1440x900,helper,Under the table
+webgl.html,1440x900,helper,"Plan, from above"
+webgl.html,1440x900,helper,No saved views yet.
+webgl.html,1440x900,helper,orbit
+webgl.html,1440x900,helper,tilt
+webgl.html,1440x900,helper,pan
+webgl.html,1440x900,helper,zoom
+webgl.html,1440x900,helper,orthographic
+webgl.html,1440x900,helper,whole · tool
+webgl.html,1440x900,helper,stage a fault
+webgl.html,1440x900,button,Run
+webgl.html,1440x900,button,Tour the file and every fault
+webgl.html,1440x900,heading,FILE
+webgl.html,1440x900,label,Clock
+webgl.html,1440x900,helper,"A two-pass 600 × 400 mm profile, then a 300 × 200 mm pocket, in 18 mm plywood. 6 mm two-flute bit at 12000 rpm and 60 mm/s (0.15 mm per tooth)."
+webgl.html,1440x900,helper,pause only
+webgl.html,1440x900,helper,rewind
+webgl.html,1440x900,helper,±10 s
+webgl.html,1440x900,helper,±1 s
+webgl.html,1440x900,helper,reset
+webgl.html,1440x900,helper,Catalogue reference movement area 389 × 155 × 20.3 cm. The pendant carries Reset · Start · E-stop.
+webgl.html,1440x900,button,‹ Prev
+webgl.html,1440x900,button,Replay
+webgl.html,1440x900,button,Auto
+webgl.html,1440x900,button,Next ›
+webgl.html,1440x900,button,Close
+webgl.html,1440x900,nav-link,01Rules
+webgl.html,1440x900,nav-link,02The machine
+webgl.html,1440x900,nav-link,03Run a job
+webgl.html,1440x900,nav-link,04Zeroing
+webgl.html,1440x900,nav-link,05Pre-flight
+webgl.html,1440x900,nav-link,06Something’s wrong
+webgl.html,1440x900,nav-link,07Feeds & CAM
+webgl.html,1440x900,nav-link,08Maintenance
+webgl.html,1440x900,nav-link,09Sign-off
+webgl.html,1440x900,helper,01Rules
+webgl.html,1440x900,helper,02The machine
+webgl.html,1440x900,helper,03Run a job
+webgl.html,1440x900,helper,04Zeroing
+webgl.html,1440x900,helper,05Pre-flight
+webgl.html,1440x900,helper,06Something’s wrong
+webgl.html,1440x900,helper,07Feeds & CAM
+webgl.html,1440x900,helper,08Maintenance
+webgl.html,1440x900,helper,09Sign-off
+webgl.html,1440x900,helper,"Mid-cut, one closed-loop X motor on each end plate pulls the gantry along its rack. The two must stay in step."
+webgl.html,1440x900,helper,"E01 Alpha fault Stops dead mid-cut; the driver LED turns red. Everything stops dead mid-cut; the red fault LED on the control box lights and the software reports an alpha alarm. Cause A closed-loop alphaStep motor was pushed past what its correction could hold: an obstruction, a clamp struck at speed, chips packed into the rack, or a damaged motor cable. (At 1.8° of lag the driver starts correcting; the alarm comes when correction fails.) Cure Stop and call staff; do not open the cabinet. Staff check the driver and clear the cause. Reset, re-home (C3) and re-zero after recovery; position is lost."
+webgl.html,1440x900,helper,Everything stops dead mid-cut; the red fault LED on the control box lights and the software reports an alpha alarm.
+webgl.html,1440x900,helper,"A closed-loop alphaStep motor was pushed past what its correction could hold: an obstruction, a clamp struck at speed, chips packed into the rack, or a damaged motor cable. (At 1.8° of lag the driver starts correcting; the alarm comes when correction fails.)"
+webgl.html,1440x900,helper,"Stop and call staff; do not open the cabinet. Staff check the driver and clear the cause. Reset, re-home (C3) and re-zero after recovery; position is lost."
+index.html,390x844,summary,CONTENTS
+index.html,390x844,nav-link,ShopBot PRSalpha 144-60
+index.html,390x844,nav-link,"3D model, full screen"
+rules.html,390x844,summary,CONTENTS
+rules.html,390x844,nav-link,ShopBot PRSalpha 144-60
+rules.html,390x844,nav-link,"3D model, full screen"
+machine.html,390x844,summary,CONTENTS
+machine.html,390x844,nav-link,ShopBot PRSalpha 144-60
+machine.html,390x844,nav-link,"3D model, full screen"
+run.html,390x844,summary,CONTENTS
+run.html,390x844,nav-link,ShopBot PRSalpha 144-60
+run.html,390x844,nav-link,"3D model, full screen"
+zero.html,390x844,summary,CONTENTS
+zero.html,390x844,nav-link,ShopBot PRSalpha 144-60
+zero.html,390x844,nav-link,"3D model, full screen"
+preflight.html,390x844,summary,CONTENTS
+preflight.html,390x844,nav-link,ShopBot PRSalpha 144-60
+preflight.html,390x844,nav-link,"3D model, full screen"
+trouble.html,390x844,summary,CONTENTS
+trouble.html,390x844,summary,"E01 Alpha driver fault — “location no longer ACCURATE”[1,22,30]"
+trouble.html,390x844,summary,"E02 USB disconnect / communications failure[7,55]"
+trouble.html,390x844,summary,"E04 C3 homes early, fails, or asks to “move off prox”[2,6,49]"
+trouble.html,390x844,summary,"E05 Z plate not detected[4,6]"
+trouble.html,390x844,summary,"E06 C2 touches but stops[4,6]"
+trouble.html,390x844,summary,"E07 Spindle will not start[4,21,24,25]"
+trouble.html,390x844,summary,"E08 RPM will not change[4,6,52]"
+trouble.html,390x844,summary,E09 Wrong spindle-start order[4]
+trouble.html,390x844,summary,"E10 Bit slips in the collet[4,13,16,31]"
+trouble.html,390x844,summary,"E11 Tool pull-out read as axis drift[1,13,16]"
+trouble.html,390x844,summary,"E16 Dust packed in rack teeth[13,32]"
+trouble.html,390x844,summary,"E17 Worn rack or pinion[13,15,16,33]"
+trouble.html,390x844,summary,"E18 Loose pinion set screw / tired motor spring[2,13,15]"
+trouble.html,390x844,summary,"E21 Crash into a clamp or screw[1,4,12]"
+trouble.html,390x844,summary,"E22 Part lifts or flies[4,12,29]"
+trouble.html,390x844,summary,"E23 Clamps or shims let go[12,11]"
+trouble.html,390x844,summary,"E28 Retract height too low for clamps[10,12]"
+trouble.html,390x844,summary,"E38 Gantry out of square[2,13,16]"
+trouble.html,390x844,summary,"E39 Bit hits a hold-down screw[1,4,12]"
+trouble.html,390x844,nav-link,ShopBot PRSalpha 144-60
+trouble.html,390x844,nav-link,"3D model, full screen"
+trouble.html,390x844,helper,"E01 Alpha driver fault — “location no longer ACCURATE”[1,22,30] WHAT YOU SEE Abrupt stop, driver-fault dialog, red LED on the box; coordinates untrustworthy. WHY Obstruction or excessive load, chips in the rack, a struck clamp, a damaged motor cable; AS drivers also trip on heat, voltage, speed and sensor faults. WHAT TO DO Stop and call staff. Staff check the driver LED and cause; students do not open the cabinet. After recovery, reset, re-home (C3) and re-zero. Reduce feed or depth if it was the cut."
+trouble.html,390x844,helper,"E02 USB disconnect / communications failure[7,55] WHAT YOU SEE SB3 loses the controller mid-file; spindle keeps running. WHY PC power management (USB selective suspend, sleep), long or damaged cable. WHAT TO DO E-stop first and call staff. Staff check PC power settings and the direct USB cable (under 3 m, no extension). Rehome and re-zero after recovery."
+trouble.html,390x844,helper,"E04 C3 homes early, fails, or asks to “move off prox”[2,6,49] WHAT YOU SEE Wrong zero, stop before the target, or a nagging prox dialog. WHY Misaligned target, swapped input polarity, bad switch or cable, dead input channel. WHAT TO DO Stop and call staff to check inputs 2/3, target alignment and wiring. Do not disable limits."
+trouble.html,390x844,helper,"E05 Z plate not detected[4,6] WHAT YOU SEE Input 1 stays dark; the bit keeps descending. WHY Clip knocked off the carriage plate or on paint/dust, a dirty plate or bit, dirty contact, open lead or connector. WHAT TO DO Test input 1 before every C2; it must light on contact and clear on separation. If it fails, do not run C2. If Z fails to reverse at contact, spacebar; if Z still moves, E-stop. Call staff."
+trouble.html,390x844,helper,"E06 C2 touches but stops[4,6] WHAT YOU SEE First touch registers, routine halts. WHY Plate moved before the second touch; or (staff: check the C2 settings) a zero Safe-Z pull-up. WHAT TO DO Leave the plate until both touches finish. If C2 halts, stop and call staff; students do not change pull-up settings."
+trouble.html,390x844,helper,"E07 Spindle will not start[4,21,24,25] WHAT YOU SEE Axes move; spindle stays still; a still bit snaps instantly. WHY Interlock key off, no output 1 / pendant Start, VFD in LOCAL, or a drive fault. WHAT TO DO Stop the file. Check the key, output 1 and pendant Start sequence with everyone clear. If it still fails, call staff; do not change VFD parameters."
+trouble.html,390x844,helper,"E08 RPM will not change[4,6,52] WHAT YOU SEE Typed value ignored; speed stays as before. WHY RPM window closed, Enter not pressed, wrong VFD selected, RPM-board USB lost, legacy keypad-only VFD. WHAT TO DO Open TR, type the required rpm and press Enter; confirm on the VFD display. If it does not respond, stop and call staff; do not change drive settings."
+trouble.html,390x844,helper,"E09 Wrong spindle-start order[4] WHAT YOU SEE File starts with a still spindle. WHY Pendant green START pressed after OK (alpha wants it before), or not at all. WHAT TO DO At the spindle prompt: pendant START, hear it reach speed, read the rpm on the VFD, then OK."
+trouble.html,390x844,helper,"E10 Bit slips in the collet[4,13,16,31] WHAT YOU SEE Cuts get deeper pass by pass; Z zero seems to drift. WHY Dirty or worn ER25 collet, nut not snapped onto the collet first, wrong torque, wrong shank size. WHAT TO DO Clean taper/collet/nut; collet into nut first; use the tightening method demonstrated during induction, not a torque for another nut; replace collets after 400–700 h or any incident."
+trouble.html,390x844,helper,"E11 Tool pull-out read as axis drift[1,13,16] WHAT YOU SEE Depth changes while coordinates look right; witness mark on the shank has moved. WHY Inadequate grip; the motor encoder cannot see a bit sliding. WHAT TO DO Compare Z zero before/after a test cut; replace suspect collet and bit; don't clamp on the flutes."
+trouble.html,390x844,helper,"E16 Dust packed in rack teeth[13,32] WHAT YOU SEE Ticking, uneven motion, erratic Z. WHY Chips filling the gear mesh. WHAT TO DO Brush racks and pinions clean, then light grease (schedule: BB-sized blob every 6 in, run the axes, wipe excess)."
+trouble.html,390x844,helper,"E17 Worn rack or pinion[13,15,16,33] WHAT YOU SEE Oval circles, Z notches at certain heights, reversal play. WHY Worn teeth or poor mesh. WHAT TO DO Push-pull test, inspect full travel, replace pinions as a set; CC circle test separates mechanics from bad CAD."
+trouble.html,390x844,helper,"E18 Loose pinion set screw / tired motor spring[2,13,15] WHAT YOU SEE Clunks, sudden registration loss, backlash. WHY Pinion moving on its shaft or not fully engaged. WHAT TO DO Staff task: tighten set screw and key, set spring preload and full-width engagement; rehome afterwards."
+trouble.html,390x844,helper,"E21 Crash into a clamp or screw[1,4,12] WHAT YOU SEE Bang, broken cutter, alarm, shifted cut. WHY Toolpath or rapid intersects hardware. WHAT TO DO Stop, inspect tool/mount/drives, fix clearance, rehome and re-zero; plan screw zones."
+trouble.html,390x844,helper,"E22 Part lifts or flies[4,12,29] WHAT YOU SEE Sheet rises or a cut-out catches the bit and is thrown. WHY Poor hold-down, bowed stock, no tabs. WHAT TO DO Screws in the waste, tabs or 0.25–0.75 mm onion skin, never reach in."
+trouble.html,390x844,helper,"E23 Clamps or shims let go[12,11] WHAT YOU SEE Sheet shifts after the first passes; parts come out the right shape in the wrong place. WHY Spring or pistol-grip clamps creeping, shims loosening as the sheet relaxes, too few screws, screws only at the edge. WHAT TO DO Screws into the spoilboard through the waste, at least every 300–400 mm and near every freed part; re-check clamps after the first pass; shim bowed stock flat before screwing."
+trouble.html,390x844,helper,"E28 Retract height too low for clamps[10,12] WHAT YOU SEE Traverse hits a clamp though the contours clear. WHY CAM clearance below fixture height, or Z reference changed. WHAT TO DO Clearance = tallest fixture + margin; preview rapid links."
+trouble.html,390x844,helper,"E38 Gantry out of square[2,13,16] WHAT YOU SEE Diagonals differ; corners not 90°. WHY Gantry reset with sides misaligned; unequal mesh; table shifted. WHAT TO DO Stop and call staff for gantry alignment and diagonal checks; validate squareness before cutting again."
+trouble.html,390x844,helper,"E39 Bit hits a hold-down screw[1,4,12] WHAT YOU SEE A loud bang mid-cut with the spindle running; the bit breaks off and a screw head in the waste is chewed up. WHY A screw placed on or too close to a toolpath, or the CAM clearance height set below the screw heads so a move between cuts runs into one. Carbide shatters on steel. WHAT TO DO Spacebar (E-stop in an emergency), spindle stopped, key OFF and removed, tell staff; the bit and possibly the collet are scrap. Screws only in planned safe zones of the waste, drawn in CAM and checked against every toolpath and rapid; clearance above the tallest screw head."
+feeds.html,390x844,summary,CONTENTS
+feeds.html,390x844,nav-link,ShopBot PRSalpha 144-60
+feeds.html,390x844,nav-link,"3D model, full screen"
+maintain.html,390x844,summary,CONTENTS
+maintain.html,390x844,nav-link,ShopBot PRSalpha 144-60
+maintain.html,390x844,nav-link,"3D model, full screen"
+quiz.html,390x844,summary,CONTENTS
+quiz.html,390x844,nav-link,ShopBot PRSalpha 144-60
+quiz.html,390x844,nav-link,"3D model, full screen"
+light/index.html,1440x900,nav-link,Dark version
+light/rules.html,1440x900,nav-link,Dark version
+light/machine.html,1440x900,nav-link,Dark version
+light/run.html,1440x900,nav-link,Dark version
+light/zero.html,1440x900,nav-link,Dark version
+light/preflight.html,1440x900,nav-link,Dark version
+light/trouble.html,1440x900,nav-link,Dark version
+light/feeds.html,1440x900,nav-link,Dark version
+light/maintain.html,1440x900,nav-link,Dark version
+light/quiz.html,1440x900,nav-link,Dark version
+light/webgl.html,1440x900,nav-link,Dark version

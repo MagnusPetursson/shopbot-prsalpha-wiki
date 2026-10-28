@@ -100,7 +100,7 @@ ${lbl(ox + 282, 140, "stock", 'text-anchor="end" class="sb-vis-label sb-small sb
 ${L(ox + 8, z0, ox + 302, z0, `stroke="${col}" stroke-width="1.2" stroke-dasharray="5 4"`)}${lbl(ox + 10, z0 - 6, "Z0", 'class="sb-vis-label sb-small"')}
 ${P(`M${ox + 40} ${r} H${ox + 92} V${cut} H${ox + 226} V${r} H${ox + 280}`, `fill="none" stroke="${col}" stroke-width="2.4" stroke-linejoin="round"`)}
 ${R(ox + 88, r - 30, 8, 30, 'fill="var(--anatomy-strong)"')}
-${lbl(ox + 20, 20, ok ? "you touched the stock top" : "you touched the bed", 'class="sb-vis-label"')}
+${lbl(ox + 20, 20, ok ? "plate on the stock top" : "plate on the bed", 'class="sb-vis-label"')}
 ${lbl(ox + 20, 42, ok ? "cuts as planned" : "every move a sheet too deep", `class="sb-vis-label sb-small" fill="${col}" style="fill:${col}"`)}`;
   };
   return `<div class="sb-crash-pair">${S(310, 250, panel(0, 110, true), "sb-crash", "Z zero on the stock top: cuts as planned")}${S(310, 250, panel(0, 160, false), "sb-crash", "Z zero on the bed: every move a sheet too deep")}</div>`;

@@ -53,8 +53,8 @@ const localLinks = (html) => html
   .replace(/<a href="webgl\.html[^"]*">([^<]*)<\/a>/g, "$1");
 const P = Object.fromEntries(S.PAGES.map((p) => [p.file.replace(".html", ""), { ...p }]));
 // two page subtitles describe the web version; the printed book says what is on paper instead
-P.machine.sub = "Four motors, three axes, one spindle. What each part does, and what the motors cannot see.";
-P.maintain.title = "Looking after the machine";
+P.machine.sub = "Axes, drives and spindle: what each part does and what the motors cannot detect.";
+P.maintain.title = "Machine maintenance";
 P.maintain.sub = "The published schedule and why it matters here. Glossary, I/O table and sources are in the appendix.";
 const cite = S.c;
 
@@ -70,7 +70,7 @@ const hsec = (eyebrow, title, intro, inner, cls = "") => `<section class="hb-sec
 const rules = chapter("rules", `<ol class="sb-tenrules">${S.RULES.map(([t, x]) => `<li><b>${t}</b><span>${x}</span></li>`).join("")}</ol>${S.stopsBox}${S.startBox}`);
 
 // 02 Machine: the WebGL viewer becomes a captioned still; the spec line; how the mechanisms work; the numbers
-const machine = chapter("machine", `<div class="hb-hero"><figure class="hb-still"><img src="${img("operator")}" alt=""></figure><div class="hb-hero-side"><p class="hb-cap"><b>The machine in 3D.</b> Still from the site's 3D model: table and spoilboard, the gantry (X bridge), the Y car carrying the spindle, the control PC and the wall pendant with the only <span class='nw'>E-stop</span>. Online the model turns and acts out ten faults; five are frozen in chapter 06.</p>${V.stats([["Sheet", "12 × 5 ft"], ["Travel", "153 × 61 in"], ["Motors", "4 closed-loop alphaStep"], ["Drive", "7.2 : 1, rack and pinion"], ["Rapid", "30 in/s · 760 mm/s"], ["Spindle", "12 000 rpm typical, 6–18k"], ["Resolution", "0.0004 in ≈ 0.01&nbsp;mm"]])}</div></div>
+const machine = chapter("machine", `<div class="hb-hero"><figure class="hb-still"><img src="${img("operator")}" alt=""></figure><div class="hb-hero-side"><p class="hb-cap"><b>The machine in 3D.</b> Still from the site's 3D model: table and spoilboard, the gantry (X bridge), the Y car carrying the spindle, the control PC and the wall pendant with the only <span class='nw'>E-stop</span>. Online, the model rotates and animates ten faults; chapter 06 shows five as stills.</p>${V.stats([["Sheet", "12 × 5 ft"], ["Travel", "153 × 61 in"], ["Motors", "4 closed-loop alphaStep"], ["Drive", "7.2 : 1, rack and pinion"], ["Rapid", "30 in/s · 760 mm/s"], ["Spindle", "12 000 rpm typical, 6–18k"], ["Resolution", "0.0004 in ≈ 0.01&nbsp;mm"]])}</div></div>
 <p class="sb-aside hb-note"><b>Staff only, not part of the student course:</b> the rotary-axis chuck standing beside the table belongs to this machine but is not used in student jobs. Leave it alone; ask staff.</p>
 ${hsec("How it works", "How the mechanisms work", "", `<div class="hb-cols">${S.mech.replace(/^[\s\S]*?<h3>[^<]*How the mechanisms work<\/h3>/, "").replace(/<h3>Zeroing and homing<\/h3>[\s\S]*$/, "")}</div><p class="sb-aside hb-note">Zeroing and homing are chapter 04; dust extraction and hold-down are chapters 01 and 03.</p>`)}
 ${hsec("Reference", "The machine in numbers", "", S.numbersHtml, "hb-numbers")}`);
@@ -78,7 +78,7 @@ ${hsec("Reference", "The machine in numbers", "", S.numbersHtml, "hb-numbers")}`
 // 03 Run a job: the eleven-step strip and the two drawings from the manual section (the manual prose itself is cut)
 const runBody = S.BODIES["run.html"].body;
 const runFigs = runBody.match(/<figure class="sb-fig [\s\S]*?<\/figure>/g) || [];
-const run = chapter("run", `${S.procHtml}${hsec("Two drawings", "Hold-down and the collet, in section", "Get these two right and most first-job crashes do not happen.", `<div class="hb-figpair">${runFigs.join("")}</div>`)}`);
+const run = chapter("run", `${S.procHtml}${hsec("Sections", "Hold-down and collet", "Most first-job crashes come from an error in one of these two.", `<div class="hb-figpair">${runFigs.join("")}</div>`)}`);
 
 // 04 Zeroing: the trio and the three figures (detail accordions cut)
 const zeroBody = S.BODIES["zero.html"].body.replace(/<div class="sb-measure sb-group">[\s\S]*$/, "");
@@ -93,7 +93,7 @@ const preflight = `<section class="hb-ch hb-pf" id="ch-preflight"><header class=
 const beat = (n, t) => `<li><img src="${img("screw-b" + n)}" alt=""><span><b>${n}</b> ${t}</span></li>`;
 const trouble = chapter("trouble", `<div class="sb-trouble-tree">${V.stoppedFlow()}</div>
 <section class="hb-sec sb-staff" id="callstaff"><h2>${V.icon("alarm")}Stop and call staff when</h2>${CALL_STAFF}</section>
-${hsec("Seen in the 3D model", "Five faults, frozen", "Stills from the site's 3D model, which acts out ten faults. The E-number leads to the row in Appendix A.", `<div class="hb-stills">
+${hsec("3D model", "Five faults, as stills", "Stills from the site's 3D model, which animates ten faults. The E-number leads to the row in Appendix A.", `<div class="hb-stills">
 ${still("zzero-shatter", "<b><a href=\"#E05\">E05</a> · C2 does not see the plate.</b> Input 1 stays dark, Z keeps driving down and the cutter shatters on the plate. Test input 1 before every C2.")}
 ${still("collet-slip", "<b><a href=\"#E10\">E10</a> · Bit slips in the collet.</b> 2.5 mm of slip turns an 18 mm cut into 20.5 mm. The motors cannot see it.")}
 ${still("part-fling", "<b><a href=\"#E22\">E22</a> · Part lifts off.</b> No tabs or onion skin: the freed part is thrown clear of the table and the bit snaps.")}
@@ -101,7 +101,7 @@ ${still("usb-stopped", "<b><a href=\"#E02\">E02</a> · USB lost.</b> Motion stop
 </div>
 <figure class="hb-beats"><ol>${beat(1, "Screw on the toolpath, bit cutting at 12 000 rpm.")}${beat(2, "The CAM toolpath runs over the screw head.")}${beat(3, "Impact: carbide tip shatters, a bang like a gunshot.")}${beat(4, "Aftermath: broken shank, fragments, a chipped screw.")}</ol>
 <figcaption><b><a href="#E39">E39</a> · Bit hits a hold-down screw</b>, in four beats (key S in the online 3D model). Check every screw and clamp against the toolpaths in CAM before you run.</figcaption></figure>`, "hb-frozen")}
-${hsec("Index", "Start from what you see", "Find what you see, not what you suspect. Each card names the most likely causes in order and points to the fault entry (E-number) in Appendix A.", S.symHtml, "hb-symptoms")}`);
+${hsec("Index", "Symptoms", "Look up the symptom, not the suspected cause. Each card names the most likely causes in order and points to the fault entry (E-number) in Appendix A.", S.symHtml, "hb-symptoms")}`);
 
 // 07 Feeds: the calculator as a static still at the worked example; table; rules of thumb; CAM checklist
 const X = (v) => 12 + Math.min(1, v / 0.5) * 376, lo = 0.13 * 6 / 6.35, hi = 0.5 * 6 / 6.35;
@@ -113,15 +113,15 @@ const calcStill = V.chipCalc()
 const thumbs = (S.feedsNotes.match(/<p><b>Rules of thumb\.[\s\S]*?<\/p>/) || [""])[0];
 const feeds = chapter("feeds", `<figure class="hb-calc">${calcStill}<figcaption>The site's chipload calculator, frozen at the worked example: 6 mm two-flute, 14 000 rpm, 4200 mm/min.</figcaption></figure>
 <div class="hb-cols hb-why">${S.feedsIntro}<div class="sb-formula">f<sub>z</sub> = feed ÷ (rpm × flutes)</div>${S.feedsWorked}${thumbs}</div>
-${hsec("Starting points", "Used in Icelandic Fab Labs", "6 mm two-flute unless stated. Record the material, cutter, feed, rpm and any fault in your job notes and report problems to staff.", `<table class="sb-ftab"><colgroup><col style="width:17%"><col style="width:13%"><col style="width:8%"><col style="width:11%"><col style="width:10%"><col></colgroup><thead><tr><th>Material</th><th>Cutter</th><th>rpm</th><th>Feed mm/min</th><th>mm/tooth</th><th>Notes</th></tr></thead><tbody>${S.FEEDTAB.map(([m, cu, r, f, z, n]) => `<tr><td>${m}</td><td>${cu}</td><td class="num">${r}</td><td class="num">${f}</td><td class="num">${z}</td><td class="note">${n}</td></tr>`).join("")}</tbody></table>`)}
-${hsec("Checklist", "From CAM to the machine", "", S.stripH2(CAM))}`);
+${hsec("Starting points", "Icelandic Fab Lab settings", "6 mm two-flute unless stated. Record the material, cutter, feed, rpm and any fault in your job notes and report problems to staff.", `<table class="sb-ftab"><colgroup><col style="width:17%"><col style="width:13%"><col style="width:8%"><col style="width:11%"><col style="width:10%"><col></colgroup><thead><tr><th>Material</th><th>Cutter</th><th>rpm</th><th>Feed mm/min</th><th>mm/tooth</th><th>Notes</th></tr></thead><tbody>${S.FEEDTAB.map(([m, cu, r, f, z, n]) => `<tr><td>${m}</td><td>${cu}</td><td class="num">${r}</td><td class="num">${f}</td><td class="num">${z}</td><td class="note">${n}</td></tr>`).join("")}</tbody></table>`)}
+${hsec("Checklist", "CAM post-processing", "", S.stripH2(CAM))}`);
 
 // 08 Maintenance: calendar + why (the full published schedule is cut; glossary and I/O are Appendix B)
-const maintain = chapter("maintain", `${V.maintGrid(S.maintCols)}${hsec("Why", "Why maintenance matters here", "", `<div class="hb-cols">${S.stripH2(MAINTENANCE).replace(/<h3>What this page does not know[\s\S]*$/, "")}</div>`)}
+const maintain = chapter("maintain", `${V.maintGrid(S.maintCols)}${hsec("Why", "Why maintenance matters", "", `<div class="hb-cols">${S.stripH2(MAINTENANCE).replace(/<h3>What this page does not know[\s\S]*$/, "")}</div>`)}
 `);
 
 // 09 Quiz, answers open
-const quiz = chapter("quiz", openAll(S.relink(S.stripH2(QUIZ)).replace("Answers are under each question; think before you open them.", "Answers follow each question; try answering before reading on.").replace(/<summary>Answer<\/summary>/g, "<summary>Answer</summary><div>").replace(/<\/details>/g, "</div></details>")));
+const quiz = chapter("quiz", openAll(S.relink(S.stripH2(QUIZ)).replace("Answer each question before opening its answer.", "Answer each question before reading its answer.").replace(/<summary>Answer<\/summary>/g, "<summary>Answer</summary><div>").replace(/<\/details>/g, "</div></details>")));
 
 // Appendix: A faults E01-E39, B glossary, C sources  (9.5 pt, two columns)
 const fnum = (id) => Number(id.slice(1));
@@ -130,7 +130,7 @@ const faults = [...FAULTS_DOC].sort((a, b) => fnum(a[0]) - fnum(b[0])).map(([id,
 const glossary = S.proc(/^11\./);
 // printed form of a source URL: the host only (the PDF link keeps the full address)
 const shortUrl = (u) => { const m = u.match(/^https?:\/\/(?:www\.)?([^/]+)/); return m ? m[1] : u; };
-const appendix = `<section class="hb-ch hb-app" id="ch-appendix"><header class="hb-chh"><div class="sb-kicker"><span>A–C</span>Appendix</div><h1>Reference</h1><p class="sb-lead">The full fault table, the command glossary and the sources. Look things up here; learn them from the chapters.</p></header>
+const appendix = `<section class="hb-ch hb-app" id="ch-appendix"><header class="hb-chh"><div class="sb-kicker"><span>A–C</span>Appendix</div><h1>Reference</h1><p class="sb-lead">The full fault table, the command glossary and the sources.</p></header>
 <section class="hb-asec" id="faults"><h2><span>A</span>All 39 failure modes</h2><p class="hb-aintro">What you see, why, what to do. Faults the 3D model can act out carry their key. Numbers in brackets are sources (Appendix C).</p><div class="hb-acols">${faults}</div></section>
 <section class="hb-asec" id="glossary"><h2><span>B</span>Command glossary</h2><div class="hb-acols hb-gloss">${glossary}</div><h3 class="hb-ah3" id="io">Inputs, outputs and status LEDs</h3><div class="hb-acols hb-io">${S.proc(/^12\./)}</div></section>
 <section class="hb-asec" id="sources"><h2><span>C</span>Sources</h2><div class="hb-acols">${S.allSources.replace(/<a href="([^"]+)">[^<]+<\/a>/g, (m, u) => `<a href="${u}">${shortUrl(u)}</a>`)}</div></section></section>`;
@@ -142,7 +142,7 @@ const TOC = [["rules"], ["machine"], ["run"], ["zero"], ["preflight"], ["trouble
   .concat([{ id: "faults", n: "A", label: "All 39 failure modes", find: "All 39 failure modes" }, { id: "glossary", n: "B", label: "Command glossary", find: "Command glossary" },
     { id: "sources", n: "C", label: "Sources", find: "\nC Sources", exact: "Sources" }]);
 const cover = (pages) => `<section class="hb-cover"><div class="hb-cover-top"><div class="sb-kicker"><span>Handbook</span>For first-course students</div>
-<h1>The ShopBot PRSalpha <em>144-60</em></h1><p class="sb-lead">How it works, how to run it, what goes wrong. The printed companion to the lab's teaching site.</p></div>
+<h1>The ShopBot PRSalpha <em>144-60</em></h1><p class="sb-lead">Operation, zeroing, troubleshooting, feeds and maintenance. Printed companion to the lab's teaching site.</p></div>
 <div class="hb-cover-meta"><div><span>Lab</span>Prototyping Lab, University of Iceland</div><div><span>Date</span>${TODAY}</div><div><span>Version</span>Handbook 2 · this machine: ${identity.replace(/^This machine's control box: /, "").replace(/Model# (\d+)/, '<span class="nw">Model# $1</span>').replace(/SB3 version ([\d.]+)/, '<span class="nw">SB3 version $1</span>')}</div></div>
 <nav class="hb-toc" aria-label="Contents"><div class="hb-toc-h">Contents</div><ol>${TOC.map((t) => `<li><a href="#${t.id}"><span class="n">${t.n}</span><b>${t.label}</b><span class="pg">${pages?.[t.id] ?? ""}</span></a></li>`).join("")}</ol></nav>
 <p class="hb-cover-foot">References: Appendix C. Read chapters 01–05 before your induction, tear out the pre-flight sheet (page ${pages?.["ch-preflight"] ?? "—"}) and keep it at the machine.</p></section>`;

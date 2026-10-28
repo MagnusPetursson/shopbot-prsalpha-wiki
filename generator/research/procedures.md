@@ -35,7 +35,7 @@ Audience: first-time CNC students. References use the source tags below.
 7. With everyone clear of the machine, insert the spindle interlock key into the safety lockout next to the power switch and turn it to **ENGAGED** [QS p.12]. Before hands-on work, stop the spindle, turn the key OFF and remove it. Keep it in your pocket [UG p.5].
 8. Switch the dust collector on **at the collector itself**; it is switched manually, not by SB3. It stays on for the whole job [MS p.3].
 9. Warm up, home, then zero: C5 (the lab's standard warm-up), then C3, then C2 [MS p.3].
-### When you are finished
+### Leaving the machine
 **Users never power down the machine.** Finish or stop the file and leave the machine powered for lab staff. Do not exit SB3, turn off the control cabinet or switch off the spindle controller. Use the E-stop in an emergency, not as an end-of-session switch. Follow “After the job” for spindle stopping, key removal and cleanup.
 ## 2. Keypad and jogging (K / SK)
 ### Opening and closing the keypad

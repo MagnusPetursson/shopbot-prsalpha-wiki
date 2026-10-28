@@ -1077,7 +1077,7 @@ function showCaption() {
     capText.textContent = "Drag to orbit · wheel to zoom · shift-drag to pan · 1–9 or S stage a fault · Run button plays · Space pauses.";
     const messy = HIDDEN.includes("dustfoot");
     capTodo.hidden = !messy; capNav.hidden = true;
-    if (messy) capTodo.innerHTML = "<b>Dust foot</b> Don\u2019t forget to put the vacuum head (dust foot) on, otherwise things get messy.";
+    if (messy) capTodo.innerHTML = "<b>Dust foot</b> Hidden in the model only. On the machine, cut with the dust foot fitted.";
     fitCaption();
   }
 }

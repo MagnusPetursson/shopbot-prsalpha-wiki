@@ -64,13 +64,13 @@ export const relink = (html) => html
 
 // --------------------------------------------------------------- pages
 export const PAGES = [
-  { file: "rules.html", nav: "Rules", title: "Before you touch it", sub: "Ten rules and two procedures. Know them before the induction." },
-  { file: "machine.html", nav: "The machine", title: "What moves, and why", sub: "Four motors, three axes, one spindle. Turn the model; pick one of the ten faults in its side panel to watch it happen." },
-  { file: "run.html", nav: "Run a job", title: "Your first job", sub: "Eleven steps from CAM to a finished part, with the command at each step." },
+  { file: "rules.html", nav: "Rules", title: "Safety rules", sub: "Ten rules and two procedures. Know them before the induction." },
+  { file: "machine.html", nav: "The machine", title: "How the machine works", sub: "Axes, drives, spindle and controls, with a 3D model that animates ten faults." },
+  { file: "run.html", nav: "Run a job", title: "Running a job", sub: "Eleven steps from CAM to a finished part, with the command at each step." },
   { file: "zero.html", nav: "Zeroing", title: "Home, job zero and Z zero", sub: "Three different zeros. Mixing them up is the most common first-week crash." },
-  { file: "preflight.html", nav: "Pre-flight", title: "Pre-flight checklist", sub: "Print it. Tick it, in order, every time." },
-  { file: "trouble.html", nav: "Something’s wrong", title: "Something went wrong", sub: "Start from what you see. Stop first, diagnose second." },
-  { file: "feeds.html", nav: "Feeds & CAM", title: "Feeds, speeds and the post", sub: "One number decides most cuts. Most machine failures are decided at the computer." },
+  { file: "preflight.html", nav: "Pre-flight", title: "Pre-flight checklist", sub: "Print it and tick every item, in order, for every job." },
+  { file: "trouble.html", nav: "Troubleshooting", title: "Troubleshooting", sub: "Find the fault from the symptom. Stop the machine before diagnosing." },
+  { file: "feeds.html", nav: "Feeds & CAM", title: "Feeds, speeds and CAM", sub: "Chipload, starting feeds and the CAM checklist. Most machine failures start in CAM." },
   { file: "maintain.html", nav: "Maintenance", title: "Maintenance and reference", sub: "The published schedule, the command glossary, the I/O table, the sources." },
   { file: "quiz.html", nav: "Sign-off", title: "Self-check", sub: "Twelve questions. Passing is part of the sign-off." },
 ];
@@ -462,7 +462,7 @@ body[data-theme=light] .sb-figure-block{--anatomy-muted:#8c8c90}
 `;
 
 function page(p, i, body, script = "", { bodyClass = "" } = {}) {
-  let html = k.pageHtml({ title: `${p.title} — ShopBot PRSalpha 144-60`, theme: THEME, body: `<style>${PROSE_CSS}${SHELL_CSS}${V.VIS_CSS}${SITE_CSS}</style>${nav(p.file)}<article class="sb-doc">${p.noHead ? "" : head(p, p.headExtra || "")}${body}${i >= 0 ? pager(i) : ""}${colophon}</article>`, script, width: 1200 });
+  let html = k.pageHtml({ title: p.file === "index.html" ? "ShopBot PRSalpha 144-60" : `${p.title} — ShopBot PRSalpha 144-60`, theme: THEME, body: `<style>${PROSE_CSS}${SHELL_CSS}${V.VIS_CSS}${SITE_CSS}</style>${nav(p.file)}<article class="sb-doc">${p.noHead ? "" : head(p, p.headExtra || "")}${body}${i >= 0 ? pager(i) : ""}${colophon}</article>`, script, width: 1200 });
   html = html.replace("</title>", `</title>${FONTS}`);
   if (bodyClass) html = html.replace('<body class="iso"', `<body class="iso ${bodyClass}"`);
   BODIES[p.file] = { body, script };
@@ -477,7 +477,7 @@ const OPEN_JS = `const openHash=()=>{const id=decodeURIComponent(location.hash.s
 export const RULES = [
   ["Trained and signed off.", "You run this machine only after the induction and the instructor's sign-off. Until then, only with a signed-off person at the <span class='nw'>E-stop</span>."],
   ["Never alone, never tired.", "Two people in the room; the second one knows where the <span class='nw'>E-stop</span> is: the red button on the wall-mounted pendant by the monitor. It is the only one."],
-  ["Eyes and ears, for you and anyone watching.", "From the moment the machine is powered. No gloves, loose clothing, hair or lanyards near the gantry."],
+  ["Eye and ear protection for you and onlookers.", "From the moment the machine is powered. No gloves, loose clothing, hair or lanyards near the gantry."],
   ["Hands out of the cutting area while the control box is on.", "The only exception: spindle stopped, keypad closed, no file loaded or paused, and the key OFF in your pocket. It can move without warning, in any direction."],
   ["Key out for hands-on work.", "Spindle stopped, interlock key OFF and in your pocket before you change a bit, touch the collet, or load, move or clamp material."],
   ["Never leave a running job.", "Dust under the brush catches when a tool rubs, hits a screw or burns hardwood. Stand where you can see the cut and reach the <span class='nw'>E-stop</span>."],
@@ -486,18 +486,18 @@ export const RULES = [
   ["Extraction on.", "Switch the dust collector on at the collector itself (manual; SB3 does not switch it). It runs whenever the spindle runs. If the hose comes off the foot or the brush skirt is damaged, stop and tell staff."],
   ["Clean up; leave the machine powered.", "Stop the file and spindle; key out before cleanup. Clear and clean the deck, stow the bit, report faults. Users never power down the machine; leave it for lab staff. Use E-stop in an emergency, not to finish a session."],
 ];
-export const stopsBox = `<section class="sb-panel sb-panel-stop" id="stops"><div class="sb-panel-h">${V.icon("stop")}<h2>How to stop</h2></div><p class="sb-panel-sub">Two controls, two meanings. Use them without hesitating.</p><div class="sb-stopgrid">
+export const stopsBox = `<section class="sb-panel sb-panel-stop" id="stops"><div class="sb-panel-h">${V.icon("stop")}<h2>Stopping the machine</h2></div><p class="sb-panel-sub">Spacebar for a routine stop, E-stop when something is wrong. Use either without hesitating.</p><div class="sb-stopgrid">
 <div>${V.spacebar()}<span class="what ok">Routine · position kept</span><h3>Spacebar</h3><p>Or Enter, or on-screen Stop. Motion ramps down, Z lifts, position is kept, you can resume. <b>Treat the spindle as live</b> — it may keep turning, coast, or restart on resume. Before reaching in: spindle stopped, key OFF and removed, keypad closed, no file loaded or paused. Keep clear before restarting.${c(4, 11)}</p></div>
 <div>${V.pendant()}<span class="what bad">Something is wrong · position lost</span><h3><span class='nw'>E-stop</span></h3><p>The red button on the wall-mounted pendant by the monitor — the only <span class='nw'>E-stop</span> on this machine (the red-and-yellow rotary handle on the control cabinet is the power disconnect, not an <span class='nw'>E-stop</span>). Spindle power off at once, motors ~5 s later. Position is <b>lost</b>: twist to release → pendant <b>Reset</b> → <code>C3</code> → <code>C2</code>. If the software has frozen, <span class='nw'>E-stop</span> is the only control that still kills the spindle.${c(2, 10, 11)}</p></div>
 </div></section>`;
-export const startBox = `<section class="sb-panel sb-panel-start" id="spindle-start"><div class="sb-panel-h">${V.icon("play")}<h2>How to start a job</h2></div><p class="sb-panel-sub">The one sequence. The pendant comes before OK.</p>${V.flow([
+export const startBox = `<section class="sb-panel sb-panel-start" id="spindle-start"><div class="sb-panel-h">${V.icon("play")}<h2>Starting a job</h2></div><p class="sb-panel-sub">Pendant START before OK on the screen.</p>${V.flow([
   { title: "RPM typed, Enter", text: "Spindle RPM Control window (Tools menu or <code>TR</code>); leave it open." },
   { title: "<code>FP</code>, pick file, Start", text: "Offset = No Offset." },
   { title: "Pendant START", text: "When the screen says “Press START on control before pressing OK”. Green button.", hot: true },
   { title: "Spindle at speed", text: "Check it runs at the commanded rpm (the VFD display). There is no separate RUN step on the VFD." },
   { title: "OK", text: "Cutting begins. Hand near the spacebar for the first plunge." },
 ])}</section>`;
-page(PAGES[0], 0, `<ol class="sb-tenrules">${RULES.map(([t, x]) => `<li><b>${t}</b><span>${x}</span></li>`).join("")}</ol>${stopsBox}${startBox}<div class="sb-measure" style="margin-top:72px">${details("ShopBot's own safety list, from the manuals", proc(/^0\./))}</div>`);
+page(PAGES[0], 0, `<ol class="sb-tenrules">${RULES.map(([t, x]) => `<li><b>${t}</b><span>${x}</span></li>`).join("")}</ol>${stopsBox}${startBox}<div class="sb-measure" style="margin-top:72px">${details("ShopBot safety list (manuals)", proc(/^0\./))}</div>`);
 
 // ---- 2 Machine
 const numbers = AFTER_FIGURE.split("<h2>3 · Failure modes</h2>")[0];
@@ -507,7 +507,7 @@ page(PAGES[1], 1, `<div class="sb-stage-wrap"><iframe class="sb-gl-frame" src="w
 <div class="sb-stage-note"><span>The machine in 3D</span><a href="webgl.html">Open the model full screen →</a></div></div>
 <div class="sb-specrow">${V.stats([["Sheet", "12 × 5 ft"], ["Travel", "153 × 61 in"], ["Motors", "4 closed-loop alphaStep"], ["Drive", "7.2 : 1, rack and pinion"], ["Rapid", "30 in/s · 760 mm/s"], ["Spindle", "12 000 rpm typical, 6–18k"], ["Resolution", "0.0004 in ≈ 0.01&nbsp;mm"]])}</div>
 <p class="sb-measure sb-aside" id="rotary-axis"><b>Staff only, not part of the student course:</b> the rotary-axis chuck standing beside the table belongs to this machine but is not used in student jobs and is not shown in the 3D model. Leave it alone; ask staff.</p>
-<div class="sb-measure sb-group">${details("How the mechanisms work", mech)}${details("The machine in numbers", numbersHtml)}</div>`);
+<div class="sb-measure sb-group">${details("How the mechanisms work", mech.replace(/<h3>[^<]*How the mechanisms work<\/h3>/, ""))}${details("The machine in numbers", numbersHtml)}</div>`);
 
 // ---- 3 Run a job
 export const STEPS = [
@@ -526,12 +526,12 @@ export const STEPS = [
     ["Air cut", "<code>FP</code> with Offset = 3D, bit raised more than the deepest cut, spindle off. Then No Offset.", "FP|Offset 3D"],
     ["Cut", "RPM + Enter → <code>FP</code> → screen prompt → pendant START → spindle at commanded speed → OK → cut. Hand on the spacebar. Stay at the machine until it finishes.", "TR|Enter|FP|START|OK"]]],
   ["Finish", [
-    ["Done", "Finish or stop the file and stop the spindle. With everyone clear, raise Z and jog clear. Close the keypad, end any loaded/paused file and remove the key before cleanup. Collector off; clear, vacuum, brush and stow the bit. Report faults. Leave the machine powered for lab staff; users never power down. E-stop is for emergencies.", "Stop file|key out"]]],
+    ["Clean up", "Finish or stop the file and stop the spindle. With everyone clear, raise Z and jog clear. Close the keypad, end any loaded/paused file and remove the key before cleanup. Collector off; clear, vacuum, brush and stow the bit. Report faults. Leave the machine powered for lab staff; users never power down. E-stop is for emergencies.", "Stop file|key out"]]],
 ];
 let sn = 0;
 export const procHtml = `<div class="sb-proc">${STEPS.map(([ph, steps]) => `<div class="sb-phase"><div class="sb-phase-h">${ph}</div><ol>${steps.map(([t, x, cmd, hot]) => { sn++; return `<li class="sb-step${hot ? " hot" : ""}" id="step-${sn}"><span class="sb-step-n">${sn}</span><div><div class="sb-step-t">${t}</div><div class="sb-step-x">${x}</div></div><div class="sb-step-cmd">${cmd.split("|").map((s) => `<code>${s}</code>`).join("")}</div></li>`; }).join("")}</ol></div>`).join("")}</div>`;
 page(PAGES[2], 2, `${procHtml}
-${sec("Manual", "The detail behind each step", "", `<div class="sb-measure sb-group">${details("Power-up and leaving the machine", proc(/^1\./))}${details("Keypad and jogging", proc(/^2\./))}${details("Homing (C3)", proc(/^3\./))}${details("Material and hold-down", proc(/^4\./) + V.fig(V.holddown(), ["Screw in the waste.", "Profile cut, 0.2 mm into the board.", "Tab or onion skin (0.25–0.75 mm) keeps the part from flying.", "Clearance height <b>above</b> every screw head and clamp."], { title: "Hold-down, in section" }))}${details("Tool change", V.fig(V.collet(), ["Spindle nose.", "Matching nut for the ER25 collet. Snap the collet into the nut <b>first</b>, insert the bit, then thread the assembly onto the spindle. Use the tightening method demonstrated during induction; do not use a torque for a different nut.", "Collet: clean, right size for the shank.", "Shank ≥ 75 % in the collet.", "Flutes never inside the nut.", "Stick-out as short as the job allows."], { title: "Collet, nut and bit, in section" }) + proc(/^5\./))}${details("Loading and running a file", proc(/^8\./))}${details("Pausing, stopping, resuming", proc(/^9\./))}${details("After the job", proc(/^10\./))}</div>`)}`);
+${sec("Manual", "Step details", "", `<div class="sb-measure sb-group">${details("Power-up and leaving the machine", proc(/^1\./))}${details("Keypad and jogging", proc(/^2\./))}${details("Homing (C3)", proc(/^3\./))}${details("Material and hold-down", proc(/^4\./) + V.fig(V.holddown(), ["Screw in the waste.", "Profile cut, 0.2 mm into the board.", "Tab or onion skin (0.25–0.75 mm) keeps the part from flying.", "Clearance height <b>above</b> every screw head and clamp."], { title: "Hold-down, in section" }))}${details("Tool change", V.fig(V.collet(), ["Spindle nose.", "Matching nut for the ER25 collet. Snap the collet into the nut <b>first</b>, insert the bit, then thread the assembly onto the spindle. Use the tightening method demonstrated during induction; do not use a torque for a different nut.", "Collet: clean, right size for the shank.", "Shank ≥ 75 % in the collet.", "Flutes never inside the nut.", "Stick-out as short as the job allows."], { title: "Collet, nut and bit, in section" }) + proc(/^5\./))}${details("Loading and running a file", proc(/^8\./))}${details("Pausing, stopping, resuming", proc(/^9\./))}${details("After the job", proc(/^10\./))}</div>`)}`);
 
 // ---- 4 Zeroing
 page(PAGES[3], 3, `<div class="sb-trio">
@@ -540,13 +540,13 @@ page(PAGES[3], 3, `<div class="sb-trio">
 <a href="#z"><span class="cmd">C2</span><b>Z zero</b><span>Material top <i>or</i> table surface — whichever <code>&amp;PWZorigin</code> in the file says. Found with the plate.</span></a></div>
 ${sec("Figure 1 · plan", "Home and job zero, from above", "", `<span id="job"></span>${V.fig(V.tablePlan(), ["<b>Gantry</b> (X bridge): runs along the table on two X motors.", "<b>Spindle on the Y car</b>: runs across the gantry.", "<b>X proximity switch</b> · input 2.", "<b>Y proximity switch</b> · input 3.", "<b>Machine home 0,0.</b> <code>C3</code> finds it on the prox switches. Fixed.", "<b>XY job zero — <code>Z2</code> at the material centre.</b> Match the centre origin in CAM. A corner origin is also possible, but only when the file uses it. Z2 does not set Z height; use C2 for Z."], { cls: "sb-zero-fig" })}`, { id: "home" })}
 ${sec("Figure 2 · side", "Z zero with the plate", "", V.fig(V.zTouch(), ["<b>Spindle and collet nut</b> on the aluminium carriage plate.", "<b>Bit</b>: <code>C2</code> lowers it until it touches the plate, twice, then lifts.", "<b>Ground clip</b>: it stays clamped on the aluminium carriage plate, on the edge. Leave it there; never on the bit or nut.", "<b>Z-zero plate</b> on the surface the file expects (stock top here).", "<b>Input 1</b> on the SB3 screen lights on contact, goes out when lifted. The green dashes are the circuit: plate → bit → spindle → carriage plate → clip → lead → plate.", "<b>One coiled lead</b>, plate to clip. Nothing else to connect."], { cls: "sb-zero-fig" }), { id: "z" })}
-${sec("Figure 3 · the classic crash", "Same file, wrong surface", `CAM assumed the <b>stock top</b>; you touched the plate on the <b>bed</b>. Every rapid and retract now runs <i>inside</i> the material and every cut goes a sheet thickness into the spoilboard: clamps hit, bit snaps. The reverse mismatch cuts air. Read <code>&amp;PWZorigin</code> in the file header before C2, every time.${c(4, 54)}`, `<figure class="sb-fig sb-zero-fig"><div class="sb-fig-art">${V.crashPair()}</div><div class="sb-crash-cap"><div class="ok"><b>Match</b>File and plate both on the stock top: the rapid clears the sheet, the cut ends just below it.</div><div class="bad"><b>Mismatch</b>File on the stock top, plate on the bed: the rapid runs inside the sheet, the cut goes a sheet thickness into the spoilboard.</div></div></figure>`)}
+${sec("Figure 3 · Z mismatch", "Z zero on the wrong surface", `CAM assumed the <b>stock top</b>; you touched the plate on the <b>bed</b>. Every rapid and retract now runs <i>inside</i> the material and every cut goes a sheet thickness into the spoilboard: clamps hit, bit snaps. The reverse mismatch cuts air. Read <code>&amp;PWZorigin</code> in the file header before C2, every time.${c(4, 54)}`, `<figure class="sb-fig sb-zero-fig"><div class="sb-fig-art">${V.crashPair()}</div><div class="sb-crash-cap"><div class="ok"><b>Match</b>File and plate both on the stock top: the rapid clears the sheet, the cut ends just below it.</div><div class="bad"><b>Mismatch</b>File on the stock top, plate on the bed: the rapid runs inside the sheet, the cut goes a sheet thickness into the spoilboard.</div></div></figure>`)}
 <div class="sb-measure sb-group">${details("Homing (C3) in detail", proc(/^3\./))}${details("Z zero in detail (C2, plate thickness)", proc(/^6\./))}${details("XY zero in detail (Z2, ZX/ZY, fixed offsets)", proc(/^7\./))}</div>`);
 
 // ---- 5 Preflight
 export const pfAside = (PREFLIGHT.match(/<p class="sb-aside">([\s\S]*?)<\/p>/) || [, ""])[1];
 export const pfBody = PREFLIGHT.replace(/<p class="sb-aside">[\s\S]*?<\/p>/, "");
-page(PAGES[4], 4, `<div class="sb-pf-tools"><button type="button" class="sb-print" onclick="print()">Print this page</button><p class="sb-aside" style="margin:0">${pfAside}</p></div>
+page(PAGES[4], 4, `<div class="sb-pf-tools"><button type="button" class="sb-print" onclick="print()">Print checklist</button><p class="sb-aside" style="margin:0">${pfAside}</p></div>
 <div class="sb-pf-fill" aria-hidden="true"><span>Operator</span><span>Second person</span><span>Date</span><span>Job / file</span></div>${pfBody}`, "", { bodyClass: "pf" });
 
 // ---- 6 Trouble
@@ -558,7 +558,7 @@ const jump = `<nav class="sb-jump" aria-label="Jump to a fault">${FAULTS_DOC.map
 const TROUBLE_JS = `const q=document.querySelector('[data-filter]'),out=document.querySelector('[data-count]');const items=[...document.querySelectorAll('.sb-sym,.sb-frow')];
 q&&q.addEventListener('input',()=>{const t=q.value.trim().toLowerCase();let n=0;for(const el of items){const hit=!t||el.textContent.toLowerCase().includes(t);el.classList.toggle('sb-hidden',!hit);if(hit)n++;const d=el.querySelector('details');if(d)d.open=!!t&&hit&&t.length>2;}out.textContent=t?n+' match'+(n===1?'':'es'):'';});${OPEN_JS}`;
 page(PAGES[5], 5, `<div class="sb-trouble-tree">${V.stoppedFlow()}</div>
-${sec("Index", "Start from what you see", symIntro, `<div class="sb-filter"><input type="search" data-filter placeholder="Filter symptoms and faults — e.g. spindle, Z, plywood" aria-label="Filter symptoms and faults"><output data-count></output></div>${symHtml}`, { id: "symptoms" })}
+${sec("Index", "Symptoms", symIntro, `<div class="sb-filter"><input type="search" data-filter placeholder="Filter symptoms and faults — e.g. spindle, Z, plywood" aria-label="Filter symptoms and faults"><output data-count></output></div>${symHtml}`, { id: "symptoms" })}
 <section class="sb-sec sb-staff" id="callstaff"><h2>${V.icon("alarm")}Stop and call staff when</h2>${CALL_STAFF}</section>
 ${sec("Reference", "All 39 failure modes", "Open a row for what you see, why, and what to do. Faults the 3D model on <a href=\"webgl.html\">The machine</a> can act out show their key (1–9 or S) and are bold in the index.", `${jump}<ol class="sb-faults">${faultRows}</ol>`, { id: "faults" })}
 <div class="sb-measure sb-group">${details("Driver and controller alarms, in detail", proc(/^13\./))}</div>`, TROUBLE_JS);
@@ -576,9 +576,9 @@ export const feedsNotes = stripH2(FEEDS).replace(/<p>The cutter removes[\s\S]*?<
 export const feedsIntro = (FEEDS.match(/<p>The cutter removes[\s\S]*?<\/p>/) || [""])[0];
 export const feedsWorked = (FEEDS.match(/<p>Worked example[\s\S]*?<\/p>/) || [""])[0];
 page(PAGES[6], 6, `<div class="sb-calc-wrap">${V.chipCalc()}</div>
-${sec("Starting points", "Used in Icelandic Fab Labs", "6 mm two-flute unless stated. Record the material, cutter, feed, rpm and any fault in your job notes and report problems to staff.", `<div class="sb-ftab-wrap"><table class="sb-ftab"><colgroup><col style="width:19%"><col style="width:13%"><col style="width:8%"><col style="width:11%"><col style="width:10%"><col></colgroup><thead><tr><th>Material</th><th>Cutter</th><th>rpm</th><th>Feed mm/min</th><th>mm/tooth</th><th>Notes</th></tr></thead><tbody>${FEEDTAB.map(([m, cu, r, f, z, n]) => `<tr><td>${m}</td><td data-l="Cutter">${cu}</td><td class="num" data-l="rpm">${r}</td><td class="num" data-l="Feed mm/min">${f}</td><td class="num" data-l="mm/tooth">${z}</td><td class="note">${n}</td></tr>`).join("")}</tbody></table></div>
-<div class="sb-measure sb-group">${details("Why chipload, with a worked example", feedsIntro + feedsWorked)}${details("Ranges, sources and rules of thumb", feedsNotes)}</div>`)}
-${sec("Checklist", "From CAM to the machine", "", `<div class="sb-measure" style="max-width:900px">${stripH2(CAM)}</div>`)}`, V.CALC_JS);
+${sec("Starting points", "Icelandic Fab Lab settings", "6 mm two-flute unless stated. Record the material, cutter, feed, rpm and any fault in your job notes and report problems to staff.", `<div class="sb-ftab-wrap"><table class="sb-ftab"><colgroup><col style="width:19%"><col style="width:13%"><col style="width:8%"><col style="width:11%"><col style="width:10%"><col></colgroup><thead><tr><th>Material</th><th>Cutter</th><th>rpm</th><th>Feed mm/min</th><th>mm/tooth</th><th>Notes</th></tr></thead><tbody>${FEEDTAB.map(([m, cu, r, f, z, n]) => `<tr><td>${m}</td><td data-l="Cutter">${cu}</td><td class="num" data-l="rpm">${r}</td><td class="num" data-l="Feed mm/min">${f}</td><td class="num" data-l="mm/tooth">${z}</td><td class="note">${n}</td></tr>`).join("")}</tbody></table></div>
+<div class="sb-measure sb-group">${details("Chipload, with a worked example", feedsIntro + feedsWorked)}${details("Ranges, sources and rules of thumb", feedsNotes)}</div>`)}
+${sec("Checklist", "CAM post-processing", "", `<div class="sb-measure" style="max-width:900px">${stripH2(CAM)}</div>`)}`, V.CALC_JS);
 
 // ---- 8 Maintenance + reference
 export const maintCols = [
@@ -588,7 +588,7 @@ export const maintCols = [
   ["Semiannual (staff)", ["Check gantry square (diagonal test), table flatness", "Spoilboard surfacing", "Proximity switch gap and function", "Replace collets at 400–700 h or any incident"]],
 ];
 export const allSources = `<ol class="sb-sources">${[...SOURCES, ...LAB_SOURCES].map(([n, label, url]) => `<li value="${n}">${label}${url ? ` — <a href="${url}">${url}</a>` : ""}</li>`).join("")}</ol><p class="sb-aside">Manual tags: AG Assembly Guide 2022 [2] · QS Quick Start 2016 [4] · UG User Guide 2015 [11] · CR Command Reference 2015 [10] · HD Holding Down [12] · MS Maintenance Schedule [13] · TM Troubleshooting Mechanicals [16] · XY Manually Setting XY Zero [47] · FAQ Z-zero plate [6].</p>`;
-page(PAGES[7], 7, `${sec("Calendar", "What to do, and when", `Summary of ShopBot's PRS Maintenance Schedule and the maintenance appendix; the full published schedule, with the rack-greasing and bearing-adjustment procedures, is below.${c(2, 13)}`, `${V.maintGrid(maintCols)}<div class="sb-measure sb-group" style="margin-top:40px">${details("Why maintenance matters here", stripH2(MAINTENANCE).replace(/<h3>What this page does not know[\s\S]*$/, ""))}${details("The published schedule, in full", proc(/^14\./), false, "schedule")}</div>`)}
+page(PAGES[7], 7, `${sec("Calendar", "Maintenance schedule", `Summary of ShopBot's PRS Maintenance Schedule and the maintenance appendix; the full published schedule, with the rack-greasing and bearing-adjustment procedures, is below.${c(2, 13)}`, `${V.maintGrid(maintCols)}<div class="sb-measure sb-group" style="margin-top:40px">${details("Why maintenance matters", stripH2(MAINTENANCE).replace(/<h3>What this page does not know[\s\S]*$/, ""))}${details("Full published schedule", proc(/^14\./), false, "schedule")}</div>`)}
 ${sec("Reference", "Commands, signals and sources", "", `<nav class="sb-reflinks" aria-label="Reference sections"><a href="#glossary">Command glossary</a><a href="#io">Inputs, outputs and LEDs</a><a href="#sources">Sources</a></nav><div class="sb-group">${details("Command glossary", proc(/^11\./), false, "glossary")}${details("Inputs, outputs and status LEDs", proc(/^12\./), false, "io")}${details("Sources", allSources, false, "sources")}</div>`)}`, OPEN_JS);
 
 // ---- 9 Quiz
@@ -627,23 +627,23 @@ if (!NO_WRITE) writeFileSync(join(OUT, "webgl.html"), glOut.replace("</body>", `
 const idx = { file: "index.html", title: "The ShopBot PRSalpha 144-60", noHead: true };
 const where = [
   ["Before your induction", "01 Rules", "rules.html"],
-  ["Learning how it works", "02 The machine", "machine.html"],
-  ["Standing at the machine, about to cut", "05 Pre-flight", "preflight.html"],
-  ["It stopped, or the cut went wrong", "06 Something’s wrong", "trouble.html", "danger"],
-  ["Choosing feeds, posting a file", "07 Feeds & CAM", "feeds.html"],
+  ["Learning the machine", "02 The machine", "machine.html"],
+  ["At the machine, before cutting", "05 Pre-flight", "preflight.html"],
+  ["Machine stopped or bad cut", "06 Troubleshooting", "trouble.html", "danger"],
+  ["Feeds and posting", "07 Feeds & CAM", "feeds.html"],
 ];
-page(idx, -1, `<header class="sb-hero"><div><div class="sb-kicker"><span>00</span>A teaching site for the prototyping lab</div><h1>The ShopBot PRSalpha <em>144-60</em></h1><p class="sb-lead">How it works, how to run it, what goes wrong.</p><a class="sb-cta" href="rules.html">New here? Start with the rules <i>→</i></a></div>
-<nav class="sb-where" aria-label="Where are you now?"><div class="sb-where-h">Where are you now?</div>${where.map(([w, p, href, cls]) => `<a href="${href}"${cls ? ` class="${cls}"` : ""}><b>${w}</b><span>${p}</span></a>`).join("")}</nav></header>
-${sec("Before anything else", "Two ways to stop it", "", `<div class="sb-stops-teaser"><figure>${V.spacebar()}<figcaption><b>Spacebar — routine stop</b>Motion ramps down, position is kept. Treat the spindle as live.</figcaption></figure><figure>${V.pendant()}<figcaption><b>E-stop — something is wrong</b>Spindle power off at once. Position is lost: Reset, <code>C3</code>, <code>C2</code>. <a href="rules.html#stops">How to stop, in full</a>.</figcaption></figure></div>`)}
-${sec("The route", "Your first time, in six pages", "Read them in this order before your first job. Then the pre-flight sheet does the remembering for you.", V.flow([
+page(idx, -1, `<header class="sb-hero"><div><div class="sb-kicker"><span>00</span>A teaching site for the prototyping lab</div><h1>The ShopBot PRSalpha <em>144-60</em></h1><p class="sb-lead">Operation, troubleshooting and maintenance.</p><a class="sb-cta" href="rules.html">Read the rules <i>→</i></a></div>
+<nav class="sb-where" aria-label="By situation"><div class="sb-where-h">By situation</div>${where.map(([w, p, href, cls]) => `<a href="${href}"${cls ? ` class="${cls}"` : ""}><b>${w}</b><span>${p}</span></a>`).join("")}</nav></header>
+${sec("Safety", "Stopping the machine", "", `<div class="sb-stops-teaser"><figure>${V.spacebar()}<figcaption><b>Spacebar — routine stop</b>Motion ramps down, position is kept. Treat the spindle as live.</figcaption></figure><figure>${V.pendant()}<figcaption><b>E-stop — something is wrong</b>Spindle power off at once. Position is lost: Reset, <code>C3</code>, <code>C2</code>. <a href="rules.html#stops">Full stop procedure</a>.</figcaption></figure></div>`)}
+${sec("Reading order", "Before your first job", "Read these six pages in order; after that, use the pre-flight checklist at the machine.", V.flow([
   { title: "Rules", text: "Before the induction.", href: "rules.html" },
-  { title: "The machine", text: "Turn the model; play the ten faults from its side panel.", href: "machine.html" },
-  { title: "Run a job", text: "Eleven steps. Read once, then use the pre-flight.", href: "run.html" },
-  { title: "Zeroing", text: "Three zeros; the first-week crash.", href: "zero.html" },
-  { title: "Pre-flight", text: "Printed, at the machine, every job.", href: "preflight.html" },
+  { title: "The machine", text: "3D model with ten animated faults.", href: "machine.html" },
+  { title: "Run a job", text: "Eleven steps, CAM to finished part.", href: "run.html" },
+  { title: "Zeroing", text: "Home, XY zero and Z zero.", href: "zero.html" },
+  { title: "Pre-flight", text: "Printed checklist for every job.", href: "preflight.html" },
   { title: "Sign-off", text: "Twelve questions, with answers.", href: "quiz.html" },
 ]))}
-${sec("Contents", "The whole site", "", `<ol class="sb-toc">${PAGES.map((p) => `<li><a href="${p.file}"><span class="n">${p.n}</span><b>${p.nav}</b><span>${p.sub}</span></a></li>`).join("")}<li><a href="webgl.html"><span class="n">3D</span><b>3D model, full screen</b><span>Orbit, zoom and follow the tool through the posted job.</span></a></li></ol>`)}
+${sec("Contents", "All pages", "", `<ol class="sb-toc">${PAGES.map((p) => `<li><a href="${p.file}"><span class="n">${p.n}</span><b>${p.nav}</b><span>${p.sub}</span></a></li>`).join("")}<li><a href="webgl.html"><span class="n">3D</span><b>3D model, full screen</b><span>Orbit, zoom and follow the tool through the posted job.</span></a></li></ol>`)}
 `);
 
 if (!NO_WRITE) console.log("wrote", OUT, PAGES.length + 2, "pages");

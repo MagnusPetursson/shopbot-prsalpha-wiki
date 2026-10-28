@@ -6,9 +6,12 @@ import subprocess, json, re, math
 root=Path(__file__).resolve().parents[2]
 out=root/'qa/geometry-audit/pdf';out.mkdir(parents=True,exist_ok=True)
 results=[]
+# Reader-text guard: geometry-only work must not change reader text. The baseline is the last
+# approved copy revision (qa/READER_BASELINE); 23d731b before the copy pass.
+BASELINE = (lambda f: f.read_text().strip() if f.exists() else '23d731b')(Path(__file__).resolve().parents[2]/'qa/READER_BASELINE')
 for filename in ['shopbot-handbook.pdf','shopbot-wiki.pdf']:
     pdf=root/filename; name=pdf.stem; dest=out/name;dest.mkdir(exist_ok=True)
-    baseline=subprocess.check_output(['git','show','23d731b:'+filename],cwd=root)
+    baseline=subprocess.check_output(['git','show',BASELINE+':'+filename],cwd=root)
     before=subprocess.check_output(['pdftotext','-raw','-','-'],input=baseline).decode()
     after=subprocess.check_output(['pdftotext','-raw',str(pdf),'-'],text=True)
     def normalized(text):

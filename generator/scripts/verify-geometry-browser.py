@@ -24,12 +24,15 @@ class Reader(HTMLParser):
         if not self.skip: self.words.append(data)
     def value(self): return ' '.join(' '.join(self.words).split())
 
+# Reader-text guard: geometry-only work must not change reader text. The baseline is the last
+# approved copy revision (qa/READER_BASELINE); 23d731b before the copy pass.
+BASELINE = (lambda f: f.read_text().strip() if f.exists() else '23d731b')(Path(__file__).resolve().parents[2]/'qa/READER_BASELINE')
 pages = ['index','rules','machine','run','zero','preflight','trouble','feeds','maintain','quiz','webgl']
 voice = []
 for theme in ['', 'light']:
     for name in pages:
         rel = (Path(theme)/(name+'.html')).as_posix()
-        before = subprocess.check_output(['git','show','23d731b:'+rel], text=True)
+        before = subprocess.check_output(['git','show',BASELINE+':'+rel], text=True)
         now = (root/rel).read_text()
         assert Reader(before).value() == Reader(now).value(), 'Reader text changed: '+rel
         voice.append(rel)
