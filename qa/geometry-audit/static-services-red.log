@@ -1,5 +1,0 @@
-Traceback (most recent call last):
-  File "/home/maggi/Documents/Repos/shopbot-prsalpha-wiki/generator/scripts/verify-static-services.py", line 15, in <module>
-    assert '<path' in svg, f'{name}: missing static service route; PDF/no-JS drawing is disconnected'
-           ^^^^^^^^^^^^^^
-AssertionError: hose.foot: missing static service route; PDF/no-JS drawing is disconnected

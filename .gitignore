@@ -11,3 +11,9 @@ generator/figures/shopbot/site-light/
 # Reproducible QA intermediates; retain reports/contact sheets, not every raster page.
 qa/geometry-audit/pdf/*/
 qa/geometry-audit/before-*.pdf
+
+# local QA/audit evidence (kept private)
+copy-audit/
+qa/
+TRIAGE.md
+generator/scripts/verify-geometry-stage.py
