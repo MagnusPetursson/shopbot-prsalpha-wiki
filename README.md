@@ -32,6 +32,6 @@ GitHub Pages publishes the checked-in root of `main`. `.nojekyll` keeps the depl
 
 ## Publication and licences
 
-This public edition excludes private communication identifiers, internal research dumps, photographs and third-party manuals. All ten included JPGs are rendered stills from the site's own 3D model, not photographs of people. Source citations link to external documentation rather than redistributing it. Unique equipment identifiers and the staff question record are not included.
+All ten JPGs are rendered stills from the site's own 3D model. Source citations link to the manufacturers' documentation rather than redistributing it.
 
-No blanket reuse licence is granted for the original teaching text, diagrams or project-specific code; rights remain with their respective holders pending an explicit licence choice. Publication alone is not an open-source licence. The included Anatomy drawing toolkit derives from [wheresryan22/anatomy](https://github.com/wheresryan22/anatomy), under its [MIT licence](licenses/anatomy-MIT.txt). IBM Plex Sans, IBM Plex Mono and Source Serif 4 are distributed under their SIL Open Font Licences in `licenses/`. ShopBot and other manufacturers retain their trademarks and documentation rights.
+All rights are reserved for the original teaching text, diagrams and project-specific code; publishing them here grants no reuse licence. The included Anatomy drawing toolkit derives from [wheresryan22/anatomy](https://github.com/wheresryan22/anatomy), under its [MIT licence](licenses/anatomy-MIT.txt). IBM Plex Sans, IBM Plex Mono and Source Serif 4 are distributed under their SIL Open Font Licences in `licenses/`. ShopBot and other manufacturers retain their trademarks and documentation rights.
