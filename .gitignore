@@ -16,4 +16,3 @@ qa/geometry-audit/before-*.pdf
 copy-audit/
 qa/
 TRIAGE.md
-generator/scripts/verify-geometry-stage.py
